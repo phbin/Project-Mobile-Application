@@ -1,0 +1,23 @@
+<resources>
+<!--    Log in and Sign up Screens-->
+    <string name="app_name">FoodDelivery</string>
+    <string name="Create_account">Create new account</string>
+    <string name="Sign_in">Sign in</string>
+    <string name="Login_with_google">Continue with Google</string>
+    <string name="Reset_new_password">Reset new password</string>
+    <string name="Enter_your_number">Enter your number</string>
+    <string name="Keep_phone">Keep your phone we will texted you a verification code to your phone number</string>
+    <string name="Phone_number">Phone number</string>
+    <string name="Enter_your_phone_number">Enter your phone number</string>
+    <string name="Continue">Continue</string>
+    <string name="Set_new_password">Set a new password</string>
+    <string name="Password">Password</string>
+    <string name="Enter_your_password">Enter your password</string>
+    <string name="Confirm_password">Confirm password</string>
+    <string name="Reset_password">Reset password</string>
+    <string name="Reset_your_password">Reset your password</string>
+    <string name="Sign_up">Sign up</string>
+    <string name="Enter_your_verify_code">Enter your verify code</string>
+    <string name="We_texted_verify_code">We texted you a verification code to your phone number</string>
+
+</resources>
