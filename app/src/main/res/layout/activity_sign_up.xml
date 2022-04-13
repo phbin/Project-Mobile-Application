@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <ImageButton
@@ -49,14 +50,41 @@
             android:textColor="@color/black"
             android:textSize="40.32px" />
 
-        <EditText
-            android:id="@+id/editTxtPhoneNumber"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28.8px"
-            android:hint="@string/Enter_your_phone_number"
-            android:textSize="40.32px"
-            android:textColor="@color/black"/>
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editTextRegionPhoneNumber"
+                android:layout_width="112px"
+                android:layout_height="wrap_content"
+                android:text="+84"
+                android:textSize="40.32px"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:background="@null"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:counterEnabled="true"
+                app:counterMaxLength="10"
+                app:hintEnabled="false"
+                android:orientation="horizontal">
+
+
+                <EditText
+                    android:id="@+id/editTextEnterPhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28.8px"
+                    android:hint="@string/Enter_your_phone_number"
+                    android:textSize="40.32px"
+                    android:textColor="@color/black"
+                    android:inputType="number"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
 
         <Button
             android:id="@+id/btnContinue"

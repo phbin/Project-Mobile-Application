@@ -3,7 +3,11 @@ package com.example.fooddelivery
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_sign_in.*
 import kotlinx.android.synthetic.main.activity_sign_up.*
+import kotlinx.android.synthetic.main.activity_sign_up.btnBack
+import kotlinx.android.synthetic.main.activity_sign_up.btnContinue
+import kotlinx.android.synthetic.main.activity_sign_up.editTextEnterPhoneNumber
 
 
 class SignUpActivity : AppCompatActivity() {
@@ -18,8 +22,20 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         btnContinue.setOnClickListener {
-            val intent = Intent(this, SignUpEnterCodeActivity::class.java)
-            startActivity(intent)
+            val phoneNumber = editTextEnterPhoneNumber.text.toString().trim()
+
+            if(phoneNumber.isEmpty()){
+                editTextEnterPhoneNumber.error = "Phone number required"
+                return@setOnClickListener
+            }
+            else if(phoneNumber.length != 10){
+                editTextEnterPhoneNumber.error = "Phone number required 10 character"
+                return@setOnClickListener
+            }
+            else{
+                val intent = Intent(this, SignUpEnterCodeActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 }
