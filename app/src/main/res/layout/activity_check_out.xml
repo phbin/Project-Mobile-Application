@@ -77,6 +77,20 @@
                 android:layout_marginTop="1.6px"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+<<<<<<< Updated upstream
+=======
+                android:text="0393751403"
+                android:textColor="@color/grey"
+                android:textSize="40.32px"
+                android:fontFamily="@font/lato_regular"
+                >
+            </TextView>
+            <TextView
+                android:layout_marginHorizontal="83.52px"
+                android:layout_marginTop="1.6px"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+>>>>>>> Stashed changes
                 android:text="Số 1, khu phố 6, Linh Trung, Thủ Đức, Tp.HCM"
                 android:textColor="@color/grey"
                 android:textSize="40.32px"

@@ -20,6 +20,11 @@
     <string name="Enter_your_verify_code">Enter your verify code</string>
     <string name="We_texted_verify_code">We texted you a verification code to your phone number</string>
     <string name="Required">Required</string>
+<<<<<<< Updated upstream
+=======
+    <string name="Enter_your_name">Enter your name</string>
+    <string name="Enter_your_email">Enter your email</string>
+>>>>>>> Stashed changes
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

@@ -14,7 +14,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnCreateAccount.setOnClickListener {
+<<<<<<< Updated upstream
             val intent = Intent(this, CheckOutActivity::class.java)
+=======
+            val intent = Intent(this, SignUpActivity::class.java)
+>>>>>>> Stashed changes
             startActivity(intent)
         }
 
@@ -24,6 +28,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnLoginWithGoogle.setOnClickListener {
+            val intent = Intent(this,CheckOutActivity::class.java)
+            startActivity(intent)
             Toast.makeText(this, "Google clicked", Toast.LENGTH_SHORT).show()
         }
     }

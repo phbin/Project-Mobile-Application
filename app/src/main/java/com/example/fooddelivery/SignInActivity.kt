@@ -5,17 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import androidx.core.view.isEmpty
-import androidx.core.widget.doOnTextChanged
-import androidx.lifecycle.MediatorLiveData
-import androidx.lifecycle.MutableLiveData
-import com.google.android.material.textfield.TextInputLayout
+import com.example.fooddelivery.model.Customer
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
-import com.google.firebase.crashlytics.buildtools.reloc.com.google.common.base.Verify
+import com.google.firebase.database.*
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_sign_in.*
 import java.util.concurrent.TimeUnit
 
@@ -23,15 +20,14 @@ import java.util.concurrent.TimeUnit
 class SignInActivity : AppCompatActivity() {
 
     lateinit var auth: FirebaseAuth
-    lateinit var storedVerificationId:String
+    lateinit var storedVerificationId: String
     lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
     private lateinit var callbacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
 
-        auth=FirebaseAuth.getInstance()
+
 
         btnBack.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
@@ -50,13 +46,15 @@ class SignInActivity : AppCompatActivity() {
 //        }
 
         btnContinue.setOnClickListener {
+            CheckPassword()
+            auth = FirebaseAuth.getInstance()
 //            if(validPhoneNumber() && validPassword()){
 //                Toast.makeText(this, "Login successfully", Toast.LENGTH_SHORT).show()
 //            }
 //            else{
 //                return@setOnClickListener
 //            }
-            login()
+           login()
         }
 
         // Callback function for Phone Auth
@@ -76,28 +74,51 @@ class SignInActivity : AppCompatActivity() {
                 token: PhoneAuthProvider.ForceResendingToken
             ) {
 
-                Log.d("TAG","onCodeSent:$verificationId")
+                Log.d("TAG", "onCodeSent:$verificationId")
                 storedVerificationId = verificationId
                 resendToken = token
 
-                var intent = Intent(applicationContext,SignInEnterCode::class.java)
-                intent.putExtra("storedVerificationId",storedVerificationId)
+                var intent = Intent(applicationContext, SignInEnterCode::class.java)
+                intent.putExtra("storedVerificationId", storedVerificationId)
                 startActivity(intent)
             }
         }
     }
 
     private fun login() {
+
         var number = editTextEnterPhoneNumber.text.toString().trim()
 
         if (number.isNotEmpty()) {
-            number = "+84" + number
-            sendVerificationcode(number)
+           // if(CheckPassword()) {
+                number = "+84" + number
+                sendVerificationcode(number)
+           // }
         } else {
             Toast.makeText(this, "Enter mobile number", Toast.LENGTH_SHORT).show()
         }
+
     }
 
+    private fun CheckPassword(){
+        var fb = FirebaseFirestore.getInstance().collection("Customer")
+        fb.get().addOnCompleteListener{
+            if(it.isSuccessful)
+            {
+                for (i in it.result)
+                {
+                    if ((editTextEnterPhoneNumber.text.toString())==i.id)
+                    {
+                        if (editTextEnterPassword.text.toString()==i.data.getValue("password").toString()) {
+                            Toast.makeText(this,
+                                "Success",
+                                Toast.LENGTH_SHORT).show()
+                        } else continue
+                    } else continue
+                }
+            }
+        }
+    }
     private fun sendVerificationcode(number: String) {
         val options = PhoneAuthOptions.newBuilder(auth)
             .setPhoneNumber(number) // Phone number to verify
@@ -137,3 +158,4 @@ class SignInActivity : AppCompatActivity() {
         }
     }
 }
+

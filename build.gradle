@@ -15,4 +15,8 @@ task clean(type: Delete) {
 }
 dependencies {
     'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes
