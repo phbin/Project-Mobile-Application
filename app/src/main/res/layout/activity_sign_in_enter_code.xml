@@ -16,7 +16,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Sign_up"
+        android:text="@string/Sign_in"
         android:textSize="69.12px"
         android:fontFamily="@font/lato_semibold"
         android:textColor="@color/black"
@@ -53,50 +53,57 @@
         <EditText
             android:id="@+id/editTextCodeNumber1"
             android:layout_width="112px"
-            android:layout_height="112px"
+            android:layout_height="wrap_content"
             android:textSize="69.12px"
             android:gravity="center"
-            android:maxLength="1"/>
+            android:maxLength="1"
+            android:cursorVisible="false"/>
         <EditText
             android:id="@+id/editTextCodeNumber2"
             android:layout_width="112px"
-            android:layout_height="112px"
+            android:layout_height="wrap_content"
             android:textSize="69.12px"
             android:gravity="center"
             android:layout_marginLeft="54px"
-            android:maxLength="1"/>
+            android:maxLength="1"
+            android:cursorVisible="false"/>
         <EditText
             android:id="@+id/editTextCodeNumber3"
             android:layout_width="112px"
-            android:layout_height="112px"
+            android:layout_height="wrap_content"
             android:textSize="69.12px"
             android:gravity="center"
             android:layout_marginLeft="54px"
-            android:maxLength="1"/>
+            android:maxLength="1"
+            android:cursorVisible="false"/>
         <EditText
             android:id="@+id/editTextCodeNumber4"
             android:layout_width="112px"
-            android:layout_height="112px"
+            android:layout_height="wrap_content"
             android:textSize="69.12px"
             android:gravity="center"
             android:layout_marginLeft="54px"
-            android:maxLength="1"/>
+            android:maxLength="1"
+            android:cursorVisible="false"/>
         <EditText
             android:id="@+id/editTextCodeNumber5"
             android:layout_width="112px"
-            android:layout_height="112px"
+            android:layout_height="wrap_content"
             android:textSize="69.12px"
             android:gravity="center"
             android:layout_marginLeft="54px"
-            android:maxLength="1"/>
+            android:maxLength="1"
+            android:cursorVisible="false"/>
         <EditText
             android:id="@+id/editTextCodeNumber6"
             android:layout_width="112px"
-            android:layout_height="112px"
+            android:layout_height="wrap_content"
             android:textSize="69.12px"
             android:gravity="center"
             android:layout_marginLeft="54px"
-            android:maxLength="1"/>
+            android:maxLength="1"
+            android:cursorVisible="false"/>
+
     </LinearLayout>
 
     <Button

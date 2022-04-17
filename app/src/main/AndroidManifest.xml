@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodDelivery">
         <activity
+            android:name=".SignInEnterCode"
+            android:exported="false" />
+        <activity
+            android:name=".sign_in_enter_code"
+            android:exported="false" />
+        <activity
             android:name=".SignUpSetPasswordActivity"
             android:exported="false" />
         <activity

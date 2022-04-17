@@ -1,5 +1,5 @@
 <resources>
-<!--    Log in and Sign up Screens-->
+    <!--    Log in and Sign up Screens-->
     <string name="app_name">FoodDelivery</string>
     <string name="Create_account">Create new account</string>
     <string name="Sign_in">Sign in</string>
@@ -19,5 +19,6 @@
     <string name="Sign_up">Sign up</string>
     <string name="Enter_your_verify_code">Enter your verify code</string>
     <string name="We_texted_verify_code">We texted you a verification code to your phone number</string>
+    <string name="Required">Required</string>
 
 </resources>

@@ -3,6 +3,7 @@ package com.example.fooddelivery
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_reset_password_set_password.*
 
 class ResetPasswordSetPasswordActivity : AppCompatActivity() {
@@ -16,7 +17,21 @@ class ResetPasswordSetPasswordActivity : AppCompatActivity() {
         }
 
         btnResetPassword.setOnClickListener {
+            val password = editTextEnterPassword.text.toString().trim()
+            val confirmPassword = editTextConfirmPassword.text.toString().trim()
 
+            if(password.isEmpty()){
+                editTextEnterPassword.error = "Password required"
+                return@setOnClickListener
+            }
+            else if(password != confirmPassword){
+                editTextConfirmPassword.error = "Please make sure your password match"
+                return@setOnClickListener
+            }
+            else{
+                btnResetPassword.isEnabled = true
+                Toast.makeText(this, "Login successfully", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }
