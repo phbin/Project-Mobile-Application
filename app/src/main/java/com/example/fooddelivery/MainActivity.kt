@@ -4,8 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.PhoneAuthProvider
+import com.example.fooddelivery.checkout.CheckOutActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnCreateAccount.setOnClickListener {
-            val intent = Intent(this,SignUpActivity::class.java)
+            val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
 
@@ -25,6 +24,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnLoginWithGoogle.setOnClickListener {
+            val intent = Intent(this,CheckOutActivity::class.java)
+            startActivity(intent)
             Toast.makeText(this, "Google clicked", Toast.LENGTH_SHORT).show()
         }
     }

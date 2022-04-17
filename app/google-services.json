@@ -7,12 +7,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:700807142483:android:a7bbd7ee9b87c3da6f3aa6",
+        "mobilesdk_app_id": "1:700807142483:android:d1065037092af6226f3aa6",
         "android_client_info": {
           "package_name": "com.example.fooddelivery"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "700807142483-mrbbutmhj1su0ug4r68pabjs5l3r95dl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fooddelivery",
+            "certificate_hash": "e43c65525538afd495d34612c0e6a6d2d58d528c"
+          }
+        },
         {
           "client_id": "700807142483-jjmh8dr1jlchvlg0s22tjo9luf9gm2qa.apps.googleusercontent.com",
           "client_type": 3

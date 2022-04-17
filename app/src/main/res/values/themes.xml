@@ -10,6 +10,11 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/black</item>
         <!-- Customize your theme here. -->
-
-    </style>
+        </style>
+        <style name="BottomSheetStyle" parent="Theme.Design.BottomSheetDialog">
+            <item name="bottomSheetStyle">@style/Modal</item>
+        </style>
+        <style name="Modal" parent="Widget.Design.BottomSheet.Modal">
+            <item name="android:background">@drawable/dialog_fragment_corner</item>
+        </style>
 </resources>

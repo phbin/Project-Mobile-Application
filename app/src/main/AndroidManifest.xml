@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodDelivery">
         <activity
-            android:name=".SignInEnterCode"
+            android:name=".checkout.FragmentPromotion"
             android:exported="false" />
         <activity
-            android:name=".sign_in_enter_code"
+            android:name=".checkout.CheckOutActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SignInEnterCode"
             android:exported="false" />
         <activity
             android:name=".SignUpSetPasswordActivity"

@@ -46,10 +46,40 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/lato_regular"
-            android:text="@string/Phone_number"
+            android:text="Name"
             android:textColor="@color/black"
             android:textSize="40.32px" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false"
+                android:orientation="horizontal">
+
+
+                <EditText
+                    android:id="@+id/editTextEnterName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28.8px"
+                    android:hint="@string/Enter_your_name"
+                    android:textSize="40.32px"
+                    android:textColor="@color/black"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="57.6px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:text="@string/Phone_number"
+            android:textColor="@color/black"
+            android:textSize="40.32px" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -68,8 +98,6 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:counterEnabled="true"
-                app:counterMaxLength="10"
                 app:hintEnabled="false"
                 android:orientation="horizontal">
 
@@ -83,6 +111,35 @@
                     android:textSize="40.32px"
                     android:textColor="@color/black"
                     android:inputType="number"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="57.6px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:text="Email"
+            android:textColor="@color/black"
+            android:textSize="40.32px" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/editTextEnterEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28.8px"
+                    android:hint="@string/Enter_your_email"
+                    android:textSize="40.32px"
+                    android:textColor="@color/black"/>
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
