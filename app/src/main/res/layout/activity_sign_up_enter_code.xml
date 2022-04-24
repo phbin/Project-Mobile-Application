@@ -54,63 +54,80 @@
             android:id="@+id/editTextCodeNumber1"
             android:layout_width="112px"
             android:layout_height="112px"
-            android:textSize="69.12px"
             android:gravity="center"
-            android:maxLength="1"/>
+            android:inputType="number"
+            android:maxLength="1"
+            android:textSize="50px" />
+
         <EditText
             android:id="@+id/editTextCodeNumber2"
             android:layout_width="112px"
             android:layout_height="112px"
-            android:textSize="69.12px"
+            android:textSize="50px"
             android:gravity="center"
             android:layout_marginLeft="54px"
-            android:maxLength="1"/>
+            android:maxLength="1"
+            android:inputType="number"/>
         <EditText
             android:id="@+id/editTextCodeNumber3"
             android:layout_width="112px"
             android:layout_height="112px"
-            android:textSize="69.12px"
+            android:textSize="50px"
             android:gravity="center"
             android:layout_marginLeft="54px"
-            android:maxLength="1"/>
+            android:maxLength="1"
+            android:inputType="number"/>
         <EditText
             android:id="@+id/editTextCodeNumber4"
             android:layout_width="112px"
             android:layout_height="112px"
-            android:textSize="69.12px"
+            android:textSize="50px"
             android:gravity="center"
             android:layout_marginLeft="54px"
-            android:maxLength="1"/>
+            android:maxLength="1"
+            android:inputType="number"/>
         <EditText
             android:id="@+id/editTextCodeNumber5"
             android:layout_width="112px"
             android:layout_height="112px"
-            android:textSize="69.12px"
+            android:textSize="50px"
             android:gravity="center"
             android:layout_marginLeft="54px"
-            android:maxLength="1"/>
+            android:maxLength="1"
+            android:inputType="number"/>
         <EditText
             android:id="@+id/editTextCodeNumber6"
             android:layout_width="112px"
             android:layout_height="112px"
-            android:textSize="69.12px"
+            android:textSize="50px"
             android:gravity="center"
             android:layout_marginLeft="54px"
-            android:maxLength="1"/>
+            android:maxLength="1"
+            android:inputType="number"/>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnContinue"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="130px"
-        android:background="@drawable/mint_button"
-        android:backgroundTint="@color/mint"
-        android:layout_marginTop="103.68px"
-        android:text="@string/Continue"
-        android:textColor="@color/white"
-        android:textAllCaps="false"
-        android:textSize="46.08px"
-        android:layout_marginHorizontal="60px"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="103.68px">
 
+        <Button
+            android:id="@+id/btnContinue"
+            android:layout_width="match_parent"
+            android:layout_height="130px"
+            android:layout_marginHorizontal="60px"
+            android:background="@drawable/mint_button"
+            android:backgroundTint="@color/mint"
+            android:text="@string/Continue"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="46.08px" />
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+    </FrameLayout>
 </LinearLayout>
