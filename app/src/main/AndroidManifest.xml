@@ -22,10 +22,21 @@
             android:name=".SignInWithGoogleEnterPhone"
             android:exported="false" />
         <activity
-            android:name=".SignInEnterCode"
+            android:name=".checkout.FragmentPromotion"
+<<<<<<< Updated upstream
             android:exported="false" />
         <activity
-            android:name=".sign_in_enter_code"
+            android:name=".checkout.CheckOutActivity"
+            android:exported="false" />
+        <activity
+=======
+            android:exported="false" />
+        <activity
+            android:name=".checkout.CheckOutActivity"
+            android:exported="true" />
+        <activity
+>>>>>>> Stashed changes
+            android:name=".SignInEnterCode"
             android:exported="false" />
         <activity
             android:name=".SignUpSetPasswordActivity"

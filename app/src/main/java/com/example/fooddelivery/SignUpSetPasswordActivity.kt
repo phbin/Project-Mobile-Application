@@ -4,12 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-<<<<<<< Updated upstream
-=======
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fooddelivery.model.Customer
 import com.google.firebase.firestore.FirebaseFirestore
->>>>>>> Stashed changes
 import kotlinx.android.synthetic.main.activity_sign_up_set_password.*
 
 class SignUpSetPasswordActivity : AppCompatActivity() {
@@ -52,10 +49,6 @@ class SignUpSetPasswordActivity : AppCompatActivity() {
                 btnCreateAccount.visibility = View.VISIBLE
                 return@setOnClickListener
             }
-<<<<<<< Updated upstream
-        }
-    }
-=======
             SignUpAccount()
         }
     }
@@ -89,6 +82,7 @@ class SignUpSetPasswordActivity : AppCompatActivity() {
                 progressBar.visibility = View.GONE
                 btnCreateAccount.visibility = View.VISIBLE
             }
+            SetPassword()
         }
         else{
             progressBar.visibility = View.GONE
@@ -96,5 +90,4 @@ class SignUpSetPasswordActivity : AppCompatActivity() {
 
         }
     }
->>>>>>> Stashed changes
 }

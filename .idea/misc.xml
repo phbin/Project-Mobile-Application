@@ -15,6 +15,35 @@
         <entry key="..\:/MobileUIT/app/src/main/res/layout/activity_sign_up.xml" value="0.3333333333333333" />
         <entry key="..\:/MobileUIT/app/src/main/res/layout/activity_sign_up_enter_code.xml" value="0.22" />
         <entry key="..\:/MobileUIT/app/src/main/res/layout/activity_sign_up_set_password.xml" value="0.22" />
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/drawable-v24/border_shadow_button.xml" value="0.119" />
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/drawable-v24/circle_mint.xml" value="0.119" />
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/drawable-v24/dialog_fragment_corner.xml" value="0.119" />
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/layout/activity_check_out.xml" value="0.2" />
+<<<<<<< Updated upstream
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/layout/activity_fragment_promotion.xml" value="0.16458333333333333" />
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/layout/activity_main.xml" value="0.1734375" />
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/layout/activity_reset_password.xml" value="0.1734375" />
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/layout/activity_reset_password_enter_code.xml" value="0.1734375" />
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/layout/activity_sign_in.xml" value="0.1734375" />
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/layout/fragment_blank.xml" value="0.16927083333333334" />
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/layout/fragment_payment.xml" value="0.264" />
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/layout/listview_choosingitem.xml" value="0.16458333333333333" />
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/layout/listview_promotion.xml" value="0.536" />
+=======
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/layout/activity_fragment_promotion.xml" value="0.176" />
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/layout/activity_main.xml" value="0.1734375" />
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/layout/activity_reset_password.xml" value="0.1734375" />
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/layout/activity_reset_password_enter_code.xml" value="0.1734375" />
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/layout/activity_sign_in.xml" value="0.2" />
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/layout/activity_sign_in_enter_code.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/layout/activity_sign_up.xml" value="0.4" />
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/layout/activity_sign_up_enter_code.xml" value="0.1875" />
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/layout/activity_sign_up_set_password.xml" value="0.1875" />
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/layout/fragment_blank.xml" value="0.16927083333333334" />
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/layout/fragment_payment.xml" value="0.264" />
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/layout/listview_choosingitem.xml" value="0.4" />
+        <entry key="..\:/Users/Bin/Desktop/Project-Mobile-Application/app/src/main/res/layout/listview_promotion.xml" value="0.264" />
+>>>>>>> Stashed changes
       </map>
     </option>
   </component>

@@ -5,10 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-<<<<<<< Updated upstream
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.PhoneAuthProvider
-=======
 import com.example.fooddelivery.checkout.CheckOutActivity
 import com.google.android.gms.auth.api.credentials.IdToken
 import com.google.android.gms.auth.api.identity.BeginSignInRequest
@@ -18,7 +14,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
->>>>>>> Stashed changes
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -35,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnCreateAccount.setOnClickListener {
-            val intent = Intent(this,SignUpActivity::class.java)
+            val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
 
@@ -45,9 +40,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnLoginWithGoogle.setOnClickListener {
-<<<<<<< Updated upstream
-            Toast.makeText(this, "Google clicked", Toast.LENGTH_SHORT).show()
-=======
 //            val intent = Intent(this,CheckOutActivity::class.java)
 //            startActivity(intent)
 //            Toast.makeText(this, "Google clicked", Toast.LENGTH_SHORT).show()
@@ -94,7 +86,6 @@ class MainActivity : AppCompatActivity() {
             else{
                 Log.d("SignInActivity", exception.toString())
             }
->>>>>>> Stashed changes
         }
     }
 

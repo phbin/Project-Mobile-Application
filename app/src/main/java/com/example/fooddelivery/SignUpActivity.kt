@@ -2,9 +2,6 @@ package com.example.fooddelivery
 
 import android.content.Intent
 import android.os.Bundle
-<<<<<<< Updated upstream
-import kotlinx.android.synthetic.main.activity_sign_in.*
-=======
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -15,7 +12,6 @@ import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.firestore.FirebaseFirestore
->>>>>>> Stashed changes
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import java.util.concurrent.TimeUnit
 import java.util.regex.Pattern
@@ -38,13 +34,10 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         btnContinue.setOnClickListener {
-<<<<<<< Updated upstream
-=======
             progressBar.visibility = View.VISIBLE
             btnContinue.visibility = View.INVISIBLE
 
             auth = FirebaseAuth.getInstance()
->>>>>>> Stashed changes
             val phoneNumber = editTextEnterPhoneNumber.text.toString().trim()
             val email = editTextEnterEmail.text.toString().trim()
             val name = editTextEnterName.text.toString()
@@ -74,9 +67,6 @@ class SignUpActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             else{
-<<<<<<< Updated upstream
-                val intent = Intent(this, SignUpEnterCodeActivity::class.java)
-=======
                 var fb = FirebaseFirestore.getInstance().collection("Customer")
                 fb.get().addOnCompleteListener{
                     if(it.isSuccessful)
@@ -136,13 +126,11 @@ class SignUpActivity : AppCompatActivity() {
                 intent.putExtra("noPhone",editTextEnterPhoneNumber.text.toString())
                 intent.putExtra("email",editTextEnterEmail.text.toString())
                 intent.putExtra("name", editTextEnterName.text.toString())
->>>>>>> Stashed changes
                 startActivity(intent)
             }
         }
     }
-<<<<<<< Updated upstream
-=======
+
 //    private fun SignUpAccount(){
 //        var fb = FirebaseFirestore.getInstance().collection("Customer")
 //        var cus=Customer(""+editTextEnterName.text.toString(),""+editTextEnterEmail.text.toString(),"")
@@ -210,6 +198,3 @@ class SignUpActivity : AppCompatActivity() {
 
         return existed
     }
-
->>>>>>> Stashed changes
-}
