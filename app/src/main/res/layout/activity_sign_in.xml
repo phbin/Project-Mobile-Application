@@ -129,17 +129,28 @@
                 android:layout_marginTop="28.8px" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/btnContinue"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="130px"
-            android:background="@drawable/mint_button"
-            android:backgroundTint="@color/mint"
-            android:layout_marginTop="103.68px"
-            android:text="@string/Continue"
-            android:textColor="@color/white"
-            android:textAllCaps="false"
-            android:textSize="46.08px"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="103.68px">
+            <Button
+                android:id="@+id/btnContinue"
+                android:layout_width="match_parent"
+                android:layout_height="130px"
+                android:background="@drawable/mint_button"
+                android:backgroundTint="@color/mint"
+                android:text="@string/Continue"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:textSize="46.08px"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:visibility="gone"/>
+        </FrameLayout>
     </LinearLayout>
 
     <LinearLayout
