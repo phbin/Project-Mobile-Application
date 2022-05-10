@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
+    <androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="match_parent">
+<androidx.appcompat.widget.LinearLayoutCompat
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
-    <LinearLayout
+
+<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="left"
@@ -31,25 +35,23 @@
             android:fontFamily="@font/lato_semibold"
             android:textStyle="bold" />
     </LinearLayout>
-    <ScrollView
-        android:layout_marginTop="57.6px"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             >
-            <ImageView
+            <fragment
                 android:layout_marginHorizontal="70px"
                 android:id="@+id/frmMaps"
-
+                android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="941.76px"
                 android:layout_height="408.96px"
                 android:layout_marginTop="71px"
                 >
-            </ImageView>
+            </fragment>
             <TextView
                 android:layout_marginHorizontal="83.52px"
                 android:layout_marginTop="74.88px"
@@ -113,28 +115,20 @@
                 android:fontFamily="@font/lato_regular"
                 >
             </TextView>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                >
-                <ListView
+             <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/listviewItem"
                     android:layout_width="match_parent"
-                    android:layout_height="580px"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="83.52px"
                     android:layout_marginRight="70px"
                     android:divider="#00000000"
-                    android:dividerHeight="59.2px"
-                    android:scrollbars="none"
                     >
-                </ListView>
-            </LinearLayout>
+                </androidx.recyclerview.widget.RecyclerView>
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="2.88px"
-                android:layout_marginTop="105.28px"
+                android:layout_marginTop="47.68px"
                 android:background="#DEDEDE"
                 >
             </LinearLayout>
@@ -374,5 +368,6 @@
                 >
             </Button>
         </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+    </LinearLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.core.widget.NestedScrollView>

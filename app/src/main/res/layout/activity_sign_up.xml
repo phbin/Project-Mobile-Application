@@ -61,7 +61,6 @@
                 app:hintEnabled="false"
                 android:orientation="horizontal">
 
-
                 <EditText
                     android:id="@+id/editTextEnterName"
                     android:layout_width="match_parent"
@@ -85,21 +84,23 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/editTextRegionPhoneNumber"
-                android:layout_width="112px"
-                android:layout_height="wrap_content"
-                android:text="+84"
-                android:textSize="40.32px"
-                android:textColor="@color/black"
-                android:inputType="number"
-                android:background="@null"/>
+            <!--            <EditText-->
+            <!--                android:id="@+id/editTextRegionPhoneNumber"-->
+            <!--                android:layout_width="112px"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="+84"-->
+            <!--                android:textSize="40.32px"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                android:inputType="number"-->
+            <!--                android:background="@null"/>-->
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:hintEnabled="false"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                app:counterEnabled="true"
+                app:counterMaxLength="10">
 
 
                 <EditText
@@ -110,7 +111,8 @@
                     android:hint="@string/Enter_your_phone_number"
                     android:textSize="40.32px"
                     android:textColor="@color/black"
-                    android:inputType="number"/>
+                    android:inputType="number"
+                    android:maxLines="1"/>
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
         <TextView
@@ -125,7 +127,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -143,17 +144,28 @@
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
-        <Button
-            android:id="@+id/btnContinue"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="130px"
-            android:background="@drawable/mint_button"
-            android:backgroundTint="@color/mint"
-            android:layout_marginTop="103.68px"
-            android:text="@string/Continue"
-            android:textColor="@color/white"
-            android:textAllCaps="false"
-            android:textSize="46.08px"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="103.68px">
+            <Button
+                android:id="@+id/btnContinue"
+                android:layout_width="match_parent"
+                android:layout_height="130px"
+                android:background="@drawable/mint_button"
+                android:backgroundTint="@color/mint"
+                android:text="@string/Continue"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:textSize="46.08px"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:visibility="gone"/>
+        </FrameLayout>
 
 
     </LinearLayout>

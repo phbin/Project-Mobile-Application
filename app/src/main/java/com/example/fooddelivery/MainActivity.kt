@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnLoginWithGoogle.setOnClickListener {
-            val intent = Intent(this,CheckOutActivity::class.java)
+            val intent = Intent(this,ShipperActivity::class.java)
             startActivity(intent)
             Toast.makeText(this, "Google clicked", Toast.LENGTH_SHORT).show()
         }

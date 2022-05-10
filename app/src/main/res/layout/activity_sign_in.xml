@@ -63,9 +63,41 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/lato_regular"
+            android:text="Sign in as"
+            android:textColor="@color/grey"
+            android:textSize="34.56px"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteTextViewRole"
+                android:layout_marginTop="28.8px"
+                android:layout_width="840px"
+                android:layout_height="wrap_content"
+                android:text="Customer"
+                android:fontFamily="@font/lato_regular"
+                android:textSize="40px"
+                android:textColor="@color/black"
+                android:background="@android:color/transparent"
+                android:inputType="none"/>
+            <ImageView
+                android:id="@+id/dropdownImageView"
+                android:layout_width="90px"
+                android:layout_height="90px"
+                android:src="@drawable/ic_baseline_arrow_drop_down_24"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
             android:text="@string/Phone_number"
             android:textColor="@color/grey"
-            android:textSize="34.56px" />
+            android:textSize="34.56px"
+            android:layout_marginTop="121.68px"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -84,24 +116,24 @@
                 android:inputType="numberSigned"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-<!--        <com.google.android.material.textfield.TextInputLayout-->
-<!--            android:id="@+id/editTextEnterPhoneNumber"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:hintEnabled="false"-->
-<!--            app:counterEnabled="true"-->
-<!--            app:counterMaxLength="10"-->
-<!--            android:layout_marginTop="28.8px">-->
+        <!--        <com.google.android.material.textfield.TextInputLayout-->
+        <!--            android:id="@+id/editTextEnterPhoneNumber"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            app:hintEnabled="false"-->
+        <!--            app:counterEnabled="true"-->
+        <!--            app:counterMaxLength="10"-->
+        <!--            android:layout_marginTop="28.8px">-->
 
-<!--            <com.google.android.material.textfield.TextInputEditText-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginTop="28.8px"-->
-<!--                android:hint="@string/Enter_your_phone_number"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textSize="40.32px"-->
-<!--                android:inputType="number|phone"/>-->
-<!--        </com.google.android.material.textfield.TextInputLayout>-->
+        <!--            <com.google.android.material.textfield.TextInputEditText-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginTop="28.8px"-->
+        <!--                android:hint="@string/Enter_your_phone_number"-->
+        <!--                android:textColor="@color/black"-->
+        <!--                android:textSize="40.32px"-->
+        <!--                android:inputType="number|phone"/>-->
+        <!--        </com.google.android.material.textfield.TextInputLayout>-->
 
         <TextView
             android:layout_width="match_parent"
@@ -129,17 +161,29 @@
                 android:layout_marginTop="28.8px" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/btnContinue"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="130px"
-            android:background="@drawable/mint_button"
-            android:backgroundTint="@color/mint"
-            android:layout_marginTop="103.68px"
-            android:text="@string/Continue"
-            android:textColor="@color/white"
-            android:textAllCaps="false"
-            android:textSize="46.08px"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="103.68px">
+
+            <Button
+                android:id="@+id/btnContinue"
+                android:layout_width="match_parent"
+                android:layout_height="130px"
+                android:background="@drawable/mint_button"
+                app:backgroundTint="@color/mint"
+                android:text="@string/Continue"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="46.08px" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:visibility="gone"/>
+        </FrameLayout>
     </LinearLayout>
 
     <LinearLayout
