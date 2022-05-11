@@ -82,7 +82,7 @@ class SignUpSetPasswordActivity : AppCompatActivity() {
                 progressBar.visibility = View.GONE
                 btnCreateAccount.visibility = View.VISIBLE
             }
-            SetPassword()
+//            SetPassword()
         }
         else{
             progressBar.visibility = View.GONE

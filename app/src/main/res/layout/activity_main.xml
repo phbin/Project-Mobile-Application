@@ -21,13 +21,14 @@
         android:layout_height="130px"
         android:layout_gravity="center"
         android:layout_marginTop="69px"
-        android:text="@string/Create_account"
         android:background="@drawable/mint_button"
         android:backgroundTint="@color/mint"
-        android:textColor="@color/white"
+        android:fontFamily="@font/lato_semibold"
+        android:text="@string/Create_account"
         android:textAllCaps="false"
+        android:textColor="@color/white"
         android:textSize="48px"
-        android:fontFamily="@font/lato_semibold"/>
+        app:backgroundTint="@color/mint"/>
 
     <Button
         android:id="@+id/btnSignIn"
@@ -41,6 +42,7 @@
         android:textAllCaps="false"
         android:textSize="48px"
         android:fontFamily="@font/lato_semibold"/>
+
 
     <FrameLayout
         android:layout_width="981px"
