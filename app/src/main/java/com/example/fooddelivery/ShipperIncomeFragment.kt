@@ -1,11 +1,13 @@
 package com.example.fooddelivery
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.fooddelivery.R
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.fragment_shipper_income.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,6 +38,19 @@ class ShipperIncomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_shipper_income, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        btnSeeEarnings.setOnClickListener{
+            activity?.let{
+                val intent = Intent (it, SignUpActivity::class.java)
+                it.startActivity(intent)
+            }
+//            Toast.makeText(activity, activity.toString(), Toast.LENGTH_SHORT).show()
+//            Toast.makeText(activity, "Nhan dc ne", Toast.LENGTH_SHORT).show()
+        }
     }
 
     companion object {

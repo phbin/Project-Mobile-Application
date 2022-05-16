@@ -24,9 +24,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="layoutResourceFile" />
         <option value="resourceFile" />
         <option value="Class" />
+        <option value="valueResourceFile" />
+        <option value="layoutResourceFile" />
+        <option value="Kotlin Data Class" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -42,7 +44,7 @@
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/example/fooddelivery" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/111/app" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -51,6 +53,22 @@
       <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\res\layout" />
     </key>
     <key name="android.template.47244412">
+      <recent name="com.example.fooddelivery" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\res\layout" />
+      <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\res\drawable-v24" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.example.fooddelivery" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.fooddelivery" />
+    </key>
+    <key name="android.template.-1221040005">
+      <recent name="com.example.fooddelivery" />
+    </key>
+    <key name="android.template.-1968461023">
       <recent name="com.example.fooddelivery" />
     </key>
   </component>
