@@ -1,5 +1,6 @@
 package com.example.fooddelivery
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_see_earnings.*
@@ -9,8 +10,14 @@ class SeeEarningsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_see_earnings)
 
-//        viewPager.adapter = PageAdapter(supportFragmentManager)
-//        tabLayout.setupWithViewPager(viewPager)
+        viewPager.adapter = ShipperIncomeAdapter(supportFragmentManager)
+        tabLayout.setupWithViewPager(viewPager)
+
+        btnBack.setOnClickListener {
+//            val intent = Intent(this, ShipperIncomeFragment::class.java)
+//            startActivity(intent)
+            finish()
+        }
 //
 //        val fm = supportFragmentManager
 //        val fragmentShipperIncome = FragmentOrder()

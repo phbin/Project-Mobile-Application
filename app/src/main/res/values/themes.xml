@@ -17,4 +17,21 @@
         <style name="Modal" parent="Widget.Design.BottomSheet.Modal">
             <item name="android:background">@drawable/dialog_fragment_corner</item>
         </style>
+
+    <style name="MyDatePickerStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/mint</item>
+        <!--selected Item color-->
+        <item name="colorControlActivated">@color/mint</item>
+        <!-- arrow bordercolor(<>)-->
+        <item name="colorControlHighlight">#9AE4E7</item>
+        <!-- Ok Cancel Color-->
+        <item name="android:textColor">@color/mint</item>
+    </style>
+
+
+    <style name="TabLayoutStyle" parent="Base.Widget.Design.TabLayout">
+        <item name="android:textSize">50px</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/lato_bold</item>
+    </style>
 </resources>

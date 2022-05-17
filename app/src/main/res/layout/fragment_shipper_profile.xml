@@ -130,7 +130,7 @@
         </androidx.cardview.widget.CardView>
 
         <Button
-            android:id="@+id/btnCreateAccount"
+            android:id="@+id/btnLogout"
             android:layout_width="981px"
             android:layout_height="130px"
             android:layout_gravity="center"

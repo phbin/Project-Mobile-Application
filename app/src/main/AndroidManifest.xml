@@ -14,12 +14,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodDelivery" >
         <activity
-            android:name=".ShipperInomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ShipperIncomeEarnings"
-            android:exported="false" />
-        <activity
             android:name=".ShipperActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
@@ -67,6 +61,9 @@
             android:exported="false" />
         <activity
             android:name=".ResetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SeeEarningsActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
