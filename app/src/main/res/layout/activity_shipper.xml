@@ -5,17 +5,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnGetOrder"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="69px"
-        android:text="Get order"
-        android:fontFamily="@font/lato_bold"
-        android:textSize="50px"
-        android:backgroundTint="@color/mint"
-        android:textColor="@color/white"
-        android:layout_gravity="center_vertical"/>
+<!--    <Button-->
+<!--        android:id="@+id/btnGetOrder"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="69px"-->
+<!--        android:text="Get order"-->
+<!--        android:fontFamily="@font/lato_bold"-->
+<!--        android:textSize="50px"-->
+<!--        android:backgroundTint="@color/mint"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:layout_gravity="center_vertical"/>-->
 
     <Button
         android:id="@+id/btnStatus"
@@ -24,7 +24,7 @@
         android:layout_gravity="right"
         android:layout_marginTop="51px"
         android:layout_marginRight="69px"
-        android:text="Accept order"
+        android:text="Receive order"
         android:background="@drawable/mint_button"
         android:backgroundTint="@color/mint"
         android:fontFamily="@font/lato_semibold"
@@ -44,31 +44,17 @@
         app:tabSelectedTextColor="@color/mint"
         app:tabIndicatorFullWidth="false"
         app:tabIndicatorGravity="bottom">
-
-<!--        <com.google.android.material.tabs.TabItem-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="NEW ORDER"/>-->
-
-<!--        <com.google.android.material.tabs.TabItem-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="HISTORY" />-->
-
-<!--        <com.google.android.material.tabs.TabItem-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="INCOME" />-->
-
-<!--        <com.google.android.material.tabs.TabItem-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="PROFILE" />-->
     </com.google.android.material.tabs.TabLayout>
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPager"
+    <FrameLayout
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="1898px" />
+        android:layout_height="match_parent">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
 
 </LinearLayout>

@@ -16,7 +16,7 @@
         <activity
             android:name=".ShipperActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustResize" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -65,6 +65,9 @@
             android:exported="false" />
         <activity
             android:name=".ResetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SeeEarningsActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

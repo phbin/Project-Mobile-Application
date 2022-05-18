@@ -37,8 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="51.68px"
                 android:orientation="vertical"
-                android:layout_gravity="center"
-                >
+                android:layout_gravity="center">
                 <TextView
                     android:id="@+id/textName"
                     android:layout_width="wrap_content"
@@ -56,8 +55,7 @@
                     android:text="Expired Date"
                     android:fontFamily="@font/lato_regular"
                     android:textColor="@color/grey"
-                    android:textSize="34.56px"
-                    >
+                    android:textSize="34.56px">
                 </TextView>
             </LinearLayout>
         </LinearLayout>

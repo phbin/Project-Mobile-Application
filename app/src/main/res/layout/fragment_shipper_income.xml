@@ -2,13 +2,20 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ShipperIncomeFragment">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="INCOME" />
+    <Button
+        android:id="@+id/btnSeeEarnings"
+        android:layout_width="981px"
+        android:layout_height="130px"
+        android:layout_gravity="center"
+        android:background="@drawable/mint_button"
+        android:backgroundTint="@color/mint"
+        android:fontFamily="@font/lato_semibold"
+        android:text="See your earnings"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="48px"
+        android:layout_marginBottom="200px"/>
 
 </FrameLayout>

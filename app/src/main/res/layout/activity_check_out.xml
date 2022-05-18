@@ -121,8 +121,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="83.52px"
                     android:layout_marginRight="70px"
-                    android:divider="#00000000"
-                    >
+                    android:divider="#00000000">
              </androidx.recyclerview.widget.RecyclerView>
             <LinearLayout
                 android:orientation="vertical"

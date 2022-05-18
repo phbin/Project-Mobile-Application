@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<FrameLayout
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:isScrollContainer="false"
-    tools:context=".ShipperNewOrderFragment">
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+    tools:context=".ShipperNewOrderFragment"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -52,10 +48,16 @@
                                 android:textColor="@color/grey" />
 
                             <TextView
+                                android:layout_width="30px"
+                                android:layout_height="wrap_content"
+                                android:text="#"
+                                android:layout_marginLeft="29.72px"/>
+
+                            <TextView
+                                android:id="@+id/textViewOrderID"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="#23123"
-                                android:layout_marginLeft="29.72px"/>
+                                android:text="23123"/>
                         </LinearLayout>
 
                         <TextView
@@ -109,7 +111,7 @@
                         <TextView
                             android:layout_width="715px"
                             android:layout_height="wrap_content"
-                            android:text="hien thi dia chi nha hang o day"
+                            android:text="hien thi dia chi khach hang o day"
                             android:fontFamily="@font/lato_regular"
                             android:textSize="37.44px"
                             android:textColor="@color/grey" />
@@ -269,7 +271,7 @@
             </LinearLayout>
 
         <Button
-            android:id="@+id/btnCreateAccount"
+            android:id="@+id/btnStartDelivery"
             android:layout_width="981px"
             android:layout_height="130px"
             android:layout_gravity="center"
@@ -282,8 +284,23 @@
             android:textColor="@color/white"
             android:textSize="48px"
             app:backgroundTint="@color/mint"
-            android:layout_marginBottom="200px"/>
-    </LinearLayout>
+            android:layout_marginBottom="100px"/>
 
-    </ScrollView>
-</FrameLayout>
+        <Button
+            android:id="@+id/btnFinish"
+            android:layout_width="981px"
+            android:layout_height="130px"
+            android:layout_gravity="center"
+            android:layout_marginTop="69px"
+            android:background="@drawable/mint_button"
+            android:backgroundTint="@color/mint"
+            android:fontFamily="@font/lato_semibold"
+            android:text="Finish Delivery"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="48px"
+            app:backgroundTint="@color/mint"
+            android:layout_marginBottom="100px"
+            android:visibility="invisible"/>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
