@@ -14,14 +14,7 @@ class SeeEarningsActivity : AppCompatActivity() {
         tabLayout.setupWithViewPager(viewPager)
 
         btnBack.setOnClickListener {
-//            val intent = Intent(this, ShipperIncomeFragment::class.java)
-//            startActivity(intent)
             finish()
         }
-//
-//        val fm = supportFragmentManager
-//        val fragmentShipperIncome = FragmentOrder()
-//
-//        fragmentShipperIncome.show(fm, "Shipper Income Fragment")
     }
 }

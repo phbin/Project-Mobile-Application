@@ -1,22 +1,17 @@
 package com.example.fooddelivery
 
+import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import com.example.fooddelivery.model.Customer
-import com.google.firebase.FirebaseException
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.PhoneAuthCredential
-import com.google.firebase.auth.PhoneAuthOptions
 import com.google.firebase.auth.PhoneAuthProvider
-import com.google.firebase.database.*
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_sign_in.*
-import java.util.concurrent.TimeUnit
 
 
 class SignInActivity : AppCompatActivity() {
@@ -25,12 +20,17 @@ class SignInActivity : AppCompatActivity() {
     lateinit var storedVerificationId: String
     lateinit var resendToken: PhoneAuthProvider.ForceResendingToken
     private lateinit var callbacks: PhoneAuthProvider.OnVerificationStateChangedCallbacks
+    lateinit var sharedPreferences : SharedPreferences
+    var isRemember = false
 
     private var roles = arrayOf("Customer", "Shipper", "Restaurant")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_in)
+
+        sharedPreferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+
 
         var roles = arrayOf("Customer", "Shipper", "Restaurant")
         var adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line,roles)
@@ -61,7 +61,7 @@ class SignInActivity : AppCompatActivity() {
 
         btnContinue.setOnClickListener {
             if(!validPhoneNumber() || !validPassword()){
-                Toast.makeText(this, "Login fail", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this, "Login fail", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -282,9 +282,16 @@ class SignInActivity : AppCompatActivity() {
                         if (editTextEnterPassword.text.toString()==i.data.getValue("password").toString()) {
                             progressBar.visibility = View.VISIBLE
                             btnContinue.visibility = View.INVISIBLE
-                            Toast.makeText(this,
-                                "Login successfully",
-                                Toast.LENGTH_SHORT).show()
+
+                            val editor : SharedPreferences.Editor = sharedPreferences.edit()
+                            editor.putString("ID", editTextEnterPhoneNumber.text.toString())
+                            editor.putBoolean("REMEMBER", true)
+                            editor.putString("ROLE", autoCompleteTextViewRole.text.toString())
+                            editor.apply()
+
+                            val intent = Intent(this, ShipperActivity::class.java)
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                            startActivity(intent)
                         } else {
                             Toast.makeText(this,
                                 "Wrong password",
@@ -348,7 +355,7 @@ class SignInActivity : AppCompatActivity() {
             }
         }
     }
-    //
+
     private fun validPassword() : Boolean{
         val password = editTextEnterPassword.text.toString().trim()
 

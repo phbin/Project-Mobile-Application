@@ -48,8 +48,6 @@ class ShipperIncomeFragment : Fragment() {
                 val intent = Intent (it, SeeEarningsActivity::class.java)
                 it.startActivity(intent)
             }
-//            Toast.makeText(activity, activity.toString(), Toast.LENGTH_SHORT).show()
-//            Toast.makeText(activity, "Nhan dc ne", Toast.LENGTH_SHORT).show()
         }
     }
 

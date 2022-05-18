@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import android.widget.Toast
 import kotlinx.android.synthetic.main.fragment_shipper_new_order.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -20,29 +20,29 @@ private const val ARG_PARAM2 = "param2"
  */
 class ShipperNewOrderFragment : Fragment() {
 
-    lateinit var startDelivery : Button
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val v = inflater.inflate(R.layout.fragment_shipper_new_order, container, false)
+        return inflater.inflate(R.layout.fragment_shipper_new_order, container, false)
         // Inflate the layout for this fragment
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        startDelivery = v.findViewById(R.id.btnStartDelivery)
-
-        startDelivery.setOnClickListener {
-            cardView.visibility = View.GONE
-            btnStartDelivery.text = "Finish Delivery"
+        btnStartDelivery.setOnClickListener {
+            if(btnStartDelivery.text.toString() == "Start delivery"){
+                btnStartDelivery.text = "Finish Delivery"
+            }
+            else{
+                Toast.makeText(requireActivity(), "Xong đơn", Toast.LENGTH_SHORT).show()
+            }
         }
-
-        return v
     }
 
     companion object {

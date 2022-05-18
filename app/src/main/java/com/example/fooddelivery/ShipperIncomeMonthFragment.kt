@@ -48,7 +48,7 @@ class ShipperIncomeMonthFragment : Fragment() {
         val c  = Calendar.getInstance()
 
         val y = c.get(Calendar.YEAR)
-        val m = c.get(Calendar.MONTH)
+        val m = c.get(Calendar.MONTH) + 1
         val d= c.get(Calendar.DAY_OF_MONTH)
 
         textViewDate.text = "$m/$y"
@@ -59,9 +59,10 @@ class ShipperIncomeMonthFragment : Fragment() {
             val dp = DatePickerDialog(requireActivity(),
                 { view, year, monthOfYear, _ ->
                     var erg = ""
-                    erg += (monthOfYear).toString()
+                    erg += ((monthOfYear) +1).toString()
                     erg += "/$year"
                     (textViewDate as TextView).text = erg
+                    textViewDateTotal.text = erg
                 }, y, m, d
             )
             dp.setTitle("Calender")

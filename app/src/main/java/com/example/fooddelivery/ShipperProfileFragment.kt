@@ -1,11 +1,15 @@
 package com.example.fooddelivery
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_shipper_profile.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -22,6 +26,8 @@ class ShipperProfileFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
+    lateinit var references : SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,10 +47,34 @@ class ShipperProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val sharedPreferences = requireActivity().getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        val phoneNumber = sharedPreferences.getString("ID", "")
+        textViewPhoneNumber.text = phoneNumber
         btnLogout.setOnClickListener {
+            val editor: SharedPreferences.Editor = sharedPreferences.edit()
+            editor.clear()
+            editor.commit()
+
+//            textViewPhoneNumber.text = references.getString("ID", "")
+
             val intent = Intent(requireActivity(), MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
+        }
+
+        var fb = FirebaseFirestore.getInstance().collection("Shipper")
+        fb.get().addOnCompleteListener {
+            for(i in it.result){
+                if(i.id == phoneNumber)
+                {
+                    textViewProfileName.text = i.data.getValue("displayName").toString()
+                    textViewTransport.text = i.data.getValue("transportType").toString()
+                    textViewLicensePlate.text = i.data.getValue("licensePlates").toString()
+                    return@addOnCompleteListener
+                }
+                continue
+            }
         }
     }
 

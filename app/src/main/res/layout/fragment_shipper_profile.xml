@@ -30,17 +30,17 @@
                 android:src="@drawable/ic_baseline_edit_24"
                 android:background="@android:color/transparent"/>
         </LinearLayout>
-        
+
         <TextView
+            android:id="@+id/textViewProfileName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingHorizontal="60px"
             android:layout_marginTop="60px"
             android:fontFamily="@font/lato_bold"
-            android:textSize="90px"
-            android:text="Huỳnh Thế Vĩ"
+            android:gravity="center_horizontal"
+            android:paddingHorizontal="60px"
             android:textColor="@color/black"
-            android:gravity="center_horizontal"/>
+            android:textSize="90px" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -70,18 +70,18 @@
                 android:layout_marginBottom="45px">
 
                 <TextView
+                    android:id="@+id/textViewTransport"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Mercerdes-Benz"
                     android:fontFamily="@font/lato_regular"
                     android:textSize="37.44px"
                     android:textColor="@color/grey" />
 
 
                 <TextView
+                    android:id="@+id/textViewLicensePlate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="68G1-06642"
                     android:textColor="@color/black"
                     android:textSize="49px"
                     android:fontFamily="@font/lato_bold"
@@ -118,9 +118,9 @@
                 android:layout_marginBottom="45px">
 
                 <TextView
+                    android:id="@+id/textViewPhoneNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="012312313"
                     android:textColor="@color/black"
                     android:textSize="49px"
                     android:fontFamily="@font/lato_bold"
