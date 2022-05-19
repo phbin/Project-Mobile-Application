@@ -33,8 +33,8 @@
         <option value="resourceFile" />
         <option value="Class" />
         <option value="valueResourceFile" />
-        <option value="layoutResourceFile" />
         <option value="Kotlin Data Class" />
+        <option value="layoutResourceFile" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -62,11 +62,16 @@
       <recent name="com.example.fooddelivery" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\res\drawable" />
       <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\res\layout" />
+      <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\java\com\example\fooddelivery" />
+      <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\java\com\example\fooddelivery\object" />
+      <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\res\drawable" />
       <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\res\drawable-v24" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.example.fooddelivery" />
+    </key>
+    <key name="android.template.150376001">
       <recent name="com.example.fooddelivery" />
     </key>
     <key name="android.template.456850797">

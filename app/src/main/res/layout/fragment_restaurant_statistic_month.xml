@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ShipperIncomeDayFragment">
+    tools:context=".RestaurantStatisticMonthFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,20 +15,46 @@
             android:layout_width="match_parent"
             android:layout_height="122px"
             app:cardCornerRadius="30px"
-            android:backgroundTint="#F0F0F0"
+            android:backgroundTint="#474747"
             android:layout_marginTop="165px">
 
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:orientation="horizontal"-->
+            <!--                android:gravity="center_vertical">-->
+            <!--                <Button-->
+            <!--                    android:layout_width="90px"-->
+            <!--                    android:layout_height="70px"-->
+            <!--                    android:background="@drawable/ic_baseline_arrow_left_24"/>-->
+
+            <!--                <TextView-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:text="01/05 - 07/05"-->
+            <!--                    android:fontFamily="@font/lato_semibold"-->
+            <!--                    android:textSize="40px"-->
+            <!--                    android:textColor="@color/black"-->
+            <!--                    android:layout_marginLeft="272px"/>-->
+
+            <!--                <Button-->
+            <!--                    android:layout_width="90px"-->
+            <!--                    android:layout_height="70px"-->
+            <!--                    android:layout_marginLeft="262px"-->
+            <!--                    android:background="@drawable/ic_baseline_arrow_right_24" />-->
+
+            <!--            </LinearLayout>-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
                 <TextView
-                    android:layout_width="207px"
+                    android:layout_width="247px"
                     android:layout_height="wrap_content"
-                    android:text="Select date:"
+                    android:text="Select month:"
                     android:fontFamily="@font/lato_semibold"
                     android:textSize="40px"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="193px"/>
 
@@ -58,7 +84,7 @@
             android:layout_width="match_parent"
             android:layout_height="1004px"
             app:cardCornerRadius="30px"
-            android:backgroundTint="#F0F0F0"
+            android:backgroundTint="#474747"
             android:layout_marginTop="92px">
 
             <LinearLayout
@@ -71,13 +97,20 @@
                     android:orientation="horizontal"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="78px">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Month"
+                        android:textColor="@color/white"
+                        android:fontFamily="@font/lato_semibold"
+                        android:textSize="40px"/>
 
                     <TextView
                         android:id="@+id/textViewDateTotal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=""
-                        android:textColor="@color/black"
+                        android:text="05/2022"
+                        android:textColor="@color/white"
                         android:fontFamily="@font/lato_semibold"
                         android:textSize="40px"
                         android:layout_marginLeft="10px"/>
@@ -88,7 +121,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Your total income is"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:fontFamily="@font/lato_semibold"
                     android:textSize="40px"
                     android:layout_marginLeft="10px"
@@ -109,4 +142,5 @@
 
         </androidx.cardview.widget.CardView>
     </LinearLayout>
+
 </FrameLayout>
