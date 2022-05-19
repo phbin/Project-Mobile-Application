@@ -4,21 +4,9 @@ import android.content.SharedPreferences
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import android.view.WindowManager
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
-import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_shipper.*
-import kotlinx.android.synthetic.main.activity_shipper.view.*
-import kotlinx.android.synthetic.main.activity_shipper_order_dialog.view.*
-import kotlinx.android.synthetic.main.fragment_shipper_new_order.*
-import kotlinx.android.synthetic.main.fragment_shipper_profile.*
 
 class ShipperActivity : AppCompatActivity() {
 
@@ -36,14 +24,41 @@ class ShipperActivity : AppCompatActivity() {
         val fm = supportFragmentManager
         val fragmentOrder = FragmentOrder()
 
+        var fb = FirebaseFirestore.getInstance().collection("Shipper")
+        fb.get().addOnCompleteListener {
+            for(i in it.result){
+                if(i.id == preferences.getString("ID", ""))
+                {
+                    if(i.data.getValue("status").toString() == "Stopped"){
+                        btnStatus.setTextColor(Color.parseColor("#828282"))
+                        btnStatus.text = i.data.getValue("status").toString()
+                        val icon = applicationContext.resources.getDrawable(R.drawable.ic_status_closed)
+                        btnStatus.setCompoundDrawablesWithIntrinsicBounds(icon, null, null, null)
+                    }
+                    else
+                    {
+                        btnStatus.text = i.data.getValue("status").toString()
+                        btnStatus.setTextColor(Color.parseColor("#FFFFFF"))
+                        val icon = applicationContext.resources.getDrawable(R.drawable.ic_shipper_status)
+                        btnStatus.setCompoundDrawablesWithIntrinsicBounds(icon, null, null, null)
+                    }
+                    return@addOnCompleteListener
+                }
+                continue
+            }
+        }
+
 
         btnStatus.setOnClickListener {
+            val id = preferences.getString("ID", "")
             if(btnStatus.text == "Receive order")
             {
+
                 btnStatus.text="Stopped"
                 btnStatus.setTextColor(Color.parseColor("#828282"))
                 val icon = applicationContext.resources.getDrawable(R.drawable.ic_status_closed)
                 btnStatus.setCompoundDrawablesWithIntrinsicBounds(icon, null, null, null)
+                var fb = FirebaseFirestore.getInstance().collection("Shipper").document("$id").update("status", "Stopped")
             }
             else{
                 btnStatus.text="Receive order"
@@ -51,6 +66,7 @@ class ShipperActivity : AppCompatActivity() {
                 btnStatus.setTextColor(Color.parseColor("#FFFFFF"))
                 val icon = applicationContext.resources.getDrawable(R.drawable.ic_shipper_status)
                 btnStatus.setCompoundDrawablesWithIntrinsicBounds(icon, null, null, null)
+                var fb = FirebaseFirestore.getInstance().collection("Shipper").document("$id").update("status", "Receive order")
             }
         }
 
