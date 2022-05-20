@@ -56,16 +56,15 @@ class ShipperIncomeMonthFragment : Fragment() {
 
         btnPickTime.setOnClickListener {
 
-            val dp = DatePickerDialog(requireActivity(),
+            val dp = DatePickerDialog(requireActivity(), R.style.MyDatePickerStyle,
                 { view, year, monthOfYear, _ ->
                     var erg = ""
-                    erg += ((monthOfYear) +1).toString()
+                    erg += ((monthOfYear)).toString()
                     erg += "/$year"
                     (textViewDate as TextView).text = erg
                     textViewDateTotal.text = erg
                 }, y, m, d
             )
-            dp.setTitle("Calender")
 
             dp.show()
         }

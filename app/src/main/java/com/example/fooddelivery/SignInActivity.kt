@@ -246,6 +246,7 @@ class SignInActivity : AppCompatActivity() {
 //    }
 
     private fun CheckPassword(){
+        val password = editTextEnterPassword.text.toString()
         var fb = FirebaseFirestore.getInstance().collection("Customer")
         fb.get().addOnCompleteListener{
             if(it.isSuccessful)
@@ -254,17 +255,29 @@ class SignInActivity : AppCompatActivity() {
                 {
                     if ((editTextEnterPhoneNumber.text.toString())==i.id)
                     {
-                        if (editTextEnterPassword.text.toString()==i.data.getValue("password").toString()) {
+                        val result : BCrypt.Result = BCrypt.verifyer().verify(password.toCharArray(), i.data.getValue("password").toString())
+//                        if (editTextEnterPassword.text.toString()==i.data.getValue("password").toString()) {
+//                            progressBar.visibility = View.VISIBLE
+//                            btnContinue.visibility = View.INVISIBLE
+//                            Toast.makeText(this,
+//                                "Login successfully",
+//                                Toast.LENGTH_SHORT).show()
+//                        } else {
+//                            Toast.makeText(this,
+//                                "Wrong password",
+//                                Toast.LENGTH_SHORT).show()
+//                        }
+                        if (result.verified) {
                             progressBar.visibility = View.VISIBLE
                             btnContinue.visibility = View.INVISIBLE
                             Toast.makeText(this,
                                 "Login successfully",
                                 Toast.LENGTH_SHORT).show()
                         } else {
-                            Toast.makeText(this,
-                                "Wrong password",
-                                Toast.LENGTH_SHORT).show()
-                        }
+                        Toast.makeText(this,
+                            "Wrong password",
+                            Toast.LENGTH_SHORT).show()
+                    }
                     } else continue
                 }
             }
@@ -272,6 +285,7 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun CheckShipperPassword(){
+        val password = editTextEnterPassword.text.toString()
         var fb = FirebaseFirestore.getInstance().collection("Shipper")
         fb.get().addOnCompleteListener{
             if(it.isSuccessful)
@@ -280,7 +294,9 @@ class SignInActivity : AppCompatActivity() {
                 {
                     if ((editTextEnterPhoneNumber.text.toString())==i.id)
                     {
-                        if (editTextEnterPassword.text.toString()==i.data.getValue("password").toString()) {
+                        val result : BCrypt.Result = BCrypt.verifyer().verify(password.toCharArray(), i.data.getValue("password").toString())
+                        if (result.verified) {
+
                             progressBar.visibility = View.VISIBLE
                             btnContinue.visibility = View.INVISIBLE
 
@@ -305,25 +321,27 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun CheckRestaurantPassword(){
+        val password = editTextEnterPassword.text.toString()
         var fb = FirebaseFirestore.getInstance().collection("Restaurant")
         fb.get().addOnCompleteListener{
             if(it.isSuccessful)
             {
                 for (i in it.result)
                 {
-                    if ((editTextEnterPhoneNumber.text.toString())==i.id)
-                    {
-                        if (editTextEnterPassword.text.toString()==i.data.getValue("password").toString()) {
-                            progressBar.visibility = View.VISIBLE
-                            btnContinue.visibility = View.INVISIBLE
-                            Toast.makeText(this,
-                                "Login successfully",
-                                Toast.LENGTH_SHORT).show()
-                        } else {
-                            Toast.makeText(this,
-                                "Wrong password",
-                                Toast.LENGTH_SHORT).show()
-                        }
+                    if ((editTextEnterPhoneNumber.text.toString())==i.id){
+                        val result : BCrypt.Result = BCrypt.verifyer().verify(password.toCharArray(), i.data.getValue("password").toString())
+                        if (result.verified) {
+                        progressBar.visibility = View.VISIBLE
+                        btnContinue.visibility = View.INVISIBLE
+
+                        val intent = Intent(this, RestaurantHomeActivity::class.java)
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                        startActivity(intent)
+                    } else {
+                        Toast.makeText(this,
+                            "Wrong password",
+                            Toast.LENGTH_SHORT).show()
+                    }
                     } else continue
                 }
             }
