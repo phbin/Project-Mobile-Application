@@ -49,9 +49,9 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
                 <TextView
-                    android:layout_width="207px"
+                    android:layout_width="247px"
                     android:layout_height="wrap_content"
-                    android:text="Select date:"
+                    android:text="Select month:"
                     android:fontFamily="@font/lato_semibold"
                     android:textSize="40px"
                     android:textColor="@color/black"

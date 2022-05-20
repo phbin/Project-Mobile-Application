@@ -34,7 +34,6 @@ class FragmentOrder : DialogFragment() {
 
         submitButton.setOnClickListener(object : View.OnClickListener{
             override fun onClick(p0: View?) {
-                cardView.visibility = View.GONE
                 dismiss()
             }
         })
