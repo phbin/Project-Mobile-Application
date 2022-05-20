@@ -55,7 +55,7 @@ class RestaurantStatisticMonthFragment : Fragment() {
 
         btnPickTime.setOnClickListener {
 
-            val dp = DatePickerDialog(requireActivity(),
+            val dp = DatePickerDialog(requireActivity(), R.style.MyDatePickerStyle,
                 { view, year, monthOfYear, _ ->
                     var erg = ""
                     erg += ((monthOfYear) +1).toString()
@@ -64,7 +64,6 @@ class RestaurantStatisticMonthFragment : Fragment() {
                     textViewDateTotal.text = erg
                 }, y, m, d
             )
-            dp.setTitle("Calender")
 
             dp.show()
         }
