@@ -32,7 +32,9 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
         else if(isRemember && role == "Restaurant"){
-            Toast.makeText(this, "Đăng nhập bằng Restaurant nè", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, RestaurantHomeActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
         btnCreateAccount.setOnClickListener {

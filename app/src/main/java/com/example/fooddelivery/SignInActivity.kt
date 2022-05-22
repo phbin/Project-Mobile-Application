@@ -331,17 +331,23 @@ class SignInActivity : AppCompatActivity() {
                     if ((editTextEnterPhoneNumber.text.toString())==i.id){
                         val result : BCrypt.Result = BCrypt.verifyer().verify(password.toCharArray(), i.data.getValue("password").toString())
                         if (result.verified) {
-                        progressBar.visibility = View.VISIBLE
-                        btnContinue.visibility = View.INVISIBLE
+                            progressBar.visibility = View.VISIBLE
+                            btnContinue.visibility = View.INVISIBLE
 
-                        val intent = Intent(this, RestaurantHomeActivity::class.java)
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
-                        startActivity(intent)
-                    } else {
+                            val editor : SharedPreferences.Editor = sharedPreferences.edit()
+                            editor.putString("ID", editTextEnterPhoneNumber.text.toString())
+                            editor.putBoolean("REMEMBER", true)
+                            editor.putString("ROLE", autoCompleteTextViewRole.text.toString())
+                            editor.apply()
+
+                            val intent = Intent(this, RestaurantHomeActivity::class.java)
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                            startActivity(intent)
+                        } else {
                         Toast.makeText(this,
                             "Wrong password",
                             Toast.LENGTH_SHORT).show()
-                    }
+                        }
                     } else continue
                 }
             }

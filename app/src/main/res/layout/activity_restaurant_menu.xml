@@ -121,6 +121,29 @@
                 android:fontFamily="@font/lato_regular"/>
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="77px"
+            android:gravity="center_vertical">
+            <ImageView
+                android:id="@+id/btnLogout"
+                android:layout_width="63px"
+                android:layout_height="63px"
+                android:src="@drawable/ic_baseline_exit_to_app_24"/>
+
+            <TextView
+                android:id="@+id/textViewLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="58px"
+                android:text="Statistics"
+                android:textColor="@color/white"
+                android:textSize="40px"
+                android:fontFamily="@font/lato_regular"/>
+        </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>
