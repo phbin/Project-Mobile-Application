@@ -270,9 +270,9 @@ class SignInActivity : AppCompatActivity() {
                         if (result.verified) {
                             progressBar.visibility = View.VISIBLE
                             btnContinue.visibility = View.INVISIBLE
-                            Toast.makeText(this,
-                                "Login successfully",
-                                Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this, HomeActivity::class.java)
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                            startActivity(intent)
                         } else {
                         Toast.makeText(this,
                             "Wrong password",
