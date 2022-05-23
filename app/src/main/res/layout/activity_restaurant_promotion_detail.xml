@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_background">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="54px"
+        android:layout_marginTop="72px"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_gravity="left"
+            android:layout_width="55px"
+            android:layout_height="55px"
+            android:drawableStart="@drawable/ic_close"
+            android:background="@android:color/transparent"/>
+
+        <TextView
+            android:id="@+id/textVewMenuName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:fontFamily="@font/lato_regular"
+            android:textSize="45px"
+            android:textColor="@color/white"
+            android:layout_marginTop="124px"/>
+
+        <EditText
+            android:id="@+id/editTextMenuName"
+            android:hint="Enter name of menu"
+            android:textColorHint="@color/grey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:textSize="45px"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/textViewCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Code"
+            android:fontFamily="@font/lato_regular"
+            android:textSize="45px"
+            android:textColor="@color/white"
+            android:layout_marginTop="105px"/>
+
+        <EditText
+            android:id="@+id/editTextCode"
+            android:hint="Enter code"
+            android:textColorHint="@color/grey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:textSize="45px"
+            android:textColor="@color/white"
+            android:inputType="number"/>
+
+        <TextView
+            android:id="@+id/textViewDiscountPercent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Discount percent"
+            android:fontFamily="@font/lato_regular"
+            android:textSize="45px"
+            android:textColor="@color/white"
+            android:layout_marginTop="105px"/>
+
+        <EditText
+            android:id="@+id/editTextDiscountPercent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:hint="Enter discount percent"
+            android:inputType="number"
+            android:textColor="@color/white"
+            android:textColorHint="@color/grey"
+            android:textSize="45px" />
+
+        <TextView
+            android:id="@+id/textViewExpiry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Expiry"
+            android:fontFamily="@font/lato_regular"
+            android:textSize="45px"
+            android:textColor="@color/white"
+            android:layout_marginTop="105px"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/textViewExpiryDate"
+                android:layout_marginTop="18px"
+                android:textColorHint="@color/grey"
+                android:layout_width="850px"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_regular"
+                android:textSize="45px"
+                android:textColor="@color/white"/>
+
+            <ImageButton
+                android:id="@+id/btnSelectDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_calendar_today_24"
+                android:background="@android:color/transparent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5px"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnContinue"
+            android:layout_width="match_parent"
+            android:layout_height="130px"
+            android:background="@drawable/mint_button"
+            android:backgroundTint="@color/mint"
+            android:text="Done"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="46.08px"
+            android:layout_marginTop="120px"/>
+
+    </LinearLayout>
+</LinearLayout>

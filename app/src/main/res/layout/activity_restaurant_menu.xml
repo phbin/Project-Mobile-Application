@@ -138,7 +138,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="58px"
-                android:text="Statistics"
+                android:text="Log out"
                 android:textColor="@color/white"
                 android:textSize="40px"
                 android:fontFamily="@font/lato_regular"/>

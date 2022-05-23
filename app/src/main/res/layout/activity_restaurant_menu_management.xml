@@ -37,6 +37,7 @@
                 android:layout_gravity="center_horizontal"/>
 
             <Button
+                android:id="@+id/btnAddMenu"
                 android:layout_width="60px"
                 android:layout_height="60px"
                 android:drawableStart="@drawable/ic_baseline_add_24"
@@ -45,6 +46,7 @@
         </FrameLayout>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewMenu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="30px"/>

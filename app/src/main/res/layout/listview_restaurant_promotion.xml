@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="85px">
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="233.28px"
+            android:gravity="center"
+            android:background="@drawable/border_shadow_button"
+            android:backgroundTint="#474747">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="172.8px"
+                android:background="@drawable/circle_mint"
+                android:layout_gravity="center"
+                >
+                <ImageView
+                    android:id="@+id/imgIcon"
+                    android:layout_marginHorizontal="50px"
+                    android:layout_marginVertical="49px"
+                    android:layout_width="88.13px"
+                    android:layout_height="73.12px"
+                    android:background="@drawable/iccoupon"
+                    >
+                </ImageView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="490px"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="51.68px"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+                <TextView
+                    android:id="@+id/textViewPromotionName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Promotion Name"
+                    android:fontFamily="@font/lato_bold"
+                    android:textColor="@color/white"
+                    android:textSize="40.32px"
+                    >
+                </TextView>
+                <TextView
+                    android:id="@+id/textViewExpiry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Expired Date"
+                    android:fontFamily="@font/lato_regular"
+                    android:textColor="@color/grey"
+                    android:textSize="34.56px">
+                </TextView>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnRemovePromotion"
+                android:layout_width="60px"
+                android:layout_height="60px"
+                android:drawableStart="@drawable/ic_delete"
+                android:layout_marginLeft="30px"
+                android:background="@android:color/transparent"/>
+        </LinearLayout>
+</LinearLayout>
