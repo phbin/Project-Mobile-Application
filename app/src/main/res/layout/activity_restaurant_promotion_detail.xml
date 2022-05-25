@@ -29,7 +29,7 @@
             android:layout_marginTop="124px"/>
 
         <EditText
-            android:id="@+id/editTextMenuName"
+            android:id="@+id/editTextPromotionName"
             android:hint="Enter name of menu"
             android:textColorHint="@color/grey"
             android:layout_width="match_parent"
@@ -103,15 +103,6 @@
                 android:fontFamily="@font/lato_regular"
                 android:textSize="45px"
                 android:textColor="@color/white"/>
-
-            <ImageButton
-                android:id="@+id/btnSelectDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_baseline_calendar_today_24"
-                android:background="@android:color/transparent"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="5px"/>
         </LinearLayout>
 
         <Button
