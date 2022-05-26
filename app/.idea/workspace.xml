@@ -6,8 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="111" />
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="info" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
@@ -39,6 +38,14 @@
       </list>
     </option>
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="28yjPlSQE48FZyFWakDV4fL7DUY" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -67,6 +74,12 @@
       <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\java\com\example\fooddelivery\object" />
       <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\res\drawable" />
       <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\res\drawable-v24" />
+    </key>
+    <key name="android.template.2098715316">
+      <recent name="com.example.fooddelivery" />
+    </key>
+    <key name="android.template.228465708">
+      <recent name="com.example.fooddelivery" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="com.example.fooddelivery" />

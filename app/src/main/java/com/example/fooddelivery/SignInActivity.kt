@@ -34,9 +34,9 @@ class SignInActivity : AppCompatActivity() {
 
 
         var roles = arrayOf("Customer", "Shipper", "Restaurant")
-        var adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line,roles)
+        var adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, roles)
 
-        autoCompleteTextViewRole.threshold=0
+        autoCompleteTextViewRole.threshold = 0
         autoCompleteTextViewRole.setAdapter(adapter)
 
         dropdownImageView.setOnClickListener {
@@ -61,12 +61,12 @@ class SignInActivity : AppCompatActivity() {
 //        }
 
         btnContinue.setOnClickListener {
-            if(!validPhoneNumber() || !validPassword()){
+            if (!validPhoneNumber() || !validPassword()) {
 //                Toast.makeText(this, "Login fail", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            if(autoCompleteTextViewRole.text.toString() == "Customer") {
+            if (autoCompleteTextViewRole.text.toString() == "Customer") {
                 var fb = FirebaseFirestore.getInstance().collection("Customer")
                 fb.get().addOnCompleteListener {
                     if (it.isSuccessful) {
@@ -82,8 +82,7 @@ class SignInActivity : AppCompatActivity() {
                     }
                 }
             }
-            if(autoCompleteTextViewRole.text.toString() == "Shipper")
-            {
+            if (autoCompleteTextViewRole.text.toString() == "Shipper") {
                 var fb = FirebaseFirestore.getInstance().collection("Shipper")
                 fb.get().addOnCompleteListener {
                     if (it.isSuccessful) {
@@ -99,8 +98,7 @@ class SignInActivity : AppCompatActivity() {
                     }
                 }
             }
-            if(autoCompleteTextViewRole.text.toString() == "Restaurant")
-            {
+            if (autoCompleteTextViewRole.text.toString() == "Restaurant") {
                 var fb = FirebaseFirestore.getInstance().collection("Restaurant")
                 fb.get().addOnCompleteListener {
                     if (it.isSuccessful) {
@@ -116,134 +114,9 @@ class SignInActivity : AppCompatActivity() {
                     }
                 }
             }
-//            CheckPassword()
-//            auth = FirebaseAuth.getInstance()
-//            if(validPhoneNumber() && validPassword()){
-//                Toast.makeText(this, "Login successfully", Toast.LENGTH_SHORT).show()
-//            }
-//            else{
-//                return@setOnClickListener
-//            }
-//            login()
-
         }
 
-        // Callback function for Phone Auth
-//        callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-//
-//            override fun onVerificationCompleted(credential: PhoneAuthCredential) {
-//                Toast.makeText(applicationContext, "Success", Toast.LENGTH_LONG).show()
-//                finish()
-//            }
-//
-//            override fun onVerificationFailed(e: FirebaseException) {
-//                Toast.makeText(applicationContext, "Failed", Toast.LENGTH_LONG).show()
-//            }
-//
-//            override fun onCodeSent(
-//                verificationId: String,
-//                token: PhoneAuthProvider.ForceResendingToken
-//            ) {
-//
-//                Log.d("TAG", "onCodeSent:$verificationId")
-//                storedVerificationId = verificationId
-//                resendToken = token
-//
-//                var intent = Intent(applicationContext, SignInEnterCode::class.java)
-//                intent.putExtra("storedVerificationId", storedVerificationId)
-//                startActivity(intent)
-//            }
-//        }
-//    }
-
-//    private fun login() {
-//
-//        var number = editTextEnterPhoneNumber.text.toString().trim()
-//
-//        if (number.isNotEmpty()) {
-//           // if(CheckPassword()) {
-//                number = "+84" + number
-//                sendVerificationcode(number)
-//           // }
-//        } else {
-//            Toast.makeText(this, "Enter mobile number", Toast.LENGTH_SHORT).show()
-//        }
-//
-//    }
-
-//    private fun CheckPassword(){
-//        var fb = FirebaseFirestore.getInstance().collection("Customer")
-//        fb.get().addOnCompleteListener{
-//            if(it.isSuccessful)
-//            {
-//                for (i in it.result)
-//                {
-//                    if ((editTextEnterPhoneNumber.text.toString())==i.id)
-//                    {
-//                        if (editTextEnterPassword.text.toString()==i.data.getValue("password").toString()) {
-//                            Toast.makeText(this,
-//                                "Success",
-//                                Toast.LENGTH_SHORT).show()
-//                        } else continue
-//                    } else continue
-//                }
-//            }
-//        }
-//    }
-//    private fun sendVerificationcode(number: String) {
-//        val options = PhoneAuthOptions.newBuilder(auth)
-//            .setPhoneNumber(number) // Phone number to verify
-//            .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
-//            .setActivity(this) // Activity (for callback binding)
-//            .setCallbacks(callbacks) // OnVerificationStateChangedCallbacks
-//            .build()
-//        PhoneAuthProvider.verifyPhoneNumber(options)
-//    }
-////           login()
-//        }
-
-        // Callback function for Phone Auth
-//        callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-//
-//            override fun onVerificationCompleted(credential: PhoneAuthCredential) {
-//                Toast.makeText(applicationContext, "Success", Toast.LENGTH_LONG).show()
-//                finish()
-//            }
-//
-//            override fun onVerificationFailed(e: FirebaseException) {
-//                Toast.makeText(applicationContext, "Failed", Toast.LENGTH_LONG).show()
-//            }
-//
-//            override fun onCodeSent(
-//                verificationId: String,
-//                token: PhoneAuthProvider.ForceResendingToken
-//            ) {
-//
-//                Log.d("TAG", "onCodeSent:$verificationId")
-//                storedVerificationId = verificationId
-//                resendToken = token
-//
-//                var intent = Intent(applicationContext, SignInEnterCode::class.java)
-//                intent.putExtra("storedVerificationId", storedVerificationId)
-//                startActivity(intent)
-//            }
-//        }
     }
-
-//    private fun login() {
-//
-//        var number = editTextEnterPhoneNumber.text.toString().trim()
-//
-//        if (number.isNotEmpty()) {
-//           // if(CheckPassword()) {
-//                number = "+84" + number
-//                sendVerificationcode(number)
-//           // }
-//        } else {
-//            Toast.makeText(this, "Enter mobile number", Toast.LENGTH_SHORT).show()
-//        }
-//
-//    }
 
     private fun CheckPassword(){
         val password = editTextEnterPassword.text.toString()
@@ -307,7 +180,7 @@ class SignInActivity : AppCompatActivity() {
                             editor.apply()
 
                             val intent = Intent(this, ShipperActivity::class.java)
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                             startActivity(intent)
                         } else {
                             Toast.makeText(this,
@@ -341,7 +214,7 @@ class SignInActivity : AppCompatActivity() {
                             editor.apply()
 
                             val intent = Intent(this, RestaurantHomeActivity::class.java)
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                             startActivity(intent)
                         } else {
                         Toast.makeText(this,
@@ -353,15 +226,6 @@ class SignInActivity : AppCompatActivity() {
             }
         }
     }
-//    private fun sendVerificationcode(number: String) {
-//        val options = PhoneAuthOptions.newBuilder(auth)
-//            .setPhoneNumber(number) // Phone number to verify
-//            .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
-//            .setActivity(this) // Activity (for callback binding)
-//            .setCallbacks(callbacks) // OnVerificationStateChangedCallbacks
-//            .build()
-//        PhoneAuthProvider.verifyPhoneNumber(options)
-//    }
 
     private fun validPhoneNumber() : Boolean{
         val phoneNumber = editTextEnterPhoneNumber.text.toString().trim()

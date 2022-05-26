@@ -43,6 +43,18 @@ class RestaurantHomeDoneFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        recyclerView = view.findViewById(R.id.recyclerViewDoneOrders)
+        recyclerView.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
+
+        var orderArray : ArrayList<RestaurantOrders> = ArrayList()
+
+        orderArray.add(RestaurantOrders("005", "Linh, Thủ Đức", "Thế Vĩ", "1 món", "200.000đ"))
+        orderArray.add(RestaurantOrders("002", "Kiên Giang", "Vĩ", "2 món", "250.000đ"))
+        orderArray.add(RestaurantOrders("003", "Cần Thơ", "Huỳnh", "5 món", "100.000đ"))
+        orderArray.add(RestaurantOrders("004", "Long An", "Thế", "3 món", "300.000đ"))
+
+
+        recyclerView.adapter = RestaurantDoneOrdersAdapter(requireActivity().applicationContext, orderArray )
     }
 
     companion object {
