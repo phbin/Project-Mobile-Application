@@ -43,6 +43,7 @@
         <entry key="..\:/Users/PC/Documents/GitHub/Project-Mobile-Application/app/src/main/res/drawable-v24/mint_button.xml" value="0.16" />
         <entry key="..\:/Users/PC/Documents/GitHub/Project-Mobile-Application/app/src/main/res/drawable/search_view_corner.xml" value="0.16" />
         <entry key="..\:/Users/PC/Documents/GitHub/Project-Mobile-Application/app/src/main/res/layout/activity_home.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/PC/Documents/GitHub/Project-Mobile-Application/app/src/main/res/layout/explore_more_recycler_view.xml" value="0.2" />
         <entry key="..\:/Users/PC/Documents/GitHub/Project-Mobile-Application/app/src/main/res/layout/gridview_restaurantpopular.xml" value="0.13055555555555556" />
         <entry key="..\:/Users/PC/Documents/GitHub/Project-Mobile-Application/app/src/main/res/layout/listview_choosingitem.xml" value="0.2" />
         <entry key="..\:/Users/PC/Documents/GitHub/Project-Mobile-Application/app/src/main/res/layout/listview_order_history.xml" value="0.2" />
@@ -51,6 +52,7 @@
         <entry key="..\:/Users/PC/Documents/GitHub/Project-Mobile-Application/app/src/main/res/layout/listview_restaurant.xml" value="0.2" />
         <entry key="..\:/Users/PC/Documents/GitHub/Project-Mobile-Application/app/src/main/res/layout/listview_restaurant_orders.xml" value="0.2" />
         <entry key="..\:/Users/PC/Documents/GitHub/Project-Mobile-Application/app/src/main/res/layout/recycler_view_category.xml" value="0.22" />
+        <entry key="..\:/Users/PC/Documents/GitHub/Project-Mobile-Application/app/src/main/res/layout/recycler_view_explore_more.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/PC/Documents/GitHub/Project-Mobile-Application/app/src/main/res/layout/recycler_view_favorite_restaurant.xml" value="0.2" />
         <entry key="..\:/Users/PC/Documents/GitHub/Project-Mobile-Application/app/src/main/res/layout/recycler_view_previous_orders.xml" value="0.2" />
         <entry key="..\:/Users/PC/Documents/GitHub/Project-Mobile-Application/app/src/main/res/layout/visibility.xml" value="0.2" />

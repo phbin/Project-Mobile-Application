@@ -1,5 +1,6 @@
 package com.example.fooddelivery
 
+import Explore_More_RecyclerView
 import Favorite_Restaurant_RecyclerView
 import Previous_Orders_RecyclerView
 import android.content.Intent
@@ -12,7 +13,6 @@ import com.example.fooddelivery.Adapter.Category_RecyclerView
 //import android.widget.LinearLayout
 import com.example.fooddelivery.`object`.PreviousOrdersClass
 import com.example.fooddelivery.`object`.RestaurantClass
-import com.example.fooddelivery.checkout.CustomAdapterRestaurant
 import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
@@ -20,6 +20,7 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var adapterCategory: Category_RecyclerView
     private lateinit var adapterPreviousOrders: Previous_Orders_RecyclerView
     private lateinit var adapterFavoriteRestaurant: Favorite_Restaurant_RecyclerView
+    private lateinit var adapterExploreMore: Explore_More_RecyclerView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +41,11 @@ class HomeActivity : AppCompatActivity() {
         adapterFavoriteRestaurant = Favorite_Restaurant_RecyclerView()
         recyclerview.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
         recyclerview.adapter = adapterFavoriteRestaurant
+
+        recyclerview = findViewById(R.id.exploreMoreRecyclerView)
+        adapterExploreMore = Explore_More_RecyclerView()
+        recyclerview.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
+        recyclerview.adapter = adapterExploreMore
 
         see_moreButton.setOnClickListener {
             val intent:Intent = Intent(this,PopularInYourAreaActivity::class.java)
@@ -91,7 +97,7 @@ class HomeActivity : AppCompatActivity() {
             "3 km")
         )
 
-        restaurantListView.adapter = CustomAdapterRestaurant(this, arrayListRestau)
+
 
         var arrayListOrders: ArrayList<PreviousOrdersClass> = ArrayList()
         arrayListOrders.add(
