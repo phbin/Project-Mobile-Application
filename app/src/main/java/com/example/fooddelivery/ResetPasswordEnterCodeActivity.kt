@@ -21,7 +21,7 @@ class ResetPasswordEnterCodeActivity : AppCompatActivity() {
 
         editTextCodeNumber1.requestFocus()
 
-        auth=FirebaseAuth.getInstance()
+        auth= FirebaseAuth.getInstance()
         val storedVerificationId=intent.getStringExtra("storedVerificationId")
 
         btnBack.setOnClickListener {
@@ -93,7 +93,7 @@ class ResetPasswordEnterCodeActivity : AppCompatActivity() {
                     // Sign in failed, display a message and update the UI
                     if (task.exception is FirebaseAuthInvalidCredentialsException) {
                         // The verification code entered was invalid
-                        Toast.makeText(this,"Invalid OTP",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this,"Invalid OTP", Toast.LENGTH_SHORT).show()
                         progressBar.visibility = View.GONE
                         btnContinue.visibility = View.VISIBLE
                     }

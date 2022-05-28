@@ -6,7 +6,7 @@
     <string name="Login_with_google">Continue with Google</string>
     <string name="Reset_new_password">Reset new password</string>
     <string name="Enter_your_number">Enter your number</string>
-    <string name="Keep_phone">Keep your phone we will text you a verification code to your phone number</string>
+    <string name="Keep_phone">Keep your phone we will texted you a verification code to your phone number</string>
     <string name="Phone_number">Phone number</string>
     <string name="Enter_your_phone_number">Enter your phone number</string>
     <string name="Continue">Continue</string>
@@ -20,12 +20,12 @@
     <string name="Enter_your_verify_code">Enter your verify code</string>
     <string name="We_texted_verify_code">We texted you a verification code to your phone number</string>
     <string name="Required">Required</string>
-<<<<<<< Updated upstream
-=======
     <string name="Enter_your_name">Enter your name</string>
     <string name="Enter_your_email">Enter your email</string>
->>>>>>> Stashed changes
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="search_dish_name_restaurant">Search dish name, restaurant</string>
+    <string name="delivery_to">Delivery to</string>
+    <string name="see_more">See more</string>
+    <string name="popular_in_your_area">Popular in your area</string>
 </resources>

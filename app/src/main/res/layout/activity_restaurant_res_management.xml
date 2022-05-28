@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Restaurant.RestaurantResManagementActivity"
+    android:background="@color/black_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="54px"
+        android:layout_marginTop="72px"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_gravity="left"
+                android:layout_width="55px"
+                android:layout_height="55px"
+                android:drawableStart="@drawable/ic_close"
+                android:background="@android:color/transparent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Restaurant Management"
+                android:textColor="@color/white"
+                android:textSize="52px"
+                android:fontFamily="@font/lato_semibold"
+                android:layout_gravity="center_horizontal"/>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="200px"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="280px"
+                android:layout_height="wrap_content"
+                android:text="Monday"
+                android:textColor="@color/white"
+                android:textSize="50px"
+                android:fontFamily="@font/lato_regular" />
+
+                <LinearLayout
+                    android:id="@+id/mondayTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="120px">
+                    <TextView
+                        android:id="@+id/mondayStartTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="08:00"
+                        android:textColor="@color/white"
+                        android:textSize="40px"
+                        android:fontFamily="@font/lato_regular"/>
+
+                    <TextView
+                        android:id="@+id/mondayLine"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="125px"
+                        android:fontFamily="@font/lato_regular"
+                        android:text="-"
+                        android:textColor="@color/white"
+                        android:textSize="40px" />
+
+                    <TextView
+                        android:id="@+id/mondayEndTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20:00"
+                        android:textColor="@color/white"
+                        android:textSize="40px"
+                        android:fontFamily="@font/lato_regular"/>
+                </LinearLayout>
+
+            <ImageView
+                android:id="@+id/closedRestaurantMonday"
+                android:layout_width="40px"
+                android:layout_height="40px"
+                android:src="@drawable/ic_status_closed"
+                android:layout_marginLeft="40px"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="50px"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="280px"
+                android:layout_height="wrap_content"
+                android:text="Tuesday"
+                android:textColor="@color/white"
+                android:textSize="50px"
+                android:fontFamily="@font/lato_regular" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="120px">
+                <TextView
+                    android:id="@+id/tuesdayStartTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="08:00"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"/>
+
+                <TextView
+                    android:id="@+id/tuesdayLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="125px"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"/>
+
+                <TextView
+                    android:id="@+id/tuesdayEndTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20:00"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/closedRestaurantTuesday"
+                android:layout_width="40px"
+                android:layout_height="40px"
+                android:src="@drawable/ic_status_closed"
+                android:layout_marginLeft="40px"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="50px"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="280px"
+                android:layout_height="wrap_content"
+                android:text="Wednesday"
+                android:textColor="@color/white"
+                android:textSize="50px"
+                android:fontFamily="@font/lato_regular" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="120px">
+                <TextView
+                    android:id="@+id/wednesdayStartTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="08:00"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"/>
+
+                <TextView
+                    android:id="@+id/wednesdayLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="125px"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"/>
+
+                <TextView
+                    android:id="@+id/wednesdayEndTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20:00"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/closedRestaurantWednesday"
+                android:layout_width="40px"
+                android:layout_height="40px"
+                android:src="@drawable/ic_status_closed"
+                android:layout_marginLeft="40px"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="50px"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="280px"
+                android:layout_height="wrap_content"
+                android:text="Thursday"
+                android:textColor="@color/white"
+                android:textSize="50px"
+                android:fontFamily="@font/lato_regular" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="120px">
+                <TextView
+                    android:id="@+id/thursdayStartTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="08:00"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"/>
+
+                <TextView
+                    android:id="@+id/thursdayLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="125px"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"/>
+
+                <TextView
+                    android:id="@+id/thursdayEndTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20:00"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/closedRestaurantThursday"
+                android:layout_width="40px"
+                android:layout_height="40px"
+                android:src="@drawable/ic_status_closed"
+                android:layout_marginLeft="40px"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="50px"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="280px"
+                android:layout_height="wrap_content"
+                android:text="Friday"
+                android:textColor="@color/white"
+                android:textSize="50px"
+                android:fontFamily="@font/lato_regular" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="120px">
+                <TextView
+                    android:id="@+id/fridayStartTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="08:00"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"/>
+
+                <TextView
+                    android:id="@+id/fridayLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="125px"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"/>
+
+                <TextView
+                    android:id="@+id/fridayEndTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20:00"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/closedRestaurantFriday"
+                android:layout_width="40px"
+                android:layout_height="40px"
+                android:src="@drawable/ic_status_closed"
+                android:layout_marginLeft="40px"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="50px"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="280px"
+                android:layout_height="wrap_content"
+                android:text="Saturday"
+                android:textColor="@color/white"
+                android:textSize="50px"
+                android:fontFamily="@font/lato_regular" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="120px">
+                <TextView
+                    android:id="@+id/saturdayStartTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="08:00"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"/>
+
+                <TextView
+                    android:id="@+id/saturdayLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="125px"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"/>
+
+                <TextView
+                    android:id="@+id/saturdayEndTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20:00"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/closedRestaurantSaturday"
+                android:layout_width="40px"
+                android:layout_height="40px"
+                android:src="@drawable/ic_status_closed"
+                android:layout_marginLeft="40px"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="50px"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="280px"
+                android:layout_height="wrap_content"
+                android:text="Sunday"
+                android:textColor="@color/white"
+                android:textSize="50px"
+                android:fontFamily="@font/lato_regular" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="120px">
+                <TextView
+                    android:id="@+id/sundayStartTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="08:00"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"/>
+
+                <TextView
+                    android:id="@+id/sundayLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="125px"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"/>
+
+                <TextView
+                    android:id="@+id/sundayEndTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20:00"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/closedRestaurantSunday"
+                android:layout_width="40px"
+                android:layout_height="40px"
+                android:src="@drawable/ic_status_closed"
+                android:layout_marginLeft="40px"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

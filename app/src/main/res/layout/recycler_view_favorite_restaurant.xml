@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="475.2px"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48.96px"
+        android:layout_marginEnd="37.52px"
+
+
+        >
+        <LinearLayout
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            >
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/square_mint"
+                android:layout_gravity="left"
+                android:orientation="vertical"
+                >
+
+                <ImageView
+                    android:id="@+id/imgRestPopular"
+                    android:layout_width="475.2px"
+                    android:layout_height="480.96px"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                >
+
+                <TextView
+                    android:id="@+id/textNameRestPopular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lato_bold"
+                    android:text="Shaking Beef Tri-Tip"
+                    android:textColor="@color/black"
+                    android:textSize="46.8px"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="51.54px"
+                        android:layout_height="41.96px"
+                        android:layout_marginTop="19.6px"
+                        android:background="@drawable/rate_star" />
+
+                    <TextView
+                        android:id="@+id/textRatePopular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="36.88px"
+                        android:text="5" />
+
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="18dp"
+                        android:layout_marginStart="179.87px"
+                        android:layout_marginTop="19.6px"
+                        android:background="@drawable/location_icon"
+                        />
+
+                    <TextView
+                        android:id="@+id/textLocationPopular"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8.64px"
+                        android:layout_marginTop="36.88px"
+                        android:text="3 km"
+                        android:textColor="@color/grey" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

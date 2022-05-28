@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.example.fooddelivery.model.Customer
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_reset_password_set_password.*
 
@@ -56,7 +55,7 @@ class ResetPasswordSetPasswordActivity : AppCompatActivity() {
         var intent:Intent= intent
         val textPhone:String=intent.getStringExtra("noPhone").toString()
 
-        var fb=FirebaseFirestore.getInstance().collection("Customer")
+        var fb= FirebaseFirestore.getInstance().collection("Customer")
             .document(""+textPhone)
             .update("password",""+editTextEnterPassword.text)
             .addOnCompleteListener {

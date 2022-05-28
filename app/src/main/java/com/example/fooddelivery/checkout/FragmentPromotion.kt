@@ -1,15 +1,12 @@
 package com.example.fooddelivery.checkout
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.BaseAdapter
+import android.widget.AdapterView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.fooddelivery.R
 import com.example.fooddelivery.`object`.PromotionClass
-import com.example.fooddelivery.databinding.ActivityFragmentPromotionBinding
-import com.example.fooddelivery.databinding.ActivityMainBinding
-import kotlinx.android.synthetic.main.activity_check_out.*
 import kotlinx.android.synthetic.main.activity_fragment_promotion.*
 
 class FragmentPromotion : AppCompatActivity() {
@@ -46,7 +43,13 @@ class FragmentPromotion : AppCompatActivity() {
         arrayListProm.add(PromotionClass(R.drawable.iccoupon,
             "Promotion 15% for Loteria",
             "Expried on 11 May 2021"))
-        promotionListView.adapter = CustomAdapterPromotion(this, arrayListProm)
+//        promotionListView.adapter = CustomAdapterPromotion(this, arrayListProm)
+//
+//        promotionListView.setOnItemClickListener { parent, view, position:Int, id ->
+//            var intent = Intent(this, CheckOutActivity::class.java)
+//            intent.putExtra("getPosition",position)
+//            startActivity(intent)
+//        }
 
 //        promotionListView.isClickable = true
 //
