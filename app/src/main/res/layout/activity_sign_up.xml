@@ -140,7 +140,8 @@
                     android:layout_marginTop="28.8px"
                     android:hint="@string/Enter_your_email"
                     android:textSize="40.32px"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:inputType="textEmailAddress"/>
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 

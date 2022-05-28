@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Restaurant.RestaurantMenuActivity"
+    android:background="@color/black_background">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="54px"
+        android:layout_marginTop="72px"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="55px"
+            android:layout_height="55px"
+            android:drawableStart="@drawable/ic_close"
+            android:background="@android:color/transparent"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bự Coffee and Tea - Hoàng Diệu 2"
+            android:textSize="60px"
+            android:fontFamily="@font/lato_bold"
+            android:textColor="@color/white"
+            android:layout_marginTop="102px"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="138px"
+            android:gravity="center_vertical">
+            <ImageView
+                android:id="@+id/btnResManagement"
+                android:layout_width="63px"
+                android:layout_height="63px"
+                android:src="@drawable/ic_baseline_home_24"/>
+
+            <TextView
+                android:id="@+id/textViewResManagement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="58px"
+                android:text="Restaurant Management"
+                android:textColor="@color/white"
+                android:textSize="40px"
+                android:fontFamily="@font/lato_regular"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="77px"
+            android:gravity="center_vertical">
+            <ImageView
+                android:id="@+id/btnMenuManagement"
+                android:layout_width="63px"
+                android:layout_height="63px"
+                android:src="@drawable/ic_baseline_menu_book_24"/>
+
+            <TextView
+                android:id="@+id/textViewMenuManagement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="58px"
+                android:text="Menu Management"
+                android:textColor="@color/white"
+                android:textSize="40px"
+                android:fontFamily="@font/lato_regular"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="77px"
+            android:gravity="center_vertical">
+            <ImageView
+                android:id="@+id/btnPromotion"
+                android:layout_width="63px"
+                android:layout_height="63px"
+                android:src="@drawable/ic_baseline_promotion_24"/>
+
+            <TextView
+                android:id="@+id/textViewPromotion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="58px"
+                android:text="Promotion"
+                android:textColor="@color/white"
+                android:textSize="40px"
+                android:fontFamily="@font/lato_regular"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="77px"
+            android:gravity="center_vertical">
+            <ImageView
+                android:id="@+id/btnStatistic"
+                android:layout_width="63px"
+                android:layout_height="63px"
+                android:src="@drawable/ic_baseline_chart_24"/>
+
+            <TextView
+                android:id="@+id/textViewStatistics"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="58px"
+                android:text="Statistics"
+                android:textColor="@color/white"
+                android:textSize="40px"
+                android:fontFamily="@font/lato_regular"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="77px"
+            android:gravity="center_vertical">
+            <ImageView
+                android:id="@+id/btnLogout"
+                android:layout_width="63px"
+                android:layout_height="63px"
+                android:src="@drawable/ic_baseline_exit_to_app_24"/>
+
+            <TextView
+                android:id="@+id/textViewLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="58px"
+                android:text="Log out"
+                android:textColor="@color/white"
+                android:textSize="40px"
+                android:fontFamily="@font/lato_regular"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

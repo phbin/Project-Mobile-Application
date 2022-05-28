@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import at.favre.lib.crypto.bcrypt.BCrypt
 import com.example.fooddelivery.model.Customer
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_sign_up_set_password.*
@@ -70,8 +71,10 @@ class SignUpSetPasswordActivity : AppCompatActivity() {
         val email = intent.getStringExtra("email")
         val password = editTextEnterPassword.text.toString()
 
+        val passwordHashed = BCrypt.withDefaults().hashToString(12, password.toCharArray())
+
         var fb = FirebaseFirestore.getInstance().collection("Customer")
-        var cus=Customer(""+name,""+email,""+password)
+        var cus=Customer(""+name,""+email,""+passwordHashed)
         if (phoneNumber != null) {
             fb.document(phoneNumber).set(cus).addOnSuccessListener {
                 Toast.makeText(this, "Create account successfully",Toast.LENGTH_SHORT).show()
