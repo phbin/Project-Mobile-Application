@@ -6,22 +6,22 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml
+8-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="32" />
-9-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml
+9-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:5:5-67
-11-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:5:22-64
+11-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:5:5-67
+11-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:5:22-64
 12    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-12-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:6:5-79
-12-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:6:22-76
+12-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:6:5-79
+12-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:6:22-76
 13    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-13-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:7:5-81
-13-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:7:22-78
+13-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:7:5-81
+13-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:7:22-78
 14    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-14-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:8:5-79
-14-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:8:22-77
+14-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:8:5-79
+14-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:8:22-77
 15
 16    <!-- Include required permissions for Google Maps API to run. -->
 17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -58,63 +58,63 @@
 32-->[com.google.android.gms:play-services-measurement:20.1.2] C:\Users\PC\.gradle\caches\transforms-3\4f76e6e2672bac7527e84309dd0d0c5b\transformed\play-services-measurement-20.1.2\AndroidManifest.xml:26:22-107
 33
 34    <application
-34-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:10:5-126:19
+34-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:10:5-126:19
 35        android:allowBackup="true"
-35-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:11:9-35
+35-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:11:9-35
 36        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 36-->[androidx.core:core:1.7.0] C:\Users\PC\.gradle\caches\transforms-3\9891f6d6a6be88ecc6a6bc4619088f55\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
 37        android:debuggable="true"
 38        android:icon="@mipmap/ic_launcher"
-38-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:12:9-43
+38-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:12:9-43
 39        android:label="@string/app_name"
-39-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:13:9-41
+39-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:13:9-41
 40        android:roundIcon="@mipmap/ic_launcher_round"
-40-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:14:9-54
+40-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:14:9-54
 41        android:supportsRtl="true"
-41-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:15:9-35
+41-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:15:9-35
 42        android:testOnly="true"
 43        android:theme="@style/Theme.FoodDelivery" >
-43-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:16:9-50
+43-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:16:9-50
 44        <activity
-44-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:17:9-20:58
+44-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:17:9-20:58
 45            android:name="com.example.fooddelivery.ShipperActivity"
-45-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:18:13-44
+45-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:18:13-44
 46            android:exported="false"
-46-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:19:13-37
+46-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:19:13-37
 47            android:windowSoftInputMode="adjustResize" />
-47-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:20:13-55
+47-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:20:13-55
 48        <activity
-48-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:21:9-24:58
+48-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:21:9-24:58
 49            android:name="com.example.fooddelivery.RestaurantMenuDetailActivity"
-49-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:22:13-57
+49-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:22:13-57
 50            android:exported="false"
-50-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:23:13-37
+50-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:23:13-37
 51            android:windowSoftInputMode="adjustResize" />
-51-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:24:13-55
+51-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:24:13-55
 52        <activity
-52-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:25:9-28:58
+52-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:25:9-28:58
 53            android:name="com.example.fooddelivery.RestaurantAddingMenuActivity"
-53-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:26:13-57
+53-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:26:13-57
 54            android:exported="false"
-54-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:27:13-37
+54-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:27:13-37
 55            android:windowSoftInputMode="adjustResize" />
-55-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:28:13-55
+55-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:28:13-55
 56        <activity
-56-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:29:9-32:58
+56-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:29:9-32:58
 57            android:name="com.example.fooddelivery.RestaurantAddingPromotionActivity"
-57-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:30:13-62
+57-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:30:13-62
 58            android:exported="false"
-58-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:31:13-37
+58-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:31:13-37
 59            android:windowSoftInputMode="adjustResize" />
-59-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:32:13-55
+59-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:32:13-55
 60        <activity
-60-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:33:9-36:58
+60-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:33:9-36:58
 61            android:name="com.example.fooddelivery.RestaurantPromotionDetailActivity"
-61-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:34:13-62
+61-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:34:13-62
 62            android:exported="false"
-62-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:35:13-37
+62-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:35:13-37
 63            android:windowSoftInputMode="adjustResize" />
-63-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:36:13-55
+63-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:36:13-55
 64        <!--
 65             TODO: Before you run your application, you need a Google Maps API key.
 66
@@ -127,153 +127,153 @@
 73             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
 74        -->
 75        <meta-data
-75-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:48:9-50:71
+75-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:48:9-50:71
 76            android:name="com.google.android.geo.API_KEY"
-76-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:49:13-58
+76-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:49:13-58
 77            android:value="AIzaSyBgcrJbS9BYCPw1aa3ksmVpYhqTbjyWp58" />
-77-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:50:13-68
+77-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:50:13-68
 78
 79        <activity
-79-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:52:9-54:40
+79-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:52:9-54:40
 80            android:name="com.example.fooddelivery.checkout.FragmentPromotion"
-80-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:53:13-55
+80-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:53:13-55
 81            android:exported="false" />
-81-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:54:13-37
+81-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:54:13-37
 82        <activity
-82-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:55:9-57:40
+82-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:55:9-57:40
 83            android:name="com.example.fooddelivery.PopularInYourAreaActivity"
-83-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:56:13-54
+83-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:56:13-54
 84            android:exported="false" />
-84-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:57:13-37
+84-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:57:13-37
 85        <activity
-85-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:58:9-60:40
+85-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:58:9-60:40
 86            android:name="com.example.fooddelivery.checkout.CheckOutActivity"
-86-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:59:13-54
+86-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:59:13-54
 87            android:exported="false" />
-87-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:60:13-37
+87-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:60:13-37
 88        <activity
-88-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:61:9-63:40
+88-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:61:9-63:40
 89            android:name="com.example.fooddelivery.SignInEnterCode"
-89-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:62:13-44
+89-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:62:13-44
 90            android:exported="false" />
-90-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:63:13-37
+90-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:63:13-37
 91        <activity
-91-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:64:9-66:40
+91-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:64:9-66:40
 92            android:name="com.example.fooddelivery.SignUpSetPasswordActivity"
-92-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:65:13-54
+92-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:65:13-54
 93            android:exported="false" />
-93-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:66:13-37
+93-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:66:13-37
 94        <activity
-94-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:67:9-69:40
+94-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:67:9-69:40
 95            android:name="com.example.fooddelivery.SignUpEnterCodeActivity"
-95-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:68:13-52
+95-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:68:13-52
 96            android:exported="false" />
-96-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:69:13-37
+96-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:69:13-37
 97        <activity
-97-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:71:9-73:40
+97-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:71:9-73:40
 98            android:name="com.example.fooddelivery.SignUpActivity"
-98-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:72:13-43
+98-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:72:13-43
 99            android:exported="false" />
-99-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:73:13-37
+99-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:73:13-37
 100        <activity
-100-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:74:9-76:40
+100-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:74:9-76:40
 101            android:name="com.example.fooddelivery.SignInActivity"
-101-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:75:13-43
+101-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:75:13-43
 102            android:exported="false" />
-102-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:76:13-37
+102-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:76:13-37
 103        <activity
-103-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:77:9-79:40
+103-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:77:9-79:40
 104            android:name="com.example.fooddelivery.ResetPasswordSetPasswordActivity"
-104-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:78:13-61
+104-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:78:13-61
 105            android:exported="false" />
-105-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:79:13-37
+105-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:79:13-37
 106        <activity
-106-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:80:9-82:40
+106-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:80:9-82:40
 107            android:name="com.example.fooddelivery.ResetPasswordEnterCodeActivity"
-107-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:81:13-59
+107-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:81:13-59
 108            android:exported="false" />
-108-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:82:13-37
+108-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:82:13-37
 109        <activity
-109-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:83:9-85:40
+109-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:83:9-85:40
 110            android:name="com.example.fooddelivery.ResetPasswordActivity"
-110-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:84:13-50
+110-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:84:13-50
 111            android:exported="false" />
-111-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:85:13-37
+111-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:85:13-37
 112        <activity
-112-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:86:9-88:40
+112-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:86:9-88:40
 113            android:name="com.example.fooddelivery.SeeEarningsActivity"
-113-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:87:13-48
+113-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:87:13-48
 114            android:exported="false" />
-114-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:88:13-37
+114-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:88:13-37
 115        <activity
-115-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:89:9-91:40
+115-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:89:9-91:40
 116            android:name="com.example.fooddelivery.RestaurantMenuActivity"
-116-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:90:13-51
+116-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:90:13-51
 117            android:exported="false" />
-117-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:91:13-37
+117-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:91:13-37
 118        <activity
-118-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:92:9-94:40
+118-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:92:9-94:40
 119            android:name="com.example.fooddelivery.RestaurantHomeActivity"
-119-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:93:13-51
+119-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:93:13-51
 120            android:exported="false" />
-120-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:94:13-37
+120-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:94:13-37
 121        <activity
-121-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:95:9-97:40
+121-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:95:9-97:40
 122            android:name="com.example.fooddelivery.RestaurantResManagementActivity"
-122-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:96:13-60
+122-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:96:13-60
 123            android:exported="false" />
-123-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:97:13-37
+123-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:97:13-37
 124        <activity
-124-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:98:9-100:40
+124-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:98:9-100:40
 125            android:name="com.example.fooddelivery.RestaurantMenuManagementActivity"
-125-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:99:13-61
+125-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:99:13-61
 126            android:exported="false" />
-126-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:100:13-37
+126-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:100:13-37
 127        <activity
-127-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:101:9-103:40
+127-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:101:9-103:40
 128            android:name="com.example.fooddelivery.RestaurantPromotionActivity"
-128-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:102:13-56
+128-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:102:13-56
 129            android:exported="false" />
-129-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:103:13-37
+129-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:103:13-37
 130        <activity
-130-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:104:9-106:40
+130-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:104:9-106:40
 131            android:name="com.example.fooddelivery.RestaurantStatisticsActivity"
-131-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:105:13-57
+131-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:105:13-57
 132            android:exported="false" />
-132-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:106:13-37
+132-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:106:13-37
 133        <activity
-133-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:107:9-109:40
+133-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:107:9-109:40
 134            android:name="com.example.fooddelivery.MainActivity"
-134-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:108:13-41
+134-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:108:13-41
 135            android:exported="false" />
-135-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:109:13-37
+135-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:109:13-37
 136        <activity
-136-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:110:9-112:39
+136-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:110:9-112:39
 137            android:name="com.example.fooddelivery.HomeActivity"
-137-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:111:13-41
+137-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:111:13-41
 138            android:exported="false" />
-138-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:112:13-37
+138-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:112:13-37
 139        <activity
-139-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:113:9-115:39
-140            android:name="com.example.fooddelivery.DishDetailActivity"
-140-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:114:13-47
+139-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:113:9-115:39
+140            android:name="com.example.fooddelivery.RestaurantActivity"
+140-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:114:13-47
 141            android:exported="false" />
-141-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:115:13-37
+141-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:115:13-37
 142        <activity
-142-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:116:9-125:20
-143            android:name="com.example.fooddelivery.RestaurantActivity"
-143-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:118:13-47
+142-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:116:9-125:20
+143            android:name="com.example.fooddelivery.DishDetailActivity"
+143-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:118:13-47
 144            android:exported="true" >
-144-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:119:13-36
+144-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:119:13-36
 145            <intent-filter>
-145-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:120:13-124:29
+145-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:120:13-124:29
 146                <action android:name="android.intent.action.MAIN" />
-146-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:121:17-69
-146-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:121:25-66
+146-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:121:17-69
+146-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:121:25-66
 147
 148                <category android:name="android.intent.category.LAUNCHER" />
-148-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:123:17-77
-148-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:123:27-74
+148-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:123:17-77
+148-->D:\New folder (2)\Project-Mobile-Application\app\src\main\AndroidManifest.xml:123:27-74
 149            </intent-filter>
 150        </activity>
 151        <!-- Needs to be explicitly declared on P+ -->

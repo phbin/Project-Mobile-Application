@@ -111,11 +111,11 @@
             android:name=".HomeActivity"
             android:exported="false"/>
         <activity
-            android:name=".DishDetailActivity"
+            android:name=".RestaurantActivity"
             android:exported="false"/>
         <activity
 
-            android:name=".RestaurantActivity"
+            android:name=".DishDetailActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

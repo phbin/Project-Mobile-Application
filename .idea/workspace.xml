@@ -12,10 +12,14 @@
     <list default="true" id="aae7b323-5b18-4c10-a7d5-c53bf4498bf7" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/app/src/main/ic_plus-playstore.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/ic_subtraction-playstore.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/fooddelivery/Adapter/DishDetail_Choice_Size_RecyclerView.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/fooddelivery/Adapter/DishDetail_Choice_Topping_RecyclerView.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/fooddelivery/Adapter/Restaurant_Appertizer_RecyclerView.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/fooddelivery/Adapter/Restaurant_Popular_RecyclerView.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/fooddelivery/DishDetailActivity.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/fooddelivery/RestaurantActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/fooddelivery/object/DishDetailChoiceSize.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/fooddelivery/object/DishDetailChoiceTopping.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/fooddelivery/object/RestaurantAppertizer.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/fooddelivery/object/RestaurantPopular.kt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/darkmint_border_view.xml" afterDir="false" />
@@ -34,6 +38,8 @@
       <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/mint_border_view.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_dish_detail.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_restaurant.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/recycler_view_choice_size.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/recycler_view_choice_topping.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/recycler_view_restaurant_appertizer.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/recycler_view_restaurant_popular.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_plus.xml" afterDir="false" />
@@ -117,10 +123,11 @@
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\New folder (2)\Project-Mobile-Application\app\src\main\res\layout" />
       <recent name="D:\GitHub\Project-Mobile-Application\app\src\main\res\drawable-v24" />
       <recent name="D:\GitHub\Project-Mobile-Application\app\src\main\res\drawable" />
       <recent name="D:\GitHub\Project-Mobile-Application\app\src\main\res\layout" />
@@ -129,9 +136,9 @@
       <recent name="com.example.fooddelivery" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
-      <recent name="com.example.fooddelivery" />
       <recent name="com.example.fooddelivery.object" />
       <recent name="com.example.fooddelivery.Adapter" />
+      <recent name="com.example.fooddelivery" />
     </key>
   </component>
   <component name="RunManager">

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sq\\values-sq.xml",
+            "outputFile": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sq\\values-sq.xml",
             "map": [
                 {
                     "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-3\\0aaf014b22ed208b8c65df9dc94f7b61\\transformed\\play-services-basement-18.0.0\\res\\values-sq\\values.xml",

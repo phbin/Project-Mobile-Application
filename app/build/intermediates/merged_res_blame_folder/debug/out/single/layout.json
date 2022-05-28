@@ -1,210 +1,218 @@
 [
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\listview_choosingitem.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\listview_choosingitem.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_restaurant_home.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_restaurant_home.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_fragment_promotion.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_fragment_promotion.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_restaurant_adding_promotion.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_restaurant_adding_promotion.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_restaurant_promotion.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_restaurant_promotion.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_popular_in_your_area.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_popular_in_your_area.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_shipper_order_dialog.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_shipper_order_dialog.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\listview_restaurant_promotion.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\listview_restaurant_promotion.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_dish_detail.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_dish_detail.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_restaurant_home_processing.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\fragment_restaurant_home_processing.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_shipper_income_month.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\fragment_shipper_income_month.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\recycler_view_category.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\recycler_view_category.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_shipper_income.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\fragment_shipper_income.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_shipper_profile.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\fragment_shipper_profile.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\listview_promotion.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\listview_promotion.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\recycler_view_favorite_restaurant.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\recycler_view_favorite_restaurant.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_sign_up_enter_code.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_sign_up_enter_code.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_sign_in_enter_code.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_sign_in_enter_code.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_restaurant_home_done.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\fragment_restaurant_home_done.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_restaurant_statistics.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_restaurant_statistics.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\listview_menu_management.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\listview_menu_management.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_shipper.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_shipper.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_restaurant_statistics_day.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\fragment_restaurant_statistics_day.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_restaurant_adding_menu.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_restaurant_adding_menu.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\gridview_restaurantpopular.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\gridview_restaurantpopular.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_dish_detail.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_dish_detail.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\recycler_view_favorite_restaurant.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\recycler_view_favorite_restaurant.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\recycler_view_explore_more.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\recycler_view_explore_more.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_restaurant_adding_promotion.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_restaurant_adding_promotion.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_restaurant_menu_detail.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_restaurant_menu_detail.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\recycler_view_explore_more.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\recycler_view_explore_more.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_reset_password_enter_code.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_reset_password_enter_code.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_shipper_new_order.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\fragment_shipper_new_order.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_home.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_home.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_reset_password.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_reset_password.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\listview_restaurant_promotion.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\listview_restaurant_promotion.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_restaurant_statistics_day.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\fragment_restaurant_statistics_day.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_restaurant.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_restaurant.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\listview_menu_management.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\listview_menu_management.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_popular_in_your_area.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_popular_in_your_area.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_reset_password_enter_code.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_reset_password_enter_code.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\recycler_view_restaurant_appertizer.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\recycler_view_restaurant_appertizer.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_restaurant_home.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_restaurant_home.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_check_out.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_check_out.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_restaurant_statistic_month.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\fragment_restaurant_statistic_month.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_shipper_history.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\fragment_shipper_history.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_sign_in.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_sign_in.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_sign_up.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_sign_up.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_sign_up.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_sign_up.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_shipper_new_order.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\fragment_shipper_new_order.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_check_out.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_check_out.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_restaurant_menu_management.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_restaurant_menu_management.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_restaurant.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_restaurant.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\recycler_view_category.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\recycler_view_category.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_restaurant_res_management.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_restaurant_res_management.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_restaurant_menu.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_restaurant_menu.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\gridview_restaurantpopular.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\gridview_restaurantpopular.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_payment.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\fragment_payment.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\recycler_view_previous_orders.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\recycler_view_previous_orders.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_restaurant_res_management.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_restaurant_res_management.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_sign_up_enter_code.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_sign_up_enter_code.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_reset_password.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_reset_password.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_see_earnings.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_see_earnings.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_sign_in.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_sign_in.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\recycler_view_restaurant_popular.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\recycler_view_restaurant_popular.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_restaurant_menu_detail.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_restaurant_menu_detail.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_restaurant_promotion_detail.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_restaurant_promotion_detail.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_sign_in_enter_code.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_sign_in_enter_code.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_shipper_history.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\fragment_shipper_history.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\listview_choosingitem.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\listview_choosingitem.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_shipper_income_day.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\fragment_shipper_income_day.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\recycler_view_choice_size.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\recycler_view_choice_size.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_restaurant_promotion.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_restaurant_promotion.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_shipper_profile.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\fragment_shipper_profile.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\listview_promotion.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\listview_promotion.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_restaurant_statistics.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_restaurant_statistics.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_reset_password_set_password.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_reset_password_set_password.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_restaurant_adding_menu.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_restaurant_adding_menu.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_shipper_income_month.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\fragment_shipper_income_month.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_shipper.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_shipper.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_shipper_income.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\fragment_shipper_income.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_restaurant_promotion_detail.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_restaurant_promotion_detail.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\recycler_view_restaurant_appertizer.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\recycler_view_restaurant_appertizer.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_restaurant_statistic_month.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\fragment_restaurant_statistic_month.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\listview_order_history.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\listview_order_history.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_see_earnings.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_see_earnings.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_restaurant_home_done.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\fragment_restaurant_home_done.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_shipper_income_day.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\fragment_shipper_income_day.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_restaurant_menu_management.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_restaurant_menu_management.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\recycler_view_restaurant_popular.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\recycler_view_restaurant_popular.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_restaurant_menu.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_restaurant_menu.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\recycler_view_choice_topping.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\recycler_view_choice_topping.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_shipper_order_dialog.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_shipper_order_dialog.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_restaurant_home_processing.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\fragment_restaurant_home_processing.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_sign_up_set_password.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_sign_up_set_password.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_reset_password_set_password.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_reset_password_set_password.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_home.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_home.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_sign_up_set_password.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_sign_up_set_password.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_payment.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\fragment_payment.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_fragment_promotion.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_fragment_promotion.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\listview_restaurant_orders.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\listview_restaurant_orders.xml"
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\listview_order_history.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\listview_order_history.xml"
+    },
+    {
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\recycler_view_previous_orders.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\recycler_view_previous_orders.xml"
+    },
+    {
+        "merged": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\listview_restaurant_orders.xml",
+        "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\listview_restaurant_orders.xml"
     }
 ]

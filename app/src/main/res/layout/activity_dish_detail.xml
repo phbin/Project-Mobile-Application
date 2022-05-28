@@ -118,80 +118,17 @@
                 android:textSize="40.32px"
                 android:textStyle="bold" />
 
-            <LinearLayout
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="129dp"
+                android:layout_marginTop="30px">
 
-                <CheckBox
-                    android:id="@+id/checkBox"
-                    android:layout_width="9dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="52.12px"
-                    android:layout_marginTop="5px"
-                    android:layout_weight="1"
-                    android:text="Size S"
-                    android:textSize="40.32px" />
-
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="110px"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="0 VND" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/checkBox1"
-                    android:layout_width="9dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="52.12px"
-                    android:layout_marginTop="5px"
-                    android:layout_weight="1"
-                    android:text="Size M"
-                    android:textSize="40.32px" />
-
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="110px"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="0 VND" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/checkBox2"
-                    android:layout_width="9dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="52.12px"
-                    android:layout_marginTop="5px"
-                    android:layout_weight="1"
-                    android:text="Size L"
-                    android:textSize="40.32px" />
-
-                <TextView
-                    android:id="@+id/textView11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="110px"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="0 VND" />
-            </LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/dishdetailChoiceSizeRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/textView12"
@@ -204,262 +141,23 @@
                 android:textSize="40.32px"
                 android:textStyle="bold" />
 
-            <LinearLayout
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="match_parent">
 
-                <CheckBox
-                    android:id="@+id/checkBox3"
-                    android:layout_width="9dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="52.12px"
-                    android:layout_marginTop="5px"
-                    android:layout_weight="1"
-                    android:text="Silica"
-                    android:textSize="40.32px" />
-
-                <TextView
-                    android:id="@+id/textView13"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="110px"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="0 VND" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/checkBox4"
-                    android:layout_width="9dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="52.12px"
-                    android:layout_marginTop="5px"
-                    android:layout_weight="1"
-                    android:text="Fructose"
-                    android:textSize="40.32px" />
-
-                <TextView
-                    android:id="@+id/textView14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="110px"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="0 VND" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/checkBox5"
-                    android:layout_width="9dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="52.12px"
-                    android:layout_marginTop="5px"
-                    android:layout_weight="1"
-                    android:text="Phenoxythanol"
-                    android:textSize="40.32px" />
-
-                <TextView
-                    android:id="@+id/textView15"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="110px"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="0 VND" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/checkBox6"
-                    android:layout_width="9dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="52.12px"
-                    android:layout_marginTop="5px"
-                    android:layout_weight="1"
-                    android:text="Silica"
-                    android:textSize="40.32px" />
-
-                <TextView
-                    android:id="@+id/textView16"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="110px"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="0 VND" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/checkBox7"
-                    android:layout_width="9dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="52.12px"
-                    android:layout_marginTop="5px"
-                    android:layout_weight="1"
-                    android:text="Silica"
-                    android:textSize="40.32px" />
-
-                <TextView
-                    android:id="@+id/textView17"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="110px"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="0 VND" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/checkBox8"
-                    android:layout_width="9dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="52.12px"
-                    android:layout_marginTop="5px"
-                    android:layout_weight="1"
-                    android:text="Silica"
-                    android:textSize="40.32px" />
-
-                <TextView
-                    android:id="@+id/textView18"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="110px"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="0 VND" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/checkBox9"
-                    android:layout_width="9dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="52.12px"
-                    android:layout_marginTop="5px"
-                    android:layout_weight="1"
-                    android:text="Silica"
-                    android:textSize="40.32px" />
-
-                <TextView
-                    android:id="@+id/textView19"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="110px"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="0 VND" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/checkBox10"
-                    android:layout_width="9dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="52.12px"
-                    android:layout_marginTop="5px"
-                    android:layout_weight="1"
-                    android:text="Silica"
-                    android:textSize="40.32px" />
-
-                <TextView
-                    android:id="@+id/textView20"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="110px"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="0 VND" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/checkBox11"
-                    android:layout_width="9dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="52.12px"
-                    android:layout_marginTop="5px"
-                    android:layout_weight="1"
-                    android:text="Silica"
-                    android:textSize="40.32px" />
-
-                <TextView
-                    android:id="@+id/textView21"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="110px"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="0 VND" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/checkBox12"
-                    android:layout_width="9dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="52.12px"
-                    android:layout_marginTop="5px"
-                    android:layout_weight="1"
-                    android:text="Silica"
-                    android:textSize="40.32px" />
-
-                <TextView
-                    android:id="@+id/textView22"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="110px"
-                    android:layout_weight="1"
-                    android:gravity="right"
-                    android:text="0 VND" />
-            </LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/dishdetailChoiceToppingRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/textView23"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="69.12px"
-                android:layout_marginTop="300.28px"
+                android:layout_marginTop="30px"
                 android:text="Additional Message"
                 android:textColor="@color/black"
                 android:textSize="40.32px"

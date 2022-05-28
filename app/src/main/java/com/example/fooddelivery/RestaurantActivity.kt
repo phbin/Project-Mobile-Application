@@ -33,25 +33,24 @@ class RestaurantActivity : AppCompatActivity() {
 
         var arrayListRestaurantPopular: ArrayList<RestaurantPopular> = ArrayList()
         arrayListRestaurantPopular.add(
-            RestaurantPopular("Hieu", 10000)
+            RestaurantPopular(R.drawable.square_mint,"Hieu",10000)
         )
         arrayListRestaurantPopular.add(
-            RestaurantPopular("Hieu", 10000)
+            RestaurantPopular(R.drawable.square_mint,"Hieu", 10000)
         )
         arrayListRestaurantPopular.add(
-            RestaurantPopular("Hieu", 10000)
+            RestaurantPopular(R.drawable.square_mint,"Hieu", 10000)
         )
 
         var arrayListRestaurantAppertizer: ArrayList<RestaurantAppertizer> = ArrayList()
         arrayListRestaurantAppertizer.add(
-            RestaurantAppertizer("Hieu", "Trai thang", 10000)
+            RestaurantAppertizer(R.drawable.square_mint,"Hieu", "Trai thang", 10000)
         )
         arrayListRestaurantAppertizer.add(
-            RestaurantAppertizer("Hieu", "Trai thang", 10000)
+            RestaurantAppertizer(R.drawable.square_mint,"Hieu", "Trai thang", 10000)
         )
         arrayListRestaurantAppertizer.add(
-            RestaurantAppertizer("Hieu", "Trai thang", 10000)
+            RestaurantAppertizer(R.drawable.square_mint,"Hieu", "Trai thang", 10000)
         )
-
     }
 }
