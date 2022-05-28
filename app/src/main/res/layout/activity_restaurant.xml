@@ -76,7 +76,7 @@
         app:layout_constraintTop_toTopOf="@+id/view" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvNameStore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="69.12px"
@@ -91,7 +91,7 @@
         app:layout_constraintTop_toTopOf="@+id/view1" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/tvCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="69.12px"

@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
+                {
+                    "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\values\\colors.xml",
+                    "from": {
+                        "startLines": "6,8,4,3,9,2,5,7",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "216,302,137,97,354,57,177,259",
+                        "endColumns": "41,50,38,38,43,38,37,41",
+                        "endOffsets": "253,348,171,131,393,91,210,296"
+                    },
+                    "to": {
+                        "startLines": "588,589,590,658,659,841,861,875",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "29911,29953,30004,34822,34861,47840,49253,50151",
+                        "endColumns": "41,50,38,38,43,38,37,41",
+                        "endOffsets": "29948,29999,30038,34856,34900,47874,49286,50188"
+                    }
+                },
                 {
                     "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-3\\6ac48fca0b1229e7b9c75586a3368bfa\\transformed\\transition-1.2.0\\res\\values\\values.xml",
                     "from": {
@@ -97,22 +114,20 @@
                     }
                 },
                 {
-                    "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\values\\themes.xml",
+                    "source": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\generated\\res\\google-services\\debug\\values\\values.xml",
                     "from": {
-                        "startLines": "13,16,20,31,2,37",
-                        "startColumns": "8,8,4,4,4,4",
-                        "startOffsets": "690,852,1024,1460,102,1718",
-                        "endLines": "15,18,28,35,12,41",
-                        "endColumns": "16,16,12,12,16,12",
-                        "endOffsets": "842,1016,1450,1710,680,1965"
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "55,199,281,385,494,614,719",
+                        "endColumns": "143,81,103,108,119,104,81",
+                        "endOffsets": "194,276,380,489,609,714,796"
                     },
                     "to": {
-                        "startLines": "4939,5042,5045,5375,5775,6342",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "338211,344843,345010,366553,395111,437305",
-                        "endLines": "4941,5044,5053,5379,5785,6346",
-                        "endColumns": "16,16,12,12,16,12",
-                        "endOffsets": "338361,345005,345428,366799,395677,437548"
+                        "startLines": "1757,1763,1764,1765,1766,1767,1899",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "109173,109837,109919,110023,110132,110252,126974",
+                        "endColumns": "143,81,103,108,119,104,81",
+                        "endOffsets": "109312,109914,110018,110127,110247,110352,127051"
                     }
                 },
                 {
@@ -133,37 +148,22 @@
                     }
                 },
                 {
-                    "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\values\\strings.xml",
+                    "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\values\\custome_profile_pic.xml",
                     "from": {
-                        "startLines": "30,15,11,3,23,22,7,14,10,19,8,5,13,9,21,6,16,17,12,4,18,20,29,2,27,25,31,26,28",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "1846,895,667,111,1420,1359,354,826,590,1131,419,219,779,535,1312,287,958,1017,714,174,1086,1206,1799,60,1699,1542,1933,1613,1752",
-                        "endColumns": "85,61,45,61,61,59,63,67,75,73,114,66,45,53,45,65,57,67,63,43,43,104,45,49,51,69,69,84,45",
-                        "endOffsets": "1927,952,708,168,1477,1414,413,889,661,1200,529,281,820,584,1353,348,1011,1080,773,213,1125,1306,1840,105,1746,1607,1998,1693,1793"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "138"
                     },
                     "to": {
-                        "startLines": "1679,1680,1681,1682,1683,1684,1685,1686,1687,1688,1689,1690,1691,1692,1693,1694,1695,1696,1697,1698,1699,1700,1728,1730,1758,1768,1898,1900,1902",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "102414,102500,102562,102608,102670,102732,102792,102856,102924,103000,103074,103189,103256,103302,103356,103402,103468,103526,103594,103658,103702,103746,105717,105846,109317,110357,126904,127056,127194",
-                        "endColumns": "85,61,45,61,61,59,63,67,75,73,114,66,45,53,45,65,57,67,63,43,43,104,45,49,51,69,69,84,45",
-                        "endOffsets": "102495,102557,102603,102665,102727,102787,102851,102919,102995,103069,103184,103251,103297,103351,103397,103463,103521,103589,103653,103697,103741,103846,105758,105891,109364,110422,126969,127136,127235"
-                    }
-                },
-                {
-                    "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\values\\colors.xml",
-                    "from": {
-                        "startLines": "6,8,4,3,9,2,5,7",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "216,302,137,97,354,57,177,259",
-                        "endColumns": "41,50,38,38,43,38,37,41",
-                        "endOffsets": "253,348,171,131,393,91,210,296"
-                    },
-                    "to": {
-                        "startLines": "588,589,590,658,659,841,861,875",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "29911,29953,30004,34822,34861,47840,49253,50151",
-                        "endColumns": "41,50,38,38,43,38,37,41",
-                        "endOffsets": "29948,29999,30038,34856,34900,47874,49286,50188"
+                        "startLines": "4950",
+                        "startColumns": "4",
+                        "startOffsets": "338684",
+                        "endLines": "4952",
+                        "endColumns": "12",
+                        "endOffsets": "338763"
                     }
                 },
                 {
@@ -219,6 +219,25 @@
                         "startOffsets": "105763",
                         "endColumns": "82",
                         "endOffsets": "105841"
+                    }
+                },
+                {
+                    "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\values\\themes.xml",
+                    "from": {
+                        "startLines": "13,16,20,31,2,37",
+                        "startColumns": "8,8,4,4,4,4",
+                        "startOffsets": "690,852,1024,1460,102,1718",
+                        "endLines": "15,18,28,35,12,41",
+                        "endColumns": "16,16,12,12,16,12",
+                        "endOffsets": "842,1016,1450,1710,680,1965"
+                    },
+                    "to": {
+                        "startLines": "4939,5042,5045,5375,5775,6342",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "338211,344843,345010,366553,395111,437305",
+                        "endLines": "4941,5044,5053,5379,5785,6346",
+                        "endColumns": "16,16,12,12,16,12",
+                        "endOffsets": "338361,345005,345428,366799,395677,437548"
                     }
                 },
                 {
@@ -347,6 +366,23 @@
                     }
                 },
                 {
+                    "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\values\\dimen.xml",
+                    "from": {
+                        "startLines": "3,2",
+                        "startColumns": "4,4",
+                        "startOffsets": "110,57",
+                        "endColumns": "51,51",
+                        "endOffsets": "157,104"
+                    },
+                    "to": {
+                        "startLines": "1193,1194",
+                        "startColumns": "4,4",
+                        "startOffsets": "71875,71927",
+                        "endColumns": "51,51",
+                        "endOffsets": "71922,71974"
+                    }
+                },
+                {
                     "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-3\\ff511b7864768c9195f58f0a31ee7458\\transformed\\fragment-1.3.6\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2,3,4,5,10",
@@ -401,23 +437,6 @@
                         "endLines": "8294,8301,8312,12032,12037",
                         "endColumns": "24,24,24,24,24",
                         "endOffsets": "562284,562669,563266,749536,749806"
-                    }
-                },
-                {
-                    "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\values\\dimen.xml",
-                    "from": {
-                        "startLines": "3,2",
-                        "startColumns": "4,4",
-                        "startOffsets": "110,57",
-                        "endColumns": "51,51",
-                        "endOffsets": "157,104"
-                    },
-                    "to": {
-                        "startLines": "1193,1194",
-                        "startColumns": "4,4",
-                        "startOffsets": "71875,71927",
-                        "endColumns": "51,51",
-                        "endOffsets": "71922,71974"
                     }
                 },
                 {
@@ -476,39 +495,20 @@
                     }
                 },
                 {
-                    "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\build\\generated\\res\\google-services\\debug\\values\\values.xml",
+                    "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "55,199,281,385,494,614,719",
-                        "endColumns": "143,81,103,108,119,104,81",
-                        "endOffsets": "194,276,380,489,609,714,796"
+                        "startLines": "30,15,11,3,23,22,7,14,10,19,8,5,13,9,21,6,16,17,12,4,18,20,29,2,27,25,31,26,28",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1846,895,667,111,1420,1359,354,826,590,1131,419,219,779,535,1312,287,958,1017,714,174,1086,1206,1799,60,1699,1542,1933,1613,1752",
+                        "endColumns": "85,61,45,61,61,59,63,67,75,73,114,66,45,53,45,65,57,67,63,43,43,104,45,49,51,69,69,84,45",
+                        "endOffsets": "1927,952,708,168,1477,1414,413,889,661,1200,529,281,820,584,1353,348,1011,1080,773,213,1125,1306,1840,105,1746,1607,1998,1693,1793"
                     },
                     "to": {
-                        "startLines": "1757,1763,1764,1765,1766,1767,1899",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "109173,109837,109919,110023,110132,110252,126974",
-                        "endColumns": "143,81,103,108,119,104,81",
-                        "endOffsets": "109312,109914,110018,110127,110247,110352,127051"
-                    }
-                },
-                {
-                    "source": "D:\\New folder (2)\\Project-Mobile-Application\\app\\src\\main\\res\\values\\custome_profile_pic.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "57",
-                        "endLines": "4",
-                        "endColumns": "12",
-                        "endOffsets": "138"
-                    },
-                    "to": {
-                        "startLines": "4950",
-                        "startColumns": "4",
-                        "startOffsets": "338684",
-                        "endLines": "4952",
-                        "endColumns": "12",
-                        "endOffsets": "338763"
+                        "startLines": "1679,1680,1681,1682,1683,1684,1685,1686,1687,1688,1689,1690,1691,1692,1693,1694,1695,1696,1697,1698,1699,1700,1728,1730,1758,1768,1898,1900,1902",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "102414,102500,102562,102608,102670,102732,102792,102856,102924,103000,103074,103189,103256,103302,103356,103402,103468,103526,103594,103658,103702,103746,105717,105846,109317,110357,126904,127056,127194",
+                        "endColumns": "85,61,45,61,61,59,63,67,75,73,114,66,45,53,45,65,57,67,63,43,43,104,45,49,51,69,69,84,45",
+                        "endOffsets": "102495,102557,102603,102665,102727,102787,102851,102919,102995,103069,103184,103251,103297,103351,103397,103463,103521,103589,103653,103697,103741,103846,105758,105891,109364,110422,126969,127136,127235"
                     }
                 },
                 {

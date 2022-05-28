@@ -56,9 +56,6 @@ public final class ActivityRestaurantBinding implements ViewBinding {
   public final RecyclerView restaurantPopularRecyclerView;
 
   @NonNull
-  public final TextView textView;
-
-  @NonNull
   public final TextView textView1;
 
   @NonNull
@@ -69,6 +66,9 @@ public final class ActivityRestaurantBinding implements ViewBinding {
 
   @NonNull
   public final TextView textView5;
+
+  @NonNull
+  public final TextView tvName;
 
   @NonNull
   public final TextView twPopular;
@@ -84,9 +84,9 @@ public final class ActivityRestaurantBinding implements ViewBinding {
       @NonNull ImageButton btnInformation, @NonNull ImageView imageView,
       @NonNull ImageView imageView1, @NonNull ImageView imageView2, @NonNull ImageView imageView3,
       @NonNull ImageView imageView4, @NonNull RecyclerView restaurantAppertizerRecyclerView,
-      @NonNull RecyclerView restaurantPopularRecyclerView, @NonNull TextView textView,
-      @NonNull TextView textView1, @NonNull TextView textView2, @NonNull TextView textView3,
-      @NonNull TextView textView5, @NonNull TextView twPopular, @NonNull View view,
+      @NonNull RecyclerView restaurantPopularRecyclerView, @NonNull TextView textView1,
+      @NonNull TextView textView2, @NonNull TextView textView3, @NonNull TextView textView5,
+      @NonNull TextView tvName, @NonNull TextView twPopular, @NonNull View view,
       @NonNull View view1) {
     this.rootView = rootView;
     this.Appertizer = Appertizer;
@@ -100,11 +100,11 @@ public final class ActivityRestaurantBinding implements ViewBinding {
     this.imageView4 = imageView4;
     this.restaurantAppertizerRecyclerView = restaurantAppertizerRecyclerView;
     this.restaurantPopularRecyclerView = restaurantPopularRecyclerView;
-    this.textView = textView;
     this.textView1 = textView1;
     this.textView2 = textView2;
     this.textView3 = textView3;
     this.textView5 = textView5;
+    this.tvName = tvName;
     this.twPopular = twPopular;
     this.view = view;
     this.view1 = view1;
@@ -203,12 +203,6 @@ public final class ActivityRestaurantBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView;
-      TextView textView = ViewBindings.findChildViewById(rootView, id);
-      if (textView == null) {
-        break missingId;
-      }
-
       id = R.id.textView1;
       TextView textView1 = ViewBindings.findChildViewById(rootView, id);
       if (textView1 == null) {
@@ -233,6 +227,12 @@ public final class ActivityRestaurantBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvName;
+      TextView tvName = ViewBindings.findChildViewById(rootView, id);
+      if (tvName == null) {
+        break missingId;
+      }
+
       id = R.id.twPopular;
       TextView twPopular = ViewBindings.findChildViewById(rootView, id);
       if (twPopular == null) {
@@ -253,8 +253,8 @@ public final class ActivityRestaurantBinding implements ViewBinding {
 
       return new ActivityRestaurantBinding((ConstraintLayout) rootView, Appertizer, btnBack,
           btnHeart, btnInformation, imageView, imageView1, imageView2, imageView3, imageView4,
-          restaurantAppertizerRecyclerView, restaurantPopularRecyclerView, textView, textView1,
-          textView2, textView3, textView5, twPopular, view, view1);
+          restaurantAppertizerRecyclerView, restaurantPopularRecyclerView, textView1, textView2,
+          textView3, textView5, tvName, twPopular, view, view1);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

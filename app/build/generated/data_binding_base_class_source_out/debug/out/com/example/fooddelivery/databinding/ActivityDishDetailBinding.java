@@ -28,10 +28,16 @@ public final class ActivityDishDetailBinding implements ViewBinding {
   public final Button AddANoteToTheRestaurantButton;
 
   @NonNull
+  public final Button btnAdddish;
+
+  @NonNull
   public final ImageButton btnBack;
 
   @NonNull
-  public final Button button;
+  public final ImageButton btnPlus;
+
+  @NonNull
+  public final ImageButton btnSub;
 
   @NonNull
   public final RecyclerView dishdetailChoiceSizeRecyclerView;
@@ -43,37 +49,31 @@ public final class ActivityDishDetailBinding implements ViewBinding {
   public final EditText editTextTextPersonName;
 
   @NonNull
-  public final ImageButton imageButton2;
-
-  @NonNull
-  public final ImageButton imageButton3;
-
-  @NonNull
   public final NestedScrollView nestedScrollView;
-
-  @NonNull
-  public final TextView textView;
 
   @NonNull
   public final TextView textView1;
 
   @NonNull
-  public final TextView textView12;
+  public final TextView tvAddMess;
 
   @NonNull
-  public final TextView textView23;
+  public final TextView tvChoiceSize;
 
   @NonNull
-  public final TextView textView24;
+  public final TextView tvChoiceTopping;
 
   @NonNull
-  public final TextView textView25;
+  public final TextView tvName;
 
   @NonNull
-  public final TextView textView7;
+  public final TextView tvPrice;
 
   @NonNull
-  public final TextView textView8;
+  public final TextView tvSoluong;
+
+  @NonNull
+  public final TextView tvTotal;
 
   @NonNull
   public final View view;
@@ -88,33 +88,33 @@ public final class ActivityDishDetailBinding implements ViewBinding {
   public final View view3;
 
   private ActivityDishDetailBinding(@NonNull ConstraintLayout rootView,
-      @NonNull Button AddANoteToTheRestaurantButton, @NonNull ImageButton btnBack,
-      @NonNull Button button, @NonNull RecyclerView dishdetailChoiceSizeRecyclerView,
+      @NonNull Button AddANoteToTheRestaurantButton, @NonNull Button btnAdddish,
+      @NonNull ImageButton btnBack, @NonNull ImageButton btnPlus, @NonNull ImageButton btnSub,
+      @NonNull RecyclerView dishdetailChoiceSizeRecyclerView,
       @NonNull RecyclerView dishdetailChoiceToppingRecyclerView,
-      @NonNull EditText editTextTextPersonName, @NonNull ImageButton imageButton2,
-      @NonNull ImageButton imageButton3, @NonNull NestedScrollView nestedScrollView,
-      @NonNull TextView textView, @NonNull TextView textView1, @NonNull TextView textView12,
-      @NonNull TextView textView23, @NonNull TextView textView24, @NonNull TextView textView25,
-      @NonNull TextView textView7, @NonNull TextView textView8, @NonNull View view,
+      @NonNull EditText editTextTextPersonName, @NonNull NestedScrollView nestedScrollView,
+      @NonNull TextView textView1, @NonNull TextView tvAddMess, @NonNull TextView tvChoiceSize,
+      @NonNull TextView tvChoiceTopping, @NonNull TextView tvName, @NonNull TextView tvPrice,
+      @NonNull TextView tvSoluong, @NonNull TextView tvTotal, @NonNull View view,
       @NonNull View view1, @NonNull View view2, @NonNull View view3) {
     this.rootView = rootView;
     this.AddANoteToTheRestaurantButton = AddANoteToTheRestaurantButton;
+    this.btnAdddish = btnAdddish;
     this.btnBack = btnBack;
-    this.button = button;
+    this.btnPlus = btnPlus;
+    this.btnSub = btnSub;
     this.dishdetailChoiceSizeRecyclerView = dishdetailChoiceSizeRecyclerView;
     this.dishdetailChoiceToppingRecyclerView = dishdetailChoiceToppingRecyclerView;
     this.editTextTextPersonName = editTextTextPersonName;
-    this.imageButton2 = imageButton2;
-    this.imageButton3 = imageButton3;
     this.nestedScrollView = nestedScrollView;
-    this.textView = textView;
     this.textView1 = textView1;
-    this.textView12 = textView12;
-    this.textView23 = textView23;
-    this.textView24 = textView24;
-    this.textView25 = textView25;
-    this.textView7 = textView7;
-    this.textView8 = textView8;
+    this.tvAddMess = tvAddMess;
+    this.tvChoiceSize = tvChoiceSize;
+    this.tvChoiceTopping = tvChoiceTopping;
+    this.tvName = tvName;
+    this.tvPrice = tvPrice;
+    this.tvSoluong = tvSoluong;
+    this.tvTotal = tvTotal;
     this.view = view;
     this.view1 = view1;
     this.view2 = view2;
@@ -154,15 +154,27 @@ public final class ActivityDishDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnAdddish;
+      Button btnAdddish = ViewBindings.findChildViewById(rootView, id);
+      if (btnAdddish == null) {
+        break missingId;
+      }
+
       id = R.id.btnBack;
       ImageButton btnBack = ViewBindings.findChildViewById(rootView, id);
       if (btnBack == null) {
         break missingId;
       }
 
-      id = R.id.button;
-      Button button = ViewBindings.findChildViewById(rootView, id);
-      if (button == null) {
+      id = R.id.btnPlus;
+      ImageButton btnPlus = ViewBindings.findChildViewById(rootView, id);
+      if (btnPlus == null) {
+        break missingId;
+      }
+
+      id = R.id.btnSub;
+      ImageButton btnSub = ViewBindings.findChildViewById(rootView, id);
+      if (btnSub == null) {
         break missingId;
       }
 
@@ -184,27 +196,9 @@ public final class ActivityDishDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.imageButton2;
-      ImageButton imageButton2 = ViewBindings.findChildViewById(rootView, id);
-      if (imageButton2 == null) {
-        break missingId;
-      }
-
-      id = R.id.imageButton3;
-      ImageButton imageButton3 = ViewBindings.findChildViewById(rootView, id);
-      if (imageButton3 == null) {
-        break missingId;
-      }
-
       id = R.id.nestedScrollView;
       NestedScrollView nestedScrollView = ViewBindings.findChildViewById(rootView, id);
       if (nestedScrollView == null) {
-        break missingId;
-      }
-
-      id = R.id.textView;
-      TextView textView = ViewBindings.findChildViewById(rootView, id);
-      if (textView == null) {
         break missingId;
       }
 
@@ -214,39 +208,45 @@ public final class ActivityDishDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView12;
-      TextView textView12 = ViewBindings.findChildViewById(rootView, id);
-      if (textView12 == null) {
+      id = R.id.tvAddMess;
+      TextView tvAddMess = ViewBindings.findChildViewById(rootView, id);
+      if (tvAddMess == null) {
         break missingId;
       }
 
-      id = R.id.textView23;
-      TextView textView23 = ViewBindings.findChildViewById(rootView, id);
-      if (textView23 == null) {
+      id = R.id.tvChoiceSize;
+      TextView tvChoiceSize = ViewBindings.findChildViewById(rootView, id);
+      if (tvChoiceSize == null) {
         break missingId;
       }
 
-      id = R.id.textView24;
-      TextView textView24 = ViewBindings.findChildViewById(rootView, id);
-      if (textView24 == null) {
+      id = R.id.tvChoiceTopping;
+      TextView tvChoiceTopping = ViewBindings.findChildViewById(rootView, id);
+      if (tvChoiceTopping == null) {
         break missingId;
       }
 
-      id = R.id.textView25;
-      TextView textView25 = ViewBindings.findChildViewById(rootView, id);
-      if (textView25 == null) {
+      id = R.id.tvName;
+      TextView tvName = ViewBindings.findChildViewById(rootView, id);
+      if (tvName == null) {
         break missingId;
       }
 
-      id = R.id.textView7;
-      TextView textView7 = ViewBindings.findChildViewById(rootView, id);
-      if (textView7 == null) {
+      id = R.id.tvPrice;
+      TextView tvPrice = ViewBindings.findChildViewById(rootView, id);
+      if (tvPrice == null) {
         break missingId;
       }
 
-      id = R.id.textView8;
-      TextView textView8 = ViewBindings.findChildViewById(rootView, id);
-      if (textView8 == null) {
+      id = R.id.tvSoluong;
+      TextView tvSoluong = ViewBindings.findChildViewById(rootView, id);
+      if (tvSoluong == null) {
+        break missingId;
+      }
+
+      id = R.id.tvTotal;
+      TextView tvTotal = ViewBindings.findChildViewById(rootView, id);
+      if (tvTotal == null) {
         break missingId;
       }
 
@@ -275,10 +275,10 @@ public final class ActivityDishDetailBinding implements ViewBinding {
       }
 
       return new ActivityDishDetailBinding((ConstraintLayout) rootView,
-          AddANoteToTheRestaurantButton, btnBack, button, dishdetailChoiceSizeRecyclerView,
-          dishdetailChoiceToppingRecyclerView, editTextTextPersonName, imageButton2, imageButton3,
-          nestedScrollView, textView, textView1, textView12, textView23, textView24, textView25,
-          textView7, textView8, view, view1, view2, view3);
+          AddANoteToTheRestaurantButton, btnAdddish, btnBack, btnPlus, btnSub,
+          dishdetailChoiceSizeRecyclerView, dishdetailChoiceToppingRecyclerView,
+          editTextTextPersonName, nestedScrollView, textView1, tvAddMess, tvChoiceSize,
+          tvChoiceTopping, tvName, tvPrice, tvSoluong, tvTotal, view, view1, view2, view3);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

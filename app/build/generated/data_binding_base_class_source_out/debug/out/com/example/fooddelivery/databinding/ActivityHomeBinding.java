@@ -41,13 +41,13 @@ public final class ActivityHomeBinding implements ViewBinding {
   public final Button seeMoreButton;
 
   @NonNull
-  public final TextView textView;
+  public final TextView tvName;
 
   private ActivityHomeBinding(@NonNull ConstraintLayout rootView,
       @NonNull RecyclerView categoryRecyclerView, @NonNull RecyclerView exploreMoreRecyclerView,
       @NonNull RecyclerView favoriteRestaurantRecyclerView,
       @NonNull RecyclerView previousOrdersRecyclerView, @NonNull SearchView searchView,
-      @NonNull Button seeMoreButton, @NonNull TextView textView) {
+      @NonNull Button seeMoreButton, @NonNull TextView tvName) {
     this.rootView = rootView;
     this.categoryRecyclerView = categoryRecyclerView;
     this.exploreMoreRecyclerView = exploreMoreRecyclerView;
@@ -55,7 +55,7 @@ public final class ActivityHomeBinding implements ViewBinding {
     this.previousOrdersRecyclerView = previousOrdersRecyclerView;
     this.searchView = searchView;
     this.seeMoreButton = seeMoreButton;
-    this.textView = textView;
+    this.tvName = tvName;
   }
 
   @Override
@@ -121,15 +121,15 @@ public final class ActivityHomeBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.textView;
-      TextView textView = ViewBindings.findChildViewById(rootView, id);
-      if (textView == null) {
+      id = R.id.tvName;
+      TextView tvName = ViewBindings.findChildViewById(rootView, id);
+      if (tvName == null) {
         break missingId;
       }
 
       return new ActivityHomeBinding((ConstraintLayout) rootView, categoryRecyclerView,
           exploreMoreRecyclerView, favoriteRestaurantRecyclerView, previousOrdersRecyclerView,
-          searchView, seeMoreButton, textView);
+          searchView, seeMoreButton, tvName);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
