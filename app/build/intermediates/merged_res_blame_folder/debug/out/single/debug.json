@@ -412,10 +412,6 @@
         "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\fragment_restaurant_home_processing.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\merged_res\\debug\\layout_recycler_view_choice_size.xml.flat",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\recycler_view_choice_size.xml"
-    },
-    {
         "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\merged_res\\debug\\drawable-v24_meow.png.flat",
         "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\drawable-v24\\meow.png"
     },
@@ -522,10 +518,6 @@
     {
         "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_subtraction_round.xml.flat",
         "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_subtraction_round.xml"
-    },
-    {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\merged_res\\debug\\layout_recycler_view_choice_topping.xml.flat",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\recycler_view_choice_topping.xml"
     },
     {
         "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\merged_res\\debug\\xml_data_extraction_rules.xml.flat",

@@ -134,13 +134,13 @@
             android:name="com.example.fooddelivery.MainActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.fooddelivery.RestaurantActivity"
-            android:exported="false" />
-        <activity
             android:name="com.example.fooddelivery.HomeActivity"
             android:exported="false" />
         <activity
             android:name="com.example.fooddelivery.DishDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.fooddelivery.RestaurantActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

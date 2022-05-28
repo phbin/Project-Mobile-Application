@@ -387,19 +387,19 @@ ADDED from D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml
 		ADDED from D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:109:13-37
 	android:name
 		ADDED from D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:108:13-41
-activity#com.example.fooddelivery.RestaurantActivity
+activity#com.example.fooddelivery.HomeActivity
 ADDED from D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:110:9-112:39
 	android:exported
 		ADDED from D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:112:13-37
 	android:name
-		ADDED from D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:111:13-47
-activity#com.example.fooddelivery.HomeActivity
+		ADDED from D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:111:13-41
+activity#com.example.fooddelivery.DishDetailActivity
 ADDED from D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:113:9-115:39
 	android:exported
 		ADDED from D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:115:13-37
 	android:name
-		ADDED from D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:114:13-41
-activity#com.example.fooddelivery.DishDetailActivity
+		ADDED from D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:114:13-47
+activity#com.example.fooddelivery.RestaurantActivity
 ADDED from D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:116:9-125:20
 	android:exported
 		ADDED from D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:119:13-36

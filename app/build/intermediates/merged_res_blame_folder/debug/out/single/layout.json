@@ -60,10 +60,6 @@
         "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\recycler_view_explore_more.xml"
     },
     {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\recycler_view_choice_size.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\recycler_view_choice_size.xml"
-    },
-    {
         "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_restaurant_menu_detail.xml",
         "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_restaurant_menu_detail.xml"
     },
@@ -118,10 +114,6 @@
     {
         "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_restaurant_res_management.xml",
         "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\activity_restaurant_res_management.xml"
-    },
-    {
-        "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\recycler_view_choice_topping.xml",
-        "source": "D:\\GitHub\\Project-Mobile-Application\\app\\src\\main\\res\\layout\\recycler_view_choice_topping.xml"
     },
     {
         "merged": "D:\\GitHub\\Project-Mobile-Application\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\gridview_restaurantpopular.xml",

@@ -249,19 +249,19 @@
 135-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:109:13-37
 136        <activity
 136-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:110:9-112:39
-137            android:name="com.example.fooddelivery.RestaurantActivity"
-137-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:111:13-47
+137            android:name="com.example.fooddelivery.HomeActivity"
+137-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:111:13-41
 138            android:exported="false" />
 138-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:112:13-37
 139        <activity
 139-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:113:9-115:39
-140            android:name="com.example.fooddelivery.HomeActivity"
-140-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:114:13-41
+140            android:name="com.example.fooddelivery.DishDetailActivity"
+140-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:114:13-47
 141            android:exported="false" />
 141-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:115:13-37
 142        <activity
 142-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:116:9-125:20
-143            android:name="com.example.fooddelivery.DishDetailActivity"
+143            android:name="com.example.fooddelivery.RestaurantActivity"
 143-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:118:13-47
 144            android:exported="true" >
 144-->D:\GitHub\Project-Mobile-Application\app\src\main\AndroidManifest.xml:119:13-36

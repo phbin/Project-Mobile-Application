@@ -3,6 +3,48 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable-v24/back_background.xml" value="0.2015" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable-v24/back_button_background.xml" value="0.2015" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable-v24/back_button_foreground.xml" value="0.2015" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable-v24/back_circle_button.xml" value="0.2015" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable-v24/darkmint_border_view.xml" value="0.2015" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable-v24/grey_border_button.xml" value="0.2015" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable-v24/mint_border_button.xml" value="0.2015" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable-v24/mint_button.xml" value="0.2015" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable-v24/mintlight_border_button.xml" value="0.2015" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable-v24/visibility.xml" value="0.2015" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable-v24/visibility_off.xml" value="0.2015" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable/back_button_background1.xml" value="0.1" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable/back_button_foregroundwhite.xml" value="0.1" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable/grey_border_view.xml" value="0.2015" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable/ic_add_photo.xml" value="0.2015" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable/ic_baseline_promotion_24.xml" value="0.2015" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable/ic_close.xml" value="0.2015" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable/ic_delete.xml" value="0.2015" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable/ic_heart.xml" value="0.1" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable/ic_information.xml" value="0.1" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable/ic_plus_background.xml" value="0.2015" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable/ic_plus_foreground.xml" value="0.2015" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable/ic_subtraction.xml" value="0.2015" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable/ic_subtraction_background.xml" value="0.2015" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable/ic_subtraction_foreground.xml" value="0.2015" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable/ic_triangle.xml" value="0.1" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable/mint_border_view.xml" value="0.2015" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable/rectangle_container.xml" value="0.2015" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable/search_view_corner.xml" value="0.2015" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/drawable/square_mint.xml" value="0.2015" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/layout/activity_check_out.xml" value="0.16168478260869565" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/layout/activity_dish_detail.xml" value="0.38915470494417864" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/layout/activity_fragment_promotion.xml" value="0.22327898550724637" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/layout/activity_home.xml" value="0.22826086956521738" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/layout/activity_main.xml" value="0.22327898550724637" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/layout/activity_restaurant.xml" value="0.25" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/layout/recycler_view_category.xml" value="0.6" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/layout/recycler_view_choice_size.xml" value="0.22327898550724637" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/layout/recycler_view_explore_more.xml" value="0.22327898550724637" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/layout/recycler_view_previous_orders.xml" value="0.22826086956521738" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/layout/recycler_view_restaurant_appertizer.xml" value="0.22327898550724637" />
+        <entry key="..\:/GitHub/Project-Mobile-Application/app/src/main/res/layout/recycler_view_restaurant_popular.xml" value="0.22327898550724637" />
         <entry key="..\:/MobileUIT/app/src/main/res/drawable-v24/back_background.xml" value="0.1125" />
         <entry key="..\:/MobileUIT/app/src/main/res/drawable-v24/back_button_background.xml" value="0.1125" />
         <entry key="..\:/MobileUIT/app/src/main/res/drawable-v24/back_button_foreground.xml" value="0.1125" />

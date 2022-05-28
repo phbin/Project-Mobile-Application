@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -12,7 +13,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.widget.NestedScrollView;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.fooddelivery.R;
@@ -34,10 +34,43 @@ public final class ActivityDishDetailBinding implements ViewBinding {
   public final Button button;
 
   @NonNull
-  public final RecyclerView dishdetailChoiceSizeRecyclerView;
+  public final CheckBox checkBox;
 
   @NonNull
-  public final RecyclerView dishdetailChoiceToppingRecyclerView;
+  public final CheckBox checkBox1;
+
+  @NonNull
+  public final CheckBox checkBox10;
+
+  @NonNull
+  public final CheckBox checkBox11;
+
+  @NonNull
+  public final CheckBox checkBox12;
+
+  @NonNull
+  public final CheckBox checkBox2;
+
+  @NonNull
+  public final CheckBox checkBox3;
+
+  @NonNull
+  public final CheckBox checkBox4;
+
+  @NonNull
+  public final CheckBox checkBox5;
+
+  @NonNull
+  public final CheckBox checkBox6;
+
+  @NonNull
+  public final CheckBox checkBox7;
+
+  @NonNull
+  public final CheckBox checkBox8;
+
+  @NonNull
+  public final CheckBox checkBox9;
 
   @NonNull
   public final EditText editTextTextPersonName;
@@ -58,7 +91,43 @@ public final class ActivityDishDetailBinding implements ViewBinding {
   public final TextView textView1;
 
   @NonNull
+  public final TextView textView10;
+
+  @NonNull
+  public final TextView textView11;
+
+  @NonNull
   public final TextView textView12;
+
+  @NonNull
+  public final TextView textView13;
+
+  @NonNull
+  public final TextView textView14;
+
+  @NonNull
+  public final TextView textView15;
+
+  @NonNull
+  public final TextView textView16;
+
+  @NonNull
+  public final TextView textView17;
+
+  @NonNull
+  public final TextView textView18;
+
+  @NonNull
+  public final TextView textView19;
+
+  @NonNull
+  public final TextView textView20;
+
+  @NonNull
+  public final TextView textView21;
+
+  @NonNull
+  public final TextView textView22;
 
   @NonNull
   public final TextView textView23;
@@ -76,6 +145,9 @@ public final class ActivityDishDetailBinding implements ViewBinding {
   public final TextView textView8;
 
   @NonNull
+  public final TextView textView9;
+
+  @NonNull
   public final View view;
 
   @NonNull
@@ -89,32 +161,63 @@ public final class ActivityDishDetailBinding implements ViewBinding {
 
   private ActivityDishDetailBinding(@NonNull ConstraintLayout rootView,
       @NonNull Button AddANoteToTheRestaurantButton, @NonNull ImageButton btnBack,
-      @NonNull Button button, @NonNull RecyclerView dishdetailChoiceSizeRecyclerView,
-      @NonNull RecyclerView dishdetailChoiceToppingRecyclerView,
+      @NonNull Button button, @NonNull CheckBox checkBox, @NonNull CheckBox checkBox1,
+      @NonNull CheckBox checkBox10, @NonNull CheckBox checkBox11, @NonNull CheckBox checkBox12,
+      @NonNull CheckBox checkBox2, @NonNull CheckBox checkBox3, @NonNull CheckBox checkBox4,
+      @NonNull CheckBox checkBox5, @NonNull CheckBox checkBox6, @NonNull CheckBox checkBox7,
+      @NonNull CheckBox checkBox8, @NonNull CheckBox checkBox9,
       @NonNull EditText editTextTextPersonName, @NonNull ImageButton imageButton2,
       @NonNull ImageButton imageButton3, @NonNull NestedScrollView nestedScrollView,
-      @NonNull TextView textView, @NonNull TextView textView1, @NonNull TextView textView12,
+      @NonNull TextView textView, @NonNull TextView textView1, @NonNull TextView textView10,
+      @NonNull TextView textView11, @NonNull TextView textView12, @NonNull TextView textView13,
+      @NonNull TextView textView14, @NonNull TextView textView15, @NonNull TextView textView16,
+      @NonNull TextView textView17, @NonNull TextView textView18, @NonNull TextView textView19,
+      @NonNull TextView textView20, @NonNull TextView textView21, @NonNull TextView textView22,
       @NonNull TextView textView23, @NonNull TextView textView24, @NonNull TextView textView25,
-      @NonNull TextView textView7, @NonNull TextView textView8, @NonNull View view,
-      @NonNull View view1, @NonNull View view2, @NonNull View view3) {
+      @NonNull TextView textView7, @NonNull TextView textView8, @NonNull TextView textView9,
+      @NonNull View view, @NonNull View view1, @NonNull View view2, @NonNull View view3) {
     this.rootView = rootView;
     this.AddANoteToTheRestaurantButton = AddANoteToTheRestaurantButton;
     this.btnBack = btnBack;
     this.button = button;
-    this.dishdetailChoiceSizeRecyclerView = dishdetailChoiceSizeRecyclerView;
-    this.dishdetailChoiceToppingRecyclerView = dishdetailChoiceToppingRecyclerView;
+    this.checkBox = checkBox;
+    this.checkBox1 = checkBox1;
+    this.checkBox10 = checkBox10;
+    this.checkBox11 = checkBox11;
+    this.checkBox12 = checkBox12;
+    this.checkBox2 = checkBox2;
+    this.checkBox3 = checkBox3;
+    this.checkBox4 = checkBox4;
+    this.checkBox5 = checkBox5;
+    this.checkBox6 = checkBox6;
+    this.checkBox7 = checkBox7;
+    this.checkBox8 = checkBox8;
+    this.checkBox9 = checkBox9;
     this.editTextTextPersonName = editTextTextPersonName;
     this.imageButton2 = imageButton2;
     this.imageButton3 = imageButton3;
     this.nestedScrollView = nestedScrollView;
     this.textView = textView;
     this.textView1 = textView1;
+    this.textView10 = textView10;
+    this.textView11 = textView11;
     this.textView12 = textView12;
+    this.textView13 = textView13;
+    this.textView14 = textView14;
+    this.textView15 = textView15;
+    this.textView16 = textView16;
+    this.textView17 = textView17;
+    this.textView18 = textView18;
+    this.textView19 = textView19;
+    this.textView20 = textView20;
+    this.textView21 = textView21;
+    this.textView22 = textView22;
     this.textView23 = textView23;
     this.textView24 = textView24;
     this.textView25 = textView25;
     this.textView7 = textView7;
     this.textView8 = textView8;
+    this.textView9 = textView9;
     this.view = view;
     this.view1 = view1;
     this.view2 = view2;
@@ -166,15 +269,81 @@ public final class ActivityDishDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.dishdetailChoiceSizeRecyclerView;
-      RecyclerView dishdetailChoiceSizeRecyclerView = ViewBindings.findChildViewById(rootView, id);
-      if (dishdetailChoiceSizeRecyclerView == null) {
+      id = R.id.checkBox;
+      CheckBox checkBox = ViewBindings.findChildViewById(rootView, id);
+      if (checkBox == null) {
         break missingId;
       }
 
-      id = R.id.dishdetailChoiceToppingRecyclerView;
-      RecyclerView dishdetailChoiceToppingRecyclerView = ViewBindings.findChildViewById(rootView, id);
-      if (dishdetailChoiceToppingRecyclerView == null) {
+      id = R.id.checkBox1;
+      CheckBox checkBox1 = ViewBindings.findChildViewById(rootView, id);
+      if (checkBox1 == null) {
+        break missingId;
+      }
+
+      id = R.id.checkBox10;
+      CheckBox checkBox10 = ViewBindings.findChildViewById(rootView, id);
+      if (checkBox10 == null) {
+        break missingId;
+      }
+
+      id = R.id.checkBox11;
+      CheckBox checkBox11 = ViewBindings.findChildViewById(rootView, id);
+      if (checkBox11 == null) {
+        break missingId;
+      }
+
+      id = R.id.checkBox12;
+      CheckBox checkBox12 = ViewBindings.findChildViewById(rootView, id);
+      if (checkBox12 == null) {
+        break missingId;
+      }
+
+      id = R.id.checkBox2;
+      CheckBox checkBox2 = ViewBindings.findChildViewById(rootView, id);
+      if (checkBox2 == null) {
+        break missingId;
+      }
+
+      id = R.id.checkBox3;
+      CheckBox checkBox3 = ViewBindings.findChildViewById(rootView, id);
+      if (checkBox3 == null) {
+        break missingId;
+      }
+
+      id = R.id.checkBox4;
+      CheckBox checkBox4 = ViewBindings.findChildViewById(rootView, id);
+      if (checkBox4 == null) {
+        break missingId;
+      }
+
+      id = R.id.checkBox5;
+      CheckBox checkBox5 = ViewBindings.findChildViewById(rootView, id);
+      if (checkBox5 == null) {
+        break missingId;
+      }
+
+      id = R.id.checkBox6;
+      CheckBox checkBox6 = ViewBindings.findChildViewById(rootView, id);
+      if (checkBox6 == null) {
+        break missingId;
+      }
+
+      id = R.id.checkBox7;
+      CheckBox checkBox7 = ViewBindings.findChildViewById(rootView, id);
+      if (checkBox7 == null) {
+        break missingId;
+      }
+
+      id = R.id.checkBox8;
+      CheckBox checkBox8 = ViewBindings.findChildViewById(rootView, id);
+      if (checkBox8 == null) {
+        break missingId;
+      }
+
+      id = R.id.checkBox9;
+      CheckBox checkBox9 = ViewBindings.findChildViewById(rootView, id);
+      if (checkBox9 == null) {
         break missingId;
       }
 
@@ -214,9 +383,81 @@ public final class ActivityDishDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.textView10;
+      TextView textView10 = ViewBindings.findChildViewById(rootView, id);
+      if (textView10 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView11;
+      TextView textView11 = ViewBindings.findChildViewById(rootView, id);
+      if (textView11 == null) {
+        break missingId;
+      }
+
       id = R.id.textView12;
       TextView textView12 = ViewBindings.findChildViewById(rootView, id);
       if (textView12 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView13;
+      TextView textView13 = ViewBindings.findChildViewById(rootView, id);
+      if (textView13 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView14;
+      TextView textView14 = ViewBindings.findChildViewById(rootView, id);
+      if (textView14 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView15;
+      TextView textView15 = ViewBindings.findChildViewById(rootView, id);
+      if (textView15 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView16;
+      TextView textView16 = ViewBindings.findChildViewById(rootView, id);
+      if (textView16 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView17;
+      TextView textView17 = ViewBindings.findChildViewById(rootView, id);
+      if (textView17 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView18;
+      TextView textView18 = ViewBindings.findChildViewById(rootView, id);
+      if (textView18 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView19;
+      TextView textView19 = ViewBindings.findChildViewById(rootView, id);
+      if (textView19 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView20;
+      TextView textView20 = ViewBindings.findChildViewById(rootView, id);
+      if (textView20 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView21;
+      TextView textView21 = ViewBindings.findChildViewById(rootView, id);
+      if (textView21 == null) {
+        break missingId;
+      }
+
+      id = R.id.textView22;
+      TextView textView22 = ViewBindings.findChildViewById(rootView, id);
+      if (textView22 == null) {
         break missingId;
       }
 
@@ -250,6 +491,12 @@ public final class ActivityDishDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.textView9;
+      TextView textView9 = ViewBindings.findChildViewById(rootView, id);
+      if (textView9 == null) {
+        break missingId;
+      }
+
       id = R.id.view;
       View view = ViewBindings.findChildViewById(rootView, id);
       if (view == null) {
@@ -275,10 +522,13 @@ public final class ActivityDishDetailBinding implements ViewBinding {
       }
 
       return new ActivityDishDetailBinding((ConstraintLayout) rootView,
-          AddANoteToTheRestaurantButton, btnBack, button, dishdetailChoiceSizeRecyclerView,
-          dishdetailChoiceToppingRecyclerView, editTextTextPersonName, imageButton2, imageButton3,
-          nestedScrollView, textView, textView1, textView12, textView23, textView24, textView25,
-          textView7, textView8, view, view1, view2, view3);
+          AddANoteToTheRestaurantButton, btnBack, button, checkBox, checkBox1, checkBox10,
+          checkBox11, checkBox12, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6, checkBox7,
+          checkBox8, checkBox9, editTextTextPersonName, imageButton2, imageButton3,
+          nestedScrollView, textView, textView1, textView10, textView11, textView12, textView13,
+          textView14, textView15, textView16, textView17, textView18, textView19, textView20,
+          textView21, textView22, textView23, textView24, textView25, textView7, textView8,
+          textView9, view, view1, view2, view3);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
