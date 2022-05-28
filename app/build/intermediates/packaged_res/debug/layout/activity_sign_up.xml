@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="108px"
+        android:layout_height="108px"
+        android:layout_marginLeft="51px"
+        android:layout_marginTop="60px"
+        android:background="@drawable/back_circle_button"
+        android:src="@drawable/back_button_foreground"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Sign_up"
+        android:textSize="69.12px"
+        android:fontFamily="@font/lato_semibold"
+        android:textColor="@color/black"
+        android:layout_marginLeft="60px"
+        android:layout_marginTop="53.48px"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Keep_phone"
+        android:fontFamily="@font/lato_regular"
+        android:textSize="34.56px"
+        android:layout_marginTop="95.56px"
+        android:layout_marginLeft="60px"
+        android:layout_marginRight="60px"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="57.6px"
+        android:layout_marginLeft="60px"
+        android:layout_marginRight="60px">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:text="Name"
+            android:textColor="@color/black"
+            android:textSize="40.32px" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/editTextEnterName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28.8px"
+                    android:hint="@string/Enter_your_name"
+                    android:textSize="40.32px"
+                    android:textColor="@color/black"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="57.6px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:text="@string/Phone_number"
+            android:textColor="@color/black"
+            android:textSize="40.32px" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!--            <EditText-->
+            <!--                android:id="@+id/editTextRegionPhoneNumber"-->
+            <!--                android:layout_width="112px"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="+84"-->
+            <!--                android:textSize="40.32px"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                android:inputType="number"-->
+            <!--                android:background="@null"/>-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false"
+                android:orientation="horizontal"
+                app:counterEnabled="true"
+                app:counterMaxLength="10">
+
+
+                <EditText
+                    android:id="@+id/editTextEnterPhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28.8px"
+                    android:hint="@string/Enter_your_phone_number"
+                    android:textSize="40.32px"
+                    android:textColor="@color/black"
+                    android:inputType="number"
+                    android:maxLines="1"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="57.6px"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:text="Email"
+            android:textColor="@color/black"
+            android:textSize="40.32px" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:hintEnabled="false"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/editTextEnterEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28.8px"
+                    android:hint="@string/Enter_your_email"
+                    android:textSize="40.32px"
+                    android:textColor="@color/black"
+                    android:inputType="textEmailAddress"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="103.68px">
+            <Button
+                android:id="@+id/btnContinue"
+                android:layout_width="match_parent"
+                android:layout_height="130px"
+                android:background="@drawable/mint_button"
+                android:backgroundTint="@color/mint"
+                android:text="@string/Continue"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                android:textSize="46.08px"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:visibility="gone"/>
+        </FrameLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

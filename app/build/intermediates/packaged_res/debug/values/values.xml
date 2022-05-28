@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <color name="black">#FF000000</color>
+    <color name="black_background">#1B1B1B</color>
+    <color name="blue">#0E7DE3</color>
+    <color name="grey">#828282</color>
+    <color name="greylight">#EBEBEB</color>
+    <color name="mint">#3AC5CA</color>
+    <color name="red">#F04A3F</color>
+    <color name="white">#FFFFFFFF</color>
+    <dimen name="margin_horizontal_46">46px</dimen>
+    <dimen name="margin_horizontal_70">70px</dimen>
+    <string name="Add_a_note_to_the_restaurant">Add a note to the restaurant</string>
+    <string name="Confirm_password">Confirm password</string>
+    <string name="Continue">Continue</string>
+    <string name="Create_account">Create new account</string>
+    <string name="Enter_your_email">Enter your email</string>
+    <string name="Enter_your_name">Enter your name</string>
+    <string name="Enter_your_number">Enter your number</string>
+    <string name="Enter_your_password">Enter your password</string>
+    <string name="Enter_your_phone_number">Enter your phone number</string>
+    <string name="Enter_your_verify_code">Enter your verify code</string>
+    <string name="Keep_phone">Keep your phone we will texted you a verification code to your phone number</string>
+    <string name="Login_with_google">Continue with Google</string>
+    <string name="Password">Password</string>
+    <string name="Phone_number">Phone number</string>
+    <string name="Required">Required</string>
+    <string name="Reset_new_password">Reset new password</string>
+    <string name="Reset_password">Reset password</string>
+    <string name="Reset_your_password">Reset your password</string>
+    <string name="Set_new_password">Set a new password</string>
+    <string name="Sign_in">Sign in</string>
+    <string name="Sign_up">Sign up</string>
+    <string name="We_texted_verify_code">We texted you a verification code to your phone number</string>
+    <string name="add_dish">Add dish</string>
+    <string name="app_name">FoodDelivery</string>
+    <string name="default_web_client_id" translatable="false">700807142483-jjmh8dr1jlchvlg0s22tjo9luf9gm2qa.apps.googleusercontent.com</string>
+    <string name="delivery_to">Delivery to</string>
+    <string name="gcm_defaultSenderId" translatable="false">700807142483</string>
+    <string name="google_api_key" translatable="false">AIzaSyCunlT6Px91DtK7Ls42yBsVkERP6ieysaU</string>
+    <string name="google_app_id" translatable="false">1:700807142483:android:d1065037092af6226f3aa6</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCunlT6Px91DtK7Ls42yBsVkERP6ieysaU</string>
+    <string name="google_storage_bucket" translatable="false">food-delivering-7c7fc.appspot.com</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="popular_in_your_area">Popular in your area</string>
+    <string name="project_id" translatable="false">food-delivering-7c7fc</string>
+    <string name="search_dish_name_restaurant">Search dish name, restaurant</string>
+    <string name="see_more">See more</string>
+    <style name="BottomSheetStyle" parent="Theme.Design.BottomSheetDialog">
+            <item name="bottomSheetStyle">@style/Modal</item>
+        </style>
+    <style name="Circular">
+        <item name="cornerSize">50%</item>
+    </style>
+    <style name="Modal" parent="Widget.Design.BottomSheet.Modal">
+            <item name="android:background">@drawable/dialog_fragment_corner</item>
+        </style>
+    <style name="MyDatePickerStyle" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/mint</item>
+        
+        <item name="colorControlActivated">@color/mint</item>
+        
+        <item name="colorControlHighlight">#9AE4E7</item>
+        
+        <item name="android:textColor">@color/mint</item>
+    </style>
+    <style name="TabLayoutStyle" parent="Base.Widget.Design.TabLayout">
+        <item name="android:textSize">50px</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/lato_bold</item>
+    </style>
+    <style name="Theme.FoodDelivery" parent="Theme.AppCompat.DayNight.NoActionBar">
+        
+        <item name="colorOnPrimary">@color/white</item>
+        
+        <item name="colorSecondary">@color/mint</item>
+        <item name="colorSecondaryVariant">@color/grey</item>
+        <item name="colorOnSecondary">@color/black</item>
+        
+        <item name="android:statusBarColor" ns1:targetApi="l">@color/black</item>
+        
+        </style>
+    <style name="TimePickerTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/mint</item>
+        <item name="colorPrimaryDark">@color/mint</item>
+        <item name="colorAccent">@color/mint</item>
+    </style>
+</resources>

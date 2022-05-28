@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+<!--    <Button-->
+<!--        android:id="@+id/btnGetOrder"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="69px"-->
+<!--        android:text="Get order"-->
+<!--        android:fontFamily="@font/lato_bold"-->
+<!--        android:textSize="50px"-->
+<!--        android:backgroundTint="@color/mint"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:layout_gravity="center_vertical"/>-->
+
+    <Button
+        android:id="@+id/btnStatus"
+        android:layout_width="350px"
+        android:layout_height="100px"
+        android:layout_gravity="right"
+        android:layout_marginTop="51px"
+        android:layout_marginRight="69px"
+        android:text="Receive order"
+        android:background="@drawable/mint_button"
+        android:backgroundTint="@color/mint"
+        android:fontFamily="@font/lato_semibold"
+        android:textAllCaps="false"
+        app:backgroundTint="@color/mint"
+        android:textColor="@color/white"
+        android:textSize="33px"
+        android:paddingLeft="50px"
+        android:drawableStart="@drawable/ic_shipper_status"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:layout_marginTop="60px"
+        app:tabTextColor="@color/grey"
+        app:tabSelectedTextColor="@color/mint"
+        app:tabIndicatorFullWidth="false"
+        app:tabIndicatorGravity="bottom">
+    </com.google.android.material.tabs.TabLayout>
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+</LinearLayout>

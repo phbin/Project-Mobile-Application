@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RestaurantStatisticsActivity"
+    android:background="@color/black_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="69px"
+        android:layout_marginTop="50px">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_gravity="left"
+                android:layout_width="55px"
+                android:layout_height="55px"
+                android:drawableStart="@drawable/ic_close"
+                android:background="@android:color/transparent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Statistic"
+                android:textColor="@color/white"
+                android:textSize="52px"
+                android:fontFamily="@font/lato_semibold"
+                android:layout_gravity="center_horizontal"/>
+        </FrameLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="90px"
+            android:layout_marginTop="70px"
+            app:tabTextColor="@color/grey"
+            app:tabSelectedTextColor="@color/mint"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorGravity="bottom"
+            app:tabGravity="center"
+            app:tabTextAppearance="@style/TabLayoutStyle"
+            android:layout_marginEnd="20px"
+            android:layout_marginStart="20px"/>
+    </LinearLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

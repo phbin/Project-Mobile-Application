@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="984px"
+        android:layout_height="789px"
+        android:layout_marginTop="305px"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/login_background"/>
+
+    <Button
+        android:id="@+id/btnCreateAccount"
+        android:layout_width="981px"
+        android:layout_height="130px"
+        android:layout_gravity="center"
+        android:layout_marginTop="281px"
+        android:background="@drawable/mint_button"
+        android:backgroundTint="@color/mint"
+        android:fontFamily="@font/lato_semibold"
+        android:text="@string/Create_account"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="48px"
+        app:backgroundTint="@color/mint"/>
+
+    <Button
+        android:id="@+id/btnSignIn"
+        android:layout_width="981px"
+        android:layout_height="130px"
+        android:layout_gravity="center"
+        android:layout_marginTop="91px"
+        android:background="@drawable/mint_border_button"
+        android:text="@string/Sign_in"
+        android:textColor="@color/mint"
+        android:textAllCaps="false"
+        android:textSize="48px"
+        android:fontFamily="@font/lato_semibold"/>
+
+
+</LinearLayout>
