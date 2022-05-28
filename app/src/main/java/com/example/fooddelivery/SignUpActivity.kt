@@ -29,7 +29,7 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(R.layout.activity_sign_up)
 
         btnBack.setOnClickListener {
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
@@ -42,44 +42,37 @@ class SignUpActivity : AppCompatActivity() {
             val email = editTextEnterEmail.text.toString().trim()
             val name = editTextEnterName.text.toString()
 
-            if(name.isEmpty()){
+            if (name.isEmpty()) {
                 editTextEnterName.error = "Name required!"
                 progressBar.visibility = View.GONE
                 btnContinue.visibility = View.VISIBLE
                 return@setOnClickListener
-            }
-            else if(phoneNumber.isEmpty()){
+            } else if (phoneNumber.isEmpty()) {
                 editTextEnterPhoneNumber.error = "Phone number required"
                 progressBar.visibility = View.GONE
                 btnContinue.visibility = View.VISIBLE
                 return@setOnClickListener
-            }
-            else if(phoneNumber.length != 10){
+            } else if (phoneNumber.length != 10) {
                 editTextEnterPhoneNumber.error = "Please check your phone number again"
                 progressBar.visibility = View.GONE
                 btnContinue.visibility = View.VISIBLE
                 return@setOnClickListener
-            }
-            else if(!validateEmail.matcher(email).matches()){
+            } else if (!validateEmail.matcher(email).matches()) {
                 editTextEnterEmail.error = "Please check your email"
                 progressBar.visibility = View.GONE
                 btnContinue.visibility = View.VISIBLE
                 return@setOnClickListener
-            }
-            else{
+            } else {
                 var fb = FirebaseFirestore.getInstance().collection("Customer")
-                fb.get().addOnCompleteListener{
-                    if(it.isSuccessful)
-                    {
-                        for (i in it.result)
-                        {
-                            if ((editTextEnterPhoneNumber.text.toString())==i.id)
-                            {
+                fb.get().addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        for (i in it.result) {
+                            if ((editTextEnterPhoneNumber.text.toString()) == i.id) {
                                 editTextEnterPhoneNumber.error = "This phone number existed"
                                 progressBar.visibility = View.GONE
                                 btnContinue.visibility = View.VISIBLE
                                 return@addOnCompleteListener
-                            }else continue
+                            } else continue
                         }
                         AuthPhoneNumber()
                     }
@@ -123,8 +116,8 @@ class SignUpActivity : AppCompatActivity() {
 
                 var intent = Intent(applicationContext, SignUpEnterCodeActivity::class.java)
                 intent.putExtra("storedVerificationId", storedVerificationId)
-                intent.putExtra("noPhone",editTextEnterPhoneNumber.text.toString())
-                intent.putExtra("email",editTextEnterEmail.text.toString())
+                intent.putExtra("noPhone", editTextEnterPhoneNumber.text.toString())
+                intent.putExtra("email", editTextEnterEmail.text.toString())
                 intent.putExtra("name", editTextEnterName.text.toString())
                 startActivity(intent)
             }
@@ -182,19 +175,17 @@ class SignUpActivity : AppCompatActivity() {
     private fun checkExistedPhoneNumber(): Boolean {
         var existed = false
         var fb = FirebaseFirestore.getInstance().collection("Customer")
-        fb.get().addOnCompleteListener{
-            if(it.isSuccessful)
-            {
-                for (i in it.result)
-                {
-                    if ((editTextEnterPhoneNumber.text.toString())==i.id)
-                    {
+        fb.get().addOnCompleteListener {
+            if (it.isSuccessful) {
+                for (i in it.result) {
+                    if ((editTextEnterPhoneNumber.text.toString()) == i.id) {
                         editTextEnterPhoneNumber.error = "This phone number existed"
                         existed = true
-                    }else continue
+                    } else continue
                 }
             }
         }
 
         return existed
     }
+}

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="385.92px"
+        android:background="@color/mint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="56px"
+        android:layout_marginTop="123.84px"
+        android:layout_marginStart="69.12px"
+        android:text="@string/delivery_to"
+        android:textColor="@color/white"
+        android:fontFamily="@font/lato_light"
+        android:textSize="40px"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="938.88px"
+        android:layout_height="126.72px"
+        android:layout_marginTop="322.56px"
+        android:background="@drawable/search_view_corner"
+        android:queryHint="@string/search_dish_name_restaurant"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView" />
+    <ImageButton
+        android:layout_width="45.07px"
+        android:layout_height="45px"
+        android:layout_marginTop="187.04px"
+
+        android:layout_marginEnd="250px"
+        android:background="@drawable/cart_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageButton
+        android:layout_width="77.76px"
+        android:layout_height="77.76px"
+        android:layout_marginTop="167.04px"
+
+        android:layout_marginEnd="141.12px"
+        android:background="@drawable/option_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="1470px"
+        android:layout_marginTop="0px"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100px"
+                android:layout_marginTop="100px"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="100px"
+                    android:layout_marginStart="69.12px"
+                    android:fontFamily="@font/lato_semibold"
+                    android:text="@string/popular_in_your_area"
+                    android:textStyle="bold"
+                    android:textSize="51.84px" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="100px"
+                    android:layout_marginStart="100px"
+                    android:background="#00000000"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="@string/see_more"
+                    android:textAllCaps="false"
+                    android:id="@+id/see_moreButton"
+                    android:textColor="@color/mint"
+                    android:textSize="40.32px"
+                    android:textStyle="italic" />
+            </LinearLayout>
+          <ListView
+              android:layout_width="match_parent"
+              android:layout_height="686.6px">
+
+          </ListView>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="62px"
+                android:text="Explore more"
+                android:layout_marginStart="69.12px"
+                android:textStyle="bold"
+                android:textSize="51.84px"
+                android:fontFamily="@font/lato_regular"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="10px"
+                android:layout_marginTop="12.88px"
+                android:background="@drawable/line"/>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="600px"
+                android:layout_marginTop="110.8px">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/exploreMoreRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="600px" />
+            </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="62px"
+            android:text="Category"
+            android:layout_marginStart="69.12px"
+            android:textStyle="bold"
+            android:layout_marginTop="89.28px"
+            android:textSize="51.84px"
+            android:fontFamily="@font/lato_regular"/>
+
+            //Chỗ linear ở dưới là làm cái list ngang category
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="129.6px"
+                android:layout_marginTop="110.8px">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/categoryRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="129.6px" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="62px"
+                android:text="Your Previous Orders"
+                android:layout_marginStart="69.12px"
+                android:textStyle="bold"
+                android:layout_marginTop="218.32px"
+                android:textSize="51.84px"
+                android:fontFamily="@font/lato_regular"/>
+            //Chỗ cái linear này là làm cái previous orders
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="110.8px">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/previousOrdersRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="62px"
+                android:text="Your favorite restaurants"
+                android:layout_marginStart="69.12px"
+                android:textStyle="bold"
+                android:layout_marginTop="218.32px"
+                android:textSize="51.84px"
+                android:fontFamily="@font/lato_regular"/>
+
+
+
+            //Chỗ cái linear này là làm cái favorite restaurants
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="110.8px">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/favoriteRestaurantRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

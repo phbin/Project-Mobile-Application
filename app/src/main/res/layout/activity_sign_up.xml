@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 app:hintEnabled="false"
                 android:orientation="horizontal">
-              
+
                 <EditText
                     android:id="@+id/editTextEnterName"
                     android:layout_width="match_parent"
@@ -84,15 +84,15 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-<!--            <EditText-->
-<!--                android:id="@+id/editTextRegionPhoneNumber"-->
-<!--                android:layout_width="112px"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="+84"-->
-<!--                android:textSize="40.32px"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:inputType="number"-->
-<!--                android:background="@null"/>-->
+            <!--            <EditText-->
+            <!--                android:id="@+id/editTextRegionPhoneNumber"-->
+            <!--                android:layout_width="112px"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:text="+84"-->
+            <!--                android:textSize="40.32px"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                android:inputType="number"-->
+            <!--                android:background="@null"/>-->
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -140,7 +140,8 @@
                     android:layout_marginTop="28.8px"
                     android:hint="@string/Enter_your_email"
                     android:textSize="40.32px"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:inputType="textEmailAddress"/>
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 

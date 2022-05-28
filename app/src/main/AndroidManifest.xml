@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fooddelivery" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,32 +15,50 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodDelivery" >
         <activity
-            android:name=".object.LoginWithGoogle"
-            android:exported="false" />
+            android:name=".ShipperActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".LoginWithGoogleActivity"
-            android:exported="false" />
+            android:name=".RestaurantMenuDetailActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".SignInWithGoogle"
-            android:exported="false" />
+            android:name=".RestaurantAddingMenuActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".SignInWithGoogleEnterPhone"
-            android:exported="false" />
+            android:name=".RestaurantAddingPromotionActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".RestaurantPromotionDetailActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBgcrJbS9BYCPw1aa3ksmVpYhqTbjyWp58" />
+
         <activity
             android:name=".checkout.FragmentPromotion"
-<<<<<<< Updated upstream
+            android:exported="false" />
+        <activity
+            android:name=".PopularInYourAreaActivity"
             android:exported="false" />
         <activity
             android:name=".checkout.CheckOutActivity"
             android:exported="false" />
         <activity
-=======
-            android:exported="false" />
-        <activity
-            android:name=".checkout.CheckOutActivity"
-            android:exported="true" />
-        <activity
->>>>>>> Stashed changes
             android:name=".SignInEnterCode"
             android:exported="false" />
         <activity
@@ -44,6 +67,7 @@
         <activity
             android:name=".SignUpEnterCodeActivity"
             android:exported="false" />
+
         <activity
             android:name=".SignUpActivity"
             android:exported="false" />
@@ -60,8 +84,34 @@
             android:name=".ResetPasswordActivity"
             android:exported="false" />
         <activity
+            android:name=".SeeEarningsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RestaurantMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RestaurantHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RestaurantResManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RestaurantMenuManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RestaurantPromotionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RestaurantStatisticsActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
-            android:exported="true" >
+            android:exported="false" />
+
+        <activity
+
+            android:name=".HomeActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

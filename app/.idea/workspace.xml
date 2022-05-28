@@ -6,8 +6,7 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="sdt" />
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
@@ -15,69 +14,39 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7a3df7cb-9273-4e82-855a-c6fdffa6694f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fooddelivery/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fooddelivery/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fooddelivery/ResetPasswordActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fooddelivery/ResetPasswordActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fooddelivery/ResetPasswordEnterCodeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fooddelivery/ResetPasswordEnterCodeActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fooddelivery/ResetPasswordSetPasswordActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fooddelivery/ResetPasswordSetPasswordActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fooddelivery/SignInActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fooddelivery/SignInActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fooddelivery/SignInEnterCode.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fooddelivery/SignUpActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fooddelivery/SignUpActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fooddelivery/SignUpEnterCodeActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fooddelivery/SignUpEnterCodeActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/fooddelivery/SignUpSetPasswordActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/fooddelivery/SignUpSetPasswordActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_reset_password.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_reset_password.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_reset_password_enter_code.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_reset_password_enter_code.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_reset_password_set_password.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_reset_password_set_password.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_sign_in.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_sign_in.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_sign_in_enter_code.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_sign_up.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_sign_up.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_sign_up_enter_code.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_sign_up_enter_code.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_sign_up_set_password.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_sign_up_set_password.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c039bece-5200-4750-911e-bb6e49bbcaf2" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\Lenovo\.android\avd\Pixel_4a_API_31_1.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\Lenovo\.android\avd\Pixel_4a_API_31_2.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
   </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <projects_view>
-          <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="FoodDelivery" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
-            <select />
-          </tree_state>
-        </projects_view>
-      </state>
-    </system>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="layoutResourceFile" />
+        <option value="resourceFile" />
         <option value="Class" />
+        <option value="valueResourceFile" />
+        <option value="Kotlin Data Class" />
+        <option value="layoutResourceFile" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
-  <component name="ProjectId" id="27zff9ciItnzZVC4sgwikdIBZag" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="28yjPlSQE48FZyFWakDV4fL7DUY" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -88,15 +57,46 @@
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/111/app" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="android.template.-1564092345">
-      <recent name="com.example.fooddelivery.object" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\java\com\example\fooddelivery" />
+      <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\res\layout" />
+    </key>
+    <key name="android.template.47244412">
       <recent name="com.example.fooddelivery" />
     </key>
-    <key name="android.template.1606232604">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\res\layout" />
+      <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\java\com\example\fooddelivery" />
+      <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\java\com\example\fooddelivery\object" />
+      <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\res\drawable" />
+      <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\res\drawable-v24" />
+    </key>
+    <key name="android.template.2098715316">
+      <recent name="com.example.fooddelivery" />
+    </key>
+    <key name="android.template.228465708">
+      <recent name="com.example.fooddelivery" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.example.fooddelivery" />
+    </key>
+    <key name="android.template.150376001">
+      <recent name="com.example.fooddelivery" />
+    </key>
+    <key name="android.template.456850797">
+      <recent name="com.example.fooddelivery" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.fooddelivery" />
+    </key>
+    <key name="android.template.-1221040005">
+      <recent name="com.example.fooddelivery" />
+    </key>
+    <key name="android.template.-1968461023">
       <recent name="com.example.fooddelivery" />
     </key>
   </component>
@@ -164,24 +164,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7a3df7cb-9273-4e82-855a-c6fdffa6694f" name="Default Changelist" comment="" />
-      <created>1650327945700</created>
+      <changelist id="c039bece-5200-4750-911e-bb6e49bbcaf2" name="Default Changelist" comment="" />
+      <created>1652195700244</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1650327945700</updated>
+      <updated>1652195700244</updated>
     </task>
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

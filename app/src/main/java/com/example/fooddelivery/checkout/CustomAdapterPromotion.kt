@@ -16,8 +16,6 @@ class CustomAdapterPromotion(var context: Context, var listitem:ArrayList<Promot
         var imageIC : ImageView = row.findViewById(R.id.imgIcon)
         var textName : TextView = row.findViewById(R.id.textName)
         var textDate: TextView = row.findViewById(R.id.textDate)
-
-
     }
     override fun getCount(): Int {
         return listitem.size

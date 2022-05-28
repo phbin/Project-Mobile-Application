@@ -7,34 +7,34 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <View
-        android:id="@+id/imageView"
-        android:layout_width="888px"
-        android:layout_height="1485px"
-        android:layout_gravity="center"
-        android:background="@color/mint"
-        android:layout_marginTop="39px"/>
+    <ImageView
+        android:layout_width="984px"
+        android:layout_height="789px"
+        android:layout_marginTop="305px"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/login_background"/>
 
     <Button
         android:id="@+id/btnCreateAccount"
         android:layout_width="981px"
         android:layout_height="130px"
         android:layout_gravity="center"
-        android:layout_marginTop="69px"
-        android:text="@string/Create_account"
+        android:layout_marginTop="281px"
         android:background="@drawable/mint_button"
         android:backgroundTint="@color/mint"
-        android:textColor="@color/white"
+        android:fontFamily="@font/lato_semibold"
+        android:text="@string/Create_account"
         android:textAllCaps="false"
+        android:textColor="@color/white"
         android:textSize="48px"
-        android:fontFamily="@font/lato_semibold"/>
+        app:backgroundTint="@color/mint"/>
 
     <Button
         android:id="@+id/btnSignIn"
         android:layout_width="981px"
         android:layout_height="130px"
         android:layout_gravity="center"
-        android:layout_marginTop="25px"
+        android:layout_marginTop="91px"
         android:background="@drawable/mint_border_button"
         android:text="@string/Sign_in"
         android:textColor="@color/mint"
@@ -42,32 +42,5 @@
         android:textSize="48px"
         android:fontFamily="@font/lato_semibold"/>
 
-    <FrameLayout
-        android:layout_width="981px"
-        android:layout_height="130px"
-        android:layout_marginTop="25px"
-        android:layout_gravity="center_horizontal">
-
-        <Button
-            android:id="@+id/btnLoginWithGoogle"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:background="@drawable/grey_border_button"
-            android:text="@string/Login_with_google"
-            android:textColor="@color/black"
-            android:textAllCaps="false"
-            android:textSize="48px"
-            android:fontFamily="@font/lato_semibold"
-            android:paddingLeft="100px"/>
-
-        <ImageView
-            android:layout_width="80px"
-            android:layout_height="80px"
-            android:src="@drawable/google"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="220px"/>
-
-    </FrameLayout>
 
 </LinearLayout>
