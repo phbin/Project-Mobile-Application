@@ -43,13 +43,13 @@ class FragmentPromotion : AppCompatActivity() {
         arrayListProm.add(PromotionClass(R.drawable.iccoupon,
             "Promotion 15% for Loteria",
             "Expried on 11 May 2021"))
-//        promotionListView.adapter = CustomAdapterPromotion(this, arrayListProm)
-//
-//        promotionListView.setOnItemClickListener { parent, view, position:Int, id ->
-//            var intent = Intent(this, CheckOutActivity::class.java)
-//            intent.putExtra("getPosition",position)
-//            startActivity(intent)
-//        }
+        promotionListView.adapter = CustomAdapterPromotion(this, arrayListProm)
+
+        promotionListView.setOnItemClickListener { parent, view, position:Int, id ->
+            var intent = Intent(this, CheckOutActivity::class.java)
+            intent.putExtra("getPosition",position)
+            startActivity(intent)
+        }
 
 //        promotionListView.isClickable = true
 //

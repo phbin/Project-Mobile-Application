@@ -14,9 +14,11 @@ class RestaurantMenuRecyclerAdapter(
     : RecyclerView.Adapter<RestaurantMenuRecyclerAdapter.ViewHolder>() {
 
     lateinit var itemClick : onDeleteItemClickListener
+
     interface onDeleteItemClickListener{
         fun onDeleteItemClick(position: Int)
     }
+
     fun setOnDeleteItemClickListener(listener: onDeleteItemClickListener){
         itemClick=listener
     }

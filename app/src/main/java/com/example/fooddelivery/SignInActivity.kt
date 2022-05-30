@@ -148,6 +148,12 @@ class SignInActivity : AppCompatActivity() {
                             progressBar.visibility = View.VISIBLE
                             btnContinue.visibility = View.INVISIBLE
 
+                            val editor : SharedPreferences.Editor = sharedPreferences.edit()
+                            editor.putString("ID", editTextEnterPhoneNumber.text.toString())
+                            editor.putBoolean("REMEMBER", true)
+                            editor.putString("ROLE", autoCompleteTextViewRole.text.toString())
+                            editor.apply()
+
                             val intent = Intent(this, HomeActivity::class.java)
                             //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                             startActivity(intent)

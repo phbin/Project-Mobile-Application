@@ -27,7 +27,9 @@ class MainActivity : AppCompatActivity() {
         var isRemember = sharedPreferences.getBoolean("REMEMBER", false)
 
         if(isRemember && role == "Customer"){
-            Toast.makeText(this, "Đăng nhập bằng Custmoer nè", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
         }
         else if(isRemember && role == "Shipper"){
             val intent = Intent(this, ShipperActivity::class.java)

@@ -58,7 +58,7 @@ class ShipperIncomeDayFragment : Fragment() {
 
         val myCalendar = Calendar.getInstance()
 
-        val myFormat = "dd/MM/yyyy"
+        val myFormat = "dd-MM-yyyy"
         val sdf = SimpleDateFormat(myFormat, Locale.TAIWAN)
         textViewDate.text = sdf.format((myCalendar.time))
         textViewDateTotal.text = sdf.format((myCalendar.time))
@@ -81,7 +81,7 @@ class ShipperIncomeDayFragment : Fragment() {
             for (i in it.result) {
                 if(i.data.getValue("idShipper").toString()== idShipper){
                     if(i.data.getValue("date").toString() == textViewDate.text.toString()){
-                        income += i.data.getValue("total").toString().toLong()
+                        income += i.data.getValue("deliveryFee").toString().toLong()
                         textViewIncome.text = income.toString()
                     }
                 }
@@ -111,7 +111,7 @@ class ShipperIncomeDayFragment : Fragment() {
     }
 
     private fun updateLabel(myCalendar: Calendar) {
-        val myFormat = "dd/MM/yyyy"
+        val myFormat = "dd-MM-yyyy"
         val sdf = SimpleDateFormat(myFormat, Locale.TAIWAN)
         var income : Long = 0
         textViewDate.text = sdf.format((myCalendar.time))
@@ -123,7 +123,7 @@ class ShipperIncomeDayFragment : Fragment() {
             if (it.isSuccessful) {
                 for (i in it.result) {
                     if(i.data.getValue("date").toString() == textViewDate.text.toString()){
-                        income += i.data.getValue("total").toString().toLong()
+                        income += i.data.getValue("deliveryFee").toString().toLong()
                         textViewIncome.text = income.toString()
                     }
                     else continue

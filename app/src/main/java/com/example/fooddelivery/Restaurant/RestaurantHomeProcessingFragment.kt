@@ -1,15 +1,19 @@
 package com.example.fooddelivery.Restaurant
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.fooddelivery.R
 import com.example.fooddelivery.RestaurantOrdersAdapter
-import com.example.fooddelivery.Shipper.ShipperHistoryFragment.Companion.recyclerView
 import com.example.fooddelivery.model.RestaurantOrders
+import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.fragment_restaurant_home_processing.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,6 +29,9 @@ class RestaurantHomeProcessingFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
+    private var layoutManager: RecyclerView.LayoutManager? = null
+    private var adapter: RecyclerView.Adapter<RestaurantMenuRecyclerAdapter.ViewHolder>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,19 +52,46 @@ class RestaurantHomeProcessingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        recyclerView = view.findViewById(R.id.listViewRestaurantOrders)
-        recyclerView.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
+        layoutManager = LinearLayoutManager(requireActivity().applicationContext)
+        listViewRestaurantOrders.layoutManager = layoutManager
+
+        var sharedPreferences = requireActivity().getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        var idRestaurant = sharedPreferences.getString("ID", "")
 
         var orderArray : ArrayList<RestaurantOrders> = ArrayList()
 
-        orderArray.add(RestaurantOrders("005", "Linh, Thủ Đức", "Thế Vĩ", "1 món", "200.000đ"))
-        orderArray.add(RestaurantOrders("002", "Kiên Giang", "Vĩ", "2 món", "250.000đ"))
-        orderArray.add(RestaurantOrders("003", "Cần Thơ", "Huỳnh", "5 món", "100.000đ"))
-        orderArray.add(RestaurantOrders("004", "Long An", "Thế", "3 món", "300.000đ"))
+//          orderArray.add(RestaurantOrders(""+idRestaurant, "Linh, Thủ Đức", "Thế Vĩ", "1 món", "200.000đ"))
+//        orderArray.add(RestaurantOrders("002", "Kiên Giang", "Vĩ", "2 món", "250.000đ"))
+//        orderArray.add(RestaurantOrders("003", "Cần Thơ", "Huỳnh", "5 món", "100.000đ"))
+//        orderArray.add(RestaurantOrders("004", "Long An", "Thế", "3 món", "300.000đ"))
 
+        var fb = FirebaseFirestore.getInstance().collection("Bill")
+        var fbCustomer = FirebaseFirestore.getInstance().collection("Customer")
+        fb.get().addOnCompleteListener {task ->
+            for (i in task.result) {
+                    if (i.data.getValue("idRestaurant").toString() == idRestaurant&&i.data.getValue("status").toString()=="incoming" && i.data.getValue("quantity").toString()!="0") {
+                        fbCustomer.get().addOnCompleteListener {
+                            for (j in it.result) {
+                                if (j.id == i.data.getValue("idCustomer")) {
+                                    var customerName = j.data.getValue("displayName").toString()
+                                    var customerAddress = j.data.getValue("address").toString()
+                                    orderArray.add(
+                                        RestaurantOrders("" + i.id,
+                                            "" + customerAddress,
+                                            "" + customerName,
+                                            "" +i.data.getValue("quantity")+" dish(es)",
+                                            "" + i.data.getValue("total").toString()))
+                                }
+                            }
+                            listViewRestaurantOrders.adapter = RestaurantOrdersAdapter(requireActivity().applicationContext,orderArray)
+                        }
+                    }
+                }
+            }
+        }
 
-        recyclerView.adapter = RestaurantOrdersAdapter(requireActivity().applicationContext, orderArray )
-    }
+//        recyclerView.adapter = RestaurantOrdersAdapter(requireActivity().applicationContext, orderArray )
+//    }
 
     companion object {
         /**

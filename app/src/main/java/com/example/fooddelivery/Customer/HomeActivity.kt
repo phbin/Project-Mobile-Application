@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fooddelivery.R
+import com.example.fooddelivery.SignInActivity
 import com.example.fooddelivery.model.PreviousOrdersClass
 import com.example.fooddelivery.model.RestaurantClass
 import kotlinx.android.synthetic.main.activity_home.*
@@ -144,6 +145,11 @@ class HomeActivity : AppCompatActivity() {
                 "5",
                 "3 km")
         )
+
+        btnMenu.setOnClickListener {
+            val intent = Intent(this, CustomerMenu::class.java)
+            startActivity(intent)
+        }
 
     }
 }

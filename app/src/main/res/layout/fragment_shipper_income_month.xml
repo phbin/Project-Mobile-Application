@@ -131,7 +131,7 @@
                     android:id="@+id/textViewIncome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="200.000đ"
+                    android:text="0"
                     android:textColor="@color/mint"
                     android:fontFamily="@font/lato_bold"
                     android:textSize="90px"

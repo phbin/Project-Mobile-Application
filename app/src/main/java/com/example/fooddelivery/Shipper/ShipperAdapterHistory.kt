@@ -7,9 +7,22 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fooddelivery.R
+import com.example.fooddelivery.Restaurant.RestaurantMenuRecyclerAdapter
+import com.example.fooddelivery.model.RestaurantMenuList
 import com.example.fooddelivery.model.ShipperOrderHistory
 
 class ShipperAdapterHistory (var context : Context, var listItems : List<ShipperOrderHistory>) : RecyclerView.Adapter<ShipperAdapterHistory.ViewHolder>() {
+
+    lateinit var itemClick : ShipperAdapterHistory.onIntemClickListener
+    var onItemClick : ((ShipperOrderHistory) -> Unit)? = null
+
+    interface onIntemClickListener{
+        fun onClickItem(position: Int)
+    }
+
+    fun setOnIntemClickListener(listener: onIntemClickListener){
+        itemClick=listener
+    }
 
     class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         var textviewOrderID : TextView = itemView.findViewById(R.id.textViewOrderID)
@@ -31,6 +44,12 @@ class ShipperAdapterHistory (var context : Context, var listItems : List<Shipper
         holder.textViewName.text = listItems[position].name
         holder.textViewQuantity.text = listItems[position].quantity
         holder.textViewPrice.text = listItems[position].price
+
+        holder.itemView.setOnClickListener {
+//            onItemClick?.invoke(listItems[position])
+            itemClick.onClickItem(position)
+            notifyDataSetChanged()
+        }
     }
 
     override fun getItemCount(): Int {

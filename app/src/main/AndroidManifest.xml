@@ -15,6 +15,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodDelivery">
         <activity
+            android:name=".Customer.CustomerMenu"
+            android:exported="false" />
+        <activity
+            android:name=".Customer.CustomerProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Restaurant.RestaurantPromotionDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".Shipper.ShipperActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
@@ -27,11 +36,11 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".Restaurant.RestaurantPromotionDetailActivity"
+            android:name=".Restaurant.RestaurantDishesManagementActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".Restaurant.RestaurantDishesManagementActivity"
+            android:name=".OrderDetailActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <!--
@@ -68,6 +77,12 @@
             android:exported="false" />
         <activity
             android:name=".Restaurant.RestaurantHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Customer.RestaurantActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Customer.DishDetailActivity"
             android:exported="false" />
         <activity
             android:name=".ResetPasswordSetPasswordActivity"
@@ -111,6 +126,9 @@
         <activity
             android:name=".Restaurant.RestaurantAddingDishesActivity"
             android:exported="false" />
+        <activity
+            android:name=".Restaurant.RestaurantPromotionActivity"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

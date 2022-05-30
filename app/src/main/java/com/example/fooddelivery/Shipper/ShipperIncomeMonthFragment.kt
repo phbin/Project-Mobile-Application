@@ -64,14 +64,14 @@ class ShipperIncomeMonthFragment : Fragment() {
         val m = c.get(Calendar.MONTH) + 1
         val d= c.get(Calendar.DAY_OF_MONTH)
 
-        textViewDate.text = "$m/$y"
-        textViewDateTotal.text = "$m/$y"
+        textViewDate.text = "$m-$y"
+        textViewDateTotal.text = "$m-$y"
 
         fb.get().addOnCompleteListener {
             for (i in it.result) {
                 if(i.data.getValue("idShipper").toString()== idShipper){
                     if(i.data.getValue("date").toString().subSequence(4,10) == textViewDate.text.toString()){
-                        income += i.data.getValue("total").toString().toLong()
+                        income += i.data.getValue("deliveryFee").toString().toLong()
                         textViewIncome.text = income.toString()
                     }
                 }
@@ -85,7 +85,7 @@ class ShipperIncomeMonthFragment : Fragment() {
                 { view, year, monthOfYear, _ ->
                     var erg = ""
                     erg += ((monthOfYear)).toString()
-                    erg += "/$year"
+                    erg += "-$year"
                     (textViewDate as TextView).text = erg
                     textViewDateTotal.text = erg
 
@@ -94,7 +94,7 @@ class ShipperIncomeMonthFragment : Fragment() {
                         for (i in it.result) {
                             if(i.data.getValue("idShipper").toString()== idShipper){
                                 if(i.data.getValue("date").toString().subSequence(4,10) == textViewDate.text.toString()){
-                                    income += i.data.getValue("total").toString().toLong()
+                                    income += i.data.getValue("deliveryFee").toString().toLong()
                                     textViewIncome.text = income.toString()
                                 }
                             }

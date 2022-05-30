@@ -27,5 +27,7 @@
     <string name="search_dish_name_restaurant">Search dish name, restaurant</string>
     <string name="delivery_to">Delivery to</string>
     <string name="see_more">See more</string>
+    <string name="add_dish">Add dish</string>
+    <string name="Add_a_note_to_the_restaurant">Add a note to the restaurant</string>
     <string name="popular_in_your_area">Popular in your area</string>
 </resources>

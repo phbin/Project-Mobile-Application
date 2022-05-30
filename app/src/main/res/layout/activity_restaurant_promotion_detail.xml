@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    tools:context=".Restaurant.RestaurantPromotionDetailActivity"
     android:layout_height="match_parent"
     android:background="@color/black_background">
     <LinearLayout
@@ -38,26 +41,6 @@
             android:textSize="45px"
             android:textColor="@color/white"/>
 
-        <TextView
-            android:id="@+id/textViewCode"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Code"
-            android:fontFamily="@font/lato_regular"
-            android:textSize="45px"
-            android:textColor="@color/white"
-            android:layout_marginTop="105px"/>
-
-        <EditText
-            android:id="@+id/editTextCode"
-            android:hint="Enter code"
-            android:textColorHint="@color/grey"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/lato_regular"
-            android:textSize="45px"
-            android:textColor="@color/white"
-            android:inputType="number"/>
 
         <TextView
             android:id="@+id/textViewDiscountPercent"
@@ -103,8 +86,35 @@
                 android:fontFamily="@font/lato_regular"
                 android:textSize="45px"
                 android:textColor="@color/white"/>
-        </LinearLayout>
 
+            <ImageButton
+                android:id="@+id/btnSelectDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_calendar_today_24"
+                android:background="@android:color/transparent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5px"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/textViewDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:fontFamily="@font/lato_regular"
+            android:textSize="45px"
+            android:textColor="@color/white"
+            android:layout_marginTop="105px"/>
+
+        <EditText
+            android:id="@+id/editTextDescription"
+            android:hint="Enter description"
+            android:textColorHint="@color/grey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:textSize="45px"
+            android:textColor="@color/white"/>
         <Button
             android:id="@+id/btnContinue"
             android:layout_width="match_parent"

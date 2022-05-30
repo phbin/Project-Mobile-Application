@@ -1,6 +1,7 @@
 package com.example.fooddelivery.Shipper
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,12 +12,16 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.fooddelivery.OrderDetailActivity
 import com.example.fooddelivery.R
+import com.example.fooddelivery.Restaurant.RestaurantDishesManagementActivity
+import com.example.fooddelivery.Restaurant.RestaurantMenuRecyclerAdapter
 import com.example.fooddelivery.model.PromotionClass
 import com.example.fooddelivery.model.RestaurantMenuList
 import com.example.fooddelivery.model.ShipperOrderHistory
 import com.google.firebase.database.*
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_restaurant_menu_management.*
 import kotlinx.android.synthetic.main.fragment_shipper_history.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -32,6 +37,7 @@ private const val ARG_PARAM2 = "param2"
 class ShipperHistoryFragment : Fragment() {
 
     lateinit var preferences : SharedPreferences
+    private var adapter: RecyclerView.Adapter<RestaurantMenuRecyclerAdapter.ViewHolder>? = null
 
     companion object {
         lateinit var recyclerView : RecyclerView
@@ -54,6 +60,7 @@ class ShipperHistoryFragment : Fragment() {
 
         var customerName : String = ""
         var customerAddress : String = ""
+        var billID : String = ""
 
         preferences = requireActivity().getSharedPreferences("SHARED_PREF", AppCompatActivity.MODE_PRIVATE)
         val idShipper = preferences.getString("ID", "")
@@ -72,8 +79,9 @@ class ShipperHistoryFragment : Fragment() {
                             if(j.id == i.data.getValue("idCustomer")){
                                 customerName = j.data.getValue("displayName").toString()
                                 customerAddress = j.data.getValue("address").toString()
+                                billID = i.id
                                 orderHistoryList.add(
-                                    ShipperOrderHistory(i.id,
+                                    ShipperOrderHistory(billID,
                                         "" + customerAddress,
                                         "" + customerName,
                                         "",
@@ -82,9 +90,26 @@ class ShipperHistoryFragment : Fragment() {
                                 )
                             }
                         }
+
                         recyclerView = view.findViewById(R.id.recyclerViewHistory)
                         recyclerView.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
                         recyclerView.adapter = ShipperAdapterHistory(requireActivity().applicationContext, orderHistoryList )
+
+//                        (recyclerView.adapter as ShipperAdapterHistory).onItemClick = {
+//                            val intent = Intent(requireActivity(), OrderDetailActivity::class.java)
+//                            intent.putExtra("billID", billID)
+//                            startActivity(intent)
+//                        }
+
+                        (recyclerView.adapter as ShipperAdapterHistory).setOnIntemClickListener(object :
+                            ShipperAdapterHistory.onIntemClickListener {
+                            override fun onClickItem(position: Int) {
+                                val intent = Intent(requireActivity(), OrderDetailActivity::class.java)
+                                intent.putExtra("billID", orderHistoryList[position].orderID)
+                                startActivity(intent)
+                            }
+
+                        })
                     }
                 }
             }

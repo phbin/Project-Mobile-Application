@@ -6,8 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import com.example.fooddelivery.R
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_restaurant_statistics_day.*
+import kotlinx.android.synthetic.main.fragment_restaurant_statistics_day.btnPickTime
+import kotlinx.android.synthetic.main.fragment_restaurant_statistics_day.textViewDate
+import kotlinx.android.synthetic.main.fragment_restaurant_statistics_day.textViewDateTotal
+import kotlinx.android.synthetic.main.fragment_shipper_income_day.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -44,6 +50,9 @@ class RestaurantStatisticsDayFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        var income : Long = 0
+
         val myCalendar = Calendar.getInstance()
 
         val myFormat = "dd-MM-yyyy"
@@ -62,6 +71,22 @@ class RestaurantStatisticsDayFragment : Fragment() {
             DatePickerDialog(requireActivity(), R.style.MyDatePickerStyle, datePicker, myCalendar.get(
                 Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH)).show()
         }
+
+        var preferences = requireActivity().getSharedPreferences("SHARED_PREF", AppCompatActivity.MODE_PRIVATE)
+        val idRestaurant = preferences.getString("ID", "")
+
+        var fb=FirebaseFirestore.getInstance().collection("Bill")
+            .get().addOnCompleteListener {
+            for (i in it.result) {
+                if(i.data.getValue("idRestaurant").toString()== idRestaurant){
+                    if(i.data.getValue("date").toString() == textViewDate.text.toString()){
+                        income += i.data.getValue("total").toString().toLong()
+                        textViewStatistics.text = income.toString()
+                    }
+                }
+            }
+
+            }
     }
     companion object {
         /**
@@ -86,7 +111,23 @@ class RestaurantStatisticsDayFragment : Fragment() {
     private fun updateLable(myCalendar: Calendar) {
         val myFormat = "dd-MM-yyyy"
         val sdf = SimpleDateFormat(myFormat, Locale.TAIWAN)
+        var income : Long = 0
         textViewDate.text = sdf.format((myCalendar.time))
         textViewDateTotal.text = sdf.format((myCalendar.time))
+        var fb = FirebaseFirestore.getInstance().collection("Bill")
+
+        fb.get().addOnCompleteListener {
+            if (it.isSuccessful) {
+                for (i in it.result) {
+                    if(i.data.getValue("date").toString() == textViewDate.text.toString()){
+                        income += i.data.getValue("total").toString().toLong()
+                        textViewStatistics.text = income.toString()
+                    }
+                    else continue
+                }
+                textViewStatistics.text = income.toString()
+                income = 0
+            }
+        }
     }
 }

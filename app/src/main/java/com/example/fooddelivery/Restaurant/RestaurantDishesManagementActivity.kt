@@ -31,6 +31,9 @@ class RestaurantDishesManagementActivity : AppCompatActivity(){
         if(menuTitle!=null){
             textViewMenuTitle.text = menuTitle.menuName
         }
+        else {
+            textViewMenuTitle.text=intent.getStringExtra("menuName")
+        }
 
         btnBack.setOnClickListener {
             finish()

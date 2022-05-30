@@ -127,9 +127,10 @@ class RestaurantAddingDishesActivity: AppCompatActivity() {
                             .collection("Item")
                         fb.add(o)
                             .addOnSuccessListener {
-                                //val intent = Intent(this, RestaurantDishesManagementActivity::class.java)
-                                finish()
-                                //startActivity(intent)
+                                val intent = Intent(this, RestaurantDishesManagementActivity::class.java)
+                                intent.putExtra("menuName", nameCategory)
+                                //finish()
+                                startActivity(intent)
                             }
                             .addOnFailureListener{
                                 Toast.makeText(this,"Please try again!!", Toast.LENGTH_SHORT).show()

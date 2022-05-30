@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RestaurantActivity">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="1080px"
+        android:layout_height="552.96px"
+        android:background="@color/mint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="108.8px"
+        android:layout_height="108.8px"
+        android:layout_marginLeft="69.12px"
+        android:layout_marginTop="152.64px"
+        android:layout_marginRight="910.08px"
+        android:layout_marginBottom="299.52px"
+        android:background="@drawable/back_button_background1"
+        android:src="@drawable/back_button_foregroundwhite"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/btnHeart"
+        android:layout_width="108.8px"
+        android:layout_height="108.8px"
+        android:layout_marginLeft="780.48px"
+        android:layout_marginTop="152.64px"
+        android:layout_marginRight="198.72px"
+        android:layout_marginBottom="299.52px"
+        android:background="@drawable/back_button_background1"
+        android:src="@drawable/ic_heart"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/btnInformation"
+        android:layout_width="108.8px"
+        android:layout_height="108.8px"
+        android:layout_marginLeft="910.08px"
+        android:layout_marginTop="152.64px"
+        android:layout_marginRight="69.12px"
+        android:layout_marginBottom="299.52px"
+        android:background="@drawable/back_button_background1"
+        android:src="@drawable/ic_information"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="941.76px"
+        android:layout_height="313.92px"
+        android:layout_marginLeft="69.12px"
+        android:layout_marginTop="374.4px"
+        android:layout_marginRight="69.12px"
+        android:background="@drawable/grey_border_view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/tvNameStore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="69.12px"
+        android:layout_marginTop="46.08px"
+        android:layout_marginBottom="212.84px"
+        android:text="Lotteria Tô Ký - 232 Tô Ký"
+        android:textSize="46.08px"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view1"
+        app:layout_constraintStart_toStartOf="@+id/view1"
+        app:layout_constraintTop_toTopOf="@+id/view1" />
+
+    <TextView
+        android:id="@+id/tvCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="69.12px"
+        android:layout_marginTop="138.24px"
+        android:layout_marginBottom="127.68px"
+        android:text="Burger - Chicken - Cake"
+        android:textSize="40.32px"
+        app:layout_constraintBottom_toBottomOf="@+id/view1"
+        app:layout_constraintStart_toStartOf="@+id/view1"
+        app:layout_constraintTop_toTopOf="@+id/view1" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="112.32px"
+        android:layout_marginTop="241.92px"
+        android:layout_marginBottom="34px"
+        android:text="30 dishes"
+        android:textSize="31.68px"
+        app:layout_constraintBottom_toBottomOf="@+id/view1"
+        app:layout_constraintStart_toStartOf="@+id/view1"
+        app:layout_constraintTop_toTopOf="@+id/view1" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="29.95px"
+        android:layout_height="37.44px"
+        android:layout_marginLeft="69.12px"
+        android:layout_marginTop="236.16px"
+        android:layout_marginRight="842.69px"
+        android:layout_marginBottom="40.32px"
+        android:background="@drawable/ic_dishes"
+        app:layout_constraintBottom_toBottomOf="@+id/view1"
+        app:layout_constraintEnd_toEndOf="@+id/view1"
+        app:layout_constraintStart_toStartOf="@+id/view1"
+        app:layout_constraintTop_toTopOf="@+id/view1" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="411dp"
+        android:layout_height="499dp"
+        android:layout_marginTop="140.36px"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="134dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/twPopular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="69.12px"
+                    android:layout_marginTop="213.12px"
+                    android:text="Popular"
+                    android:textColor="@color/black"
+                    android:textSize="51.84px"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="20.16px"
+                    android:layout_height="28.8px"
+                    android:layout_marginLeft="38px"
+                    android:layout_marginTop="244.8px"
+                    app:srcCompat="@drawable/ic_triangle" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="15dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="547.2px"
+                    android:layout_marginTop="230.64px"
+                    android:background="@drawable/ic_dishes" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="21.89px"
+                    android:layout_marginTop="225.4px"
+                    android:text="4 dishes"
+                    android:textSize="31.68px" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0px">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/restaurantPopularRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/Appertizer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="69.12px"
+                    android:layout_marginTop="30px"
+                    android:text="Appertizer"
+                    android:textColor="@color/black"
+                    android:textSize="51.84px"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="20.16px"
+                    android:layout_height="28.8px"
+                    android:layout_marginLeft="28px"
+                    android:layout_marginTop="65px"
+                    app:srcCompat="@drawable/ic_triangle" />
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="15dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="478.08px"
+                    android:layout_marginTop="55px"
+                    android:background="@drawable/ic_dishes" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="21.89px"
+                    android:layout_marginTop="50px"
+                    android:text="4 dishes"
+                    android:textSize="31.68px" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30px">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/restaurantAppertizerRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
