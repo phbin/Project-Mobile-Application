@@ -1,12 +1,17 @@
 package com.example.fooddelivery.Shipper
 
 import android.app.DatePickerDialog
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.fooddelivery.R
+import com.example.fooddelivery.model.RestaurantMenuList
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_shipper_income_day.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -25,6 +30,8 @@ class ShipperIncomeDayFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
+    lateinit var preferences : SharedPreferences
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,6 +53,9 @@ class ShipperIncomeDayFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        var fb = FirebaseFirestore.getInstance().collection("Bill")
+        var income : Long = 0
+
         val myCalendar = Calendar.getInstance()
 
         val myFormat = "dd-MM-yyyy"
@@ -57,12 +67,25 @@ class ShipperIncomeDayFragment : Fragment() {
             myCalendar.set(Calendar.YEAR, year)
             myCalendar.set(Calendar.MONTH, month)
             myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-            updateLable(myCalendar)
+            updateLabel(myCalendar)
         }
 
         btnPickTime.setOnClickListener{
-            DatePickerDialog(requireActivity(),
-                R.style.MyDatePickerStyle, datePicker, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH)).show()
+            DatePickerDialog(requireActivity(), R.style.MyDatePickerStyle, datePicker, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH)).show()
+        }
+
+        preferences = requireActivity().getSharedPreferences("SHARED_PREF", AppCompatActivity.MODE_PRIVATE)
+        val idShipper = preferences.getString("ID", "")
+
+        fb.get().addOnCompleteListener {
+            for (i in it.result) {
+                if(i.data.getValue("idShipper").toString()== idShipper){
+                    if(i.data.getValue("date").toString() == textViewDate.text.toString()){
+                        income += i.data.getValue("deliveryFee").toString().toLong()
+                        textViewIncome.text = income.toString()
+                    }
+                }
+            }
         }
     }
 
@@ -87,11 +110,28 @@ class ShipperIncomeDayFragment : Fragment() {
             }
     }
 
-    private fun updateLable(myCalendar: Calendar) {
+    private fun updateLabel(myCalendar: Calendar) {
         val myFormat = "dd-MM-yyyy"
         val sdf = SimpleDateFormat(myFormat, Locale.TAIWAN)
+        var income : Long = 0
         textViewDate.text = sdf.format((myCalendar.time))
         textViewDateTotal.text = sdf.format((myCalendar.time))
+
+        var fb = FirebaseFirestore.getInstance().collection("Bill")
+
+        fb.get().addOnCompleteListener {
+            if (it.isSuccessful) {
+                for (i in it.result) {
+                    if(i.data.getValue("date").toString() == textViewDate.text.toString()){
+                        income += i.data.getValue("deliveryFee").toString().toLong()
+                        textViewIncome.text = income.toString()
+                    }
+                    else continue
+                }
+                textViewIncome.text = income.toString()
+                income = 0
+            }
+        }
     }
 }
 

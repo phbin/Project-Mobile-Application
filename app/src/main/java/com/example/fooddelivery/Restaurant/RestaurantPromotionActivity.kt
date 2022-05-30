@@ -10,7 +10,9 @@ import com.example.fooddelivery.Customer.CustomAdapterPromotion
 import com.example.fooddelivery.R
 import com.example.fooddelivery.model.PromotionClass
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_restaurant_dishes_management.*
 import kotlinx.android.synthetic.main.activity_restaurant_promotion.*
+import kotlinx.android.synthetic.main.activity_restaurant_promotion.btnBack
 
 class RestaurantPromotionActivity : AppCompatActivity() {
     private var layoutManager: RecyclerView.LayoutManager? = null
@@ -32,20 +34,18 @@ class RestaurantPromotionActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
         var promotionItems: ArrayList<PromotionClass> = ArrayList()
         var fb = FirebaseFirestore.getInstance().collection("Restaurant")
-            .document("0393751403")
+            .document(""+phoneNumber)
             .collection("promotion")
         fb.get().addOnCompleteListener {
             if (it.isSuccessful) {
                 for (i in it.result) {
-                    promotionItems.add(PromotionClass("" + i.data.getValue("code").toString(),
+                    promotionItems.add(PromotionClass(
                         "" + i.data.getValue("description").toString(),
                         "" + i.data.getValue("expiryDate").toString(),
                         "" + i.data.getValue("name").toString(),
-                        "" + i.data.getValue("value").toString(),
-                        "" + i.data.getValue("image").toString()))
+                        "" + i.data.getValue("value").toString()))
                 }
             }
             layoutManager = LinearLayoutManager(this)
@@ -59,6 +59,14 @@ class RestaurantPromotionActivity : AppCompatActivity() {
 //                intent.putExtra("promotionName", it)
 //                startActivity(intent)
 //            }
+            (adapter as CustomAdapterPromotion).setOnItemClickListener(object :
+                CustomAdapterPromotion.onItemClickListener {
+                override fun onItemClick(position: Int) {
+                    val intent = Intent(this@RestaurantPromotionActivity, RestaurantPromotionDetailActivity::class.java)
+                    intent.putExtra("promotionPosition", ""+position)
+                    startActivity(intent)
+                }
+            })
         }
     }
 }

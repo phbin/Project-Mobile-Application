@@ -48,6 +48,7 @@ class RestaurantDishesAdapter(
 
         holder.btnRemove.setOnClickListener {
             itemClick.onDeleteItemClick(position)
+            listItems.removeAt(position)
             notifyDataSetChanged()
         }
 

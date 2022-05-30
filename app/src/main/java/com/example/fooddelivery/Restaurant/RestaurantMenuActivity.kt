@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.fooddelivery.Customer.HomeActivity
 import com.example.fooddelivery.MainActivity
 import com.example.fooddelivery.R
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_restaurant_menu.*
 
 class RestaurantMenuActivity : AppCompatActivity() {
@@ -18,6 +19,19 @@ class RestaurantMenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_restaurant_menu)
 
+        var sharedPreferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        val phoneNumber = sharedPreferences.getString("ID", "")
+
+        var fb=FirebaseFirestore.getInstance().collection("Restaurant")
+            fb.get().addOnCompleteListener{
+            if (it.isSuccessful) {
+                for (i in it.result) {
+                    if (i.id == phoneNumber) {
+                        nameRestaurant.setText(i.data.getValue("displayName").toString())
+                    }
+                }
+            }
+        }
         btnBack.setOnClickListener {
             val intent = Intent(this, RestaurantHomeActivity::class.java)
             finish()
@@ -64,6 +78,7 @@ class RestaurantMenuActivity : AppCompatActivity() {
             editor.commit()
 
             val intent = Intent(this, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
             startActivity(intent)
             finish()
         }
@@ -74,7 +89,7 @@ class RestaurantMenuActivity : AppCompatActivity() {
             editor.commit()
 
             val intent = Intent(this, MainActivity::class.java)
-//            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
             startActivity(intent)
             finish()
         }

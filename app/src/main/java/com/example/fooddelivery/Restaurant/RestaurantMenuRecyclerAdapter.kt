@@ -14,9 +14,11 @@ class RestaurantMenuRecyclerAdapter(
     : RecyclerView.Adapter<RestaurantMenuRecyclerAdapter.ViewHolder>() {
 
     lateinit var itemClick : onDeleteItemClickListener
+
     interface onDeleteItemClickListener{
         fun onDeleteItemClick(position: Int)
     }
+
     fun setOnDeleteItemClickListener(listener: onDeleteItemClickListener){
         itemClick=listener
     }
@@ -39,6 +41,7 @@ class RestaurantMenuRecyclerAdapter(
         holder.btnRemove.setOnClickListener {
             itemClick.onDeleteItemClick(position)
             notifyDataSetChanged()
+            listItems.removeAt(position)
         }
 
         holder.itemView.setOnClickListener {

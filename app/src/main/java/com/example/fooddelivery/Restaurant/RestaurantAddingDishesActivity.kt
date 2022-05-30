@@ -80,14 +80,16 @@ class RestaurantAddingDishesActivity: AppCompatActivity() {
             }
         }
         btnContinue.setOnClickListener {
-            var calendar = Calendar.getInstance()
-            var mountainsRef: StorageReference =
-                storageRef.child("image" + calendar.timeInMillis + ".png")
+            progressBar.visibility=View.VISIBLE
+            btnContinue.visibility=View.GONE
             if (editTextSize.text.toString() != ""
                 && editTextPrice.text.toString() != ""
                 && editTextMenuName.text.toString() != ""
                 && img != null
             ) {
+                var calendar = Calendar.getInstance()
+                var mountainsRef: StorageReference =
+                    storageRef.child("image" + calendar.timeInMillis + ".png")
                 ////////////////////load image////////////////////
                 // Get the data from an ImageView as bytes
                 img.isDrawingCacheEnabled = true
@@ -127,11 +129,14 @@ class RestaurantAddingDishesActivity: AppCompatActivity() {
                             .collection("Item")
                         fb.add(o)
                             .addOnSuccessListener {
-                                //val intent = Intent(this, RestaurantDishesManagementActivity::class.java)
-                                finish()
-                                //startActivity(intent)
+                                val intent = Intent(this, RestaurantDishesManagementActivity::class.java)
+                                intent.putExtra("menuName", nameCategory)
+                                //finish()
+                                startActivity(intent)
                             }
                             .addOnFailureListener{
+                                progressBar.visibility=View.GONE
+                                btnContinue.visibility=View.VISIBLE
                                 Toast.makeText(this,"Please try again!!", Toast.LENGTH_SHORT).show()
                             }
                     } else

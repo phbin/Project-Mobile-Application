@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fooddelivery.model.RestaurantOrders
 
-class RestaurantOrdersAdapter(var context : Context, var listItems : List<RestaurantOrders>) :
+class RestaurantOrdersAdapter(var context : Context, var listItems : ArrayList<RestaurantOrders>) :
     RecyclerView.Adapter<RestaurantOrdersAdapter.ViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,

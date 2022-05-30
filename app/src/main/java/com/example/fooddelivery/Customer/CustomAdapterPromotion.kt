@@ -1,45 +1,44 @@
 package com.example.fooddelivery.Customer
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fooddelivery.R
-import com.example.fooddelivery.model.RestaurantPromotionList
 import com.example.fooddelivery.model.PromotionClass
 
 class CustomAdapterPromotion(var listitem:ArrayList<PromotionClass>):
     RecyclerView.Adapter<CustomAdapterPromotion.ViewHolder>() {
-    var onClick : ((PromotionClass) -> Unit)? = null
+    //var onClick : ((PromotionClass) -> Unit)? = null
 
-//    lateinit var itemClick : onItemClickListener
-//    interface onItemClickListener{
-//        fun onItemClick(position: Int)
-//    }
-//    fun setOnItemClickListener(listener: onItemClickListener){
-//        itemClick=listener
-//    }
+    lateinit var itemClick : onItemClickListener
+    interface onItemClickListener{
+        fun onItemClick(position: Int)
+    }
+    fun setOnItemClickListener(listener: onItemClickListener){
+        itemClick=listener
+    }
+
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView=LayoutInflater.from(parent.context).inflate(R.layout.listview_promotion,parent,false)
-        return ViewHolder(itemView)
+        return ViewHolder(itemView, itemClick)
     }
-    class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
+    class ViewHolder(itemView: View, listener: onItemClickListener): RecyclerView.ViewHolder(itemView)
     {
         //var imageIC : ImageView
         var textName : TextView=itemView.findViewById(R.id.textName)
         var textDate: TextView=itemView.findViewById(R.id.textDate)
 
-//        init{
-//            itemView.setOnClickListener{
-//                listener.onItemClick(adapterPosition)
-//            }
+        init{
+            itemView.setOnClickListener{
+                listener.onItemClick(adapterPosition)
+            }
             //imageIC=itemView.findViewById(R.id.imgIcon)
 
-    //    }
+        }
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -48,9 +47,9 @@ class CustomAdapterPromotion(var listitem:ArrayList<PromotionClass>):
         holder.textName.text=currentItem.name
         holder.textDate.text=currentItem.expiryDate
 
-        holder.itemView.setOnClickListener {
-            onClick?.invoke(currentItem)
-        }
+//        holder.itemView.setOnClickListener {
+//            onClick?.invoke(currentItem)
+//        }
     }
 
     override fun getItemCount(): Int {

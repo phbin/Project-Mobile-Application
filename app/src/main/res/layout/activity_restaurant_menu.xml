@@ -21,9 +21,9 @@
             android:background="@android:color/transparent"/>
 
         <TextView
+            android:id="@+id/nameRestaurant"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Bự Coffee and Tea - Hoàng Diệu 2"
             android:textSize="60px"
             android:fontFamily="@font/lato_bold"
             android:textColor="@color/white"

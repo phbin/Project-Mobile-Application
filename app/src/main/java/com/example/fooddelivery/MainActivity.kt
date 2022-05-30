@@ -27,20 +27,17 @@ class MainActivity : AppCompatActivity() {
         var isRemember = sharedPreferences.getBoolean("REMEMBER", false)
 
         if(isRemember && role == "Customer"){
-            Toast.makeText(this, "Đăng nhập bằng Custmoer nè", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, SplashScreenActivity::class.java)
+            startActivity(intent)
+            finish()
         }
         else if(isRemember && role == "Shipper"){
-            val intent = Intent(this, ShipperActivity::class.java)
+            val intent = Intent(this, SplashScreenActivity::class.java)
             startActivity(intent)
             finish()
         }
         else if(isRemember && role == "Restaurant"){
-            val intent = Intent(this, RestaurantHomeActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-        else if(isRemember && role == "Customer"){
-            val intent = Intent(this, HomeActivity::class.java)
+            val intent = Intent(this, SplashScreenActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -53,7 +50,7 @@ class MainActivity : AppCompatActivity() {
 
         btnSignIn.setOnClickListener {
             val intent = Intent(this,SignInActivity::class.java)
-             startActivity(intent)
+            startActivity(intent)
         }
     }
 }

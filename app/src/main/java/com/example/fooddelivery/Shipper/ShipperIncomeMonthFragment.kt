@@ -1,13 +1,17 @@
 package com.example.fooddelivery.Shipper
 
 import android.app.DatePickerDialog
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.fooddelivery.R
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_shipper_income_month.*
 import java.util.*
 
@@ -26,6 +30,8 @@ class ShipperIncomeMonthFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
+    lateinit var preferences : SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,14 +52,32 @@ class ShipperIncomeMonthFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        preferences = requireActivity().getSharedPreferences("SHARED_PREF", AppCompatActivity.MODE_PRIVATE)
+        val idShipper = preferences.getString("ID", "")
+
         val c  = Calendar.getInstance()
+
+        var fb = FirebaseFirestore.getInstance().collection("Bill")
+        var income : Long = 0
 
         val y = c.get(Calendar.YEAR)
         val m = c.get(Calendar.MONTH) + 1
         val d= c.get(Calendar.DAY_OF_MONTH)
 
-        textViewDate.text = "$m/$y"
-        textViewDateTotal.text = "$m/$y"
+        textViewDate.text = "$m-$y"
+        textViewDateTotal.text = "$m-$y"
+
+        fb.get().addOnCompleteListener {
+            for (i in it.result) {
+                if(i.data.getValue("idShipper").toString()== idShipper){
+                    if(i.data.getValue("date").toString().subSequence(4,10) == textViewDate.text.toString()){
+                        income += i.data.getValue("deliveryFee").toString().toLong()
+                        textViewIncome.text = income.toString()
+                    }
+                }
+            }
+            income = 0
+        }
 
         btnPickTime.setOnClickListener {
 
@@ -61,9 +85,24 @@ class ShipperIncomeMonthFragment : Fragment() {
                 { view, year, monthOfYear, _ ->
                     var erg = ""
                     erg += ((monthOfYear)).toString()
-                    erg += "/$year"
+                    erg += "-$year"
                     (textViewDate as TextView).text = erg
                     textViewDateTotal.text = erg
+
+
+                    fb.get().addOnCompleteListener {
+                        for (i in it.result) {
+                            if(i.data.getValue("idShipper").toString()== idShipper){
+                                if(i.data.getValue("date").toString().subSequence(4,10) == textViewDate.text.toString()){
+                                    income += i.data.getValue("deliveryFee").toString().toLong()
+                                    textViewIncome.text = income.toString()
+                                }
+                            }
+                        }
+                        textViewIncome.text = income.toString()
+                        income = 0
+                    }
+
                 }, y, m, d
             )
 

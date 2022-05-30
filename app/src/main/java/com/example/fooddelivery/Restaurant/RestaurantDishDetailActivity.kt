@@ -19,7 +19,6 @@ class RestaurantDishDetailActivity : AppCompatActivity() {
         btnBack.setOnClickListener {
             finish()
         }
-
         val position = intent.getStringExtra("dishName")
         val categoryName = intent.getStringExtra("categoryName")
 
@@ -44,6 +43,6 @@ class RestaurantDishDetailActivity : AppCompatActivity() {
                     }
                 }
             }
-             }
+        }
     }
 }

@@ -1,5 +1,6 @@
 package com.example.fooddelivery.Restaurant
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,7 +9,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fooddelivery.R
 import com.example.fooddelivery.Shipper.ShipperHistoryFragment.Companion.recyclerView
+import com.example.fooddelivery.model.RestaurantDishesList
 import com.example.fooddelivery.model.RestaurantOrders
+import com.example.fooddelivery.model.ShipperOrderHistory
+import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_restaurant_dishes_management.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -47,16 +52,39 @@ class RestaurantHomeDoneFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recyclerViewDoneOrders)
         recyclerView.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
 
-        var orderArray : ArrayList<RestaurantOrders> = ArrayList()
+        var sharedPreferences =
+            requireActivity().getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        val idRestaurant = sharedPreferences.getString("ID", "")
+        var orderArray: ArrayList<RestaurantOrders> = ArrayList()
 
-        orderArray.add(RestaurantOrders("005", "Linh, Thủ Đức", "Thế Vĩ", "1 món", "200.000đ"))
-        orderArray.add(RestaurantOrders("002", "Kiên Giang", "Vĩ", "2 món", "250.000đ"))
-        orderArray.add(RestaurantOrders("003", "Cần Thơ", "Huỳnh", "5 món", "100.000đ"))
-        orderArray.add(RestaurantOrders("004", "Long An", "Thế", "3 món", "300.000đ"))
-
-
-        recyclerView.adapter = RestaurantDoneOrdersAdapter(requireActivity().applicationContext, orderArray )
+        var fb = FirebaseFirestore.getInstance().collection("Bill")
+        var fbCustomer = FirebaseFirestore.getInstance().collection("Customer")
+        fb.get().addOnCompleteListener {
+            if (it.isSuccessful) {
+                for (i in it.result) {
+                    if (i.data.getValue("idRestaurant").toString() == idRestaurant && i.data.getValue("status").toString()=="success") {
+                        fbCustomer.get().addOnCompleteListener {
+                            for (j in it.result) {
+                                if (j.id == i.data.getValue("idCustomer")) {
+                                    var customerName = j.data.getValue("displayName").toString()
+                                    var customerAddress = j.data.getValue("address").toString()
+                                    orderArray.add(
+                                        RestaurantOrders("" + i.id,
+                                            "" + customerAddress,
+                                            "" + customerName,
+                                            "" +i.data.getValue("quantity")+" dish(s/es)",
+                                            "" + i.data.getValue("total").toString()))
+                                }
+                            }
+                            recyclerView.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
+                            recyclerView.adapter = RestaurantDoneOrdersAdapter(requireActivity().applicationContext,orderArray)
+                        }
+                    }
+                }
+            }
+        }
     }
+
 
     companion object {
         /**

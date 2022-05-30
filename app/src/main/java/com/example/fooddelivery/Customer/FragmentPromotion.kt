@@ -44,12 +44,11 @@ class FragmentPromotion : AppCompatActivity() {
         fb.get().addOnCompleteListener {
             if (it.isSuccessful) {
                 for (i in it.result) {
-                    arrayListProm.add(PromotionClass("" + i.data.getValue("code").toString(),
+                    arrayListProm.add(PromotionClass(
                         "" + i.data.getValue("description").toString(),
                         "" + i.data.getValue("expiryDate").toString(),
                         "" + i.data.getValue("name").toString(),
-                        "" + i.data.getValue("value").toString(),
-                        "" + i.data.getValue("image").toString()))
+                        "" + i.data.getValue("value").toString()))
                 }
             }
             promotionListView.layoutManager = LinearLayoutManager(this@FragmentPromotion)

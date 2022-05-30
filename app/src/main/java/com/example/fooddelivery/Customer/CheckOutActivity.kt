@@ -43,12 +43,11 @@ class CheckOutActivity : AppCompatActivity(), OnMapReadyCallback {
 
         //input list item picking
         var arrayListName: ArrayList<CheckOutTemp> = ArrayList()
-        arrayListName.add(CheckOutTemp("1x", "Shaking Beef Tri-Tip", "None", "30.000 VNĐ"))
+        arrayListName.add(CheckOutTemp("1x", "Shaking Beef Tri-Tip", "30.000 VNĐ"))
         arrayListName.add(CheckOutTemp("2x",
             "Shaking Beef Tri-Tip",
-            "Add aesculus\nNo spicy",
             "30.000 VNĐ"))
-        arrayListName.add(CheckOutTemp("1x", "Shaking Beef Tri-Tip", "Add aesculus", "30.000 VNĐ"))
+        arrayListName.add(CheckOutTemp("1x", "Shaking Beef Tri-Tip", "30.000 VNĐ"))
         listviewItem.layoutManager=LinearLayoutManager(this)
         listviewItem.adapter = CustomAdapterListName(arrayListName)
         listviewItem.setHasFixedSize(true)
