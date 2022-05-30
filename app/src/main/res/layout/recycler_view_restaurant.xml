@@ -66,31 +66,29 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     >
-                    <ImageView
-                        android:layout_width="51.54px"
-                        android:layout_height="41.96px"
-                        android:layout_marginTop="52.8px"
-                        android:background="@drawable/rate_star"/>
-                    <TextView
-                        android:id="@+id/textRateExploreMore"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="5"
-                        android:layout_marginTop="70.08px"/>
+
                     <ImageView
                         android:layout_width="50.32px"
                         android:layout_height="52.5px"
-                        android:layout_marginStart="84.6px"
+
                         android:layout_marginTop="52.8px"
-                        android:background="@drawable/location_icon"/>
+                        android:background="@drawable/location_icon" />
+
+                    <TextView
+                        android:id="@+id/textLocationExploreMore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8.64px"
+                        android:layout_marginTop="70.08px"
+                        android:text="3"
+                        android:textColor="@color/grey" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="3 km"
-                        android:id="@+id/textLocationExploreMore"
-                        android:textColor="@color/grey"
+                        android:layout_marginStart="8.64px"
                         android:layout_marginTop="70.08px"
-                        android:layout_marginStart="8.64px"/>
+                        android:text="km"
+                        android:textColor="@color/grey" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

@@ -24,7 +24,7 @@
     <string name="Enter_your_email">Enter your email</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="search_dish_name_restaurant">Search dish name, restaurant</string>
+    <string name="search_dish_name_restaurant">Search restaurant</string>
     <string name="delivery_to">Delivery to</string>
     <string name="see_more">See more</string>
     <string name="popular_in_your_area">Popular in your area</string>
