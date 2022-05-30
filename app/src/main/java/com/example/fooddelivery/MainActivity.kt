@@ -5,9 +5,12 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
-import com.example.fooddelivery.checkout.CheckOutActivity
+import com.example.fooddelivery.Customer.CheckOutActivity
+import com.example.fooddelivery.Customer.HomeActivity
+import com.example.fooddelivery.Restaurant.RestaurantHomeActivity
+import com.example.fooddelivery.Shipper.ShipperActivity
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -18,25 +21,26 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        sharedPreferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        sharedPreferences = getSharedPreferences("SHARED_PREF", MODE_PRIVATE)
 
         val role = sharedPreferences.getString("ROLE", "")
         var isRemember = sharedPreferences.getBoolean("REMEMBER", false)
 
         if(isRemember && role == "Customer"){
-            Toast.makeText(this, "Đăng nhập bằng Custmoer nè", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, SplashScreenActivity::class.java)
+            startActivity(intent)
+            finish()
         }
         else if(isRemember && role == "Shipper"){
-            val intent = Intent(this, ShipperActivity::class.java)
+            val intent = Intent(this, SplashScreenActivity::class.java)
             startActivity(intent)
             finish()
         }
         else if(isRemember && role == "Restaurant"){
-            val intent = Intent(this, RestaurantHomeActivity::class.java)
+            val intent = Intent(this, SplashScreenActivity::class.java)
             startActivity(intent)
             finish()
         }
-
         btnCreateAccount.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)

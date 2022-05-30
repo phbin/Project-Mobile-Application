@@ -22,7 +22,6 @@ class CustomAdapterListName (var listitem:ArrayList<CheckOutTemp>):
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentItem=listitem[position]
         holder.textAmount.text=currentItem.amount
-        holder.textDetail.text=currentItem.detail
         holder.textPrice.text=currentItem.price
         holder.textName.text=currentItem.name
     }
@@ -34,12 +33,10 @@ class CustomAdapterListName (var listitem:ArrayList<CheckOutTemp>):
     {
         var textAmount : TextView
         var textName : TextView
-        var textDetail: TextView
         var textPrice: TextView
         init{
             textAmount=itemView.findViewById(R.id.textAmount)
             textName=itemView.findViewById(R.id.textName)
-            textDetail=itemView.findViewById(R.id.textDetail)
             textPrice=itemView.findViewById(R.id.textPrice)
         }
     }

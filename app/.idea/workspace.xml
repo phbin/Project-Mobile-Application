@@ -6,15 +6,13 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
-    <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c039bece-5200-4750-911e-bb6e49bbcaf2" name="Default Changelist" comment="" />
+    <list default="true" id="2cd68a7a-0dc5-46b2-9647-79108a2c2bed" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,9 +28,6 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="resourceFile" />
-        <option value="Class" />
-        <option value="valueResourceFile" />
-        <option value="Kotlin Data Class" />
         <option value="layoutResourceFile" />
         <option value="Kotlin Class" />
       </list>
@@ -46,7 +41,8 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="ProjectId" id="28yjPlSQE48FZyFWakDV4fL7DUY" />
+  <component name="ProjectId" id="29m0RgokGYOfbS3xNlS6QeFIK9I" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -57,47 +53,13 @@
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/111/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\java\com\example\fooddelivery" />
-      <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\res\layout" />
-    </key>
-    <key name="android.template.47244412">
-      <recent name="com.example.fooddelivery" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\res\layout" />
-      <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\java\com\example\fooddelivery" />
-      <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\java\com\example\fooddelivery\object" />
-      <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\res\drawable" />
-      <recent name="D:\UIT2122\Project-Mobile-Application-PhuongUyen\app\src\main\res\drawable-v24" />
-    </key>
-    <key name="android.template.2098715316">
-      <recent name="com.example.fooddelivery" />
-    </key>
-    <key name="android.template.228465708">
-      <recent name="com.example.fooddelivery" />
-    </key>
-    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
-      <recent name="com.example.fooddelivery" />
-    </key>
-    <key name="android.template.150376001">
-      <recent name="com.example.fooddelivery" />
-    </key>
-    <key name="android.template.456850797">
-      <recent name="com.example.fooddelivery" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.example.fooddelivery" />
-    </key>
-    <key name="android.template.-1221040005">
-      <recent name="com.example.fooddelivery" />
-    </key>
-    <key name="android.template.-1968461023">
-      <recent name="com.example.fooddelivery" />
+      <recent name="C:\Users\Lenovo\Downloads\Project-Mobile-Application\app\src\main\res\font" />
+      <recent name="C:\Users\Lenovo\Downloads\Project-Mobile-Application\app\src\main\res\raw" />
     </key>
   </component>
   <component name="RunManager">
@@ -164,11 +126,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c039bece-5200-4750-911e-bb6e49bbcaf2" name="Default Changelist" comment="" />
-      <created>1652195700244</created>
+      <changelist id="2cd68a7a-0dc5-46b2-9647-79108a2c2bed" name="Default Changelist" comment="" />
+      <created>1653702947509</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1652195700244</updated>
+      <updated>1653702947509</updated>
     </task>
     <servers />
   </component>

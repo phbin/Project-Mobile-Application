@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="54px"
+        android:layout_marginTop="72px"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_gravity="left"
+                android:layout_width="55px"
+                android:layout_height="55px"
+                android:drawableStart="@drawable/ic_close"
+                android:background="@android:color/transparent"/>
+
+            <TextView
+                android:id="@+id/textViewMenuTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dishes Management"
+                android:textColor="@color/white"
+                android:textSize="52px"
+                android:fontFamily="@font/lato_semibold"
+                android:layout_gravity="center_horizontal"/>
+
+            <Button
+                android:id="@+id/btnAddDish"
+                android:layout_width="60px"
+                android:layout_height="60px"
+                android:drawableStart="@drawable/ic_baseline_add_24"
+                android:layout_gravity="right"
+                android:background="@android:color/transparent"/>
+        </FrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewDishes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30px"/>
+    </LinearLayout>
+</LinearLayout>
