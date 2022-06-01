@@ -2,7 +2,9 @@ package com.example.fooddelivery.Restaurant
 
 import android.app.DatePickerDialog
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fooddelivery.R
 import com.example.fooddelivery.model.PromotionClass
@@ -11,7 +13,13 @@ import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_restaurant_adding_dishes.*
 import kotlinx.android.synthetic.main.activity_restaurant_adding_promotion.*
 import kotlinx.android.synthetic.main.activity_restaurant_adding_promotion.btnBack
+import kotlinx.android.synthetic.main.activity_restaurant_adding_promotion.progressBar
 import kotlinx.android.synthetic.main.activity_restaurant_adding_promotion.btnContinue
+import kotlinx.android.synthetic.main.activity_restaurant_adding_promotion.btnSelectDate
+import kotlinx.android.synthetic.main.activity_restaurant_adding_promotion.editTextDiscountPercent
+import kotlinx.android.synthetic.main.activity_restaurant_adding_promotion.editTextPromotionName
+import kotlinx.android.synthetic.main.activity_restaurant_adding_promotion.textViewExpiryDate
+import kotlinx.android.synthetic.main.activity_restaurant_promotion_detail.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -40,6 +48,8 @@ class RestaurantAddingPromotionActivity : AppCompatActivity() {
         }
 
         btnContinue.setOnClickListener {
+            progressBar.visibility= View.VISIBLE
+            btnContinue.visibility= View.GONE
             if (editTextPromotionName.text.toString() != ""
                 && editTextDiscountPercent.text.toString() != ""
                 && textDescription.text.toString() != ""
@@ -55,6 +65,10 @@ class RestaurantAddingPromotionActivity : AppCompatActivity() {
                     .document("" + phoneNumber)
                     .collection("promotion")
                 fb.add(o)
+                    .addOnCompleteListener{
+                        val intent= Intent(this, RestaurantPromotionActivity::class.java)
+                        startActivity(intent)
+                    }
             }
         }
 

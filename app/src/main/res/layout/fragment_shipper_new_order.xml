@@ -46,7 +46,7 @@
                 <androidx.cardview.widget.CardView
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     android:layout_width="941.76px"
-                    android:layout_height="288px"
+                    android:layout_height="268px"
                     android:layout_marginTop="60px"
                     android:layout_gravity="center_horizontal"
                     card_view:cardCornerRadius="28.8px">
@@ -108,7 +108,7 @@
                     android:id="@+id/cardView"
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     android:layout_width="941.76px"
-                    android:layout_height="288px"
+                    android:layout_height="238px"
                     android:layout_marginTop="70px"
                     android:layout_gravity="center_horizontal"
                     card_view:cardCornerRadius="28.8px">
@@ -238,7 +238,7 @@
                                     android:gravity="right"
                                     android:layout_marginRight="10px">
                                     <TextView
-                                        android:id="@+id/textSubPrice"
+                                        android:id="@+id/textViewSubTotal"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:textColor="@color/black"
@@ -246,7 +246,7 @@
                                         android:textSize="40.32px"
                                         android:text="0"/>
                                     <TextView
-                                        android:id="@+id/textSubFee"
+                                        android:id="@+id/textViewDeliveryFee"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:textColor="@color/black"
@@ -316,43 +316,43 @@
                         </LinearLayout>
 
 
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnStartDelivery"
+                android:layout_width="981px"
+                android:layout_height="130px"
+                android:layout_gravity="center"
+                android:layout_marginTop="69px"
+                android:background="@drawable/mint_button"
+                android:backgroundTint="@color/mint"
+                android:fontFamily="@font/lato_semibold"
+                android:text="Start delivery"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="48px"
+                app:backgroundTint="@color/mint"
+                android:layout_marginBottom="100px"/>
+
+<!--            <Button-->
+<!--                android:id="@+id/btnFinish"-->
+<!--                android:layout_width="981px"-->
+<!--                android:layout_height="130px"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginTop="69px"-->
+<!--                android:background="@drawable/mint_button"-->
+<!--                android:backgroundTint="@color/mint"-->
+<!--                android:fontFamily="@font/lato_semibold"-->
+<!--                android:text="Finish Delivery"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="48px"-->
+<!--                app:backgroundTint="@color/mint"-->
+<!--                android:layout_marginBottom="100px"-->
+<!--                android:visibility="invisible"/>-->
         </LinearLayout>
-
-        <Button
-            android:id="@+id/btnStartDelivery"
-            android:layout_width="981px"
-            android:layout_height="130px"
-            android:layout_gravity="center"
-            android:layout_marginTop="69px"
-            android:background="@drawable/mint_button"
-            android:backgroundTint="@color/mint"
-            android:fontFamily="@font/lato_semibold"
-            android:text="Start delivery"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="48px"
-            app:backgroundTint="@color/mint"
-            android:layout_marginBottom="100px"/>
-
-        <Button
-            android:id="@+id/btnFinish"
-            android:layout_width="981px"
-            android:layout_height="130px"
-            android:layout_gravity="center"
-            android:layout_marginTop="69px"
-            android:background="@drawable/mint_button"
-            android:backgroundTint="@color/mint"
-            android:fontFamily="@font/lato_semibold"
-            android:text="Finish Delivery"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="48px"
-            app:backgroundTint="@color/mint"
-            android:layout_marginBottom="100px"
-            android:visibility="invisible"/>
-    </LinearLayout>
 
     </FrameLayout>
 </androidx.core.widget.NestedScrollView>

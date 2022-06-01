@@ -11,41 +11,94 @@
         android:layout_height="385.92px"
         android:background="@color/mint"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="56px"
+        android:layout_height="wrap_content"
         android:layout_marginTop="123.84px"
         android:layout_marginStart="69.12px"
-        android:text="@string/delivery_to"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="56px"
+            android:text="@string/delivery_to"
+            android:textColor="@color/white"
+            android:fontFamily="@font/lato_light"
+            android:textSize="40px"
+            />
+        <ImageButton
+            android:layout_width="53.76px"
+            android:layout_height="53.76px"
+            android:layout_marginStart="10px"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/ic_baseline_location_on_24" />
+    </LinearLayout>
+    <EditText
+        android:id="@+id/findLocation"
+        android:hint="Find location ..."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150.84px"
+        android:layout_marginStart="62px"
         android:textColor="@color/white"
-        android:fontFamily="@font/lato_regular"
+        android:textColorHint="@color/white"
+        android:fontFamily="@font/lato_semibold"
         android:textSize="40px"
+        android:backgroundTint="@color/white"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <SearchView
+    <LinearLayout
         android:id="@+id/searchView"
         android:layout_width="938.88px"
         android:layout_height="126.72px"
-        android:layout_marginTop="322.56px"
+        android:layout_marginStart="125.8px"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="300.12px"
         android:background="@drawable/search_view_corner"
-        android:queryHint="@string/search_dish_name_restaurant"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.201"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
+        app:layout_constraintTop_toTopOf="@+id/textView">
+
+        <ImageButton
+            android:layout_width="53.76px"
+            android:layout_height="45.93px"
+            android:layout_marginStart="52.25px"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/search_button" />
+
+        <TextView
+            android:textSize="55.32px"
+            android:id="@+id/editTextSearch2"
+            android:layout_width="800px"
+            android:layout_height="97.92px"
+            android:layout_marginStart="30px"
+            android:layout_gravity="center_vertical"
+            android:background="#00000000"
+            android:enabled="false"
+            android:hint="@string/search_dish_name_restaurant" />
+    </LinearLayout>
 
     <ImageButton
-        android:id="@+id/btnMenu"
+        android:layout_width="45.07px"
+        android:layout_height="45px"
+        android:layout_marginTop="187.04px"
+        android:id="@+id/btnCart"
+        android:layout_marginEnd="250px"
+        android:background="@drawable/cart_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageButton
         android:layout_width="77.76px"
         android:layout_height="77.76px"
         android:layout_marginTop="167.04px"
-
-        android:layout_marginEnd="69px"
+        android:id="@+id/btnMenu"
+        android:layout_marginEnd="141.12px"
         android:background="@drawable/option_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -69,31 +122,30 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_gravity="center_vertical"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="100px"
                     android:layout_marginStart="69.12px"
                     android:fontFamily="@font/lato_semibold"
                     android:text="@string/popular_in_your_area"
-                    android:textSize="51.84px"
-                    android:textColor="@color/black"/>
+                    android:textStyle="bold"
+                    android:textSize="51.84px" />
 
                 <Button
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="230px"
+                    android:layout_height="100px"
+                    android:layout_marginStart="100px"
                     android:background="#00000000"
                     android:fontFamily="@font/lato_regular"
                     android:text="@string/see_more"
                     android:textAllCaps="false"
                     android:id="@+id/see_moreButton"
                     android:textColor="@color/mint"
-                    android:textSize="40.32px"/>
+                    android:textSize="40.32px"
+                    android:textStyle="italic" />
             </LinearLayout>
             <ListView
                 android:layout_width="match_parent"
-                android:layout_height="686.6px"
-                android:layout_marginHorizontal="69px">
+                android:layout_height="686.6px">
 
             </ListView>
 
@@ -102,7 +154,7 @@
                 android:layout_height="62px"
                 android:text="Explore more"
                 android:layout_marginStart="69.12px"
-                android:textColor="@color/black"
+                android:textStyle="bold"
                 android:textSize="51.84px"
                 android:fontFamily="@font/lato_regular"/>
             <ImageView
@@ -121,8 +173,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/exploreMoreRecyclerView"
                     android:layout_width="match_parent"
-                    android:layout_height="600px"
-                    android:layout_marginLeft="69px" />
+                    android:layout_height="600px" />
             </RelativeLayout>
 
             <TextView
@@ -168,8 +219,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/previousOrdersRecyclerView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="69px"/>
+                    android:layout_height="wrap_content" />
             </RelativeLayout>
 
             <TextView
@@ -193,8 +243,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/favoriteRestaurantRecyclerView"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="69px" />
+                    android:layout_height="wrap_content" />
             </RelativeLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

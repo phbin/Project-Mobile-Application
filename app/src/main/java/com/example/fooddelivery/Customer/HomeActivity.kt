@@ -23,6 +23,9 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var adapterExploreMore: Explore_More_RecyclerView
 
 
+
+    private lateinit var arrayListRestau: ArrayList<RestaurantClass>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -52,48 +55,51 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        var arrayListRestau: ArrayList<RestaurantClass> = ArrayList()
+        searchView.setOnClickListener {
+            val intent:Intent = Intent(this,SearchRestaurantActivity::class.java)
+            startActivity(intent)
+        }
+
+
+        arrayListRestau = ArrayList()
         arrayListRestau.add(
             RestaurantClass(R.drawable.square_mint,
                 "Shaking Beef Tri-tip",
-                "Burger-Chicken-Cake",
-                "5",
+                "Hủ tiếu gà",
                 "3 km")
         )
 
         arrayListRestau.add(
             RestaurantClass(R.drawable.square_mint,
                 "Shaking Beef Tri-tip",
-                "Burger-Chicken-Cake",
-                "5",
+                "Bánh canh sườn heo chua ngọt sốt cay",
                 "3 km")
         )
         arrayListRestau.add(
             RestaurantClass(R.drawable.square_mint,
                 "Shaking Beef Tri-tip",
-                "Burger-Chicken-Cake",
-                "5",
+                "Vịt tiềm thuốc ngủ",
                 "3 km")
         )
         arrayListRestau.add(
             RestaurantClass(R.drawable.square_mint,
                 "Shaking Beef Tri-tip",
-                "Burger-Chicken-Cake",
-                "5",
+                "Chân gà nấu phô trương",
+
                 "3 km")
         )
         arrayListRestau.add(
             RestaurantClass(R.drawable.square_mint,
                 "Shaking Beef Tri-tip",
-                "Burger-Chicken-Cake",
-                "5",
+                "Ngỗng hấp hối",
+
                 "3 km")
         )
         arrayListRestau.add(
             RestaurantClass(R.drawable.square_mint,
                 "Shaking Beef Tri-tip",
-                "Burger-Chicken-Cake",
-                "5",
+                "Nhện chiên giòn giã nhuyễn nấu với nước cốt chanh dây",
+
                 "3 km")
         )
 
@@ -121,35 +127,36 @@ class HomeActivity : AppCompatActivity() {
                 "Shaking Beef Tri-tip")
         )
 //        previousOrdersRecyclerView.layoutManager = LinearLayoutManager(this)
+        btnCart.setOnClickListener{
+            val intent= Intent(this,CartActivity::class.java)
+            startActivity(intent)
+        }
 
-
+        btnMenu.setOnClickListener{
+            val intent= Intent(this,CustomerMenu::class.java)
+            startActivity(intent)
+        }
         var arrayListRestauFavorite: ArrayList<RestaurantClass> = ArrayList()
         arrayListRestauFavorite.add(
             RestaurantClass(R.drawable.square_mint,
                 "Minh",
                 "Burger-Chicken-Cake",
-                "5",
                 "3 km")
         )
         arrayListRestauFavorite.add(
             RestaurantClass(R.drawable.square_mint,
                 "Hiếu",
                 "Burger-Chicken-Cake",
-                "5",
+
                 "3 km")
         )
         arrayListRestauFavorite.add(
             RestaurantClass(R.drawable.square_mint,
                 "Nè",
                 "Burger-Chicken-Cake",
-                "5",
                 "3 km")
         )
 
-        btnMenu.setOnClickListener {
-            val intent = Intent(this, SignInActivity::class.java)
-            startActivity(intent)
-        }
-
     }
+
 }

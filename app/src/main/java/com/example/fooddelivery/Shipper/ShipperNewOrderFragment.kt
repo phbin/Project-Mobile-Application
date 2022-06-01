@@ -1,12 +1,17 @@
 package com.example.fooddelivery.Shipper
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.fooddelivery.Customer.CustomAdapterListName
 import com.example.fooddelivery.R
+import com.example.fooddelivery.model.CheckOutTemp
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_shipper_new_order.*
 
 
@@ -45,6 +50,56 @@ class ShipperNewOrderFragment : Fragment() {
                 Toast.makeText(requireActivity(), "Xong đơn", Toast.LENGTH_SHORT).show()
             }
         }
+
+        var orderArray : ArrayList<CheckOutTemp> = ArrayList()
+
+        orderArray.add(
+            CheckOutTemp("2",
+                "Shaking Beef Tri-Tip",
+                "30.000 VNĐ")
+        )
+
+        listviewItem.layoutManager= LinearLayoutManager(requireActivity())
+        listviewItem.adapter = CustomAdapterListName(orderArray)
+        listviewItem.setHasFixedSize(true)
+
+        var sharedPreferences = requireActivity().getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        var idShipper = sharedPreferences.getString("ID", "")
+
+        var fb = FirebaseFirestore.getInstance().collection("Bill")
+        var fbCustomer = FirebaseFirestore.getInstance().collection("Customer")
+        var fbRestaurant = FirebaseFirestore.getInstance().collection("Restaurant")
+
+        fb.get().addOnCompleteListener { task ->
+            for (i in task.result) {
+                if (i.data.getValue("idShipper")
+                        .toString() == idShipper && i.data.getValue("status")
+                        .toString() == "incoming" && i.data.getValue("quantity").toString() != "0"
+                ) {
+                    textViewOrderID.text = i.id
+                    textViewSubTotal.text = i.data.getValue("total").toString()
+                    textViewDeliveryFee.text = i.data.getValue("deliveryFee").toString()
+                    fbCustomer.get().addOnCompleteListener {
+                        for (j in it.result) {
+                            if (j.id == i.data.getValue("idCustomer")) {
+                                textViewCustomerName.text = j.data.getValue("displayName").toString()
+                                textViewCustomerAddress.text = j.data.getValue("address").toString()
+                            }
+                        }
+                    }
+                    fbRestaurant.get().addOnCompleteListener {
+                        for (k in it.result) {
+                            if (k.id == i.data.getValue("idRestaurant")) {
+                                textViewResName.text = k.data.getValue("displayName").toString()
+                                textViewResAddress.text = k.data.getValue("address").toString()
+                            }
+                        }
+                    }
+                }
+            }
+            textViewTotal.text = (textViewSubTotal.text.toString().toLong() + textViewDeliveryFee.text.toString().toLong()).toString()
+        }
+
     }
 
     companion object {

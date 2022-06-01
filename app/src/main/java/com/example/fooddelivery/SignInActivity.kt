@@ -159,11 +159,11 @@ class SignInActivity : AppCompatActivity() {
                             val intent = Intent(this, SplashScreenActivity::class.java)
                             startActivity(intent)
                         } else {
-                        Toast.makeText(this,
-                            "Wrong password",
-                            Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this,
+                                "Wrong password",
+                                Toast.LENGTH_SHORT).show()
 
-                    }
+                        }
                     } else continue
                 }
             }
@@ -192,7 +192,7 @@ class SignInActivity : AppCompatActivity() {
                             editor.putString("ROLE", autoCompleteTextViewRole.text.toString())
                             editor.apply()
 
-                            val intent = Intent(this, ShipperActivity::class.java)
+                            val intent = Intent(this, SplashScreenActivity::class.java)
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                             startActivity(intent)
                         } else {
@@ -226,13 +226,13 @@ class SignInActivity : AppCompatActivity() {
                             editor.putString("ROLE", autoCompleteTextViewRole.text.toString())
                             editor.apply()
 
-                            val intent = Intent(this, RestaurantHomeActivity::class.java)
+                            val intent = Intent(this, SplashScreenActivity::class.java)
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                             startActivity(intent)
                         } else {
-                        Toast.makeText(this,
-                            "Wrong password",
-                            Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this,
+                                "Wrong password",
+                                Toast.LENGTH_SHORT).show()
                         }
                     } else continue
                 }

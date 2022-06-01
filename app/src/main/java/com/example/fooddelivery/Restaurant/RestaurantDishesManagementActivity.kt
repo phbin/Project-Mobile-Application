@@ -14,6 +14,8 @@ import com.example.fooddelivery.model.RestaurantDishesList
 import com.example.fooddelivery.model.RestaurantMenuList
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_restaurant_dishes_management.*
+import kotlinx.android.synthetic.main.activity_restaurant_dishes_management.btnBack
+import kotlinx.android.synthetic.main.activity_restaurant_menu_management.*
 
 class RestaurantDishesManagementActivity : AppCompatActivity(){
 
@@ -26,16 +28,16 @@ class RestaurantDishesManagementActivity : AppCompatActivity(){
         var sharedPreferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
         val phoneNumber = sharedPreferences.getString("ID","")
         val menuTitle = intent.getParcelableExtra<RestaurantMenuList>("menuName")
-
         if(menuTitle!=null){
             textViewMenuTitle.text = menuTitle.menuName
         }
-        else{
-            textViewMenuTitle.text = intent.getStringExtra("menuName")
+        else {
+            textViewMenuTitle.text=intent.getStringExtra("menuName")
         }
 
         btnBack.setOnClickListener {
-            finish()
+            val intent = Intent(this, RestaurantMenuManagementActivity::class.java)
+            startActivity(intent)
         }
 
 

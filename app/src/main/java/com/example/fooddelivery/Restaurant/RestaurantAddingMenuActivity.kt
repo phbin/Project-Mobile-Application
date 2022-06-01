@@ -22,21 +22,25 @@ class RestaurantAddingMenuActivity : AppCompatActivity() {
         var sharedPreferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
         val phoneNumber = sharedPreferences.getString("ID","")
 
-        btnContinue.setOnClickListener{
-            var o:MutableMap<String, Any> = HashMap()
-            o["name"]=editTextMenuName.text.toString()
-            var fb = FirebaseFirestore.getInstance().collection("Restaurant")
-                .document(""+phoneNumber)
-                .collection("categoryMenu")
-                fb.document(""+editTextMenuName.text).set(o)
+        btnContinue.setOnClickListener {
+            if (editTextMenuName.text.toString() != "") {
+                var o: MutableMap<String, Any> = HashMap()
+                o["name"] = editTextMenuName.text.toString()
+                var fb = FirebaseFirestore.getInstance().collection("Restaurant")
+                    .document("" + phoneNumber)
+                    .collection("categoryMenu")
+                fb.document("" + editTextMenuName.text).set(o)
                     .addOnSuccessListener {
                         val intent = Intent(this, RestaurantMenuManagementActivity::class.java)
                         finish()
                         startActivity(intent)
                     }
-                    .addOnFailureListener{
-                        Toast.makeText(this,"Please try again!!", Toast.LENGTH_SHORT).show()
+                    .addOnFailureListener {
+                        Toast.makeText(this, "Please try again!!", Toast.LENGTH_SHORT).show()
                     }
+            } else {
+                Toast.makeText(this, "Please enter menu's name!!!",Toast.LENGTH_LONG).show()
+            }
         }
         btnBack.setOnClickListener {
             finish()

@@ -24,12 +24,12 @@ data class PromotionClass (var description:String, var expiryDate:String, var na
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<RestaurantPromotionList> {
-        override fun createFromParcel(parcel: Parcel): RestaurantPromotionList {
-            return RestaurantPromotionList(parcel)
+    companion object CREATOR : Parcelable.Creator<PromotionClass> {
+        override fun createFromParcel(parcel: Parcel): PromotionClass {
+            return PromotionClass(parcel)
         }
 
-        override fun newArray(size: Int): Array<RestaurantPromotionList?> {
+        override fun newArray(size: Int): Array<PromotionClass?> {
             return arrayOfNulls(size)
         }
     }

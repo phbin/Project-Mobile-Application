@@ -1,6 +1,7 @@
 package com.example.fooddelivery.Restaurant
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.fooddelivery.OrderDetailActivity
 import com.example.fooddelivery.R
 import com.example.fooddelivery.RestaurantOrdersAdapter
 import com.example.fooddelivery.model.RestaurantOrders
@@ -69,7 +71,7 @@ class RestaurantHomeProcessingFragment : Fragment() {
         var fbCustomer = FirebaseFirestore.getInstance().collection("Customer")
         fb.get().addOnCompleteListener {task ->
             for (i in task.result) {
-                    if (i.data.getValue("idRestaurant").toString() == idRestaurant) {
+                    if (i.data.getValue("idRestaurant").toString() == idRestaurant&&i.data.getValue("status").toString()=="incoming" && i.data.getValue("quantity").toString()!="0") {
                         fbCustomer.get().addOnCompleteListener {
                             for (j in it.result) {
                                 if (j.id == i.data.getValue("idCustomer")) {
@@ -79,11 +81,21 @@ class RestaurantHomeProcessingFragment : Fragment() {
                                         RestaurantOrders("" + i.id,
                                             "" + customerAddress,
                                             "" + customerName,
-                                            "" +i.data.getValue("quantity")+"dish(es)",
+                                            "" +i.data.getValue("quantity")+" dish(es)",
                                             "" + i.data.getValue("total").toString()))
                                 }
                             }
                             listViewRestaurantOrders.adapter = RestaurantOrdersAdapter(requireActivity().applicationContext,orderArray)
+
+                            (listViewRestaurantOrders.adapter as RestaurantDoneOrdersAdapter).setOnIntemClickListener(object :
+                                RestaurantDoneOrdersAdapter.onIntemClickListener {
+                                override fun onClickItem(position: Int) {
+                                    val intent = Intent(requireActivity(), OrderDetailActivity::class.java)
+                                    intent.putExtra("billID", orderArray[position].orderID)
+                                    startActivity(intent)
+                                }
+
+                            })
                         }
                     }
                 }

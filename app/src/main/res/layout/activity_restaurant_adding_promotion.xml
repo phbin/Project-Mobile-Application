@@ -113,17 +113,30 @@
             android:textColor="@color/white"
             android:textColorHint="@color/grey"
             android:textSize="45px" />
-        <Button
-            android:id="@+id/btnContinue"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="130px"
-            android:background="@drawable/mint_button"
-            android:backgroundTint="@color/mint"
-            android:text="Done"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="46.08px"
-            android:layout_marginTop="120px"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120px">
+
+            <Button
+                android:id="@+id/btnContinue"
+                android:layout_width="match_parent"
+                android:layout_height="130px"
+                android:background="@drawable/mint_button"
+                android:backgroundTint="@color/mint"
+                android:text="Done"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="46.08px"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:visibility="gone"/>
+        </FrameLayout>
+
 
     </LinearLayout>
 </LinearLayout>

@@ -1,19 +1,18 @@
 package com.example.fooddelivery.Restaurant
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.fooddelivery.OrderDetailActivity
 import com.example.fooddelivery.R
-import com.example.fooddelivery.Shipper.ShipperHistoryFragment.Companion.recyclerView
-import com.example.fooddelivery.model.RestaurantDishesList
 import com.example.fooddelivery.model.RestaurantOrders
-import com.example.fooddelivery.model.ShipperOrderHistory
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_restaurant_dishes_management.*
+import kotlinx.android.synthetic.main.fragment_restaurant_home_done.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -49,8 +48,7 @@ class RestaurantHomeDoneFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        recyclerView = view.findViewById(R.id.recyclerViewDoneOrders)
-        recyclerView.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
+        recyclerViewDoneOrders.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
 
         var sharedPreferences =
             requireActivity().getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
@@ -72,12 +70,22 @@ class RestaurantHomeDoneFragment : Fragment() {
                                         RestaurantOrders("" + i.id,
                                             "" + customerAddress,
                                             "" + customerName,
-                                            "" +i.data.getValue("quantity")+"dish(s/es)",
+                                            "" +i.data.getValue("quantity")+" dish(s/es)",
                                             "" + i.data.getValue("total").toString()))
                                 }
                             }
-                            recyclerView.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
-                            recyclerView.adapter = RestaurantDoneOrdersAdapter(requireActivity().applicationContext,orderArray)
+                            recyclerViewDoneOrders.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
+                            recyclerViewDoneOrders.adapter = RestaurantDoneOrdersAdapter(requireActivity().applicationContext,orderArray)
+
+                            (recyclerViewDoneOrders.adapter as RestaurantDoneOrdersAdapter).setOnIntemClickListener(object :
+                                RestaurantDoneOrdersAdapter.onIntemClickListener {
+                                override fun onClickItem(position: Int) {
+                                    val intent = Intent(requireActivity(), OrderDetailActivity::class.java)
+                                    intent.putExtra("billID", orderArray[position].orderID)
+                                    startActivity(intent)
+                                }
+
+                            })
                         }
                     }
                 }

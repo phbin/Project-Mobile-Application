@@ -2,17 +2,21 @@ package com.example.fooddelivery.Restaurant
 
 import android.app.DatePickerDialog
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import com.example.fooddelivery.R
+import com.example.fooddelivery.model.PromotionClass
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_restaurant_adding_promotion.*
-import kotlinx.android.synthetic.main.activity_restaurant_adding_promotion.btnBack
-import kotlinx.android.synthetic.main.activity_restaurant_adding_promotion.btnSelectDate
-import kotlinx.android.synthetic.main.activity_restaurant_adding_promotion.editTextDiscountPercent
-import kotlinx.android.synthetic.main.activity_restaurant_adding_promotion.editTextPromotionName
-import kotlinx.android.synthetic.main.activity_restaurant_adding_promotion.textViewExpiryDate
+import kotlinx.android.synthetic.main.activity_restaurant_promotion_detail.btnBack
+import kotlinx.android.synthetic.main.activity_restaurant_promotion_detail.btnContinue
+import kotlinx.android.synthetic.main.activity_restaurant_promotion_detail.progressBar
+import kotlinx.android.synthetic.main.activity_restaurant_promotion_detail.btnSelectDate
+import kotlinx.android.synthetic.main.activity_restaurant_promotion_detail.editTextDiscountPercent
+import kotlinx.android.synthetic.main.activity_restaurant_promotion_detail.editTextPromotionName
+import kotlinx.android.synthetic.main.activity_restaurant_promotion_detail.textViewExpiryDate
 import kotlinx.android.synthetic.main.activity_restaurant_promotion_detail.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -36,6 +40,7 @@ class RestaurantPromotionDetailActivity : AppCompatActivity() {
                 Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH) + 10).show()
         }
         var position = intent.getStringExtra("promotionPosition")
+        var key=""
 
         var fb= FirebaseFirestore.getInstance().collection("Restaurant")
             .document(""+phoneNumber)
@@ -44,6 +49,7 @@ class RestaurantPromotionDetailActivity : AppCompatActivity() {
                 if (it.isSuccessful) {
                     for ((index, i) in it.result.withIndex()) {
                         if (index.toString() == position) {
+                            key=i.id
                             editTextPromotionName.setText(i.data.getValue("name").toString())
                             editTextDiscountPercent.setText(i.data.getValue("value").toString())
                             textViewExpiryDate.setText(i.data.getValue("expiryDate").toString())
@@ -57,9 +63,30 @@ class RestaurantPromotionDetailActivity : AppCompatActivity() {
 //
 //            //editTextPromotionName.setText(position.name)
 //        }
-
+        btnContinue.setOnClickListener{
+            progressBar.visibility= View.VISIBLE
+            btnContinue.visibility=View.GONE
+            //Toast.makeText(this,""+key,Toast.LENGTH_LONG).show()
+//            if (editTextPromotionName.text.toString() != ""
+//                && editTextDiscountPercent.text.toString() != ""
+//                && textDescription.text.toString() != ""
+//                && textViewExpiryDate.text.toString() != ""
+//            ) {
+                var fb = FirebaseFirestore.getInstance().collection("Restaurant")
+                    .document("" + phoneNumber)
+                    .collection("promotion")
+                fb.document(""+key).update("description",""+editTextDescription.text.toString())
+                fb.document(""+key).update("expiryDate",""+ textViewExpiryDate.text.toString() )
+                fb.document(""+key).update("name",""+ editTextPromotionName.text.toString())
+                fb.document(""+key).update("value",""+editTextDiscountPercent.text.toString())
+                    .addOnCompleteListener{
+                        val intent= Intent(this, RestaurantPromotionActivity::class.java)
+                        startActivity(intent)
+                    }
+        }
         btnBack.setOnClickListener {
-            finish()
+            val intent= Intent(this, RestaurantPromotionActivity::class.java)
+            startActivity(intent)
         }
     }
     private fun updateLable(myCalendar: Calendar) {

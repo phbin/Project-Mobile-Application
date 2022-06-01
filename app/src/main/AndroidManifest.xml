@@ -15,18 +15,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodDelivery">
         <activity
+            android:name=".Customer.SearchRestaurantActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Customer.RestaurantActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Customer.CustomerMenu"
+            android:exported="false" />
+        <activity
+            android:name=".Customer.CustomerProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".Restaurant.RestaurantPromotionDetailActivity"
             android:exported="false" />
         <activity
             android:name=".Shipper.ShipperActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".Restaurant.RestaurantAddingMenuActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name=".SplashScreenActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
@@ -77,6 +85,12 @@
             android:name=".Restaurant.RestaurantHomeActivity"
             android:exported="false" />
         <activity
+            android:name=".Customer.CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Customer.DishDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".ResetPasswordSetPasswordActivity"
             android:exported="false" />
         <activity
@@ -122,13 +136,19 @@
             android:name=".Restaurant.RestaurantPromotionActivity"
             android:exported="true" />
         <activity
-            android:name=".Customer.CustomerFindingShipperActivity"
+            android:name=".SplashScreenActivity"
             android:exported="true" />
-<!--        <activity-->
-<!--            android:name=".Customer.CustomerOrderOnTrackingActivity"-->
-<!--            android:exported="true" />-->
         <activity
             android:name=".Customer.CustomerOrderOnTrackingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Customer.CustomerFindingShipperActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Customer.SearchLocationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

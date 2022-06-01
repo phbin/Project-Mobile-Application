@@ -41,6 +41,7 @@ class RestaurantMenuRecyclerAdapter(
         holder.btnRemove.setOnClickListener {
             itemClick.onDeleteItemClick(position)
             notifyDataSetChanged()
+            listItems.removeAt(position)
         }
 
         holder.itemView.setOnClickListener {
