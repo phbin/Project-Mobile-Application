@@ -23,14 +23,14 @@
             android:background="@android:color/transparent"
             android:drawableStart="@drawable/ic_close"/>
 
-        <fragment
-            android:layout_marginHorizontal="70px"
-            android:id="@+id/frmMaps"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
-            android:layout_width="654px"
-            android:layout_height="305px"
-            android:layout_marginTop="79px"
-            android:layout_gravity="center_horizontal"/>
+<!--        <fragment-->
+<!--            android:layout_marginHorizontal="70px"-->
+<!--            android:id="@+id/frmMaps"-->
+<!--            android:name="com.google.android.gms.maps.SupportMapFragment"-->
+<!--            android:layout_width="654px"-->
+<!--            android:layout_height="305px"-->
+<!--            android:layout_marginTop="79px"-->
+<!--            android:layout_gravity="center_horizontal"/>-->
 
     <!--    <View-->
     <!--        android:layout_width="941.76px"-->

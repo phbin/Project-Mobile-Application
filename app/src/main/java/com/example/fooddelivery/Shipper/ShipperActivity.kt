@@ -4,9 +4,17 @@ import android.content.SharedPreferences
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.example.fooddelivery.R
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_shipper.*
+import kotlinx.android.synthetic.main.activity_shipper_order_dialog.view.*
 
 class ShipperActivity : AppCompatActivity() {
 
@@ -67,6 +75,30 @@ class ShipperActivity : AppCompatActivity() {
                 val icon = applicationContext.resources.getDrawable(R.drawable.ic_shipper_status)
                 btnStatus.setCompoundDrawablesWithIntrinsicBounds(icon, null, null, null)
                 var fb = FirebaseFirestore.getInstance().collection("Shipper").document("$id").update("status", "Receive order")
+            }
+        }
+
+        var firebase = FirebaseFirestore.getInstance().collection("WaitingOrders")
+
+        firebase.addSnapshotListener { value, canceled ->
+            if(canceled != null){
+                return@addSnapshotListener
+            }
+            if(value!=null){
+
+            }
+        }
+
+        btnGetOrder.setOnClickListener {
+            val mDialogView = LayoutInflater.from(this, ).inflate(R.layout.activity_shipper_order_dialog, null)
+
+            val mBuilder = AlertDialog.Builder(this)
+                .setView(mDialogView)
+
+            val mAlertDialog = mBuilder.show()
+
+            mDialogView.btnAcceptOrder.setOnClickListener {
+                mAlertDialog.dismiss()
             }
         }
 
