@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.fooddelivery">
+    package="com.example.fooddelivery" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -13,40 +13,31 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FoodDelivery">
+        android:theme="@style/Theme.FoodDelivery" >
         <activity
-            android:name=".Customer.SearchRestaurantActivity"
+            android:name=".SearchRestaurantActivity"
             android:exported="false" />
         <activity
-            android:name=".Customer.RestaurantActivity"
+            android:name=".SearchActivity"
             android:exported="false" />
         <activity
-            android:name=".Customer.CustomerMenu"
-            android:exported="false" />
-        <activity
-            android:name=".Customer.CustomerProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Restaurant.RestaurantPromotionDetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Shipper.ShipperActivity"
+            android:name=".ShipperActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".Restaurant.RestaurantAddingMenuActivity"
+            android:name=".RestaurantMenuDetailActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".Restaurant.RestaurantAddingPromotionActivity"
+            android:name=".RestaurantAddingMenuActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".Restaurant.RestaurantDishesManagementActivity"
+            android:name=".RestaurantAddingPromotionActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".OrderDetailActivity"
+            android:name=".RestaurantPromotionDetailActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <!--
@@ -65,10 +56,14 @@
             android:value="AIzaSyBgcrJbS9BYCPw1aa3ksmVpYhqTbjyWp58" />
 
         <activity
-            android:name=".Customer.FragmentPromotion"
-            android:exported="false" /> <!-- <activity -->
-        <!-- android:name=".MainActivity" -->
-        <!-- android:exported="false" /> -->
+            android:name=".checkout.FragmentPromotion"
+            android:exported="false" />
+        <activity
+            android:name=".PopularInYourAreaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".checkout.CheckOutActivity"
+            android:exported="false" />
         <activity
             android:name=".SignInEnterCode"
             android:exported="false" />
@@ -82,13 +77,7 @@
             android:name=".SignUpActivity"
             android:exported="false" />
         <activity
-            android:name=".Restaurant.RestaurantHomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Customer.CartActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Customer.DishDetailActivity"
+            android:name=".SignInActivity"
             android:exported="false" />
         <activity
             android:name=".ResetPasswordSetPasswordActivity"
@@ -100,56 +89,32 @@
             android:name=".ResetPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".Shipper.SeeEarningsActivity"
+            android:name=".SeeEarningsActivity"
             android:exported="false" />
         <activity
-            android:name=".Restaurant.RestaurantMenuActivity"
+            android:name=".RestaurantMenuActivity"
             android:exported="false" />
         <activity
-            android:name=".Customer.CheckOutActivity"
+            android:name=".RestaurantHomeActivity"
             android:exported="false" />
         <activity
-            android:name=".Restaurant.RestaurantResManagementActivity"
+            android:name=".RestaurantResManagementActivity"
             android:exported="false" />
         <activity
-            android:name=".Restaurant.RestaurantMenuManagementActivity"
+            android:name=".RestaurantMenuManagementActivity"
             android:exported="false" />
         <activity
-            android:name=".SignInActivity"
+            android:name=".RestaurantPromotionActivity"
             android:exported="false" />
         <activity
-            android:name=".Restaurant.RestaurantStatisticsActivity"
+            android:name=".RestaurantStatisticsActivity"
             android:exported="false" />
-        <activity
-            android:name=".Customer.HomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Restaurant.RestaurantDishDetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Customer.PopularInYourAreaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Restaurant.RestaurantAddingDishesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Restaurant.RestaurantPromotionActivity"
-            android:exported="true" />
-        <activity
-            android:name=".SplashScreenActivity"
-            android:exported="true" />
-        <activity
-            android:name=".Customer.CustomerOrderOnTrackingActivity"
-            android:exported="true" />
-        <activity
-            android:name=".Customer.CustomerFindingShipperActivity"
-            android:exported="true" />
-        <activity
-            android:name=".Customer.SearchLocationActivity"
-            android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

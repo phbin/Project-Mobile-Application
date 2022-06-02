@@ -18,6 +18,25 @@
             android:drawableStart="@drawable/ic_close"
             android:background="@android:color/transparent"/>
 
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="105px">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="828px"
+                android:layout_height="484px"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/grey"/>
+
+            <Button
+                android:id="@+id/btnAddPicture"
+                android:layout_width="200px"
+                android:layout_height="200px"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_add_photo"/>
+        </FrameLayout>
 
         <TextView
             android:id="@+id/textVewMenuName"
@@ -32,6 +51,47 @@
         <EditText
             android:id="@+id/editTextMenuName"
             android:hint="Enter name of menu"
+            android:textColorHint="@color/grey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:textSize="45px"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/textViewPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Price"
+            android:fontFamily="@font/lato_regular"
+            android:textSize="45px"
+            android:textColor="@color/white"
+            android:layout_marginTop="105px"/>
+
+        <EditText
+            android:id="@+id/editTextPrice"
+            android:hint="Enter price"
+            android:textColorHint="@color/grey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lato_regular"
+            android:textSize="45px"
+            android:textColor="@color/white"
+            android:inputType="number"/>
+
+        <TextView
+            android:id="@+id/textViewSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Size"
+            android:fontFamily="@font/lato_regular"
+            android:textSize="45px"
+            android:textColor="@color/white"
+            android:layout_marginTop="105px"/>
+
+        <EditText
+            android:id="@+id/editTextSize"
+            android:hint="Enter size (if any)"
             android:textColorHint="@color/grey"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
