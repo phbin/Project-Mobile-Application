@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/textView"
@@ -15,18 +14,43 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="56px"
+        android:layout_height="wrap_content"
         android:layout_marginTop="123.84px"
         android:layout_marginStart="69.12px"
-        android:text="@string/delivery_to"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="56px"
+            android:text="@string/delivery_to"
+            android:textColor="@color/white"
+            android:fontFamily="@font/lato_light"
+            android:textSize="40px"
+            />
+        <ImageButton
+            android:layout_width="53.76px"
+            android:layout_height="53.76px"
+            android:layout_marginStart="10px"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/ic_baseline_location_on_24" />
+    </LinearLayout>
+    <EditText
+        android:id="@+id/findLocation"
+        android:hint="Find location ..."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150.84px"
+        android:layout_marginStart="62px"
         android:textColor="@color/white"
-        android:fontFamily="@font/lato_light"
+        android:textColorHint="@color/white"
+        android:fontFamily="@font/lato_semibold"
         android:textSize="40px"
+        android:backgroundTint="@color/white"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <LinearLayout
         android:id="@+id/searchView"
@@ -45,7 +69,7 @@
             android:layout_width="53.76px"
             android:layout_height="45.93px"
             android:layout_marginStart="52.25px"
-          android:layout_gravity="center_vertical"
+            android:layout_gravity="center_vertical"
             android:background="@drawable/search_button" />
 
         <TextView
@@ -64,7 +88,7 @@
         android:layout_width="45.07px"
         android:layout_height="45px"
         android:layout_marginTop="187.04px"
-
+        android:id="@+id/btnCart"
         android:layout_marginEnd="250px"
         android:background="@drawable/cart_button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,7 +97,7 @@
         android:layout_width="77.76px"
         android:layout_height="77.76px"
         android:layout_marginTop="167.04px"
-
+        android:id="@+id/btnMenu"
         android:layout_marginEnd="141.12px"
         android:background="@drawable/option_button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -119,12 +143,12 @@
                     android:textSize="40.32px"
                     android:textStyle="italic" />
             </LinearLayout>
-          <ListView
-              android:layout_width="match_parent"
-              android:layout_height="686.6px">
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="686.6px">
 
-          </ListView>
-            
+            </ListView>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="62px"
@@ -152,15 +176,15 @@
                     android:layout_height="600px" />
             </RelativeLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="62px"
-            android:text="Category"
-            android:layout_marginStart="69.12px"
-            android:textStyle="bold"
-            android:layout_marginTop="89.28px"
-            android:textSize="51.84px"
-            android:fontFamily="@font/lato_regular"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="62px"
+                android:text="Category"
+                android:layout_marginStart="69.12px"
+                android:textStyle="bold"
+                android:layout_marginTop="89.28px"
+                android:textSize="51.84px"
+                android:fontFamily="@font/lato_regular"/>
 
             //Chỗ linear ở dưới là làm cái list ngang category
             <RelativeLayout
@@ -192,10 +216,10 @@
                 android:layout_marginTop="110.8px">
 
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/previousOrdersRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/previousOrdersRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
             </RelativeLayout>
 
             <TextView

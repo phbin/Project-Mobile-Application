@@ -9,6 +9,10 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import at.favre.lib.crypto.bcrypt.BCrypt
+import com.example.fooddelivery.Customer.CheckOutActivity
+import com.example.fooddelivery.Customer.HomeActivity
+import com.example.fooddelivery.Restaurant.RestaurantHomeActivity
+import com.example.fooddelivery.Shipper.ShipperActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.firestore.FirebaseFirestore
@@ -143,14 +147,23 @@ class SignInActivity : AppCompatActivity() {
                         if (result.verified) {
                             progressBar.visibility = View.VISIBLE
                             btnContinue.visibility = View.INVISIBLE
-                            val intent = Intent(this, HomeActivity::class.java)
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+
+                            val editor : SharedPreferences.Editor = sharedPreferences.edit()
+                            editor.putString("ID", editTextEnterPhoneNumber.text.toString())
+                            editor.putBoolean("REMEMBER", true)
+                            editor.putString("ROLE", autoCompleteTextViewRole.text.toString())
+                            editor.apply()
+
+//                            val intent = Intent(this, HomeActivity::class.java)
+                            //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                            val intent = Intent(this, SplashScreenActivity::class.java)
                             startActivity(intent)
                         } else {
-                        Toast.makeText(this,
-                            "Wrong password",
-                            Toast.LENGTH_SHORT).show()
-                    }
+                            Toast.makeText(this,
+                                "Wrong password",
+                                Toast.LENGTH_SHORT).show()
+
+                        }
                     } else continue
                 }
             }
@@ -217,9 +230,9 @@ class SignInActivity : AppCompatActivity() {
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                             startActivity(intent)
                         } else {
-                        Toast.makeText(this,
-                            "Wrong password",
-                            Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this,
+                                "Wrong password",
+                                Toast.LENGTH_SHORT).show()
                         }
                     } else continue
                 }
