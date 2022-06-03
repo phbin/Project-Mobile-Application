@@ -1,16 +1,20 @@
 package com.example.fooddelivery.Shipper
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fooddelivery.Customer.CustomAdapterListName
 import com.example.fooddelivery.R
 import com.example.fooddelivery.model.CheckOutTemp
+import com.example.fooddelivery.model.OrderStatusChange
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -33,6 +37,8 @@ private const val ARG_PARAM2 = "param2"
  */
 class ShipperNewOrderFragment : Fragment() {
 
+    lateinit var references : SharedPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -48,12 +54,46 @@ class ShipperNewOrderFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        btnStartDelivery.setOnClickListener {
-            if(btnStartDelivery.text.toString() == "Start delivery"){
-                btnStartDelivery.text = "Finish Delivery"
+        var sharedPreferences = requireActivity().getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        var idShipper = sharedPreferences.getString("ID", "")
+
+        if(!sharedPreferences.getBoolean("isDelivering", false)){
+            newOrderLayout.visibility = View.GONE
+        }
+
+
+        var fb = FirebaseFirestore.getInstance().collection("WaitingOrders")
+        var fbCustomer = FirebaseFirestore.getInstance().collection("Customer")
+        var fbRestaurant = FirebaseFirestore.getInstance().collection("Restaurant")
+        var fbBill =FirebaseFirestore.getInstance().collection("Bill")
+
+
+        var date : String = ""
+        var deliveryFee : String = ""
+        var idCustomer : String = ""
+        var idPromotion : String = ""
+        var idRestaurant : String = ""
+        var quantity : Int = 0
+        var status : String = ""
+        var total : String = ""
+        var idBill : String = ""
+
+
+        btnFinish.setOnClickListener {
+            val editor : SharedPreferences.Editor = sharedPreferences.edit()
+            editor.putBoolean("isDelivering", false)
+            editor.apply()
+
+            newOrderLayout.visibility = View.GONE
+            var change = idShipper?.let { it1 ->
+                OrderStatusChange(date, deliveryFee, idCustomer, idPromotion, idRestaurant,
+                    it1, quantity, status, total)
             }
-            else{
-                Toast.makeText(requireActivity(), "Xong đơn", Toast.LENGTH_SHORT).show()
+
+            if (change != null) {
+                fbBill.document(idBill).set(change).addOnCompleteListener {
+                    fb.document(idBill).delete()
+                }
             }
         }
 
@@ -69,19 +109,25 @@ class ShipperNewOrderFragment : Fragment() {
         listviewItem.adapter = CustomAdapterListName(orderArray)
         listviewItem.setHasFixedSize(true)
 
-        var sharedPreferences = requireActivity().getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
-        var idShipper = sharedPreferences.getString("ID", "")
-
-        var fb = FirebaseFirestore.getInstance().collection("Bill")
-        var fbCustomer = FirebaseFirestore.getInstance().collection("Customer")
-        var fbRestaurant = FirebaseFirestore.getInstance().collection("Restaurant")
 
         fb.get().addOnCompleteListener { task ->
             for (i in task.result) {
-                if (i.data.getValue("idShipper")
-                        .toString() == idShipper && i.data.getValue("status")
-                        .toString() == "incoming" && i.data.getValue("quantity").toString() != "0"
+                if (i.data.getValue("idShipper").toString() == idShipper &&
+                    i.data.getValue("status").toString() == "incoming" &&
+                    i.data.getValue("quantity").toString() != "0"
                 ) {
+                    newOrderLayout.visibility = View.VISIBLE
+
+                    date = i.data.getValue("date").toString()
+                    deliveryFee = i.data.getValue("deliveryFee").toString()
+                    idCustomer = i.data.getValue("idCustomer").toString()
+                    idPromotion = i.data.getValue("idPromotion").toString()
+                    idRestaurant = i.data.getValue("idRestaurant").toString()
+                    quantity = i.data.getValue("quantity").toString().toInt()
+                    status = "success"
+                    total = i.data.getValue("total").toString()
+                    idBill = i.id
+
                     textViewOrderID.text = i.id
                     textViewSubTotal.text = i.data.getValue("total").toString()
                     textViewDeliveryFee.text = i.data.getValue("deliveryFee").toString()

@@ -84,11 +84,10 @@ class ShipperIncomeMonthFragment : Fragment() {
             val dp = DatePickerDialog(requireActivity(), R.style.MyDatePickerStyle,
                 { view, year, monthOfYear, _ ->
                     var erg = ""
-                    erg += ((monthOfYear)).toString()
+                    erg += ((monthOfYear)+1).toString()
                     erg += "-$year"
                     (textViewDate as TextView).text = erg
                     textViewDateTotal.text = erg
-
 
                     fb.get().addOnCompleteListener {
                         for (i in it.result) {

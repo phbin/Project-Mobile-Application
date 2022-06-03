@@ -121,6 +121,9 @@
             android:name=".Restaurant.RestaurantStatisticsActivity"
             android:exported="false" />
         <activity
+            android:name=".Restaurant.RestaurantProcessingDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".Customer.HomeActivity"
             android:exported="false" />
         <activity

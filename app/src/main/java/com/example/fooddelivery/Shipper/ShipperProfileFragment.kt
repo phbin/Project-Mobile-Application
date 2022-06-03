@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import com.example.fooddelivery.MainActivity
 import com.example.fooddelivery.R
 import com.google.firebase.firestore.FirebaseFirestore
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_shipper_profile.*
 
 // TODO: Rename parameter arguments, choose names that match
@@ -69,6 +70,9 @@ class ShipperProfileFragment : Fragment() {
             for(i in it.result){
                 if(i.id == phoneNumber)
                 {
+                    Picasso.get()
+                        .load(i.data.getValue("image").toString())
+                        .into(profileImage)
                     textViewProfileName.text = i.data.getValue("displayName").toString()
                     textViewTransport.text = i.data.getValue("transportType").toString()
                     textViewLicensePlate.text = i.data.getValue("licensePlates").toString()

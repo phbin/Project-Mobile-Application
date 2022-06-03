@@ -39,7 +39,7 @@ class RestaurantAddingMenuActivity : AppCompatActivity() {
                         Toast.makeText(this, "Please try again!!", Toast.LENGTH_SHORT).show()
                     }
             } else {
-                Toast.makeText(this, "Please enter menu's name!!!",Toast.LENGTH_LONG).show()
+                editTextMenuName.error = "Please enter Name"
             }
         }
         btnBack.setOnClickListener {

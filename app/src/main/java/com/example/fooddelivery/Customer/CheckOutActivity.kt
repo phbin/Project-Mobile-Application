@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fooddelivery.*
 import com.example.fooddelivery.model.CheckOutTemp
+import com.example.fooddelivery.model.OrderStatusChange
 import com.example.fooddelivery.model.PromotionClass
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -20,6 +21,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_check_out.*
 import kotlinx.android.synthetic.main.activity_fragment_promotion.*
+import kotlinx.android.synthetic.main.fragment_restaurant_home_processing.*
 
 
 class CheckOutActivity : AppCompatActivity(), OnMapReadyCallback {

@@ -29,8 +29,7 @@
                 android:layout_width="828px"
                 android:layout_height="484px"
                 android:layout_gravity="center_horizontal"
-                android:background="@color/grey"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:background="@color/grey"/>
 
             <Button
                 android:id="@+id/btnAddPicture"

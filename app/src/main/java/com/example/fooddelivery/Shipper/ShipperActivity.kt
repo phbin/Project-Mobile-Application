@@ -7,11 +7,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.FragmentTransaction
 import com.example.fooddelivery.R
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_shipper.*
 import kotlinx.android.synthetic.main.activity_shipper_order_dialog.view.*
@@ -31,6 +28,8 @@ class ShipperActivity : AppCompatActivity() {
 
         val fm = supportFragmentManager
         val fragmentOrder = FragmentOrder()
+
+        val idShipper = preferences.getString("ID", "")
 
         var fb = FirebaseFirestore.getInstance().collection("Shipper")
         fb.get().addOnCompleteListener {
@@ -79,28 +78,62 @@ class ShipperActivity : AppCompatActivity() {
         }
 
         var firebase = FirebaseFirestore.getInstance().collection("WaitingOrders")
+        var fbCustomer = FirebaseFirestore.getInstance().collection("Customer")
 
-        firebase.addSnapshotListener { value, canceled ->
-            if(canceled != null){
+        firebase.addSnapshotListener { value, error ->
+            if(error != null){
                 return@addSnapshotListener
             }
-            if(value!=null){
+            if(value != null){
+                firebase.get().addOnCompleteListener { task ->
+                    for (i in task.result) {
+                        if (i.data.getValue("idShipper").toString() == "" && !preferences.getBoolean("isDelivering", false)){
+                            val mDialogView = LayoutInflater.from(this, ).inflate(R.layout.activity_shipper_order_dialog, null)
 
+                            val mBuilder = AlertDialog.Builder(this)
+                                .setView(mDialogView)
+
+                            val mAlertDialog = mBuilder.show()
+
+                            mDialogView.btnAcceptOrder.setOnClickListener {
+                                firebase.document(i.id).update("idShipper", idShipper)
+                                firebase.document(i.id).update("status", "incoming")
+
+                                val editor : SharedPreferences.Editor = preferences.edit()
+                                editor.putBoolean("isDelivering", true)
+                                editor.apply()
+                                mAlertDialog.dismiss()
+
+                                finish();
+                                startActivity(getIntent());
+                            }
+
+                            mDialogView.btnClose.setOnClickListener {
+                                mAlertDialog.dismiss()
+                                return@setOnClickListener
+                            }
+                        }
+                    }
+                }
             }
         }
 
-        btnGetOrder.setOnClickListener {
-            val mDialogView = LayoutInflater.from(this, ).inflate(R.layout.activity_shipper_order_dialog, null)
-
-            val mBuilder = AlertDialog.Builder(this)
-                .setView(mDialogView)
-
-            val mAlertDialog = mBuilder.show()
-
-            mDialogView.btnAcceptOrder.setOnClickListener {
-                mAlertDialog.dismiss()
-            }
-        }
+//        btnGetOrder.setOnClickListener {
+//            val mDialogView = LayoutInflater.from(this, ).inflate(R.layout.activity_shipper_order_dialog, null)
+//
+//            val mBuilder = AlertDialog.Builder(this)
+//                .setView(mDialogView)
+//
+//            val mAlertDialog = mBuilder.show()
+//
+//            mDialogView.btnAcceptOrder.setOnClickListener {
+//                mAlertDialog.dismiss()
+//            }
+//
+//            mDialogView.btnClose.setOnClickListener {
+//                mAlertDialog.dismiss()
+//            }
+//        }
 
 //        btnGetOrder.setOnClickListener {
 //

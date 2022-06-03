@@ -34,6 +34,8 @@ import java.util.*
 class RestaurantAddingDishesActivity: AppCompatActivity() {
     lateinit var downloadUri:Uri
     var storage=FirebaseStorage.getInstance()
+    var uploadImageSuccess : Boolean = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_restaurant_adding_dishes)
@@ -80,13 +82,13 @@ class RestaurantAddingDishesActivity: AppCompatActivity() {
             }
         }
         btnContinue.setOnClickListener {
-            progressBar.visibility=View.VISIBLE
-            btnContinue.visibility=View.GONE
-            if (editTextSize.text.toString() != ""
-                && editTextPrice.text.toString() != ""
+            if (editTextPrice.text.toString() != ""
                 && editTextMenuName.text.toString() != ""
                 && img != null
             ) {
+                progressBar.visibility=View.VISIBLE
+                btnContinue.visibility=View.GONE
+
                 var calendar = Calendar.getInstance()
                 var mountainsRef: StorageReference =
                     storageRef.child("image" + calendar.timeInMillis + ".png")
@@ -115,6 +117,7 @@ class RestaurantAddingDishesActivity: AppCompatActivity() {
                     mountainsRef.downloadUrl
                 }.addOnCompleteListener { task ->
                     if (task.isSuccessful) {
+                        uploadImageSuccess = true
                         downloadUri = task.result
                         Log.d("AAAA", "" + downloadUri)
                         ////////////////////load another data////////////////////
@@ -140,9 +143,17 @@ class RestaurantAddingDishesActivity: AppCompatActivity() {
                                 Toast.makeText(this,"Please try again!!", Toast.LENGTH_SHORT).show()
                             }
                     } else
-                    {
-
-                    }
+                        Toast.makeText(this, "Loading failed", Toast.LENGTH_SHORT).show()
+                }
+            }else{
+                if(editTextMenuName.text.isEmpty()) {
+                    editTextMenuName.error = "Please enter Name"
+                }
+                if(editTextPrice.text.isEmpty()){
+                    editTextPrice.error = "Please enter Price"
+                }
+                if(!uploadImageSuccess){
+                    Toast.makeText(this, "Please upload picture", Toast.LENGTH_SHORT).show()
                 }
             }
         }

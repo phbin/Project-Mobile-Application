@@ -28,6 +28,7 @@ class RestaurantMenuActivity : AppCompatActivity() {
                 for (i in it.result) {
                     if (i.id == phoneNumber) {
                         nameRestaurant.setText(i.data.getValue("displayName").toString())
+                        textViewRestaurantAddress.text = i.data.getValue("address").toString()
                     }
                 }
             }
