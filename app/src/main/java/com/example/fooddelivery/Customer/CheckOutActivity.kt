@@ -3,6 +3,7 @@ package com.example.fooddelivery.Customer
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
@@ -19,17 +20,42 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_check_out.*
-import kotlinx.android.synthetic.main.activity_fragment_promotion.*
+import kotlinx.android.synthetic.main.activity_check_out.btnBack
+import kotlinx.android.synthetic.main.activity_check_out.listviewItem
 
 
 class CheckOutActivity : AppCompatActivity(), OnMapReadyCallback {
     lateinit var mMap:GoogleMap
-    //var flag:Boolean =false
+//    var sharedPreferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+//    val phoneNumber = sharedPreferences.getString("ID", "")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_check_out)
+        var promotionPosition= intent.getStringExtra("promotionPosition")
+        if(promotionPosition!="") {
+            var fb = FirebaseFirestore.getInstance().collection("Restaurant")
+                .document("0393751403")
+                .collection("promotion")
+            fb.get().addOnCompleteListener {
+                if (it.isSuccessful) {
+                    for ((index, i) in it.result.withIndex()) {
+                        if (index == promotionPosition?.toInt()) {
+                            textPromotion.text=i.data.getValue("name").toString()
+                            var discount=i.data.getValue("value").toString().toInt()
+                            var getTotal=textTotal.text.substring(0,textTotal.text.length-4).toLong()
+                            //Log.d("AAA",""+getTotal)
+                            Log.d("AA",""+textTotal.text.substring(0,textTotal.text.length-4).toLong())
+                            if(discount!=0){
+                                textDiscount.text= "-"+((getTotal*discount)/100).toString()+" VND"
+                                textTotal.text= (getTotal-discount).toString()+" VND"
+                            }
+                            imgPromotion.setBackgroundResource(R.drawable.iccoupon)
 
-
+                        }
+                    }
+                }
+            }
+        }
         //map
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.frmMaps) as SupportMapFragment
@@ -42,44 +68,13 @@ class CheckOutActivity : AppCompatActivity(), OnMapReadyCallback {
         }
 
         //input list item picking
-        var arrayListName: ArrayList<CheckOutTemp> = ArrayList()
-        arrayListName.add(CheckOutTemp("1x", "Shaking Beef Tri-Tip", "30.000 VNĐ"))
-        arrayListName.add(CheckOutTemp("2x",
-            "Shaking Beef Tri-Tip",
-            "30.000 VNĐ"))
-        arrayListName.add(CheckOutTemp("1x", "Shaking Beef Tri-Tip", "30.000 VNĐ"))
-        listviewItem.layoutManager=LinearLayoutManager(this)
-        listviewItem.adapter = CustomAdapterListName(arrayListName)
-        listviewItem.setHasFixedSize(true)
+        LoadCart()
 
         //bottom sheet dialog payment
         clickButtonChoose()
         clickButtonAdd()
-//        if (flag==true) {
-//            var listPromotion: ArrayList<PromotionClass> = ArrayList()
-//
-//            var fb = FirebaseFirestore.getInstance().collection("Restaurant")
-//                .document("0393751403")
-//                .collection("promotion")
-//            fb.get().addOnCompleteListener {
-//                if (it.isSuccessful) {
-//                    for (i in it.result) {
-//                        listPromotion.add(PromotionClass("" + i.data.getValue("code").toString(),
-//                            "" + i.data.getValue("description").toString(),
-//                            "" + i.data.getValue("expiryDate").toString(),
-//                            "" + i.data.getValue("name").toString(),
-//                            1))
-//                    }
-//                }
-//                var position = intent.getIntExtra("promotionPosition", -1)
-//                if (position != -1) {
-//                    textPromotion.text = listPromotion[position].name
-//                    //imgPromotion.setBackgroundResource(listPromotion[position].ic)
-//                    //textPromotion.setTextColor(resources.getColor(R.color.grey))
-//                    flag = false
-//                }
-//            }
-//        }
+        LoadInfo()
+        LoadTotal()
     }
 
     //Payment Method Fragment
@@ -124,11 +119,9 @@ class CheckOutActivity : AppCompatActivity(), OnMapReadyCallback {
             }
         }
     }
-    var flag=false
     fun clickButtonAdd()
     {
         btnAdd.setOnClickListener {
-            flag=true
             var intent = Intent(this, FragmentPromotion::class.java)
             startActivity(intent)
         }
@@ -141,20 +134,50 @@ class CheckOutActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(addr,15f))
     }
 
-//    fun GetPromotion() {
-//        if(flag==true) {
-//            var position = intent.getIntExtra("promotionPosition",-1)
-//            //Toast.makeText(this@CheckOutActivity,"hêlo",Toast.LENGTH_SHORT).show()
-//            if (position != -1) {
-//                var listPromotion: ArrayList<PromotionClass> = ArrayList()
-//
-//                textPromotion.text = listPromotion[position].name
-//                //imgPromotion.setBackgroundResource(listPromotion[position].ic)
-//                //textPromotion.setTextColor(resources.getColor(R.color.grey))
-//            } else return
-//        }
-//            flag = false
-//    }
+    private fun LoadInfo() {
+        var fb = FirebaseFirestore.getInstance().collection("Customer")
+        fb.get().addOnCompleteListener {
+            for (i in it.result) {
+                if (i.id == "0393751403") {
+                    textViewName.text = i.data.getValue("displayName").toString()
+                    textViewAddress.text = i.data.getValue("address").toString()
+                    textViewNoPhone.text = "0393751403"
+                    return@addOnCompleteListener
+                }
+                continue
+            }
+        }
+    }
+
+    private fun LoadCart(){
+        var arrayListName: ArrayList<CheckOutTemp> = ArrayList()
+        var fb = FirebaseFirestore.getInstance().collection("Customer")
+            .document("0393751403")
+            .collection("Cart")
+        fb.get().addOnCompleteListener {
+            for (i in it.result) {
+                arrayListName.add(CheckOutTemp("" + i.data.getValue("quantity"),
+                    "" + i.data.getValue("nameFD"),
+                    "" + i.data.getValue("price")+" VND"))
+            }
+            listviewItem.layoutManager = LinearLayoutManager(this)
+            listviewItem.adapter = CustomAdapterListName(arrayListName)
+        }
+    }
+    private fun LoadTotal(){
+        var total:Long=0
+        var fb = FirebaseFirestore.getInstance().collection("Customer")
+            .document("0393751403")
+            .collection("Cart")
+        fb.get().addOnCompleteListener {
+            for (i in it.result) {
+                var a=i.data.getValue("price").toString().toLong()
+                total=total+a
+            }
+            textSubPrice.text=total.toString()+" VND"
+            textTotal.setText((total+18000).toString()+" VND")
+        }
+    }
 }
 
 

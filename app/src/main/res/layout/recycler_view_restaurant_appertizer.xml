@@ -25,7 +25,8 @@
                 android:layout_gravity="center"
                 >
                 <ImageView
-                    android:id="@+id/imageRestaurantExploreMore"
+                    android:id="@+id/imageFD"
+                    android:scaleType="centerCrop"
                     android:layout_width="288px"
                     android:layout_height="290.88px">
                 </ImageView>
@@ -38,7 +39,7 @@
                 android:layout_gravity="center"
                 >
                 <TextView
-                    android:id="@+id/textNameRestaurantExploreMore"
+                    android:id="@+id/textName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Shaking Beef Tri-Tip"
@@ -48,19 +49,17 @@
                     >
                 </TextView>
                 <TextView
-                    android:id="@+id/textDishExploreMore"
+                    android:id="@+id/textSize"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Burger-chicken-cake"
+                    android:text="L"
                     android:fontFamily="@font/lato_regular"
                     android:textColor="@color/grey"
                     android:textSize="34.56px"
                     >
-
                 </TextView>
-
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/textPrice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="30.000 VND" />

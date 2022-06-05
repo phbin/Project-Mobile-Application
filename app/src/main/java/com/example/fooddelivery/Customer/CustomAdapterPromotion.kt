@@ -20,8 +20,6 @@ class CustomAdapterPromotion(var listitem:ArrayList<PromotionClass>):
         itemClick=listener
     }
 
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView=LayoutInflater.from(parent.context).inflate(R.layout.listview_promotion,parent,false)
         return ViewHolder(itemView, itemClick)

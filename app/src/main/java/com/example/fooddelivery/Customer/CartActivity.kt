@@ -48,6 +48,10 @@ class CartActivity : AppCompatActivity() {
         backButton.setOnClickListener{
             finish()
         }
+        btnOrder.setOnClickListener{
+            var intent=Intent(this,CheckOutActivity::class.java)
+            startActivity(intent)
+        }
 
 //
 

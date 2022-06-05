@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -18,7 +19,7 @@
             android:name=".Customer.SearchRestaurantActivity"
             android:exported="false" />
         <activity
-            android:name=".Customer.RestaurantActivity"
+            android:name=".Customer.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".Customer.CustomerMenu"
@@ -65,10 +66,8 @@
             android:value="AIzaSyBgcrJbS9BYCPw1aa3ksmVpYhqTbjyWp58" />
 
         <activity
-            android:name=".Customer.FragmentPromotion"
-            android:exported="false" /> <!-- <activity -->
-        <!-- android:name=".MainActivity" -->
-        <!-- android:exported="false" /> -->
+            android:name=".MainActivity"
+            android:exported="false" />
         <activity
             android:name=".SignInEnterCode"
             android:exported="false" />
@@ -106,7 +105,7 @@
             android:name=".Restaurant.RestaurantMenuActivity"
             android:exported="false" />
         <activity
-            android:name=".Customer.CheckOutActivity"
+            android:name=".Customer.FragmentPromotion"
             android:exported="false" />
         <activity
             android:name=".Restaurant.RestaurantResManagementActivity"
@@ -121,7 +120,7 @@
             android:name=".Restaurant.RestaurantStatisticsActivity"
             android:exported="false" />
         <activity
-            android:name=".Customer.HomeActivity"
+            android:name=".Customer.SearchLocationActivity"
             android:exported="false" />
         <activity
             android:name=".Restaurant.RestaurantDishDetailActivity"
@@ -145,10 +144,10 @@
             android:name=".Customer.CustomerFindingShipperActivity"
             android:exported="true" />
         <activity
-            android:name=".Customer.SearchLocationActivity"
+            android:name=".Customer.CheckOutActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Customer.RestaurantActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

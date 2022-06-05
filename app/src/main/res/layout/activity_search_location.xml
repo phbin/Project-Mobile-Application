@@ -6,33 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".Customer.SearchLocationActivity"
     android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="57.6px"
-        android:layout_marginHorizontal="69.12px"
-        android:orientation="horizontal">
-        <ImageButton
-            android:layout_width="57.6px"
-            android:layout_height="57.6px"
-            android:id="@+id/backButton"
-            android:background="@drawable/back_button"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_gravity="center"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Location"
-            android:fontFamily="@font/lato_semibold"
-            android:textSize="51.84px"
-            android:textColor="@color/black"
-            android:layout_marginLeft="335.32px"/>
-    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
          <EditText
+             android:id="@+id/editTextSearchLocation"
              android:layout_marginLeft="69.12px"
             android:layout_width="900px"
              android:layout_height="wrap_content"
@@ -43,6 +23,7 @@
         <ImageButton
             android:layout_width="60px"
             android:layout_height="60px"
+            android:onClick="searchLocation"
             android:layout_gravity="center"
             android:background="@drawable/search_button"/>
     </LinearLayout>
@@ -57,12 +38,12 @@
             android:layout_height="match_parent" />
 
         <Button
-            android:id="@+id/btnLogout"
+            android:id="@+id/btnConfirm"
             android:layout_width="981px"
             android:layout_height="130px"
             android:layout_gravity="center"
             android:layout_marginHorizontal="69px"
-            android:layout_marginTop="1600px"
+            android:layout_marginTop="1700px"
             android:background="@drawable/mint_button"
             android:backgroundTint="@color/mint"
             android:fontFamily="@font/lato_semibold"

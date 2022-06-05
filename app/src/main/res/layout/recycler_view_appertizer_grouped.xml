@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:id="@+id/textNameCategory"
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20px"
+        android:text="Category"
+        android:padding="20px"
+        android:layout_marginLeft="69px"
+        android:textSize="65px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/black"
+        android:fontFamily="@font/lato_bold"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/restaurantAppertizerRecyclerView"
+        android:layout_width="0px"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textNameCategory"
+        tools:listitem="@layout/recycler_view_restaurant_appertizer"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

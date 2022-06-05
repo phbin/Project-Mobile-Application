@@ -13,6 +13,7 @@
             android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="288px"
+            android:scaleType="centerCrop"
             android:layout_marginHorizontal="69.12px"
             android:gravity="center"
             android:background="@drawable/border_shadow_button"
