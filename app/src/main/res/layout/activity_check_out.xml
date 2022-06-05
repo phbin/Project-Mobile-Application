@@ -203,7 +203,7 @@
                                 android:textColor="@color/black"
                                 android:fontFamily="@font/lato_regular"
                                 android:textSize="40.32px"
-                                android:text="90.000 VND"
+                                android:text="90000 VND"
                                 >
                             </TextView>
                             <TextView
@@ -214,7 +214,7 @@
                                 android:textColor="@color/black"
                                 android:fontFamily="@font/lato_regular"
                                 android:textSize="40.32px"
-                                android:text="18.000 VND"
+                                android:text="18000 VND"
                                 >
                             </TextView>
                         </LinearLayout>
@@ -378,7 +378,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textAlignment="viewEnd"
-                        android:text="125.000 VND"
+                        android:text="125000 VND"
                         android:textSize="37.44px"
                         android:fontFamily="@font/lato_regular"
                         android:textColor="@color/black"

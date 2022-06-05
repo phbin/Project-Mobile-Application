@@ -1,5 +1,8 @@
 package com.example.fooddelivery.Customer
 
+import android.content.Context
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +12,7 @@ import com.example.fooddelivery.R
 import com.example.fooddelivery.model.DishByCategory
 import com.example.fooddelivery.model.RestaurantAppertizer
 
-class DishByCategoryAdapter(var listitem: ArrayList<DishByCategory>):RecyclerView.Adapter<DishByCategoryAdapter.ViewHolder>() {
+class DishByCategoryAdapter(val context: Context, var listitem: ArrayList<DishByCategory>):RecyclerView.Adapter<DishByCategoryAdapter.ViewHolder>() {
 //    lateinit var itemClick : onItemClickListener
 //    interface onItemClickListener{
 //        fun onItemClick(position: Int)
@@ -28,10 +31,23 @@ class DishByCategoryAdapter(var listitem: ArrayList<DishByCategory>):RecyclerVie
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentItem=listitem[position]
+        val categoryPosition=position
         holder.textNameCategory.text=currentItem.nameCategory
         var list:ArrayList<RestaurantAppertizer> = currentItem.list
         var resApperAdapter=Restaurant_Appertizer_RecyclerView(list)
         holder.restaurantAppertizerRecyclerView.adapter=resApperAdapter
+        (holder.restaurantAppertizerRecyclerView.adapter as Restaurant_Appertizer_RecyclerView)
+            .setOnItemClickListener(
+            object : Restaurant_Appertizer_RecyclerView.onItemClickListener{
+            override fun onItemClick(position: Int) {
+                var intent= Intent(context,DishDetailActivity::class.java)
+//                Log.d("AAA", "chon $position $categoryPosition")
+                intent.putExtra("itemPosition",position)
+                intent.putExtra("categoryPosition",categoryPosition)
+                context.startActivity(intent)
+            }
+
+        })
 //        resApperAdapter.setOnItemClickListener{
 //
 //        }

@@ -66,18 +66,8 @@ class RestaurantActivity : AppCompatActivity() {
                             recyclerview =
                                 findViewById(R.id.restaurantAppertizerRecyclerViewGrouped)
                             adapterDishByCategory =
-                                DishByCategoryAdapter(arrayListRestaurantAppertizer)
+                                DishByCategoryAdapter(this,arrayListRestaurantAppertizer)
                             recyclerview.adapter = adapterDishByCategory
-//                            adapter = Restaurant_Appertizer_RecyclerView(itemList)
-//                            adapter.setOnItemClickListener(object :
-//                                Restaurant_Appertizer_RecyclerView.onItemClickListener {
-//                                override fun onItemClick(position: Int) {
-//                                    Toast.makeText(this@RestaurantActivity,"hiiiii"+position,Toast.LENGTH_LONG).show()
-////                                    val intent = Intent(this@RestaurantActivity, RestaurantPromotionDetailActivity::class.java)
-////                                    intent.putExtra("promotionPosition", ""+position)
-////                                    startActivity(intent)
-//                                }
-//                            })
                         }
                 }
             }

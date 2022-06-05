@@ -12,16 +12,16 @@ import com.squareup.picasso.Picasso
 class Restaurant_Appertizer_RecyclerView(var listitem:ArrayList<RestaurantAppertizer>): RecyclerView.Adapter<Restaurant_Appertizer_RecyclerView.MyViewHolder>() {
 //    var onClick : ((Restaurant_Appertizer_RecyclerView) -> Unit)? = null
 
-//    lateinit var itemClick : onItemClickListener
-//    interface onItemClickListener{
-//        fun onItemClick(position: Int)
-//    }
-//    fun setOnItemClickListener(listener: onItemClickListener){
-//        itemClick=listener
-//    }
+    lateinit var itemClick : onItemClickListener
+    interface onItemClickListener{
+        fun onItemClick(position: Int)
+    }
+    fun setOnItemClickListener(listener: onItemClickListener){
+        itemClick=listener
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.recycler_view_restaurant_appertizer,parent,false)
-        return MyViewHolder(view)
+        return MyViewHolder(view,itemClick)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
@@ -46,16 +46,16 @@ class Restaurant_Appertizer_RecyclerView(var listitem:ArrayList<RestaurantAppert
         return 0
     }
 
-    class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    class MyViewHolder(itemView: View, listener: onItemClickListener): RecyclerView.ViewHolder(itemView) {
         var textName:TextView=itemView.findViewById(R.id.textName)
         var textSize:TextView=itemView.findViewById(R.id.textSize)
         var textPrice:TextView=itemView.findViewById(R.id.textPrice)
         var imageFD: ImageView = itemView.findViewById(R.id.imageFD)
-//        init{
-//            itemView.setOnClickListener{
-//                listener.onItemClick(adapterPosition)
-//            }
-//
-//        }
+        init{
+            itemView.setOnClickListener{
+                listener.onItemClick(adapterPosition)
+            }
+
+        }
     }
 }
