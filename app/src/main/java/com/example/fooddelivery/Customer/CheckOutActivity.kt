@@ -1,6 +1,7 @@
 package com.example.fooddelivery.Customer
 
 
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -34,12 +35,18 @@ class CheckOutActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_check_out)
+
+    var preferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+    val idCustomer = preferences.getString("ID","")
+    val idRestaurant = intent.getStringExtra("idRestaurant")
+    val quantity = intent.getStringExtra("quantity")
+
     var total:Long=0
     var fb = FirebaseFirestore.getInstance().collection("Customer")
-        .document("0393751403")
+        .document("$idCustomer")
         .collection("Cart")
     var promo = FirebaseFirestore.getInstance().collection("Restaurant")
-        .document("0393751403")
+        .document("$idCustomer")
         .collection("promotion")
     var wo = FirebaseFirestore.getInstance().collection("WaitingOrders")
 
@@ -92,10 +99,9 @@ class CheckOutActivity : AppCompatActivity(), OnMapReadyCallback {
 
     //Event click button back
     btnBack.setOnClickListener {
-//        var intent = Intent(this, MainActivity::class.java)
-//        startActivity(intent)
+        finish()
     }
-    var sdf = SimpleDateFormat("dd-MM-yyyy HH:mm:ss")
+    var sdf = SimpleDateFormat("dd-MM-yyyy")
 
     //Event click order
     btnOrder.setOnClickListener {
@@ -106,7 +112,7 @@ class CheckOutActivity : AppCompatActivity(), OnMapReadyCallback {
                 for (i in task.result) {
                     //object item chosen
                     var addListBill =
-                        WaitingOrderClass("0393751403",
+                        WaitingOrderClass("$idCustomer",
                             "" + i.data.getValue("idCategory"),
                             "" + i.data.getValue("idItem"),
                             "" + i.data.getValue("price"),
@@ -119,11 +125,7 @@ class CheckOutActivity : AppCompatActivity(), OnMapReadyCallback {
         }
         wo.document("" + id).collection("ListBill")
         wo.get().addOnCompleteListener {
-            var quantity = 1
             if (it.isSuccessful) {
-                for (i in it.result) {
-                    quantity++
-                }
                 promo.get().addOnCompleteListener {
                     if (it.isSuccessful) {
                         for ((index, i) in it.result.withIndex()) {
@@ -131,9 +133,9 @@ class CheckOutActivity : AppCompatActivity(), OnMapReadyCallback {
                                 //add list bill
                                 var addBill = OrderInfoClass("" + sdf.format(date),
                                     "" + textFee.text.substring(0, textTotal.text.length - 4),
-                                    "0393751403",
+                                    "$idCustomer",
                                     "" + i.id,
-                                    "0393751403",
+                                    "$idRestaurant",
                                     "",
                                     "" + quantity,
                                     "waiting",
@@ -144,14 +146,18 @@ class CheckOutActivity : AppCompatActivity(), OnMapReadyCallback {
 
                                 wo.document("" + id)
                                     .set(addBill)
+
+                                val intent = Intent(this, CustomerFindingShipperActivity::class.java)
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                                startActivity(intent)
                             } else {
                                 //object waiting order info
                                 var addBill = OrderInfoClass("" + sdf.format(date),
                                     "" + textSubFee.text.substring(0,
                                         textSubFee.text.length - 4),
-                                    "0393751403",
+                                    "$idCustomer",
                                     "",
-                                    "0393751403",
+                                    "$idRestaurant",
                                     "",
                                     "" + quantity,
                                     "waiting",
@@ -161,6 +167,10 @@ class CheckOutActivity : AppCompatActivity(), OnMapReadyCallback {
                                         textTotal.text.length - 4).toLong()))
                                 wo.document("" + id)
                                     .set(addBill)
+
+                                val intent = Intent(this, CustomerFindingShipperActivity::class.java)
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                                startActivity(intent)
                             }
                         }
                     }
@@ -243,12 +253,14 @@ class CheckOutActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private fun LoadInfo() {
         var fb = FirebaseFirestore.getInstance().collection("Customer")
+        var preferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        val idCustomer = preferences.getString("ID","")
         fb.get().addOnCompleteListener {
             for (i in it.result) {
-                if (i.id == "0393751403") {
+                if (i.id == "$idCustomer") {
                     textViewName.text = i.data.getValue("displayName").toString()
                     textViewAddress.text = i.data.getValue("address").toString()
-                    textViewNoPhone.text = "0393751403"
+                    textViewNoPhone.text = "$idCustomer"
                     return@addOnCompleteListener
                 }
                 continue
@@ -258,8 +270,10 @@ class CheckOutActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private fun LoadCart(){
         var arrayListName: ArrayList<CheckOutTemp> = ArrayList()
+        var preferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        val idCustomer = preferences.getString("ID","")
         var fb = FirebaseFirestore.getInstance().collection("Customer")
-            .document("0393751403")
+            .document("$idCustomer")
             .collection("Cart")
         fb.get().addOnCompleteListener {
             for (i in it.result) {
@@ -273,8 +287,10 @@ class CheckOutActivity : AppCompatActivity(), OnMapReadyCallback {
     }
     private fun LoadTotal(){
         var total:Long=0
+        var preferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        val idCustomer = preferences.getString("ID","")
         var fb = FirebaseFirestore.getInstance().collection("Customer")
-            .document("0393751403")
+            .document("$idCustomer")
             .collection("Cart")
         fb.get().addOnCompleteListener {
             for (i in it.result) {

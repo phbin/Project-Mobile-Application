@@ -22,6 +22,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.denzcoskun.imageslider.ImageSlider
+import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.models.SlideModel
 import com.example.fooddelivery.R
 import com.example.fooddelivery.SignInActivity
 import com.example.fooddelivery.model.CustomerCategory
@@ -51,12 +54,25 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var arrayListRestau: ArrayList<RestaurantClass>
     var latitude=0.0
     var longitude=0.0
+
+    lateinit var imageSlider : ImageSlider
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
         var preferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
         val idCustomer = preferences.getString("ID","")
+
+        imageSlider = findViewById(R.id.imageSlider)
+        var slideModels : ArrayList<SlideModel> = ArrayList()
+            slideModels.add(SlideModel("https://yt3.ggpht.com/ytc/AKedOLRswKCygRWK-eecd1Gt-DrlEhv79jYXlNMx535E=s900-c-k-c0x00ffffff-no-rj", ScaleTypes.FIT))
+        slideModels.add(SlideModel("https://younetmedia.com/wp-content/uploads/2019/08/younet-media-baemin-vietnam-xanh-mint-1024x683.png", ScaleTypes.FIT))
+        slideModels.add(SlideModel("https://rider.baemin.vn/wp-content/uploads/2020/08/the-le-do-vui-chuyen-gia-baemin-1127.jpg", ScaleTypes.FIT))
+        slideModels.add(SlideModel("https://vietnambusinessinsider.vn/uploads/images/2021/11/04/a33-baemin-2-1635146759-1636010488.jpeg", ScaleTypes.FIT))
+        slideModels.add(SlideModel("https://static.mservice.io/blogscontents/momo-upload-api-200416115749-637226350699346507.jpg", ScaleTypes.FIT))
+
+        imageSlider.setImageList(slideModels, ScaleTypes.FIT)
 
         latitude=intent.getDoubleExtra("lat",0.0)
         longitude=intent.getDoubleExtra("long",0.0)

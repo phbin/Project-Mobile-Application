@@ -34,6 +34,8 @@ class RestaurantActivity : AppCompatActivity() {
         setContentView(R.layout.activity_restaurant)
 
         val idRestaurant = intent.getStringExtra("idRes")
+        var preferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        val idCustomer = preferences.getString("ID","")
 
         var arrayListRestaurantAppertizer: ArrayList<DishByCategory> = ArrayList()
 
@@ -95,6 +97,16 @@ class RestaurantActivity : AppCompatActivity() {
             }
         }
         btnBack.setOnClickListener {
+            var fb = FirebaseFirestore.getInstance().collection("Customer")
+                .document("$idCustomer")
+                .collection("Cart")
+            fb.get().addOnCompleteListener {
+                if (it.isSuccessful) {
+                    for (i in it.result) {
+                        fb.document("" + i.id).delete()
+                    }
+                }
+            }
             finish()
         }
     }

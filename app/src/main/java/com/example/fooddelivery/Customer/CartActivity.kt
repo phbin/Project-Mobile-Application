@@ -22,11 +22,17 @@ class CartActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
+
+        var preferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        val idCustomer = preferences.getString("ID","")
+        var idRestaurant = ""
+        var quantity = 0
+
         //var sharedPreferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
         //val phoneNumber = sharedPreferences.getString("ID", "")
         var cartItems: ArrayList<CartClass> = ArrayList()
         var fb = FirebaseFirestore.getInstance().collection("Customer")
-            .document("0393751403")
+            .document("$idCustomer")
             .collection("Cart")
         fb.get().addOnCompleteListener {
             if (it.isSuccessful) {
@@ -40,6 +46,8 @@ class CartActivity : AppCompatActivity() {
                         "" + i.data.getValue("quantity"),
                         "" + i.data.getValue("imageFD")))
                         total += i.data.getValue("price").toString().toLong()
+                        idRestaurant = i.data.getValue("idRestaurant").toString()
+                        quantity+=i.data.getValue("quantity").toString().toInt()
                 }
                 textViewTotal.text = total.toString()
             }
@@ -54,6 +62,8 @@ class CartActivity : AppCompatActivity() {
         }
         btnOrder.setOnClickListener{
             var intent=Intent(this,CheckOutActivity::class.java)
+            intent.putExtra("idRestaurant", idRestaurant)
+            intent.putExtra("quantity", quantity.toString())
             startActivity(intent)
         }
 

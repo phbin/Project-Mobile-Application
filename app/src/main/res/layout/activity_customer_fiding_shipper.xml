@@ -60,6 +60,7 @@
                     android:text="We have received your order"/>
 
                 <LinearLayout
+                    android:id="@+id/layoutFinding"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -83,6 +84,7 @@
                         android:backgroundTint="@color/mint"/>
 
                     <TextView
+                        android:id="@+id/textViewFinding"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Finding your shipper..."
