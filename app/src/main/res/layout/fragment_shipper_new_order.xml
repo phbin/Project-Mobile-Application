@@ -35,14 +35,14 @@
                 android:layout_height="match_parent"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
-<!--                <fragment-->
-<!--                    android:layout_marginHorizontal="70px"-->
-<!--                    android:id="@+id/frmMaps"-->
-<!--                    android:name="com.google.android.gms.maps.SupportMapFragment"-->
-<!--                    android:layout_width="941.76px"-->
-<!--                    android:layout_height="408.96px"-->
-<!--                    android:layout_marginTop="71px">-->
-<!--                </fragment>-->
+                <!--                <fragment-->
+                <!--                    android:layout_marginHorizontal="70px"-->
+                <!--                    android:id="@+id/frmMaps"-->
+                <!--                    android:name="com.google.android.gms.maps.SupportMapFragment"-->
+                <!--                    android:layout_width="941.76px"-->
+                <!--                    android:layout_height="408.96px"-->
+                <!--                    android:layout_marginTop="71px">-->
+                <!--                </fragment>-->
                 <androidx.cardview.widget.CardView
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     android:layout_width="941.76px"
@@ -336,22 +336,22 @@
                 app:backgroundTint="@color/mint"
                 android:layout_marginBottom="100px"/>
 
-<!--            <Button-->
-<!--                android:id="@+id/btnFinish"-->
-<!--                android:layout_width="981px"-->
-<!--                android:layout_height="130px"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:layout_marginTop="69px"-->
-<!--                android:background="@drawable/mint_button"-->
-<!--                android:backgroundTint="@color/mint"-->
-<!--                android:fontFamily="@font/lato_semibold"-->
-<!--                android:text="Finish Delivery"-->
-<!--                android:textAllCaps="false"-->
-<!--                android:textColor="@color/white"-->
-<!--                android:textSize="48px"-->
-<!--                app:backgroundTint="@color/mint"-->
-<!--                android:layout_marginBottom="100px"-->
-<!--                android:visibility="invisible"/>-->
+            <!--            <Button-->
+            <!--                android:id="@+id/btnFinish"-->
+            <!--                android:layout_width="981px"-->
+            <!--                android:layout_height="130px"-->
+            <!--                android:layout_gravity="center"-->
+            <!--                android:layout_marginTop="69px"-->
+            <!--                android:background="@drawable/mint_button"-->
+            <!--                android:backgroundTint="@color/mint"-->
+            <!--                android:fontFamily="@font/lato_semibold"-->
+            <!--                android:text="Finish Delivery"-->
+            <!--                android:textAllCaps="false"-->
+            <!--                android:textColor="@color/white"-->
+            <!--                android:textSize="48px"-->
+            <!--                app:backgroundTint="@color/mint"-->
+            <!--                android:layout_marginBottom="100px"-->
+            <!--                android:visibility="invisible"/>-->
         </LinearLayout>
 
     </FrameLayout>

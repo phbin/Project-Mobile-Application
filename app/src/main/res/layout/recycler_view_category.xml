@@ -4,12 +4,11 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
  >
-    <LinearLayout
-        android:layout_width="129.6px"
-        android:layout_height="129.6px"
-        android:background="@drawable/circle_mint"
-        android:layout_marginStart="51.84px"
-        >
-
-    </LinearLayout>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgCategory"
+            android:layout_width="129.6px"
+            android:layout_height="129.6px"
+            android:src="@drawable/circle_mint"
+            android:layout_marginStart="51.84px">
+        </de.hdodenhof.circleimageview.CircleImageView>
 </androidx.cardview.widget.CardView>

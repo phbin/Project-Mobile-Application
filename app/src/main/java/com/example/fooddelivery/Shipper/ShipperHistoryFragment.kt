@@ -66,6 +66,7 @@ class ShipperHistoryFragment : Fragment() {
         val idShipper = preferences.getString("ID", "")
 
         var orderHistoryList : ArrayList<ShipperOrderHistory> = ArrayList()
+        var orderHistory : ArrayList<ShipperOrderHistory> = ArrayList()
 
         var fb = FirebaseFirestore.getInstance().collection("Bill")
         var fbCustomer = FirebaseFirestore.getInstance().collection("Customer")
@@ -110,6 +111,57 @@ class ShipperHistoryFragment : Fragment() {
                             }
 
                         })
+                    }
+                }
+            }
+        }
+
+        fb.addSnapshotListener { value, error ->
+            if (error != null){
+                return@addSnapshotListener
+            }
+            if(value!=null){
+                fb.get().addOnCompleteListener { task ->
+                    for (i in task.result) {
+                        if(i.data.getValue("idShipper").toString()== idShipper)
+                        {
+                            fbCustomer.get().addOnCompleteListener {
+                                for(j in it.result){
+                                    if(j.id == i.data.getValue("idCustomer")){
+                                        customerName = j.data.getValue("displayName").toString()
+                                        customerAddress = j.data.getValue("address").toString()
+                                        billID = i.id
+                                        orderHistory.add(
+                                            ShipperOrderHistory(billID,
+                                                "" + customerAddress,
+                                                "" + customerName,
+                                                "",
+                                                "" + i.data.getValue("total").toString()
+                                            )
+                                        )
+                                    }
+                                }
+
+                                recyclerView.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
+                                recyclerView.adapter = ShipperAdapterHistory(requireActivity().applicationContext, orderHistory )
+
+//                        (recyclerView.adapter as ShipperAdapterHistory).onItemClick = {
+//                            val intent = Intent(requireActivity(), OrderDetailActivity::class.java)
+//                            intent.putExtra("billID", billID)
+//                            startActivity(intent)
+//                        }
+
+                                (recyclerView.adapter as ShipperAdapterHistory).setOnIntemClickListener(object :
+                                    ShipperAdapterHistory.onIntemClickListener {
+                                    override fun onClickItem(position: Int) {
+                                        val intent = Intent(requireActivity(), OrderDetailActivity::class.java)
+                                        intent.putExtra("billID", orderHistory[position].orderID)
+                                        startActivity(intent)
+                                    }
+
+                                })
+                            }
+                        }
                     }
                 }
             }

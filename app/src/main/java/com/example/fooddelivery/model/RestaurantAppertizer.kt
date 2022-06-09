@@ -3,8 +3,8 @@ package com.example.fooddelivery.model
 import android.media.Image
 
 data class RestaurantAppertizer(
-    var image: Int,
+    var image: String,
     var name:String,
-    var caregory: String,
-    var price: Int
+    var size: String,
+    var price: String
     )

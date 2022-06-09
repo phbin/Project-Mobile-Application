@@ -163,19 +163,4 @@
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-    <Button
-        android:id="@+id/btnLogout"
-        android:layout_width="981px"
-        android:layout_height="130px"
-        android:layout_marginHorizontal="69px"
-        android:layout_gravity="center"
-        android:background="@drawable/mint_button"
-        android:backgroundTint="@color/mint"
-        android:fontFamily="@font/lato_semibold"
-        android:text="Log out"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="48px"
-        android:layout_marginTop="98px"
-        android:layout_marginBottom="82px"/>
 </LinearLayout>

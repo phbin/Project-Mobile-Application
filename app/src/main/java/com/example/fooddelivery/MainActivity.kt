@@ -1,9 +1,16 @@
 package com.example.fooddelivery
 
+import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import com.example.fooddelivery.Customer.CheckOutActivity
+import com.example.fooddelivery.Customer.HomeActivity
+import com.example.fooddelivery.Restaurant.RestaurantHomeActivity
+import com.example.fooddelivery.Shipper.ShipperActivity
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

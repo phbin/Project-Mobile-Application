@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fooddelivery.R
@@ -29,6 +30,7 @@ class CartActivity : AppCompatActivity() {
             .collection("Cart")
         fb.get().addOnCompleteListener {
             if (it.isSuccessful) {
+                var total : Long = 0
                 for (i in it.result) {
                     cartItems.add(CartClass("" + i.data.getValue("idRestaurant"),
                         "" + i.data.getValue("idCategory"),
@@ -37,7 +39,9 @@ class CartActivity : AppCompatActivity() {
                         "" + i.data.getValue("price"),
                         "" + i.data.getValue("quantity"),
                         "" + i.data.getValue("imageFD")))
+                        total += i.data.getValue("price").toString().toLong()
                 }
+                textViewTotal.text = total.toString()
             }
                 layoutManager = LinearLayoutManager(this)
                 recyclerViewCart.layoutManager = layoutManager
@@ -47,6 +51,10 @@ class CartActivity : AppCompatActivity() {
         }
         backButton.setOnClickListener{
             finish()
+        }
+        btnOrder.setOnClickListener{
+            var intent=Intent(this,CheckOutActivity::class.java)
+            startActivity(intent)
         }
 
 //

@@ -48,6 +48,7 @@ class OrderDetailActivity : AppCompatActivity() {
 
         billID = intent.getStringExtra("billID").toString()
 
+
         var fb = FirebaseFirestore.getInstance().collection("Bill")
         var fbCustomer = FirebaseFirestore.getInstance().collection("Customer")
 

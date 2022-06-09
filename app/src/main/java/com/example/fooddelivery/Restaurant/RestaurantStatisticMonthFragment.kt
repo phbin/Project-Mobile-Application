@@ -65,20 +65,18 @@ class RestaurantStatisticMonthFragment : Fragment() {
         val m = c.get(Calendar.MONTH) + 1
         val d= c.get(Calendar.DAY_OF_MONTH)
 
-        Toast.makeText(requireActivity(), m.toString(), Toast.LENGTH_SHORT).show()
-
         var fb=FirebaseFirestore.getInstance().collection("Bill")
             .get().addOnCompleteListener {
-            for (i in it.result) {
-                if(i.data.getValue("idRestaurant").toString()== idRestaurant){
-                    if(i.data.getValue("date").toString().subSequence(4,10) == textViewDate.text.toString()){
-                        income += i.data.getValue("total").toString().toLong()
-                        textViewStatistics.text = income.toString()
+                for (i in it.result) {
+                    if(i.data.getValue("idRestaurant").toString()== idRestaurant){
+                        if(i.data.getValue("date").toString().subSequence(4,10) == textViewDate.text.toString()){
+                            income += i.data.getValue("total").toString().toLong()
+                            textViewStatistics.text = income.toString()
+                        }
                     }
                 }
+                income = 0
             }
-            income = 0
-        }
 
         btnPickTime.setOnClickListener {
 

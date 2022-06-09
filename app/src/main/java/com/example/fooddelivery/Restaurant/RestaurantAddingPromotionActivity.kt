@@ -88,7 +88,7 @@ class RestaurantAddingPromotionActivity : AppCompatActivity() {
                     editTextPromotionName.text.toString(),
                     editTextDiscountPercent.text.toString())
 
-                    var fb = FirebaseFirestore.getInstance().collection("Restaurant")
+                var fb = FirebaseFirestore.getInstance().collection("Restaurant")
                     .document("" + phoneNumber)
                     .collection("promotion")
                 fb.add(o)

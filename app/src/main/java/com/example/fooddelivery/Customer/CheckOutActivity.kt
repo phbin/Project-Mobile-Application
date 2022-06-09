@@ -2,16 +2,18 @@ package com.example.fooddelivery.Customer
 
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fooddelivery.*
 import com.example.fooddelivery.model.CheckOutTemp
-import com.example.fooddelivery.model.OrderStatusChange
-import com.example.fooddelivery.model.PromotionClass
+import com.example.fooddelivery.model.OrderInfoClass
+import com.example.fooddelivery.model.WaitingOrderClass
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -20,69 +22,167 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_check_out.*
-import kotlinx.android.synthetic.main.activity_fragment_promotion.*
-import kotlinx.android.synthetic.main.fragment_restaurant_home_processing.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class CheckOutActivity : AppCompatActivity(), OnMapReadyCallback {
     lateinit var mMap:GoogleMap
-    //var flag:Boolean =false
+//    var sharedPreferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+//    val phoneNumber = sharedPreferences.getString("ID", "")
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_check_out)
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_check_out)
+    var total:Long=0
+    var fb = FirebaseFirestore.getInstance().collection("Customer")
+        .document("0393751403")
+        .collection("Cart")
+    var promo = FirebaseFirestore.getInstance().collection("Restaurant")
+        .document("0393751403")
+        .collection("promotion")
+    var wo = FirebaseFirestore.getInstance().collection("WaitingOrders")
 
 
-        //map
-        val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.frmMaps) as SupportMapFragment
-        mapFragment.getMapAsync(this)
 
-        //Event click button back
-        btnBack.setOnClickListener {
-            var intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+    var promotionPosition = intent.getStringExtra("promotionPosition")
+//    Log.d("AA",""+promotionPosition)
+
+    if (promotionPosition != null) {
+//        Log.d("AA","run")
+        promo.get().addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                fb.get().addOnCompleteListener {
+                    for (i in it.result) {
+                        var a=i.data.getValue("price").toString().toLong()
+                        total=total+a
+                    }
+                    var fee= textSubFee.text.substring(0, textSubFee.text.length - 4).toLong()
+                    textSubPrice.text=total.toString()+" VND"
+                    textTotal.setText((total+fee).toString()+" VND")
+                    //get promo
+                    for ((index, i) in task.result.withIndex()) {
+                        if (index == promotionPosition?.toInt()) {
+//                            Log.d("AA","hic")
+                            textPromotion.text = i.data.getValue("name").toString()
+                            var discount = i.data.getValue("value").toString().toInt()
+                            var subPrice = textSubPrice.text.substring(0, textSubPrice.text.length - 4).toLong()
+                            var fee = textSubFee.text.substring(0, textSubFee.text.length - 4).toLong()
+
+                            var getTotal = textTotal.text.substring(0, textTotal.text.length - 4).toLong()
+//                            Log.d("AAA",""+getTotal)
+//                            Log.d("AA",""+textTotal.text.substring(0,textTotal.text.length-4).toLong())
+                            if (discount != 0) {
+                                textDiscount.text = "-" + ((subPrice * discount) / 100).toString() + " VND"
+                                textTotal.text = (getTotal - ((subPrice * discount) / 100)).toString() + " VND"
+                            }
+                            imgPromotion.setBackgroundResource(R.drawable.iccoupon)
+                        }
+                    }
+                }
+            }
         }
-
-        //input list item picking
-        var arrayListName: ArrayList<CheckOutTemp> = ArrayList()
-        arrayListName.add(CheckOutTemp("1x", "Shaking Beef Tri-Tip", "30.000 VNĐ"))
-        arrayListName.add(CheckOutTemp("2x",
-            "Shaking Beef Tri-Tip",
-            "30.000 VNĐ"))
-        arrayListName.add(CheckOutTemp("1x", "Shaking Beef Tri-Tip", "30.000 VNĐ"))
-        listviewItem.layoutManager=LinearLayoutManager(this)
-        listviewItem.adapter = CustomAdapterListName(arrayListName)
-        listviewItem.setHasFixedSize(true)
-
-        //bottom sheet dialog payment
-        clickButtonChoose()
-        clickButtonAdd()
-//        if (flag==true) {
-//            var listPromotion: ArrayList<PromotionClass> = ArrayList()
-//
-//            var fb = FirebaseFirestore.getInstance().collection("Restaurant")
-//                .document("0393751403")
-//                .collection("promotion")
-//            fb.get().addOnCompleteListener {
-//                if (it.isSuccessful) {
-//                    for (i in it.result) {
-//                        listPromotion.add(PromotionClass("" + i.data.getValue("code").toString(),
-//                            "" + i.data.getValue("description").toString(),
-//                            "" + i.data.getValue("expiryDate").toString(),
-//                            "" + i.data.getValue("name").toString(),
-//                            1))
-//                    }
-//                }
-//                var position = intent.getIntExtra("promotionPosition", -1)
-//                if (position != -1) {
-//                    textPromotion.text = listPromotion[position].name
-//                    //imgPromotion.setBackgroundResource(listPromotion[position].ic)
-//                    //textPromotion.setTextColor(resources.getColor(R.color.grey))
-//                    flag = false
-//                }
-//            }
-//        }
+    }else{
+        LoadTotal()
     }
+    //map
+    val mapFragment = supportFragmentManager
+        .findFragmentById(R.id.frmMaps) as SupportMapFragment
+    mapFragment.getMapAsync(this)
+
+    //Event click button back
+    btnBack.setOnClickListener {
+//        var intent = Intent(this, MainActivity::class.java)
+//        startActivity(intent)
+    }
+    var sdf = SimpleDateFormat("dd-MM-yyyy HH:mm:ss")
+
+    //Event click order
+    btnOrder.setOnClickListener {
+        val date = Date()
+        var id: String = wo.document().id
+        fb.get().addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                for (i in task.result) {
+                    //object item chosen
+                    var addListBill =
+                        WaitingOrderClass("0393751403",
+                            "" + i.data.getValue("idCategory"),
+                            "" + i.data.getValue("idItem"),
+                            "" + i.data.getValue("price"),
+                            "" + i.data.getValue("quantity"))
+                    wo.document("" + id)
+                        .collection("ListBill")
+                        .add(addListBill)
+                }
+            }
+        }
+        wo.document("" + id).collection("ListBill")
+        wo.get().addOnCompleteListener {
+            var quantity = 1
+            if (it.isSuccessful) {
+                for (i in it.result) {
+                    quantity++
+                }
+                promo.get().addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        for ((index, i) in it.result.withIndex()) {
+                            if (index == promotionPosition?.toInt()) {
+                                //add list bill
+                                var addBill = OrderInfoClass("" + sdf.format(date),
+                                    "" + textFee.text.substring(0, textTotal.text.length - 4),
+                                    "0393751403",
+                                    "" + i.id,
+                                    "0393751403",
+                                    "",
+                                    "" + quantity,
+                                    "waiting",
+                                    "" + (-textSubFee.text.substring(0,
+                                        textSubFee.text.length - 4)
+                                        .toLong() + textTotal.text.substring(0,
+                                        textTotal.text.length - 4).toLong()))
+
+                                wo.document("" + id)
+                                    .set(addBill)
+                            } else {
+                                //object waiting order info
+                                var addBill = OrderInfoClass("" + sdf.format(date),
+                                    "" + textSubFee.text.substring(0,
+                                        textSubFee.text.length - 4),
+                                    "0393751403",
+                                    "",
+                                    "0393751403",
+                                    "",
+                                    "" + quantity,
+                                    "waiting",
+                                    "" + (-textSubFee.text.substring(0,
+                                        textSubFee.text.length - 4)
+                                        .toLong() + textTotal.text.substring(0,
+                                        textTotal.text.length - 4).toLong()))
+                                wo.document("" + id)
+                                    .set(addBill)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        fb.get().addOnCompleteListener {
+            if (it.isSuccessful) {
+                for (i in it.result) {
+                    fb.document("" + i.id).delete()
+                }
+            }
+        }
+    }
+
+    //input list item picking
+    LoadCart()
+    //bottom sheet dialog payment
+    clickButtonChoose()
+    clickButtonAdd()
+    LoadInfo()
+}
 
     //Payment Method Fragment
     fun clickButtonChoose()
@@ -126,11 +226,9 @@ class CheckOutActivity : AppCompatActivity(), OnMapReadyCallback {
             }
         }
     }
-    var flag=false
     fun clickButtonAdd()
     {
         btnAdd.setOnClickListener {
-            flag=true
             var intent = Intent(this, FragmentPromotion::class.java)
             startActivity(intent)
         }
@@ -143,20 +241,51 @@ class CheckOutActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(addr,15f))
     }
 
-//    fun GetPromotion() {
-//        if(flag==true) {
-//            var position = intent.getIntExtra("promotionPosition",-1)
-//            //Toast.makeText(this@CheckOutActivity,"hêlo",Toast.LENGTH_SHORT).show()
-//            if (position != -1) {
-//                var listPromotion: ArrayList<PromotionClass> = ArrayList()
-//
-//                textPromotion.text = listPromotion[position].name
-//                //imgPromotion.setBackgroundResource(listPromotion[position].ic)
-//                //textPromotion.setTextColor(resources.getColor(R.color.grey))
-//            } else return
-//        }
-//            flag = false
-//    }
+    private fun LoadInfo() {
+        var fb = FirebaseFirestore.getInstance().collection("Customer")
+        fb.get().addOnCompleteListener {
+            for (i in it.result) {
+                if (i.id == "0393751403") {
+                    textViewName.text = i.data.getValue("displayName").toString()
+                    textViewAddress.text = i.data.getValue("address").toString()
+                    textViewNoPhone.text = "0393751403"
+                    return@addOnCompleteListener
+                }
+                continue
+            }
+        }
+    }
+
+    private fun LoadCart(){
+        var arrayListName: ArrayList<CheckOutTemp> = ArrayList()
+        var fb = FirebaseFirestore.getInstance().collection("Customer")
+            .document("0393751403")
+            .collection("Cart")
+        fb.get().addOnCompleteListener {
+            for (i in it.result) {
+                arrayListName.add(CheckOutTemp("" + i.data.getValue("quantity"),
+                    "" + i.data.getValue("nameFD"),
+                    "" + i.data.getValue("price")+" VND"))
+            }
+            listviewItem.layoutManager = LinearLayoutManager(this)
+            listviewItem.adapter = CustomAdapterListName(arrayListName)
+        }
+    }
+    private fun LoadTotal(){
+        var total:Long=0
+        var fb = FirebaseFirestore.getInstance().collection("Customer")
+            .document("0393751403")
+            .collection("Cart")
+        fb.get().addOnCompleteListener {
+            for (i in it.result) {
+                var a=i.data.getValue("price").toString().toLong()
+                total=total+a
+            }
+            var fee= textSubFee.text.substring(0, textSubFee.text.length - 4).toLong()
+            textSubPrice.text=total.toString()+" VND"
+            textTotal.setText((total+fee).toString()+" VND")
+        }
+    }
 }
 
 

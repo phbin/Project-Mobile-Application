@@ -55,57 +55,60 @@
         <entry key="..\:/UIT2122/Project-Mobile-Application-PhuongUyen/app/src/main/res/layout/listview_promotion.xml" value="0.22" />
         <entry key="..\:/UIT2122/Project-Mobile-Application-PhuongUyen/app/src/main/res/layout/listview_restaurant_orders.xml" value="0.20052083333333334" />
         <entry key="..\:/UIT2122/Project-Mobile-Application-PhuongUyen/app/src/main/res/layout/listview_restaurant_promotion.xml" value="0.22" />
-        <entry key="..\:/UIT2122/Project-Mobile-Application-TV/app/src/main/res/layout/activity_check_out.xml" value="0.20052083333333334" />
-        <entry key="..\:/UIT2122/Project-Mobile-Application-TV/app/src/main/res/layout/activity_dish_detail.xml" value="0.20052083333333334" />
-        <entry key="..\:/UIT2122/Project-Mobile-Application-TV/app/src/main/res/layout/activity_order_detail.xml" value="0.20052083333333334" />
-        <entry key="..\:/UIT2122/Project-Mobile-Application-TV/app/src/main/res/layout/activity_restaurant_adding_dishes.xml" value="0.16666666666666666" />
-        <entry key="..\:/UIT2122/Project-Mobile-Application-TV/app/src/main/res/layout/activity_restaurant_adding_promotion.xml" value="0.1" />
-        <entry key="..\:/UIT2122/Project-Mobile-Application-TV/app/src/main/res/layout/activity_restaurant_dish_detail.xml" value="0.20052083333333334" />
-        <entry key="..\:/UIT2122/Project-Mobile-Application-TV/app/src/main/res/layout/activity_restaurant_home.xml" value="0.20052083333333334" />
-        <entry key="..\:/UIT2122/Project-Mobile-Application-TV/app/src/main/res/layout/activity_restaurant_menu.xml" value="0.20052083333333334" />
-        <entry key="..\:/UIT2122/Project-Mobile-Application-TV/app/src/main/res/layout/activity_restaurant_processing_detail.xml" value="0.20052083333333334" />
-        <entry key="..\:/UIT2122/Project-Mobile-Application-TV/app/src/main/res/layout/activity_restaurant_res_management.xml" value="0.20052083333333334" />
-        <entry key="..\:/UIT2122/Project-Mobile-Application-TV/app/src/main/res/layout/activity_shipper.xml" value="0.20052083333333334" />
-        <entry key="..\:/UIT2122/Project-Mobile-Application-TV/app/src/main/res/layout/activity_shipper_order_dialog.xml" value="0.14545454545454545" />
-        <entry key="..\:/UIT2122/Project-Mobile-Application-TV/app/src/main/res/layout/activity_sign_in.xml" value="0.1" />
-        <entry key="..\:/UIT2122/Project-Mobile-Application-TV/app/src/main/res/layout/activity_splash_screen.xml" value="0.20052083333333334" />
-        <entry key="..\:/UIT2122/Project-Mobile-Application-TV/app/src/main/res/layout/fragment_restaurant_home_done.xml" value="0.20052083333333334" />
-        <entry key="..\:/UIT2122/Project-Mobile-Application-TV/app/src/main/res/layout/fragment_restaurant_home_processing.xml" value="0.20052083333333334" />
-        <entry key="..\:/UIT2122/Project-Mobile-Application-TV/app/src/main/res/layout/fragment_shipper_new_order.xml" value="0.15864022662889518" />
-        <entry key="..\:/UIT2122/Project-Mobile-Application-TV/app/src/main/res/layout/fragment_shipper_profile.xml" value="0.20052083333333334" />
-        <entry key="..\:/UIT2122/Project-Mobile-Application-TV/app/src/main/res/layout/listview_order_history.xml" value="0.20052083333333334" />
-        <entry key="..\:/UIT2122/Project-Mobile-Application-TV/app/src/main/res/layout/listview_restaurant_orders.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/drawable-v24/mint_button.xml" value="0.11" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/drawable-v24/square_mint.xml" value="0.11" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/drawable/ic_baseline_exit_to_app_black.xml" value="0.1095" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/drawable/ic_close.xml" value="0.115" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/drawable/ic_place.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/drawable/ic_time.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/drawable/mint_border_view.xml" value="0.11" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/acitivity_customer_order_history.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/activity_cart.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/activity_check_out.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/activity_customer_menu.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/activity_customer_profile.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/activity_dish_detail.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/activity_fragment_promotion.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/activity_home.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/activity_order_detail.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/activity_popular_in_your_area.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/activity_restaurant.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/activity_restaurant_adding_dishes.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/activity_restaurant_adding_menu.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/activity_restaurant_adding_promotion.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/activity_restaurant_dish_detail.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/activity_restaurant_dishes_management.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/activity_restaurant_home.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/activity_restaurant_menu.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/activity_restaurant_menu_management.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/activity_restaurant_processing_detail.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/activity_restaurant_promotion_detail.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/activity_restaurant_res_management.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/activity_search_restaurant.xml" value="0.22" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/activity_shipper.xml" value="0.1" />
-        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/fragment_restaurant_home_done.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/activity_shipper_order_dialog.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/fragment_restaurant_home_processing.xml" value="0.20052083333333334" />
-        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/fragment_restaurant_statistic_month.xml" value="0.20052083333333334" />
-        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/fragment_restaurant_statistics_day.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/fragment_restaurant_statistic_month.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/fragment_shipper_history.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/fragment_shipper_income_day.xml" value="0.20052083333333334" />
-        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/fragment_shipper_income_month.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/fragment_shipper_income_month.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/fragment_shipper_new_order.xml" value="0.22" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/fragment_shipper_profile.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/listview_choosingitem.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/listview_order_history.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/listview_promotion.xml" value="0.20052083333333334" />
-        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/listview_restaurant_orders.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/listview_restaurant_orders.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/lisview_dishes_management.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/recycler_view_appertizer_grouped.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/recycler_view_category.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/recycler_view_explore_more.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/recycler_view_favorite_restaurant.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/recycler_view_previous_orders.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/recycler_view_restaurant.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/recycler_view_restaurant_appertizer.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/recycler_view_restaurant_popular.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/Lenovo/Downloads/Project-Mobile-Application/app/src/main/res/layout/recyclerview_customer_history.xml" value="0.3785557986870897" />
       </map>
     </option>
   </component>

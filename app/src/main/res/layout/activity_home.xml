@@ -17,40 +17,30 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="123.84px"
+        android:layout_marginTop="150.04px"
         android:layout_marginStart="69.12px"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="56px"
-            android:text="@string/delivery_to"
-            android:textColor="@color/white"
-            android:fontFamily="@font/lato_light"
-            android:textSize="40px"
-            />
-        <ImageButton
+        app:layout_constraintTop_toTopOf="parent" >
+        <ImageView
             android:layout_width="53.76px"
             android:layout_height="53.76px"
             android:layout_marginStart="10px"
             android:layout_gravity="center_vertical"
             android:background="@drawable/ic_baseline_location_on_24" />
+        <EditText
+            android:editable="false"
+            android:id="@+id/findLocation"
+            android:hint="Find location ..."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:fontFamily="@font/lato_semibold"
+            android:textSize="40px"
+            android:backgroundTint="@color/white"
+            />
     </LinearLayout>
-    <EditText
-        android:id="@+id/findLocation"
-        android:hint="Find location ..."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150.84px"
-        android:layout_marginStart="62px"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:fontFamily="@font/lato_semibold"
-        android:textSize="40px"
-        android:backgroundTint="@color/white"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/searchView"
@@ -167,7 +157,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="600px"
-                android:layout_marginTop="110.8px">
+                android:layout_marginTop="110.8px"
+                android:layout_marginLeft="69px">
 
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -190,6 +181,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="129.6px"
+                android:layout_marginLeft="69px"
                 android:layout_marginTop="110.8px">
 
 
@@ -213,7 +205,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="110.8px">
+                android:layout_marginTop="110.8px"
+                android:layout_marginLeft="69px">
 
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -238,7 +231,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="110.8px">
+                android:layout_marginTop="110.8px"
+                android:layout_marginLeft="69px">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/favoriteRestaurantRecyclerView"

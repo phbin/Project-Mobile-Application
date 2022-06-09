@@ -7,12 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.fooddelivery.R
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_shipper_income_month.*
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -55,32 +55,31 @@ class ShipperIncomeMonthFragment : Fragment() {
         preferences = requireActivity().getSharedPreferences("SHARED_PREF", AppCompatActivity.MODE_PRIVATE)
         val idShipper = preferences.getString("ID", "")
 
-        val c  = Calendar.getInstance()
-
-        var fb = FirebaseFirestore.getInstance().collection("Bill")
         var income : Long = 0
+        val c  = Calendar.getInstance()
+        val myFormat = "MM-yyyy"
+        val sdf = SimpleDateFormat(myFormat, Locale.TAIWAN)
+        textViewDate.text = sdf.format((c.time))
+        textViewDateTotal.text = sdf.format((c.time))
 
         val y = c.get(Calendar.YEAR)
         val m = c.get(Calendar.MONTH) + 1
         val d= c.get(Calendar.DAY_OF_MONTH)
 
-        textViewDate.text = "$m-$y"
-        textViewDateTotal.text = "$m-$y"
-
-        fb.get().addOnCompleteListener {
-            for (i in it.result) {
-                if(i.data.getValue("idShipper").toString()== idShipper){
-                    if(i.data.getValue("date").toString().subSequence(4,10) == textViewDate.text.toString()){
-                        income += i.data.getValue("deliveryFee").toString().toLong()
-                        textViewIncome.text = income.toString()
+        var fb=FirebaseFirestore.getInstance().collection("Bill")
+            .get().addOnCompleteListener {
+                for (i in it.result) {
+                    if(i.data.getValue("idShipper").toString()== idShipper){
+                        if(i.data.getValue("date").toString().subSequence(4,10) == textViewDate.text.toString()){
+                            income += i.data.getValue("total").toString().toLong()
+                            textViewIncome.text = income.toString()
+                        }
                     }
                 }
+                income = 0
             }
-            income = 0
-        }
 
         btnPickTime.setOnClickListener {
-
             val dp = DatePickerDialog(requireActivity(), R.style.MyDatePickerStyle,
                 { view, year, monthOfYear, _ ->
                     var erg = ""
@@ -89,11 +88,12 @@ class ShipperIncomeMonthFragment : Fragment() {
                     (textViewDate as TextView).text = erg
                     textViewDateTotal.text = erg
 
+                    var fb=FirebaseFirestore.getInstance().collection("Bill")
                     fb.get().addOnCompleteListener {
                         for (i in it.result) {
                             if(i.data.getValue("idShipper").toString()== idShipper){
                                 if(i.data.getValue("date").toString().subSequence(4,10) == textViewDate.text.toString()){
-                                    income += i.data.getValue("deliveryFee").toString().toLong()
+                                    income += i.data.getValue("total").toString().toLong()
                                     textViewIncome.text = income.toString()
                                 }
                             }
@@ -101,10 +101,8 @@ class ShipperIncomeMonthFragment : Fragment() {
                         textViewIncome.text = income.toString()
                         income = 0
                     }
-
-                }, y, m, d
+                }, y, m-1, d
             )
-
             dp.show()
         }
     }

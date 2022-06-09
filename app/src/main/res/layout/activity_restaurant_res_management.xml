@@ -51,49 +51,49 @@
                 android:textSize="50px"
                 android:fontFamily="@font/lato_regular" />
 
-                <LinearLayout
-                    android:id="@+id/mondayTime"
+            <LinearLayout
+                android:id="@+id/mondayTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="120px">
+                <TextView
+                    android:id="@+id/mondayStartTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginLeft="120px">
-                    <TextView
-                        android:id="@+id/mondayStartTime"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="08:00"
-                        android:textColor="@color/white"
-                        android:textSize="40px"
-                        android:fontFamily="@font/lato_regular"/>
-                    <TextView
-                        android:id="@+id/mondayClose"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Close"
-                        android:textColor="@color/white"
-                        android:textSize="40px"
-                        android:fontFamily="@font/lato_regular"
-                        android:visibility="gone"/>
+                    android:text="08:00"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"/>
+                <TextView
+                    android:id="@+id/mondayClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Close"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"
+                    android:visibility="gone"/>
 
-                    <TextView
-                        android:id="@+id/mondayLine"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="125px"
-                        android:fontFamily="@font/lato_regular"
-                        android:text="-"
-                        android:textColor="@color/white"
-                        android:textSize="40px" />
+                <TextView
+                    android:id="@+id/mondayLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="125px"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textSize="40px" />
 
-                    <TextView
-                        android:id="@+id/mondayEndTime"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="20:00"
-                        android:textColor="@color/white"
-                        android:textSize="40px"
-                        android:fontFamily="@font/lato_regular"/>
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/mondayEndTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20:00"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"/>
+            </LinearLayout>
 
             <ImageView
                 android:id="@+id/closedRestaurantMonday"

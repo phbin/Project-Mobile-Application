@@ -87,7 +87,7 @@ class ShipperActivity : AppCompatActivity() {
             if(value != null){
                 firebase.get().addOnCompleteListener { task ->
                     for (i in task.result) {
-                        if (i.data.getValue("idShipper").toString() == "" && !preferences.getBoolean("isDelivering", false)){
+                        if (i.data.getValue("idShipper").toString() == "" && !preferences.getBoolean("isDelivering", false) && btnStatus.text == "Receive order"){
                             val mDialogView = LayoutInflater.from(this, ).inflate(R.layout.activity_shipper_order_dialog, null)
 
                             val mBuilder = AlertDialog.Builder(this)

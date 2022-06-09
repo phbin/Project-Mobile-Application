@@ -55,8 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="54.72px"
         android:orientation="horizontal"
-        android:layout_marginHorizontal="69px"
-        >
+        android:layout_marginHorizontal="69px">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -67,15 +66,22 @@
             >
         </TextView>
         <TextView
+            android:id="@+id/textViewTotal"
+            android:layout_width="760px"
+            android:textAlignment="viewEnd"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="37.44px"
+            android:fontFamily="@font/lato_regular"
+            android:textColor="@color/black"/>
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="viewEnd"
-            android:text="125.000 VND"
+            android:text="VNĐ"
             android:textSize="37.44px"
             android:fontFamily="@font/lato_regular"
-            android:textColor="@color/black"
-            >
-        </TextView>
+            android:textColor="@color/black"/>
     </LinearLayout>
     <Button
         android:id="@+id/btnOrder"
