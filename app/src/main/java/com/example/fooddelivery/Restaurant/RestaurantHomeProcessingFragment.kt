@@ -83,7 +83,7 @@ class RestaurantHomeProcessingFragment : Fragment() {
                         (listViewRestaurantOrders.adapter as RestaurantOrdersAdapter).setOnIntemClickListener(object :
                             RestaurantOrdersAdapter.onIntemClickListener {
                             override fun onClickItem(position: Int) {
-                                val intent = Intent(requireActivity(), OrderDetailActivity::class.java)
+                                val intent = Intent(requireActivity(), RestaurantProcessingDetailActivity::class.java)
                                 intent.putExtra("billID", orderArray[position].orderID)
                                 startActivity(intent)
                             }
@@ -126,7 +126,7 @@ class RestaurantHomeProcessingFragment : Fragment() {
                                 (listViewRestaurantOrders.adapter as RestaurantOrdersAdapter).setOnIntemClickListener(object :
                                     RestaurantOrdersAdapter.onIntemClickListener {
                                     override fun onClickItem(position: Int) {
-                                        val intent = Intent(requireActivity(), OrderDetailActivity::class.java)
+                                        val intent = Intent(requireActivity(), RestaurantProcessingDetailActivity::class.java)
                                         intent.putExtra("billID", array[position].orderID)
                                         startActivity(intent)
                                     }

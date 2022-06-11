@@ -27,12 +27,6 @@ class OrderDetailActivity : AppCompatActivity() {
 
         var arrayListName: ArrayList<CheckOutTemp> = ArrayList()
 
-//        arrayListName.add(
-//            CheckOutTemp("2",
-//                "Shaking Beef Tri-Tip",
-//                "30.000 VNĐ")
-//        )
-
         fb.get().addOnCompleteListener { task ->
             for(i in task.result){
                 if(i.id == billID){

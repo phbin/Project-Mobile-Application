@@ -34,6 +34,9 @@
             android:name=".Restaurant.RestaurantPromotionDetailActivity"
             android:exported="false" />
         <activity
+            android:name=".Restaurant.RestaurantProcessingDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".Shipper.ShipperActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
