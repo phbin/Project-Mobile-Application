@@ -58,12 +58,6 @@ class RestaurantHomeProcessingFragment : Fragment() {
         var idRestaurant = sharedPreferences.getString("ID", "")
 
 
-
-//          orderArray.add(RestaurantOrders(""+idRestaurant, "Linh, Thủ Đức", "Thế Vĩ", "1 món", "200.000đ"))
-//        orderArray.add(RestaurantOrders("002", "Kiên Giang", "Vĩ", "2 món", "250.000đ"))
-//        orderArray.add(RestaurantOrders("003", "Cần Thơ", "Huỳnh", "5 món", "100.000đ"))
-//        orderArray.add(RestaurantOrders("004", "Long An", "Thế", "3 món", "300.000đ"))
-
         var fb = FirebaseFirestore.getInstance().collection("WaitingOrders")
         var fbCustomer = FirebaseFirestore.getInstance().collection("Customer")
 
@@ -89,7 +83,7 @@ class RestaurantHomeProcessingFragment : Fragment() {
                         (listViewRestaurantOrders.adapter as RestaurantOrdersAdapter).setOnIntemClickListener(object :
                             RestaurantOrdersAdapter.onIntemClickListener {
                             override fun onClickItem(position: Int) {
-                                val intent = Intent(requireActivity(), RestaurantProcessingDetailActivity::class.java)
+                                val intent = Intent(requireActivity(), OrderDetailActivity::class.java)
                                 intent.putExtra("billID", orderArray[position].orderID)
                                 startActivity(intent)
                             }
@@ -132,7 +126,7 @@ class RestaurantHomeProcessingFragment : Fragment() {
                                 (listViewRestaurantOrders.adapter as RestaurantOrdersAdapter).setOnIntemClickListener(object :
                                     RestaurantOrdersAdapter.onIntemClickListener {
                                     override fun onClickItem(position: Int) {
-                                        val intent = Intent(requireActivity(), RestaurantProcessingDetailActivity::class.java)
+                                        val intent = Intent(requireActivity(), OrderDetailActivity::class.java)
                                         intent.putExtra("billID", array[position].orderID)
                                         startActivity(intent)
                                     }

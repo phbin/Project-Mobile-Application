@@ -5,9 +5,9 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -29,6 +29,7 @@ import java.util.*
 
 class CheckOutActivity : AppCompatActivity(), OnMapReadyCallback {
     lateinit var mMap:GoogleMap
+    var arrayListName: ArrayList<CheckOutTemp> = ArrayList()
 //    var sharedPreferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
 //    val phoneNumber = sharedPreferences.getString("ID", "")
     @RequiresApi(Build.VERSION_CODES.O)
@@ -92,6 +93,14 @@ class CheckOutActivity : AppCompatActivity(), OnMapReadyCallback {
     }else{
         LoadTotal()
     }
+
+    //input list item picking
+    LoadCart()
+    //bottom sheet dialog payment
+    clickButtonChoose()
+    clickButtonAdd()
+    LoadInfo()
+
     //map
     val mapFragment = supportFragmentManager
         .findFragmentById(R.id.frmMaps) as SupportMapFragment
@@ -147,7 +156,15 @@ class CheckOutActivity : AppCompatActivity(), OnMapReadyCallback {
                                 wo.document("" + id)
                                     .set(addBill)
 
+                                btnOrder.visibility = View.GONE
+                                progressBar.visibility = View.VISIBLE
+
                                 val intent = Intent(this, CustomerFindingShipperActivity::class.java)
+                                intent.putExtra("idRes", idRestaurant)
+                                intent.putExtra("deliveryFee", textFee.text.toString())
+                                intent.putExtra("subTotal", textSubFee.text.toString())
+                                intent.putExtra("total", textTotal.text.toString())
+                                intent.putExtra("listBill", arrayListName)
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                                 startActivity(intent)
                             } else {
@@ -168,7 +185,14 @@ class CheckOutActivity : AppCompatActivity(), OnMapReadyCallback {
                                 wo.document("" + id)
                                     .set(addBill)
 
+                                btnOrder.visibility = View.GONE
+                                progressBar.visibility = View.VISIBLE
+
                                 val intent = Intent(this, CustomerFindingShipperActivity::class.java)
+                                intent.putExtra("idRes", idRestaurant)
+                                intent.putExtra("deliveryFee", textSubFee.text.toString())
+                                intent.putExtra("subTotal", textSubPrice.text.toString())
+                                intent.putExtra("total", textTotal.text.toString())
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
                                 startActivity(intent)
                             }
@@ -185,13 +209,6 @@ class CheckOutActivity : AppCompatActivity(), OnMapReadyCallback {
             }
         }
     }
-
-    //input list item picking
-    LoadCart()
-    //bottom sheet dialog payment
-    clickButtonChoose()
-    clickButtonAdd()
-    LoadInfo()
 }
 
     //Payment Method Fragment
@@ -269,7 +286,6 @@ class CheckOutActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun LoadCart(){
-        var arrayListName: ArrayList<CheckOutTemp> = ArrayList()
         var preferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
         val idCustomer = preferences.getString("ID","")
         var fb = FirebaseFirestore.getInstance().collection("Customer")

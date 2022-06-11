@@ -65,17 +65,8 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center_vertical">
-                    <Button
-                        android:id="@+id/btnCancel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Cancel"
-                        android:textColor="@color/red"
-                        android:background="@android:color/transparent"
-                        android:textAllCaps="false"/>
 
                     <ProgressBar
-                        android:layout_marginLeft="96px"
                         android:id="@+id/progressBar"
                         android:layout_width="50px"
                         android:layout_height="50px"

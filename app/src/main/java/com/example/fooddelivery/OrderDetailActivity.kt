@@ -19,38 +19,51 @@ class OrderDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_order_detail)
 
-        var arrayListName: ArrayList<CheckOutTemp> = ArrayList()
-        arrayListName.add(CheckOutTemp("1", "Shaking Beef Tri-Tip", "30.000 VNĐ"))
-        arrayListName.add(
-            CheckOutTemp("2",
-            "Shaking Beef Tri-Tip",
-            "30.000 VNĐ")
-        )
-        arrayListName.add(
-            CheckOutTemp("2",
-                "Shaking Beef Tri-Tip",
-                "30.000 VNĐ")
-        )
-        arrayListName.add(
-            CheckOutTemp("2",
-                "Shaking Beef Tri-Tip",
-                "30.000 VNĐ")
-        )
+        var fb = FirebaseFirestore.getInstance().collection("Bill")
+        var fbCustomer = FirebaseFirestore.getInstance().collection("Customer")
+        var fbRes = FirebaseFirestore.getInstance().collection("Restaurant")
+        billID = intent.getStringExtra("billID").toString()
+        var idRestaurant = ""
 
-        arrayListName.add(CheckOutTemp("1", "Shaking Beef Tri-Tip", "30.000 VNĐ"))
-        listviewItem.layoutManager= LinearLayoutManager(this)
-        listviewItem.adapter = CustomAdapterListName(arrayListName)
-        listviewItem.setHasFixedSize(true)
+        var arrayListName: ArrayList<CheckOutTemp> = ArrayList()
+
+//        arrayListName.add(
+//            CheckOutTemp("2",
+//                "Shaking Beef Tri-Tip",
+//                "30.000 VNĐ")
+//        )
+
+        fb.get().addOnCompleteListener { task ->
+            for(i in task.result){
+                if(i.id == billID){
+                    idRestaurant = i.data.getValue("idRestaurant").toString()
+                    fb.document("$billID").collection("ListBill").get().addOnCompleteListener { work ->
+                        for(j in work.result){
+                            fbRes.document("$idRestaurant").collection("categoryMenu").document(j.data.getValue("idCategory").toString()).collection("Item").get().addOnCompleteListener {
+                                for(k in it.result){
+                                    if(j.data.getValue("idItem") == k.id){
+                                        arrayListName.add(
+                                            CheckOutTemp(
+                                            ""+j.data.getValue("quantity"),
+                                                ""+k.data.getValue("name"),
+                                                ""+j.data.getValue("price")
+                                        ))
+                                    }
+                                }
+                                listviewItem.layoutManager= LinearLayoutManager(this)
+                                listviewItem.adapter = CustomAdapterListName(arrayListName)
+                                listviewItem.setHasFixedSize(true)
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         btnBack.setOnClickListener {
             finish()
         }
 
-        billID = intent.getStringExtra("billID").toString()
-
-
-        var fb = FirebaseFirestore.getInstance().collection("Bill")
-        var fbCustomer = FirebaseFirestore.getInstance().collection("Customer")
 
         fb.get().addOnCompleteListener { task ->
             for (i in task.result) {
@@ -62,6 +75,7 @@ class OrderDetailActivity : AppCompatActivity() {
                     textViewTotal.text = (textViewDeliveryFee.text.toString().toLong() + textViewSubTotal.text.toString().toLong()).toString()
                     customerID = i.data.getValue("idCustomer").toString()
                     textViewCustomerPhone.text = i.data.getValue("idCustomer").toString()
+
                     fbCustomer.get().addOnCompleteListener {
                         for(j in it.result){
                             if(j.id == customerID){

@@ -68,7 +68,7 @@ class RestaurantActivity : AppCompatActivity() {
                             arrayListRestaurantAppertizer.add(
                             DishByCategory(nameCategory , itemList))
                             recyclerview = findViewById(R.id.restaurantAppertizerRecyclerViewGrouped)
-                            adapterDishByCategory = DishByCategoryAdapter(this,arrayListRestaurantAppertizer)
+                            adapterDishByCategory = DishByCategoryAdapter(this,arrayListRestaurantAppertizer, "$idRestaurant" )
                             recyclerview.adapter = adapterDishByCategory
                         }
                 }
@@ -82,7 +82,7 @@ class RestaurantActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             else {
-                val intent = Intent(this, CheckOutActivity::class.java)
+                val intent = Intent(this, CartActivity::class.java)
                 startActivity(intent)
             }
         }

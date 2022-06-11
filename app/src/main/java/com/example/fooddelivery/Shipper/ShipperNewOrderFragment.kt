@@ -8,20 +8,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fooddelivery.Customer.CustomAdapterListName
 import com.example.fooddelivery.R
 import com.example.fooddelivery.model.CheckOutTemp
+import com.example.fooddelivery.model.OrderInfoClass
 import com.example.fooddelivery.model.OrderStatusChange
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
-import com.google.firebase.database.ktx.database
+import com.example.fooddelivery.model.WaitingOrderClass
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_shipper_new_order.*
 
 
@@ -84,15 +78,40 @@ class ShipperNewOrderFragment : Fragment() {
             editor.putBoolean("isDelivering", false)
             editor.apply()
 
-            newOrderLayout.visibility = View.GONE
             var change = idShipper?.let { it1 ->
                 OrderStatusChange(date, deliveryFee, idCustomer, idPromotion, idRestaurant,
                     it1, quantity, status, total)
             }
 
             if (change != null) {
-                fbBill.document(idBill).set(change).addOnCompleteListener {
-                    fb.document(idBill).delete()
+//                fbBill.document(idBill).set(change).addOnCompleteListener {
+//                    fb.document(idBill).delete()
+//                }
+                fbBill.document(idBill).set(change)
+
+                fb.get().addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        for(i in it.result){
+                            if(idShipper == i.data.getValue("idShipper")){
+                                fb.document(i.id).collection("ListBill").get().addOnCompleteListener { task->
+                                    for(j in task.result){
+                                        var addListBill = WaitingOrderClass(
+                                            ""+j.data.getValue("idRestaurant"),
+                                            ""+j.data.getValue("idCategory"),
+                                            ""+j.data.getValue("idItem"),
+                                            ""+j.data.getValue("price"),
+                                            ""+j.data.getValue("quantity")
+                                        )
+                                        fbBill.document(idBill).collection("ListBill").add(addListBill)
+                                        fb.document(idBill).delete()
+                                        editor.putBoolean("isDelivering", true)
+                                        editor.apply()
+                                        newOrderLayout.visibility = View.GONE
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
