@@ -8,7 +8,8 @@
 - 20520857 - Huỳnh Thế Vĩ
 # Đề tài: Ứng dụng đặt đồ ăn trực tuyến
 # HƯỚNG DẪN ĐĂNG NHẬP:
-- CUSTOMER: Tạo tài khoản trên máy thật để nhận OTP đăng ký tài khoản. Nếu không, có thể đăng nhập bằng tài khoản: 
+# CUSTOMER: 
+Tạo tài khoản trên máy thật để nhận OTP đăng ký tài khoản. Nếu không, có thể đăng nhập bằng tài khoản: 
 - username: 0393751403
 - password: 030202
 - RESTAURANT VÀ SHIPPER do admin cấp tài khoản, có thể đăng nhập bằng hai tài khoản sau: 
