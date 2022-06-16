@@ -45,8 +45,9 @@ class SearchLocationActivity : AppCompatActivity(), OnMapReadyCallback, Location
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_location)
-//        getLat=intent.getDoubleExtra("lat",0.0)
-//        getLong=intent.getDoubleExtra("long",0.0)
+    latitude=intent.getDoubleExtra("lat",0.0)
+    longitude=intent.getDoubleExtra("long",0.0)
+
         val mapFragment=supportFragmentManager.findFragmentById(R.id.frmMaps) as SupportMapFragment
         mapFragment.getMapAsync(this)
         btnConfirm.setOnClickListener{

@@ -28,6 +28,7 @@
                     android:id="@+id/imageRestaurantExploreMore"
                     android:layout_width="288px"
                     android:layout_height="290.88px"
+                    android:scaleType="centerCrop"
 
 
                     >
@@ -54,7 +55,6 @@
                     android:id="@+id/textDishExploreMore"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Burger-chicken-cake"
                     android:fontFamily="@font/lato_regular"
                     android:textColor="@color/grey"
                     android:textSize="34.56px"
@@ -67,20 +67,8 @@
                     android:orientation="horizontal"
                     >
                     <ImageView
-                        android:layout_width="51.54px"
-                        android:layout_height="41.96px"
-                        android:layout_marginTop="52.8px"
-                        android:background="@drawable/rate_star"/>
-                    <TextView
-                        android:id="@+id/textRateExploreMore"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="5"
-                        android:layout_marginTop="70.08px"/>
-                    <ImageView
                         android:layout_width="50.32px"
                         android:layout_height="52.5px"
-                        android:layout_marginStart="84.6px"
                         android:layout_marginTop="52.8px"
                         android:background="@drawable/location_icon"/>
                     <TextView

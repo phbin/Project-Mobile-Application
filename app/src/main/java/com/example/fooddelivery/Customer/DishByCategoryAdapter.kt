@@ -12,7 +12,8 @@ import com.example.fooddelivery.R
 import com.example.fooddelivery.model.DishByCategory
 import com.example.fooddelivery.model.RestaurantAppertizer
 
-class DishByCategoryAdapter(val context: Context, var listitem: ArrayList<DishByCategory>):RecyclerView.Adapter<DishByCategoryAdapter.ViewHolder>() {
+class DishByCategoryAdapter(val context: Context, var listitem: ArrayList<DishByCategory>, var idRestaurant : String)
+    :RecyclerView.Adapter<DishByCategoryAdapter.ViewHolder>() {
 //    lateinit var itemClick : onItemClickListener
 //    interface onItemClickListener{
 //        fun onItemClick(position: Int)
@@ -41,9 +42,9 @@ class DishByCategoryAdapter(val context: Context, var listitem: ArrayList<DishBy
             object : Restaurant_Appertizer_RecyclerView.onItemClickListener{
             override fun onItemClick(position: Int) {
                 var intent= Intent(context,DishDetailActivity::class.java)
-//                Log.d("AAA", "chon $position $categoryPosition")
                 intent.putExtra("itemPosition",position)
                 intent.putExtra("categoryPosition",categoryPosition)
+                intent.putExtra("idRes", idRestaurant)
                 context.startActivity(intent)
             }
 

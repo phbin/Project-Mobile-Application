@@ -1,5 +1,6 @@
 package com.example.fooddelivery.Customer
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -13,6 +14,9 @@ import com.example.fooddelivery.model.DishDetailChoiceTopping
 import com.google.firebase.firestore.FirebaseFirestore
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_dish_detail.*
+import kotlinx.android.synthetic.main.activity_dish_detail.btnBack
+import kotlinx.android.synthetic.main.activity_dish_detail.view
+import kotlinx.android.synthetic.main.activity_restaurant.*
 
 class DishDetailActivity : AppCompatActivity() {
     //    var sharedPreferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
@@ -20,6 +24,11 @@ class DishDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dish_detail)
+
+        val idRestaurant = intent.getStringExtra("idRes")
+        var preferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        val idCustomer = preferences.getString("ID","")
+
         LoadData()
         btnPlus.setOnClickListener {
             tvQuantity.text = (tvQuantity.text.toString().toInt() + 1).toString()
@@ -36,11 +45,12 @@ class DishDetailActivity : AppCompatActivity() {
         btnBack.setOnClickListener{
             finish()
         }
+
         btnAdddish.setOnClickListener{
             var itemPosition = intent.getIntExtra("itemPosition", -1)
             var categoryPosition = intent.getIntExtra("categoryPosition", -1)
             var fb = FirebaseFirestore.getInstance().collection("Restaurant")
-                .document("0393751403")
+                .document("$idRestaurant")
                 .collection("categoryMenu")
             fb.get().addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -54,7 +64,7 @@ class DishDetailActivity : AppCompatActivity() {
                                         for ((index, i) in it.result.withIndex()) {
                                             if (index == itemPosition) {
                                                 var idItem=i.id
-                                                var o=CartClass("039371403",
+                                                var o=CartClass("$idRestaurant",
                                                     ""+idCategory,
                                                     ""+idItem,
                                                     ""+tvName.text,
@@ -62,7 +72,7 @@ class DishDetailActivity : AppCompatActivity() {
                                                     ""+tvQuantity.text,
                                                     ""+i.data.getValue("image"))
                                                 var fbCart=FirebaseFirestore.getInstance().collection("Customer")
-                                                    .document("0393751403")
+                                                    .document("$idCustomer")
                                                     .collection("Cart")
                                                     .add(o)
                                                 finish()
@@ -78,10 +88,19 @@ class DishDetailActivity : AppCompatActivity() {
     }
 
     private fun LoadData() {
+        val idRestaurant = intent.getStringExtra("idRes")
         var itemPosition = intent.getIntExtra("itemPosition", -1)
         var categoryPosition = intent.getIntExtra("categoryPosition", -1)
+        var f=FirebaseFirestore.getInstance().collection("Restaurant")
+            .get().addOnCompleteListener{
+                for(res in it.result){
+                    if(res.id==idRestaurant){
+                        Picasso.get().load(res.data.getValue("image").toString()).into(view)
+                    }
+                }
+            }
         var fb = FirebaseFirestore.getInstance().collection("Restaurant")
-            .document("0393751403")
+            .document("$idRestaurant")
             .collection("categoryMenu")
         fb.get().addOnCompleteListener { task ->
             if (task.isSuccessful) {

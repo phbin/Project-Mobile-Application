@@ -24,6 +24,8 @@ class RestaurantAddingMenuActivity : AppCompatActivity() {
 
         btnContinue.setOnClickListener {
             if (editTextMenuName.text.toString() != "") {
+                btnContinue.visibility = View.GONE
+                progressBar.visibility = View.VISIBLE
                 var o: MutableMap<String, Any> = HashMap()
                 o["name"] = editTextMenuName.text.toString()
                 var fb = FirebaseFirestore.getInstance().collection("Restaurant")
@@ -39,7 +41,9 @@ class RestaurantAddingMenuActivity : AppCompatActivity() {
                         Toast.makeText(this, "Please try again!!", Toast.LENGTH_SHORT).show()
                     }
             } else {
-                Toast.makeText(this, "Please enter menu's name!!!",Toast.LENGTH_LONG).show()
+                btnContinue.visibility = View.VISIBLE
+                progressBar.visibility = View.GONE
+                editTextMenuName.error = "Please enter Name"
             }
         }
         btnBack.setOnClickListener {

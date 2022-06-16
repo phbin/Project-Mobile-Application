@@ -6,11 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".Customer.RestaurantActivity">
 
-    <View
+    <ImageView
         android:id="@+id/view"
         android:layout_width="1080px"
         android:layout_height="552.96px"
         android:background="@color/mint"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

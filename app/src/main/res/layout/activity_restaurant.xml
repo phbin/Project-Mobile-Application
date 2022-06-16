@@ -6,10 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".Customer.RestaurantActivity">
 
-    <View
+    <ImageView
         android:id="@+id/view"
         android:layout_width="1080px"
         android:layout_height="552.96px"
+        android:scaleType="centerCrop"
         android:background="@color/mint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,7 +77,7 @@
 
     <TextView
         android:id="@+id/tvAddress"
-        android:layout_width="wrap_content"
+        android:layout_width="800px"
         android:layout_height="wrap_content"
         android:layout_marginLeft="69.12px"
         android:layout_marginTop="138.24px"

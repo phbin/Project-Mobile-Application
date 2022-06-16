@@ -1,4 +1,4 @@
-package com.example.fooddelivery
+package com.example.fooddelivery.Restaurant
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,14 +6,27 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.fooddelivery.R
 import com.example.fooddelivery.model.RestaurantOrders
 
-class RestaurantOrdersAdapter(var context : Context, var listItems : ArrayList<RestaurantOrders>) :
+class RestaurantOrdersAdapter(var context : Context, var listItems : List<RestaurantOrders>) :
     RecyclerView.Adapter<RestaurantOrdersAdapter.ViewHolder>() {
+
+    lateinit var itemClick : RestaurantOrdersAdapter.onIntemClickListener
+    var onItemClick : ((RestaurantOrders) -> Unit)? = null
+
+    interface onIntemClickListener{
+        fun onClickItem(position: Int)
+    }
+
+    fun setOnIntemClickListener(listener: onIntemClickListener){
+        itemClick=listener
+    }
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): RestaurantOrdersAdapter.ViewHolder {
+    ): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.listview_restaurant_orders, parent, false)
         return ViewHolder(v)
     }
@@ -24,6 +37,12 @@ class RestaurantOrdersAdapter(var context : Context, var listItems : ArrayList<R
         holder.textViewName.text = listItems[position].name
         holder.textViewQuantity.text = listItems[position].quantity
         holder.textViewPrice.text = listItems[position].price
+
+        holder.itemView.setOnClickListener {
+//            onItemClick?.invoke(listItems[position])
+            itemClick.onClickItem(position)
+            notifyDataSetChanged()
+        }
     }
 
     override fun getItemCount(): Int {
@@ -36,6 +55,7 @@ class RestaurantOrdersAdapter(var context : Context, var listItems : ArrayList<R
         var textViewName : TextView = itemView.findViewById(R.id.textViewName)
         var textViewQuantity : TextView = itemView.findViewById(R.id.textViewQuantity)
         var textViewPrice : TextView = itemView.findViewById(R.id.textViewPrice)
+
     }
 
 }

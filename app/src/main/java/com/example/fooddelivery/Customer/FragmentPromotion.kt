@@ -16,19 +16,32 @@ import kotlinx.android.synthetic.main.activity_sign_in.*
 
 
 class FragmentPromotion : AppCompatActivity() {
+
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<CustomAdapterPromotion.ViewHolder>? = null
+    var latitude=0.0
+    var longitude=0.0
+    var quantity=""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fragment_promotion)
+        latitude=intent.getDoubleExtra("lat",0.0)
+        longitude=intent.getDoubleExtra("long",0.0)
+        quantity = intent.getStringExtra("quantity").toString()
+        var arrayListProm: ArrayList<PromotionClass> = ArrayList()
+        val idRestaurant = intent.getStringExtra("idRestaurant").toString()
         btnBackPromotion.setOnClickListener {
             var intent = Intent(this, CheckOutActivity::class.java)
+            intent.putExtra("idRestaurant", idRestaurant)
+            intent.putExtra("lat",latitude)
+            intent.putExtra("long",longitude)
+            intent.putExtra("quantity",quantity)
             startActivity(intent)
         }
-        var arrayListProm: ArrayList<PromotionClass> = ArrayList()
+
 
         var fb = FirebaseFirestore.getInstance().collection("Restaurant")
-            .document("0393751403")
+            .document("$idRestaurant")
             .collection("promotion")
 
         fb.get().addOnCompleteListener {
@@ -52,6 +65,10 @@ class FragmentPromotion : AppCompatActivity() {
                 override fun onItemClick(position: Int) {
                     val intent = Intent(this@FragmentPromotion, CheckOutActivity::class.java)
                     intent.putExtra("promotionPosition", ""+position)
+                    intent.putExtra("idRestaurant", idRestaurant)
+                    intent.putExtra("lat",latitude)
+                    intent.putExtra("long",longitude)
+                    intent.putExtra("quantity",quantity)
                     startActivity(intent)
                 }
             })

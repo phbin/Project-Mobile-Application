@@ -19,10 +19,13 @@ import com.example.fooddelivery.model.RestaurantMenuList
 import com.example.fooddelivery.model.RestaurantPopular
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.firestore.FirebaseFirestore
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_restaurant.*
 import kotlinx.android.synthetic.main.fragment_shipper_profile.*
 
 class RestaurantActivity : AppCompatActivity() {
+    var latitude=0.0
+    var longitude=0.0
     private lateinit var recyclerview: RecyclerView
     private lateinit var adapterDishByCategory: DishByCategoryAdapter
     private lateinit var adapter: Restaurant_Appertizer_RecyclerView
@@ -32,10 +35,16 @@ class RestaurantActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_restaurant)
+        latitude=intent.getDoubleExtra("lat",0.0)
+        longitude=intent.getDoubleExtra("long",0.0)
+        val idRestaurant = intent.getStringExtra("idRes")
+        var preferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        val idCustomer = preferences.getString("ID","")
+
         var arrayListRestaurantAppertizer: ArrayList<DishByCategory> = ArrayList()
 
         var menu = FirebaseFirestore.getInstance().collection("Restaurant")
-            .document("0393751403")
+            .document("$idRestaurant")
             .collection("categoryMenu")
         menu.get().addOnCompleteListener { task ->
             if (task.isSuccessful) {
@@ -46,7 +55,6 @@ class RestaurantActivity : AppCompatActivity() {
                         .collection("Item")
                         .addSnapshotListener { value, e ->
                             if (e != null) {
-                                Log.w("AAA", "Listen failed.", e)
                                 return@addSnapshotListener
                             }
                             var itemList: ArrayList<RestaurantAppertizer> = ArrayList()
@@ -63,10 +71,8 @@ class RestaurantActivity : AppCompatActivity() {
                             }
                             arrayListRestaurantAppertizer.add(
                             DishByCategory(nameCategory , itemList))
-                            recyclerview =
-                                findViewById(R.id.restaurantAppertizerRecyclerViewGrouped)
-                            adapterDishByCategory =
-                                DishByCategoryAdapter(this,arrayListRestaurantAppertizer)
+                            recyclerview = findViewById(R.id.restaurantAppertizerRecyclerViewGrouped)
+                            adapterDishByCategory = DishByCategoryAdapter(this,arrayListRestaurantAppertizer, "$idRestaurant" )
                             recyclerview.adapter = adapterDishByCategory
                         }
                 }
@@ -75,23 +81,57 @@ class RestaurantActivity : AppCompatActivity() {
 
         LoadInfo()
         btnCheckOut.setOnClickListener{
-            val intent = Intent(this, CheckOutActivity::class.java)
-            startActivity(intent)
+            if(textStatus.text.toString() == "Closed"){
+                Toast.makeText(this, "This restaurant is closed", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            else {
+                val intent = Intent(this, CartActivity::class.java)
+                intent.putExtra("lat",latitude)
+                intent.putExtra("long",longitude)
+                startActivity(intent)
+            }
         }
         btnCart.setOnClickListener {
-            val intent = Intent(this, CartActivity::class.java)
+            if(textStatus.text.toString() == "Closed"){
+                Toast.makeText(this, "This restaurant is closed", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            else{
+                val intent = Intent(this, CartActivity::class.java)
+                intent.putExtra("lat",latitude)
+                intent.putExtra("long",longitude)
+                startActivity(intent)
+            }
+        }
+        btnBack.setOnClickListener {
+            var fb = FirebaseFirestore.getInstance().collection("Customer")
+                .document("$idCustomer")
+                .collection("Cart")
+            fb.get().addOnCompleteListener {
+                if (it.isSuccessful) {
+                    for (i in it.result) {
+                        fb.document("" + i.id).delete()
+                    }
+                }
+            }
+            val intent = Intent(this, HomeActivity::class.java)
+            intent.putExtra("lat",latitude)
+            intent.putExtra("long",longitude)
             startActivity(intent)
         }
     }
 
     private fun LoadInfo() {
         var fb = FirebaseFirestore.getInstance().collection("Restaurant")
+        val idRestaurant = intent.getStringExtra("idRes")
         fb.get().addOnCompleteListener {
             for (i in it.result) {
-                if (i.id == "0393751403") {
+                if (i.id == "$idRestaurant") {
                     tvNameStore.text = i.data.getValue("displayName").toString()
                     tvAddress.text = i.data.getValue("address").toString()
                     textStatus.text = i.data.getValue("status").toString()
+                    Picasso.get().load(i.data.getValue("image").toString()).into(view)
                     return@addOnCompleteListener
                 }
                 continue

@@ -58,20 +58,10 @@ class RestaurantPromotionDetailActivity : AppCompatActivity() {
                     }
                 }
             }
-//        if(position!=null){
-//            val editTextPromotionName : EditText = findViewById(R.id.editTextPromotionName)
-//
-//            //editTextPromotionName.setText(position.name)
 //        }
         btnContinue.setOnClickListener{
             progressBar.visibility= View.VISIBLE
             btnContinue.visibility=View.GONE
-            //Toast.makeText(this,""+key,Toast.LENGTH_LONG).show()
-//            if (editTextPromotionName.text.toString() != ""
-//                && editTextDiscountPercent.text.toString() != ""
-//                && textDescription.text.toString() != ""
-//                && textViewExpiryDate.text.toString() != ""
-//            ) {
                 var fb = FirebaseFirestore.getInstance().collection("Restaurant")
                     .document("" + phoneNumber)
                     .collection("promotion")

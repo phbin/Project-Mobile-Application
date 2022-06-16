@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fooddelivery.Customer.HomeActivity
 import com.example.fooddelivery.Restaurant.RestaurantHomeActivity
+import com.example.fooddelivery.Shipper.ShipperActivity
 
 class SplashScreenActivity : AppCompatActivity() {
     lateinit var sharedPreferences : SharedPreferences

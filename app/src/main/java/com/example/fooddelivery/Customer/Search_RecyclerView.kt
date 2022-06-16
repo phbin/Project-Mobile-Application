@@ -8,14 +8,24 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fooddelivery.R
 import com.example.fooddelivery.model.RestaurantClass
+import com.example.fooddelivery.model.RestaurantOrders
+import com.squareup.picasso.Picasso
 
 class Search_RecyclerView(private val mList: MutableList<RestaurantClass>) : RecyclerView.Adapter<Search_RecyclerView.ViewHolder>() {
 
+    lateinit var itemClick : Search_RecyclerView.onIntemClickListener
+    var onItemClick : ((RestaurantOrders) -> Unit)? = null
+
+    interface onIntemClickListener{
+        fun onClickItem(position: Int)
+    }
+
+    fun setOnIntemClickListener(listener: onIntemClickListener){
+        itemClick=listener
+    }
+
     // create new views
-    override fun onCreateViewHolder(parent:
-
-                                    ViewGroup, viewType: Int): ViewHolder {
-
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.recycler_view_restaurant, parent, false)
 
@@ -24,17 +34,16 @@ class Search_RecyclerView(private val mList: MutableList<RestaurantClass>) : Rec
 
     // binds the list items to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val itemsViewModel = mList[position]
+        holder.name.text = itemsViewModel.name
+        holder.location.text = itemsViewModel.location
+        Picasso.get().load(itemsViewModel.image).into(holder.image)
 
-        val ItemsViewModel = mList[position]
-
-
-        holder.image.setImageResource(ItemsViewModel.image)
-
-        holder.name.text = ItemsViewModel.name
-        holder.dishes.text = ItemsViewModel.dishes
-        holder.location.text = ItemsViewModel.location
-
-
+        holder.itemView.setOnClickListener {
+//            onItemClick?.invoke(listItems[position])
+            itemClick.onClickItem(position)
+            notifyDataSetChanged()
+        }
     }
 
     override fun getItemCount(): Int {
@@ -45,7 +54,6 @@ class Search_RecyclerView(private val mList: MutableList<RestaurantClass>) : Rec
     class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         val image: ImageView = itemView.findViewById(R.id.imageRestaurantExploreMore)
         val name: TextView = itemView.findViewById(R.id.textNameRestaurantExploreMore)
-        val dishes: TextView= itemView.findViewById(R.id.textDishExploreMore)
         val location: TextView = itemView.findViewById(R.id.textLocationExploreMore)
     }
 }

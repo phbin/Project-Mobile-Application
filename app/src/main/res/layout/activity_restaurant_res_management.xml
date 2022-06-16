@@ -51,40 +51,49 @@
                 android:textSize="50px"
                 android:fontFamily="@font/lato_regular" />
 
-                <LinearLayout
-                    android:id="@+id/mondayTime"
+            <LinearLayout
+                android:id="@+id/mondayTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="120px">
+                <TextView
+                    android:id="@+id/mondayStartTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginLeft="120px">
-                    <TextView
-                        android:id="@+id/mondayStartTime"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="08:00"
-                        android:textColor="@color/white"
-                        android:textSize="40px"
-                        android:fontFamily="@font/lato_regular"/>
+                    android:text="08:00"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"/>
+                <TextView
+                    android:id="@+id/mondayClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Close"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"
+                    android:visibility="gone"/>
 
-                    <TextView
-                        android:id="@+id/mondayLine"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="125px"
-                        android:fontFamily="@font/lato_regular"
-                        android:text="-"
-                        android:textColor="@color/white"
-                        android:textSize="40px" />
+                <TextView
+                    android:id="@+id/mondayLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="125px"
+                    android:fontFamily="@font/lato_regular"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:textSize="40px" />
 
-                    <TextView
-                        android:id="@+id/mondayEndTime"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="20:00"
-                        android:textColor="@color/white"
-                        android:textSize="40px"
-                        android:fontFamily="@font/lato_regular"/>
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/mondayEndTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20:00"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"/>
+            </LinearLayout>
 
             <ImageView
                 android:id="@+id/closedRestaurantMonday"
@@ -122,6 +131,16 @@
                     android:textColor="@color/white"
                     android:textSize="40px"
                     android:fontFamily="@font/lato_regular"/>
+
+                <TextView
+                    android:id="@+id/tuesdayClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Close"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/tuesdayLine"
@@ -180,6 +199,16 @@
                     android:fontFamily="@font/lato_regular"/>
 
                 <TextView
+                    android:id="@+id/wednesdayClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Close"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"
+                    android:visibility="gone"/>
+
+                <TextView
                     android:id="@+id/wednesdayLine"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -234,6 +263,16 @@
                     android:textColor="@color/white"
                     android:textSize="40px"
                     android:fontFamily="@font/lato_regular"/>
+
+                <TextView
+                    android:id="@+id/thursdayClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Close"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/thursdayLine"
@@ -292,6 +331,16 @@
                     android:fontFamily="@font/lato_regular"/>
 
                 <TextView
+                    android:id="@+id/fridayClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Close"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"
+                    android:visibility="gone"/>
+
+                <TextView
                     android:id="@+id/fridayLine"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -348,6 +397,16 @@
                     android:fontFamily="@font/lato_regular"/>
 
                 <TextView
+                    android:id="@+id/saturdayClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Close"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"
+                    android:visibility="gone"/>
+
+                <TextView
                     android:id="@+id/saturdayLine"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -402,6 +461,16 @@
                     android:textColor="@color/white"
                     android:textSize="40px"
                     android:fontFamily="@font/lato_regular"/>
+
+                <TextView
+                    android:id="@+id/sundayClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Close"
+                    android:textColor="@color/white"
+                    android:textSize="40px"
+                    android:fontFamily="@font/lato_regular"
+                    android:visibility="gone"/>
 
                 <TextView
                     android:id="@+id/sundayLine"

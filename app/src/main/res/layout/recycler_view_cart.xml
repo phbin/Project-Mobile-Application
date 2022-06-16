@@ -37,7 +37,6 @@
                 android:layout_height="288px"
                 android:scaleType="centerCrop"
                 app:cardCornerRadius="10dp"
-                android:background="@drawable/square_mint"
                 app:srcCompat="@drawable/meow"/>
         </androidx.cardview.widget.CardView>
         <LinearLayout

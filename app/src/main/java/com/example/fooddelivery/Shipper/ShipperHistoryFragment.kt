@@ -3,6 +3,7 @@ package com.example.fooddelivery.Shipper
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.location.Geocoder
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,15 +15,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fooddelivery.OrderDetailActivity
 import com.example.fooddelivery.R
-import com.example.fooddelivery.Restaurant.RestaurantDishesManagementActivity
 import com.example.fooddelivery.Restaurant.RestaurantMenuRecyclerAdapter
-import com.example.fooddelivery.model.PromotionClass
-import com.example.fooddelivery.model.RestaurantMenuList
 import com.example.fooddelivery.model.ShipperOrderHistory
 import com.google.firebase.database.*
 import com.google.firebase.firestore.FirebaseFirestore
-import kotlinx.android.synthetic.main.activity_restaurant_menu_management.*
 import kotlinx.android.synthetic.main.fragment_shipper_history.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -38,10 +37,11 @@ class ShipperHistoryFragment : Fragment() {
 
     lateinit var preferences : SharedPreferences
     private var adapter: RecyclerView.Adapter<RestaurantMenuRecyclerAdapter.ViewHolder>? = null
-
-    companion object {
-        lateinit var recyclerView : RecyclerView
-    }
+    lateinit var recyclerView : RecyclerView
+//
+//    companion object {
+//        lateinit var recyclerView : RecyclerView
+//    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -78,7 +78,8 @@ class ShipperHistoryFragment : Fragment() {
                         for(j in it.result){
                             if(j.id == i.data.getValue("idCustomer")){
                                 customerName = j.data.getValue("displayName").toString()
-                                customerAddress = j.data.getValue("address").toString()
+                                var customerAddress = Geocoder(requireActivity(), Locale.getDefault()).getFromLocation(i.data.getValue("latCus").toString().toDouble(),i.data.getValue("longCus").toString().toDouble(),2).get(0).featureName+" "+
+                                        Geocoder(requireActivity(), Locale.getDefault()).getFromLocation(i.data.getValue("latCus").toString().toDouble(),i.data.getValue("longCus").toString().toDouble(),2).get(0).thoroughfare
                                 billID = i.id
                                 orderHistoryList.add(
                                     ShipperOrderHistory(billID,
@@ -91,9 +92,8 @@ class ShipperHistoryFragment : Fragment() {
                             }
                         }
 
-                        recyclerView = view.findViewById(R.id.recyclerViewHistory)
-                        recyclerView.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
-                        recyclerView.adapter = ShipperAdapterHistory(requireActivity().applicationContext, orderHistoryList )
+                        recyclerViewHistory.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
+                        recyclerViewHistory.adapter = ShipperAdapterHistory(requireActivity().applicationContext, orderHistoryList )
 
 //                        (recyclerView.adapter as ShipperAdapterHistory).onItemClick = {
 //                            val intent = Intent(requireActivity(), OrderDetailActivity::class.java)
@@ -101,7 +101,7 @@ class ShipperHistoryFragment : Fragment() {
 //                            startActivity(intent)
 //                        }
 
-                        (recyclerView.adapter as ShipperAdapterHistory).setOnIntemClickListener(object :
+                        (recyclerViewHistory.adapter as ShipperAdapterHistory).setOnIntemClickListener(object :
                             ShipperAdapterHistory.onIntemClickListener {
                             override fun onClickItem(position: Int) {
                                 val intent = Intent(requireActivity(), OrderDetailActivity::class.java)
@@ -115,14 +115,57 @@ class ShipperHistoryFragment : Fragment() {
             }
         }
 
-//        var orderArray : ArrayList<ShipperOrderHistory> = ArrayList()
+//        fb.addSnapshotListener { value, error ->
+//            if (error != null){
+//                return@addSnapshotListener
+//            }
+//            if(value!=null){
+//                var orderHistory : ArrayList<ShipperOrderHistory> = ArrayList()
+//                fb.get().addOnCompleteListener { task ->
+//                    for (i in task.result) {
+//                        if(i.data.getValue("idShipper").toString()== idShipper)
+//                        {
+//                            fbCustomer.get().addOnCompleteListener {
+//                                for(j in it.result){
+//                                    if(j.id == i.data.getValue("idCustomer")){
+//                                        customerName = j.data.getValue("displayName").toString()
+//                                        customerAddress = j.data.getValue("address").toString()
+//                                        billID = i.id
+//                                        orderHistory.add(
+//                                            ShipperOrderHistory(billID,
+//                                                "" + customerAddress,
+//                                                "" + customerName,
+//                                                "",
+//                                                "" + i.data.getValue("total").toString()
+//                                            )
+//                                        )
+//                                    }
+//                                }
 //
-//        orderArray.add(ShipperOrderHistory("001", "Linh Trung, Thủ Đức", "Thế Vĩ", "1 món", "200.000đ"))
-//        orderArray.add(ShipperOrderHistory("002", "Kiên Giang", "Vĩ", "2 món", "250.000đ"))
-//        orderArray.add(ShipperOrderHistory("003", "Cần Thơ", "Huỳnh", "5 món", "100.000đ"))
-//        orderArray.add(ShipperOrderHistory("004", "Long An", "Thế", "3 món", "300.000đ"))
-
-
-
+//                                recyclerViewHistory.layoutManager = LinearLayoutManager(requireActivity())
+//                                recyclerViewHistory.adapter = ShipperAdapterHistory(requireActivity(),orderHistory )
+//                                recyclerViewHistory.setHasFixedSize(true)
+//
+////                        (recyclerView.adapter as ShipperAdapterHistory).onItemClick = {
+////                            val intent = Intent(requireActivity(), OrderDetailActivity::class.java)
+////                            intent.putExtra("billID", billID)
+////                            startActivity(intent)
+////                        }
+//
+//                                (recyclerViewHistory.adapter as ShipperAdapterHistory).setOnIntemClickListener(object :
+//                                    ShipperAdapterHistory.onIntemClickListener {
+//                                    override fun onClickItem(position: Int) {
+//                                        val intent = Intent(requireActivity(), OrderDetailActivity::class.java)
+//                                        intent.putExtra("billID", orderHistory[position].orderID)
+//                                        startActivity(intent)
+//                                    }
+//
+//                                })
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
     }
 }

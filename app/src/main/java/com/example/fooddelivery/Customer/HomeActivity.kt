@@ -20,16 +20,23 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.denzcoskun.imageslider.ImageSlider
+import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.models.SlideModel
 import com.example.fooddelivery.R
 import com.example.fooddelivery.SignInActivity
+import com.example.fooddelivery.model.CoordinatesClass
+import com.example.fooddelivery.model.CustomerCategory
 import com.example.fooddelivery.model.PreviousOrdersClass
 import com.example.fooddelivery.model.RestaurantClass
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_home.*
 import java.util.*
 import kotlin.collections.ArrayList
@@ -37,6 +44,10 @@ import kotlin.collections.ArrayList
 
 class HomeActivity : AppCompatActivity() {
     private lateinit var recyclerview: RecyclerView
+    private lateinit var recyclerviewExplore: RecyclerView
+    private lateinit var recyclerviewPrevious: RecyclerView
+    private lateinit var recyclerviewNearRes: RecyclerView
+
     private lateinit var adapterCategory: Category_RecyclerView
     private lateinit var adapterPreviousOrders: Previous_Orders_RecyclerView
     private lateinit var adapterFavoriteRestaurant: Favorite_Restaurant_RecyclerView
@@ -47,9 +58,24 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var arrayListRestau: ArrayList<RestaurantClass>
     var latitude=0.0
     var longitude=0.0
+
+    lateinit var imageSlider : ImageSlider
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        var preferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        val idCustomer = preferences.getString("ID","")
+        var result=FloatArray(10)
+        imageSlider = findViewById(R.id.imageSlider)
+        var slideModels : ArrayList<SlideModel> = ArrayList()
+            slideModels.add(SlideModel("https://yt3.ggpht.com/ytc/AKedOLRswKCygRWK-eecd1Gt-DrlEhv79jYXlNMx535E=s900-c-k-c0x00ffffff-no-rj", ScaleTypes.FIT))
+        slideModels.add(SlideModel("https://younetmedia.com/wp-content/uploads/2019/08/younet-media-baemin-vietnam-xanh-mint-1024x683.png", ScaleTypes.FIT))
+        slideModels.add(SlideModel("https://rider.baemin.vn/wp-content/uploads/2020/08/the-le-do-vui-chuyen-gia-baemin-1127.jpg", ScaleTypes.FIT))
+        slideModels.add(SlideModel("https://vietnambusinessinsider.vn/uploads/images/2021/11/04/a33-baemin-2-1635146759-1636010488.jpeg", ScaleTypes.FIT))
+        slideModels.add(SlideModel("https://static.mservice.io/blogscontents/momo-upload-api-200416115749-637226350699346507.jpg", ScaleTypes.FIT))
+
+        imageSlider.setImageList(slideModels, ScaleTypes.FIT)
+
         latitude=intent.getDoubleExtra("lat",0.0)
         longitude=intent.getDoubleExtra("long",0.0)
         fusedLocationProviderClient=LocationServices.getFusedLocationProviderClient(this)
@@ -59,6 +85,10 @@ class HomeActivity : AppCompatActivity() {
             var address=Geocoder(this,Locale.getDefault()).getFromLocation(latitude,longitude,2).get(0).featureName+" "+
                     Geocoder(this,Locale.getDefault()).getFromLocation(latitude,longitude,2).get(0).thoroughfare
             findLocation.setText("$address")
+            var fb=FirebaseFirestore.getInstance().collection("Customer")
+                .document(""+idCustomer)
+            fb.update("latitude",latitude,"longitude",longitude)
+            fb.update("address",address)
         }
         findLocation.setOnClickListener{
             var intent=Intent(this,SearchLocationActivity::class.java)
@@ -66,138 +96,152 @@ class HomeActivity : AppCompatActivity() {
             intent.putExtra("long",longitude)
             startActivity(intent)
         }
-        recyclerview = findViewById(R.id.categoryRecyclerView)
-        adapterCategory = Category_RecyclerView()
-        recyclerview.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
-        recyclerview.adapter = adapterCategory
 
-        recyclerview = findViewById(R.id.previousOrdersRecyclerView)
-        adapterPreviousOrders = Previous_Orders_RecyclerView()
-        recyclerview.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
-        recyclerview.adapter = adapterPreviousOrders
 
-        recyclerview = findViewById(R.id.favoriteRestaurantRecyclerView)
-        adapterFavoriteRestaurant = Favorite_Restaurant_RecyclerView()
-        recyclerview.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
-        recyclerview.adapter = adapterFavoriteRestaurant
+        var fbRes = FirebaseFirestore.getInstance().collection("Restaurant")
+        var fbBill = FirebaseFirestore.getInstance().collection("Bill")
 
-        recyclerview = findViewById(R.id.exploreMoreRecyclerView)
-        adapterExploreMore = Explore_More_RecyclerView()
-        recyclerview.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
-        recyclerview.adapter = adapterExploreMore
+        var arrayCategory : ArrayList<CustomerCategory> = ArrayList()
+        var arrayExplore : ArrayList<RestaurantClass> = ArrayList()
+        var arrayPreviousOrders : ArrayList<RestaurantClass> = ArrayList()
+        var arrayNearRes : ArrayList<RestaurantClass> = ArrayList()
+
+        fbRes.get().addOnCompleteListener {
+            if (it.isSuccessful) {
+                for(i in it.result){
+                    Location.distanceBetween(i.data.getValue("latitude").toString().toDouble(),
+                        i.data.getValue("longitude").toString().toDouble(),
+                        latitude,
+                        longitude,result)
+                    arrayCategory.add(CustomerCategory("" + i.data.getValue("image"), i.id))
+                    arrayExplore.add(RestaurantClass(i.id, ""+i.data.getValue("image"), ""+i.data.getValue("displayName"), String.format("%.1f", result[0]/1000)+"km"))
+                    if(result[0]/1000<5){
+                        arrayNearRes.add(RestaurantClass(i.id, ""+i.data.getValue("image"), ""+i.data.getValue("displayName"), String.format("%.1f", result[0]/1000)+"km"))
+                    }
+                }
+                recyclerview = findViewById(R.id.categoryRecyclerView)
+                adapterCategory = Category_RecyclerView(this, arrayCategory)
+                recyclerview.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+                recyclerview.adapter = adapterCategory
+
+                adapterCategory.setOnIntemClickListener(object : Category_RecyclerView.onIntemClickListener{
+                    override fun onClickItem(position: Int) {
+                        val intent = Intent(this@HomeActivity, RestaurantActivity::class.java)
+                        intent.putExtra("idRes", arrayCategory[position].idRestaurant)
+                        intent.putExtra("lat",latitude)
+                        intent.putExtra("long",longitude)
+                        startActivity(intent)
+                    }
+                })
+
+
+                recyclerviewExplore = findViewById(R.id.exploreMoreRecyclerView)
+                adapterExploreMore = Explore_More_RecyclerView(this, arrayExplore)
+                recyclerviewExplore.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
+                recyclerviewExplore.adapter = adapterExploreMore
+
+                adapterExploreMore.setOnIntemClickListener(object : Explore_More_RecyclerView.onIntemClickListener{
+                    override fun onClickItem(position: Int) {
+                        val intent = Intent(this@HomeActivity, RestaurantActivity::class.java)
+                        intent.putExtra("idRes", arrayExplore[position].idRes)
+                        intent.putExtra("lat",latitude)
+                        intent.putExtra("long",longitude)
+                        startActivity(intent)
+                    }
+                })
+
+                recyclerviewNearRes = findViewById(R.id.favoriteRestaurantRecyclerView)
+                adapterFavoriteRestaurant = Favorite_Restaurant_RecyclerView(this, arrayNearRes)
+                recyclerviewNearRes.layoutManager = GridLayoutManager(this,2)
+                recyclerviewNearRes.adapter = adapterFavoriteRestaurant
+
+                adapterFavoriteRestaurant.setOnIntemClickListener(object : Favorite_Restaurant_RecyclerView.onIntemClickListener{
+                    override fun onClickItem(position: Int) {
+                        val intent = Intent(this@HomeActivity, RestaurantActivity::class.java)
+                        intent.putExtra("idRes", arrayNearRes[position].idRes)
+                        intent.putExtra("lat",latitude)
+                        intent.putExtra("long",longitude)
+                        startActivity(intent)
+                    }
+                })
+            }
+        }
+
+
+        fbBill.get().addOnCompleteListener {
+            if (it.isSuccessful) {
+                for (i in it.result) {
+                    if(i.data.getValue("idCustomer").toString() == idCustomer){
+                        fbRes.get().addOnCompleteListener { task ->
+                            if (task.isSuccessful) {
+                                for (j in task.result) {
+                                    if(i.data.getValue("idRestaurant") == j.id){
+                                        arrayPreviousOrders.add(RestaurantClass(""+i.data.getValue("idRestaurant"), ""+j.data.getValue("image"), ""+j.data.getValue("displayName"), ""+i.data.getValue("distance")+"km"))
+                                    }
+                                }
+                                recyclerviewPrevious = findViewById(R.id.previousOrdersRecyclerView)
+                                adapterPreviousOrders = Previous_Orders_RecyclerView(this, arrayPreviousOrders)
+                                recyclerviewPrevious.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+                                recyclerviewPrevious.adapter = adapterPreviousOrders
+
+                                adapterPreviousOrders.setOnIntemClickListener(object : Previous_Orders_RecyclerView.onIntemClickListener{
+                                    override fun onClickItem(position: Int) {
+                                        val intent = Intent(this@HomeActivity, RestaurantActivity::class.java)
+                                        intent.putExtra("idRes", arrayPreviousOrders[position].idRes)
+                                        intent.putExtra("lat",latitude)
+                                        intent.putExtra("long",longitude)
+                                        startActivity(intent)
+                                    }
+                                })
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+//        recyclerview = findViewById(R.id.favoriteRestaurantRecyclerView)
+//        adapterFavoriteRestaurant = Favorite_Restaurant_RecyclerView(this, arrayListRestauFavorite)
+//        recyclerview.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false)
+//        recyclerview.adapter = adapterFavoriteRestaurant
 
         see_moreButton.setOnClickListener {
             val intent = Intent(this,PopularInYourAreaActivity::class.java)
+            intent.putExtra("lat",latitude)
+            intent.putExtra("long",longitude)
             startActivity(intent)
         }
 
         searchView.setOnClickListener {
             val intent= Intent(this,SearchRestaurantActivity::class.java)
+            intent.putExtra("lat",latitude)
+            intent.putExtra("long",longitude)
             startActivity(intent)
         }
 
 
-        arrayListRestau = ArrayList()
-        arrayListRestau.add(
-            RestaurantClass(R.drawable.square_mint,
-                "Shaking Beef Tri-tip",
-                "Hủ tiếu gà",
-                "3 km")
-        )
-
-        arrayListRestau.add(
-            RestaurantClass(R.drawable.square_mint,
-                "Shaking Beef Tri-tip",
-                "Bánh canh sườn heo chua ngọt sốt cay",
-                "3 km")
-        )
-        arrayListRestau.add(
-            RestaurantClass(R.drawable.square_mint,
-                "Shaking Beef Tri-tip",
-                "Vịt tiềm thuốc ngủ",
-                "3 km")
-        )
-        arrayListRestau.add(
-            RestaurantClass(R.drawable.square_mint,
-                "Shaking Beef Tri-tip",
-                "Chân gà nấu phô trương",
-
-                "3 km")
-        )
-        arrayListRestau.add(
-            RestaurantClass(R.drawable.square_mint,
-                "Shaking Beef Tri-tip",
-                "Ngỗng hấp hối",
-
-                "3 km")
-        )
-        arrayListRestau.add(
-            RestaurantClass(R.drawable.square_mint,
-                "Shaking Beef Tri-tip",
-                "Nhện chiên giòn giã nhuyễn nấu với nước cốt chanh dây",
-
-                "3 km")
-        )
-
-
-
-        var arrayListOrders: ArrayList<PreviousOrdersClass> = ArrayList()
-        arrayListOrders.add(
-            PreviousOrdersClass(R.drawable.square_mint,
-                "Shaking Beef Tri-tip")
-        )
-        arrayListOrders.add(
-            PreviousOrdersClass(R.drawable.square_mint,
-                "Shaking Beef Tri-tip")
-        )
-        arrayListOrders.add(
-            PreviousOrdersClass(R.drawable.square_mint,
-                "Shaking Beef Tri-tip")
-        )
-        arrayListOrders.add(
-            PreviousOrdersClass(R.drawable.square_mint,
-                "Shaking Beef Tri-tip")
-        )
-        arrayListOrders.add(
-            PreviousOrdersClass(R.drawable.square_mint,
-                "Shaking Beef Tri-tip")
-        )
-        //previousOrdersRecyclerView.layoutManager = LinearLayoutManager(this)
 
         btnCart.setOnClickListener{
             val intent= Intent(this,CartActivity::class.java)
+            intent.putExtra("lat",latitude)
+            intent.putExtra("long",longitude)
             startActivity(intent)
         }
 
         btnMenu.setOnClickListener{
             val intent= Intent(this,CustomerMenu::class.java)
+            intent.putExtra("lat",latitude)
+            intent.putExtra("long",longitude)
             startActivity(intent)
         }
-        var arrayListRestauFavorite: ArrayList<RestaurantClass> = ArrayList()
-        arrayListRestauFavorite.add(
-            RestaurantClass(R.drawable.square_mint,
-                "Minh",
-                "Burger-Chicken-Cake",
-                "3 km")
-        )
-        arrayListRestauFavorite.add(
-            RestaurantClass(R.drawable.square_mint,
-                "Hiếu",
-                "Burger-Chicken-Cake",
-
-                "3 km")
-        )
-        arrayListRestauFavorite.add(
-            RestaurantClass(R.drawable.square_mint,
-                "Nè",
-                "Burger-Chicken-Cake",
-                "3 km")
-        )
 
     }
 
     @SuppressLint("SetTextI18n")
     private fun CheckLocationPermission(){
+        var preferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        val idCustomer = preferences.getString("ID","")
     val task=fusedLocationProviderClient.lastLocation
         if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)!=PackageManager.PERMISSION_GRANTED
             &&ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)!=PackageManager.PERMISSION_GRANTED) {
@@ -205,6 +249,8 @@ class HomeActivity : AppCompatActivity() {
             return
         }
         task.addOnSuccessListener {
+            var fb=FirebaseFirestore.getInstance().collection("Customer")
+                .document(""+idCustomer)
             if(it!=null){
                 latitude=it.latitude
                 longitude=it.longitude
@@ -212,6 +258,8 @@ class HomeActivity : AppCompatActivity() {
                 var address=Geocoder(this,Locale.getDefault()).getFromLocation(latitude,longitude,2).get(0).featureName+" "+
                         Geocoder(this,Locale.getDefault()).getFromLocation(latitude,longitude,2).get(0).thoroughfare
                 findLocation.setText("$address")
+                fb.update("latitude",latitude,"longitude",longitude)
+                fb.update("address",address)
 //                Log.d("AAAA","hello"+it.latitude+it.longitude)
 //
 //                Toast.makeText(this,"hello"+it.latitude+it.longitude,Toast.LENGTH_LONG).show()
@@ -223,6 +271,9 @@ class HomeActivity : AppCompatActivity() {
                 var address=Geocoder(this,Locale.getDefault()).getFromLocation(latitude,longitude,2).get(0).featureName+" "+
                         Geocoder(this,Locale.getDefault()).getFromLocation(latitude,longitude,2).get(0).thoroughfare
                 findLocation.setText("$address")
+                fb.update("latitude",latitude,"longitude",longitude)
+                fb.update("address",address)
+
             }
 
         }

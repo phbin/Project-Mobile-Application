@@ -28,7 +28,6 @@
                     android:id="@+id/imageFD"
                     android:scaleType="centerCrop"
                     android:layout_width="288px"
-                    android:background="@drawable/square_mint"
                     app:cardCornerRadius="10dp"
                     android:layout_height="290.88px">
                 </ImageView>

@@ -11,7 +11,8 @@ import com.example.fooddelivery.Restaurant.RestaurantMenuRecyclerAdapter
 import com.example.fooddelivery.model.RestaurantMenuList
 import com.example.fooddelivery.model.ShipperOrderHistory
 
-class ShipperAdapterHistory (var context : Context, var listItems : List<ShipperOrderHistory>) : RecyclerView.Adapter<ShipperAdapterHistory.ViewHolder>() {
+class ShipperAdapterHistory (var context : Context, var listItems : List<ShipperOrderHistory>) :
+    RecyclerView.Adapter<ShipperAdapterHistory.ViewHolder>() {
 
     lateinit var itemClick : ShipperAdapterHistory.onIntemClickListener
     var onItemClick : ((ShipperOrderHistory) -> Unit)? = null

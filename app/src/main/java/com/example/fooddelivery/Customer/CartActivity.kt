@@ -4,9 +4,12 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fooddelivery.R
+import com.example.fooddelivery.Restaurant.RestaurantDishesAdapter
 import com.example.fooddelivery.Restaurant.RestaurantDishesManagementActivity
 import com.example.fooddelivery.Restaurant.RestaurantMenuRecyclerAdapter
 import com.example.fooddelivery.model.CartClass
@@ -16,19 +19,29 @@ import kotlinx.android.synthetic.main.activity_cart.*
 import kotlinx.android.synthetic.main.activity_restaurant_menu_management.*
 
 class CartActivity : AppCompatActivity() {
+    var latitude=0.0
+    var longitude=0.0
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<CartAdapter.ViewHolder>? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
+        latitude=intent.getDoubleExtra("lat",0.0)
+        longitude=intent.getDoubleExtra("long",0.0)
+        var preferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
+        val idCustomer = preferences.getString("ID","")
+        var idRestaurant = ""
+        var quantity = 0
+
         //var sharedPreferences = getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
         //val phoneNumber = sharedPreferences.getString("ID", "")
         var cartItems: ArrayList<CartClass> = ArrayList()
         var fb = FirebaseFirestore.getInstance().collection("Customer")
-            .document("0393751403")
+            .document("$idCustomer")
             .collection("Cart")
         fb.get().addOnCompleteListener {
             if (it.isSuccessful) {
+                var total : Long = 0
                 for (i in it.result) {
                     cartItems.add(CartClass("" + i.data.getValue("idRestaurant"),
                         "" + i.data.getValue("idCategory"),
@@ -37,20 +50,61 @@ class CartActivity : AppCompatActivity() {
                         "" + i.data.getValue("price"),
                         "" + i.data.getValue("quantity"),
                         "" + i.data.getValue("imageFD")))
+                        total += i.data.getValue("price").toString().toLong()
+                        idRestaurant = i.data.getValue("idRestaurant").toString()
+                        quantity+=i.data.getValue("quantity").toString().toInt()
                 }
+                textViewTotal.text = total.toString()
             }
                 layoutManager = LinearLayoutManager(this)
                 recyclerViewCart.layoutManager = layoutManager
 
                 adapter = CartAdapter( cartItems)
                 recyclerViewCart.adapter = adapter
+
+            (adapter as CartAdapter).setOnDeleteItemClickListener(object :
+                CartAdapter.onDeleteItemClickListener {
+                override fun onDeleteItemClick(position: Int) {
+                    //Toast.makeText(this@RestaurantMenuManagementActivity,""+menuItems[position].menuName.toString(),Toast.LENGTH_SHORT).show()
+                    fb.get().addOnCompleteListener {task ->
+                        if (task.isSuccessful) {
+                            for ( (index,i) in task.result.withIndex()) {
+                                if(index==position) fb.document(i.id).delete()
+                            }
+                        }
+                    }
+                }
+            })
         }
         backButton.setOnClickListener{
             finish()
         }
+        var count=0
         btnOrder.setOnClickListener{
-            var intent=Intent(this,CheckOutActivity::class.java)
-            startActivity(intent)
+            progressBar.visibility = View.VISIBLE
+            btnOrder.visibility = View.GONE
+            var fb=FirebaseFirestore.getInstance().collection("Customer")
+                .document(""+idCustomer).collection("Cart")
+                .get().addOnCompleteListener{
+                    if(it.isSuccessful){
+                        for(i in it.result){
+                            count++
+                        }
+                    }
+                    if(count==0){
+                        Toast.makeText(this,"Empty!",Toast.LENGTH_LONG).show()
+                        return@addOnCompleteListener
+                        progressBar.visibility = View.GONE
+                        btnOrder.visibility = View.VISIBLE
+                    }else{
+                        var intent=Intent(this,CheckOutActivity::class.java)
+                        intent.putExtra("idRestaurant", idRestaurant)
+                        intent.putExtra("quantity", quantity.toString())
+                        intent.putExtra("lat",latitude)
+                        intent.putExtra("long",longitude)
+                        startActivity(intent)
+                    }
+                }
         }
 
 //

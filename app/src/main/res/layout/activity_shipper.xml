@@ -5,18 +5,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-<!--    <Button-->
-<!--        android:id="@+id/btnGetOrder"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="69px"-->
-<!--        android:text="Get order"-->
-<!--        android:fontFamily="@font/lato_bold"-->
-<!--        android:textSize="50px"-->
-<!--        android:backgroundTint="@color/mint"-->
-<!--        android:textColor="@color/white"-->
-<!--        android:layout_gravity="center_vertical"/>-->
-
     <Button
         android:id="@+id/btnStatus"
         android:layout_width="350px"

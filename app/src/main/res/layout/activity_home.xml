@@ -79,7 +79,7 @@
         android:layout_height="45px"
         android:layout_marginTop="187.04px"
         android:id="@+id/btnCart"
-        android:layout_marginEnd="250px"
+        android:layout_marginEnd="190px"
         android:background="@drawable/cart_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -88,14 +88,14 @@
         android:layout_height="77.76px"
         android:layout_marginTop="167.04px"
         android:id="@+id/btnMenu"
-        android:layout_marginEnd="141.12px"
+        android:layout_marginEnd="69px"
         android:background="@drawable/option_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="1470px"
+        android:layout_height="1600px"
         android:layout_marginTop="0px"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
@@ -116,14 +116,14 @@
                     android:layout_height="100px"
                     android:layout_marginStart="69.12px"
                     android:fontFamily="@font/lato_semibold"
-                    android:text="@string/popular_in_your_area"
+                    android:text="Recommend for you"
                     android:textStyle="bold"
                     android:textSize="51.84px" />
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="100px"
-                    android:layout_marginStart="100px"
+                    android:layout_marginStart="280px"
                     android:background="#00000000"
                     android:fontFamily="@font/lato_regular"
                     android:text="@string/see_more"
@@ -133,13 +133,19 @@
                     android:textSize="40.32px"
                     android:textStyle="italic" />
             </LinearLayout>
-            <ListView
+            <com.denzcoskun.imageslider.ImageSlider
                 android:layout_width="match_parent"
-                android:layout_height="686.6px">
+                android:layout_height="686.6px"
+                app:iss_period="2000"
+                app:iss_auto_cycle="true"
+                app:iss_delay="2000"
+                android:id="@+id/imageSlider"
+                app:iss_corner_radius="10">
 
-            </ListView>
+            </com.denzcoskun.imageslider.ImageSlider>
 
             <TextView
+                android:layout_marginTop="50px"
                 android:layout_width="wrap_content"
                 android:layout_height="62px"
                 android:text="Explore more"
@@ -157,7 +163,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="600px"
-                android:layout_marginTop="110.8px">
+                android:layout_marginTop="10px"
+                android:layout_marginLeft="69px">
 
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -172,7 +179,7 @@
                 android:text="Category"
                 android:layout_marginStart="69.12px"
                 android:textStyle="bold"
-                android:layout_marginTop="89.28px"
+                android:layout_marginTop="50px"
                 android:textSize="51.84px"
                 android:fontFamily="@font/lato_regular"/>
 
@@ -180,7 +187,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="129.6px"
-                android:layout_marginTop="110.8px">
+                android:layout_marginLeft="69px"
+                android:layout_marginTop="110px">
 
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -196,14 +204,15 @@
                 android:text="Your Previous Orders"
                 android:layout_marginStart="69.12px"
                 android:textStyle="bold"
-                android:layout_marginTop="218.32px"
+                android:layout_marginTop="50px"
                 android:textSize="51.84px"
                 android:fontFamily="@font/lato_regular"/>
             //Chỗ cái linear này là làm cái previous orders
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="110.8px">
+                android:layout_marginTop="10px"
+                android:layout_marginLeft="69px">
 
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -215,10 +224,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="62px"
-                android:text="Your favorite restaurants"
+                android:text="Near you"
                 android:layout_marginStart="69.12px"
                 android:textStyle="bold"
-                android:layout_marginTop="218.32px"
+                android:layout_marginTop="50px"
                 android:textSize="51.84px"
                 android:fontFamily="@font/lato_regular"/>
 
@@ -228,7 +237,9 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="110.8px">
+                android:layout_marginBottom="20px"
+                android:layout_marginTop="10px"
+                android:layout_marginLeft="69px">
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/favoriteRestaurantRecyclerView"

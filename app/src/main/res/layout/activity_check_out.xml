@@ -43,15 +43,16 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 >
-                <fragment
+                <com.google.android.gms.maps.MapView
                     android:layout_marginHorizontal="70px"
                     android:id="@+id/frmMaps"
-                    android:name="com.google.android.gms.maps.SupportMapFragment"
                     android:layout_width="941.76px"
                     android:layout_height="408.96px"
                     android:layout_marginTop="71px"
                     >
-                </fragment>
+<!--                    android:name="com.google.android.gms.maps.SupportMapFragment"-->
+
+                </com.google.android.gms.maps.MapView>
                 <TextView
                     android:layout_marginHorizontal="83.52px"
                     android:layout_marginTop="74.88px"
@@ -203,7 +204,7 @@
                                 android:textColor="@color/black"
                                 android:fontFamily="@font/lato_regular"
                                 android:textSize="40.32px"
-                                android:text="90000 VND"
+                                android:text=" VND"
                                 >
                             </TextView>
                             <TextView
@@ -214,7 +215,7 @@
                                 android:textColor="@color/black"
                                 android:fontFamily="@font/lato_regular"
                                 android:textSize="40.32px"
-                                android:text="18000 VND"
+                                android:text="0 VND"
                                 >
                             </TextView>
                         </LinearLayout>
@@ -228,49 +229,7 @@
                     android:background="#DEDEDE"
                     >
                 </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="148.08px"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="83.52px"
-                    android:layout_marginRight="70px"
-                    android:gravity="center">
-                    <LinearLayout
-                        android:layout_width="100px"
-                        android:layout_height="wrap_content">
-                        <ImageView
-                            android:id="@+id/imgPaymentMethod"
-                            android:layout_width="69.12px"
-                            android:layout_height="69.12px"
-                            android:background="@drawable/icpayment"
-                            >
-                        </ImageView>
-                    </LinearLayout>
-                    <TextView
-                        android:id="@+id/textPaymentMethod"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Payment method"
-                        android:textColor="@color/black"
-                        android:textSize="40.32px"
-                        android:fontFamily="@font/lato_regular"
-                        android:layout_marginLeft="25.92px"
-                        >
-                    </TextView>
-                    <Button
-                        android:id="@+id/btnChoose"
-                        android:layout_width="match_parent"
-                        android:layout_height="50px"
-                        android:background="#00000000"
-                        android:fontFamily="@font/lato_regular"
-                        android:text="Choose"
-                        android:textAlignment="viewEnd"
-                        android:textAllCaps="false"
-                        android:textColor="@color/mint"
-                        android:textSize="40.32px"
-                        >
-                    </Button>
-                </LinearLayout>
+
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
@@ -378,29 +337,42 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textAlignment="viewEnd"
-                        android:text="125000 VND"
+                        android:text=" VND"
                         android:textSize="37.44px"
                         android:fontFamily="@font/lato_regular"
                         android:textColor="@color/black"
                         >
                     </TextView>
                 </LinearLayout>
-                <Button
-                    android:id="@+id/btnOrder"
+
+                <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="70px"
-                    android:background="@drawable/mint_button"
-                    android:backgroundTint="@color/mint"
                     android:layout_marginTop="39.04px"
-                    android:layout_marginBottom="63.08px"
-                    android:fontFamily="@font/lato_semibold"
-                    android:textSize="46.08px"
-                    android:text="Order"
-                    android:textColor="@color/white"
-                    android:textAllCaps="false"
-                    >
-                </Button>
+                    android:layout_marginBottom="63.08px">
+
+                    <ProgressBar
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/progressBar"
+                        android:visibility="gone"/>
+
+                    <Button
+                        android:id="@+id/btnOrder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="70px"
+                        android:background="@drawable/mint_button"
+                        android:backgroundTint="@color/mint"
+                        android:fontFamily="@font/lato_semibold"
+                        android:textSize="46.08px"
+                        android:text="Order"
+                        android:textColor="@color/white"
+                        android:textAllCaps="false"
+                        >
+                    </Button>
+                </FrameLayout>
             </LinearLayout>
         </LinearLayout>
     </androidx.appcompat.widget.LinearLayoutCompat>

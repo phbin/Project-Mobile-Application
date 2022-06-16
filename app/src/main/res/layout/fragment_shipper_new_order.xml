@@ -35,18 +35,20 @@
                 android:layout_height="match_parent"
                 android:gravity="center_horizontal"
                 android:orientation="vertical">
-                <fragment
-                    android:layout_marginHorizontal="70px"
-                    android:id="@+id/frmMaps"
-                    android:name="com.google.android.gms.maps.SupportMapFragment"
-                    android:layout_width="941.76px"
-                    android:layout_height="408.96px"
-                    android:layout_marginTop="71px">
-                </fragment>
+                    <com.google.android.gms.maps.MapView
+                        android:layout_marginHorizontal="70px"
+                        android:id="@+id/frmMaps"
+                        android:layout_width="941.76px"
+                        android:layout_height="408.96px"
+                        android:layout_marginTop="71px"
+                        >
+                    </com.google.android.gms.maps.MapView>
+                <!--                        android:name="com.google.android.gms.maps.SupportMapFragment"-->
+
                 <androidx.cardview.widget.CardView
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     android:layout_width="941.76px"
-                    android:layout_height="288px"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="60px"
                     android:layout_gravity="center_horizontal"
                     card_view:cardCornerRadius="28.8px">
@@ -96,6 +98,7 @@
                             android:id="@+id/textViewResAddress"
                             android:layout_width="715px"
                             android:layout_height="wrap_content"
+                            android:layout_marginVertical="6px"
                             android:fontFamily="@font/lato_regular"
                             android:textSize="37.44px"
                             android:textColor="@color/grey" />
@@ -108,7 +111,7 @@
                     android:id="@+id/cardView"
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     android:layout_width="941.76px"
-                    android:layout_height="288px"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="70px"
                     android:layout_gravity="center_horizontal"
                     card_view:cardCornerRadius="28.8px">
@@ -138,6 +141,14 @@
                             android:fontFamily="@font/lato_regular"
                             android:textSize="37.44px"
                             android:textColor="@color/grey" />
+
+                        <TextView
+                            android:id="@+id/textViewCusPhoneNumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/lato_regular"
+                            android:textSize="37.44px"
+                            android:textColor="@color/black"/>
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
@@ -216,7 +227,7 @@
                                         >
                                     </TextView>
                                     <TextView
-                                        android:id="@+id/textDistance"
+                                        android:id="@+id/textDistanceOrder"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="2.3km"
@@ -230,45 +241,26 @@
                             </LinearLayout>
                             <LinearLayout
                                 android:layout_width="match_parent"
+                                android:layout_gravity="right"
                                 android:layout_height="match_parent">
                                 <LinearLayout
-                                    android:layout_width="382px"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical"
-                                    android:gravity="right"
-                                    android:layout_marginRight="10px">
-                                    <TextView
-                                        android:id="@+id/textSubPrice"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="@color/black"
-                                        android:fontFamily="@font/lato_regular"
-                                        android:textSize="40.32px"
-                                        android:text="0"/>
-                                    <TextView
-                                        android:id="@+id/textSubFee"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:textColor="@color/black"
-                                        android:fontFamily="@font/lato_regular"
-                                        android:textSize="40.32px"
-                                        android:text="0"
-                                        >
-                                    </TextView>
-                                </LinearLayout>
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
+                                    android:layout_gravity="right"
                                     android:layout_height="wrap_content"
                                     android:orientation="vertical">
                                     <TextView
+                                        android:id="@+id/textViewSubTotal"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:textColor="@color/black"
+                                        android:layout_gravity="right"
                                         android:fontFamily="@font/lato_regular"
                                         android:textSize="40.32px"
                                         android:text="VNĐ"/>
                                     <TextView
+                                        android:id="@+id/textViewDeliveryFee"
                                         android:layout_width="wrap_content"
+                                        android:layout_gravity="right"
                                         android:layout_height="wrap_content"
                                         android:textColor="@color/black"
                                         android:fontFamily="@font/lato_regular"
@@ -309,7 +301,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textAlignment="viewEnd"
-                                android:text="VNĐ"
+                                android:text="VND"
                                 android:textSize="37.44px"
                                 android:fontFamily="@font/lato_bold"
                                 android:textColor="@color/black"/>
@@ -321,22 +313,6 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/btnStartDelivery"
-                android:layout_width="981px"
-                android:layout_height="130px"
-                android:layout_gravity="center"
-                android:layout_marginTop="69px"
-                android:background="@drawable/mint_button"
-                android:backgroundTint="@color/mint"
-                android:fontFamily="@font/lato_semibold"
-                android:text="Start delivery"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="48px"
-                app:backgroundTint="@color/mint"
-                android:layout_marginBottom="100px"/>
-
-            <Button
                 android:id="@+id/btnFinish"
                 android:layout_width="981px"
                 android:layout_height="130px"
@@ -345,13 +321,28 @@
                 android:background="@drawable/mint_button"
                 android:backgroundTint="@color/mint"
                 android:fontFamily="@font/lato_semibold"
-                android:text="Finish Delivery"
+                android:text="Finish delivery"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 android:textSize="48px"
                 app:backgroundTint="@color/mint"
-                android:layout_marginBottom="100px"
-                android:visibility="invisible"/>
+                android:layout_marginBottom="100px"/>
+
+            <!--            <Button-->
+            <!--                android:id="@+id/btnFinish"-->
+            <!--                android:layout_width="981px"-->
+            <!--                android:layout_height="130px"-->
+            <!--                android:layout_gravity="center"-->
+            <!--                android:layout_marginTop="69px"-->
+            <!--                android:background="@drawable/mint_button"-->
+            <!--                android:backgroundTint="@color/mint"-->
+            <!--                android:fontFamily="@font/lato_semibold"-->
+            <!--                android:text="Finish Delivery"-->
+            <!--                android:textAllCaps="false"-->
+            <!--                android:textColor="@color/white"-->
+            <!--                android:textSize="48px"-->
+            <!--                app:backgroundTint="@color/mint"-->
+            <!--                android:layout_marginBottom="100px"-->
         </LinearLayout>
 
     </FrameLayout>

@@ -25,10 +25,16 @@
             android:name=".Customer.CustomerMenu"
             android:exported="false" />
         <activity
+            android:name=".Customer.CustomerOrderHistoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".Customer.CustomerProfileActivity"
             android:exported="false" />
         <activity
             android:name=".Restaurant.RestaurantPromotionDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Restaurant.RestaurantProcessingDetailActivity"
             android:exported="false" />
         <activity
             android:name=".Shipper.ShipperActivity"
@@ -64,10 +70,6 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBgcrJbS9BYCPw1aa3ksmVpYhqTbjyWp58" />
-
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
         <activity
             android:name=".SignInEnterCode"
             android:exported="false" />
@@ -148,6 +150,9 @@
             android:exported="true" />
         <activity
             android:name=".Customer.RestaurantActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

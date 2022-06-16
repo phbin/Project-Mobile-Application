@@ -11,6 +11,18 @@ import com.example.fooddelivery.model.RestaurantOrders
 
 class RestaurantDoneOrdersAdapter (var context : Context, var listItems : List<RestaurantOrders>) :
     RecyclerView.Adapter<RestaurantDoneOrdersAdapter.ViewHolder>() {
+
+    lateinit var itemClick : RestaurantDoneOrdersAdapter.onIntemClickListener
+    var onItemClick : ((RestaurantOrders) -> Unit)? = null
+
+    interface onIntemClickListener{
+        fun onClickItem(position: Int)
+    }
+
+    fun setOnIntemClickListener(listener: onIntemClickListener){
+        itemClick=listener
+    }
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -38,6 +50,12 @@ class RestaurantDoneOrdersAdapter (var context : Context, var listItems : List<R
         holder.textViewName.text = listItems[position].name
         holder.textViewQuantity.text = listItems[position].quantity
         holder.textViewPrice.text = listItems[position].price
+
+        holder.itemView.setOnClickListener {
+//            onItemClick?.invoke(listItems[position])
+            itemClick.onClickItem(position)
+            notifyDataSetChanged()
+        }
     }
 
 }

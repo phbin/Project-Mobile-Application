@@ -2,6 +2,8 @@ package com.example.fooddelivery.Customer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -12,22 +14,14 @@ import com.squareup.picasso.Picasso
 class CartAdapter(var listitem:ArrayList<CartClass>):
     RecyclerView.Adapter<CartAdapter.ViewHolder>() {
 
-//    //delete current item
-//    lateinit var itemClick : onDeleteItemClickListener
-//    interface onDeleteItemClickListener{
-//        fun onDeleteItemClick(position: Int)
-//    }
-//    fun setOnDeleteItemClickListener(listener: onDeleteItemClickListener){
-//        itemClick=listener
-//    }
-//    //get position by click
-//    lateinit var positionClick : onItemClickListener
-//    interface onItemClickListener{
-//        fun onItemClick(position: Int)
-//    }
-//    fun setOnItemClickListener(listener: onItemClickListener){
-//        positionClick=listener
-//    }
+    //delete current item
+    lateinit var itemClick : onDeleteItemClickListener
+    interface onDeleteItemClickListener{
+        fun onDeleteItemClick(position: Int)
+    }
+    fun setOnDeleteItemClickListener(listener: onDeleteItemClickListener){
+        itemClick=listener
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemView =
@@ -42,7 +36,7 @@ class CartAdapter(var listitem:ArrayList<CartClass>):
         var textQuantity: TextView = itemView.findViewById(R.id.textQuantity)
         var textPrice: TextView = itemView.findViewById(R.id.textPrice)
         var imageFD: ImageView = itemView.findViewById(R.id.imageFD)
-        //val btnDelete: Button = itemView.findViewById(R.id.btnDelete)
+        val btnDelete: ImageButton = itemView.findViewById(R.id.btnDelete)
 
 //        init {
 //            itemView.setOnClickListener {
@@ -58,6 +52,11 @@ class CartAdapter(var listitem:ArrayList<CartClass>):
         holder.textPrice.text = currentItem.price
 
         Picasso.get().load(currentItem.imageFD).into(holder.imageFD)
+        holder.btnDelete.setOnClickListener {
+            itemClick.onDeleteItemClick(position)
+            listitem.removeAt(position)
+            notifyDataSetChanged()
+        }
 //        Glide.with(context)
 //            .load(currentItem.imageFD)
 //            .into(holder.imageFD)

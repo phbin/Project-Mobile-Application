@@ -57,7 +57,6 @@
                     android:id="@+id/textDishExploreMore"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Burger-chicken-cake"
                     android:fontFamily="@font/lato_regular"
                     android:textColor="@color/grey"
                     android:textSize="34.56px"
@@ -85,14 +84,7 @@
                         android:layout_marginTop="70.08px"
                         android:text="3"
                         android:textColor="@color/grey" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8.64px"
-                        android:layout_marginTop="70.08px"
-                        android:text="km"
-                        android:textColor="@color/grey" />
-                </LinearLayout>
+                   </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

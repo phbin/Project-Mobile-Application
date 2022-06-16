@@ -26,38 +26,27 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/popular_in_your_area"
+        android:text="Recommend for you"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="149.76px"
         android:layout_marginStart="311.04px"
         android:textSize="51.84px"
         android:fontFamily="@font/lato_semibold"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Đổ dữ liệu địa chỉ vô đây"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="230.4px"
-        android:layout_marginStart="380.16px"
-        android:textSize="30.2px"
-
-        android:fontFamily="@font/lato_regular">
-    </TextView>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="1900px"
+        android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <GridView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/restaurantPopularGridView"
             android:layout_width="match_parent"
-            android:layout_height="1500px"
+            android:layout_height="wrap_content"
             android:layout_marginStart="46px"
-            android:layout_marginTop="408.96px"
+            android:layout_marginTop="300.96px"
+            android:layout_marginBottom="40px"
             android:layout_marginEnd="46.08px"
             android:divider="#00000000"
             android:dividerHeight="0px"

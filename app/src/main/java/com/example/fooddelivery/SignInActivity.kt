@@ -57,6 +57,10 @@ class SignInActivity : AppCompatActivity() {
             val intent = Intent(this, ResetPasswordActivity::class.java)
             startActivity(intent)
         }
+        btnCreateAccount.setOnClickListener{
+            val intent = Intent(this, SignUpActivity::class.java)
+            startActivity(intent)
+        }
 
 //        var currentUser = auth.currentUser
 //        if(currentUser != null) {

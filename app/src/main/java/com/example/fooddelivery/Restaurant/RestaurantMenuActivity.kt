@@ -23,11 +23,12 @@ class RestaurantMenuActivity : AppCompatActivity() {
         val phoneNumber = sharedPreferences.getString("ID", "")
 
         var fb=FirebaseFirestore.getInstance().collection("Restaurant")
-            fb.get().addOnCompleteListener{
+        fb.get().addOnCompleteListener{
             if (it.isSuccessful) {
                 for (i in it.result) {
                     if (i.id == phoneNumber) {
                         nameRestaurant.setText(i.data.getValue("displayName").toString())
+                        textViewRestaurantAddress.text = i.data.getValue("address").toString()
                     }
                 }
             }

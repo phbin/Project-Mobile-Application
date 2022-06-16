@@ -1,19 +1,23 @@
 package com.example.fooddelivery.Restaurant
 
 import android.content.Context
+import android.content.Intent
+import android.location.Geocoder
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.example.fooddelivery.OrderDetailActivity
 import com.example.fooddelivery.R
-import com.example.fooddelivery.RestaurantOrdersAdapter
 import com.example.fooddelivery.model.RestaurantOrders
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.fragment_restaurant_home_processing.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,8 +34,8 @@ class RestaurantHomeProcessingFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
-    private var layoutManager: RecyclerView.LayoutManager? = null
-    private var adapter: RecyclerView.Adapter<RestaurantMenuRecyclerAdapter.ViewHolder>? = null
+    var orderArray : ArrayList<RestaurantOrders> = ArrayList()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,43 +56,144 @@ class RestaurantHomeProcessingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        layoutManager = LinearLayoutManager(requireActivity().applicationContext)
-        listViewRestaurantOrders.layoutManager = layoutManager
+        listViewRestaurantOrders.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
 
         var sharedPreferences = requireActivity().getSharedPreferences("SHARED_PREF", Context.MODE_PRIVATE)
         var idRestaurant = sharedPreferences.getString("ID", "")
 
-        var orderArray : ArrayList<RestaurantOrders> = ArrayList()
 
-//          orderArray.add(RestaurantOrders(""+idRestaurant, "Linh, Thủ Đức", "Thế Vĩ", "1 món", "200.000đ"))
-//        orderArray.add(RestaurantOrders("002", "Kiên Giang", "Vĩ", "2 món", "250.000đ"))
-//        orderArray.add(RestaurantOrders("003", "Cần Thơ", "Huỳnh", "5 món", "100.000đ"))
-//        orderArray.add(RestaurantOrders("004", "Long An", "Thế", "3 món", "300.000đ"))
-
-        var fb = FirebaseFirestore.getInstance().collection("Bill")
+        var fb = FirebaseFirestore.getInstance().collection("WaitingOrders")
         var fbCustomer = FirebaseFirestore.getInstance().collection("Customer")
+
         fb.get().addOnCompleteListener {task ->
             for (i in task.result) {
-                    if (i.data.getValue("idRestaurant").toString() == idRestaurant&&i.data.getValue("status").toString()=="incoming" && i.data.getValue("quantity").toString()!="0") {
-                        fbCustomer.get().addOnCompleteListener {
-                            for (j in it.result) {
-                                if (j.id == i.data.getValue("idCustomer")) {
-                                    var customerName = j.data.getValue("displayName").toString()
-                                    var customerAddress = j.data.getValue("address").toString()
-                                    orderArray.add(
-                                        RestaurantOrders("" + i.id,
-                                            "" + customerAddress,
-                                            "" + customerName,
-                                            "" +i.data.getValue("quantity")+" dish(es)",
-                                            "" + i.data.getValue("total").toString()))
-                                }
+                if (i.data.getValue("idRestaurant").toString() == idRestaurant&&i.data.getValue("status").toString()=="incoming" && i.data.getValue("quantity").toString()!="0") {
+                    fbCustomer.get().addOnCompleteListener {
+                        for (j in it.result) {
+                            if (j.id == i.data.getValue("idCustomer")) {
+                                var customerName = j.data.getValue("displayName").toString()
+                                var customerAddress = Geocoder(requireActivity(), Locale.getDefault()).getFromLocation(i.data.getValue("latCus").toString().toDouble(),i.data.getValue("longCus").toString().toDouble(),2).get(0).featureName+" "+
+                                        Geocoder(requireActivity(), Locale.getDefault()).getFromLocation(i.data.getValue("latCus").toString().toDouble(),i.data.getValue("longCus").toString().toDouble(),2).get(0).thoroughfare
+                                orderArray.add(
+                                    RestaurantOrders("" + i.id,
+                                        "" + customerAddress,
+                                        "" + customerName,
+                                        "" +i.data.getValue("quantity")+" dish(es)",
+                                        "" + i.data.getValue("total").toString()))
                             }
-                            listViewRestaurantOrders.adapter = RestaurantOrdersAdapter(requireActivity().applicationContext,orderArray)
+                        }
+                        listViewRestaurantOrders.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
+                        listViewRestaurantOrders.adapter = RestaurantOrdersAdapter(requireActivity().applicationContext,orderArray)
+
+                        (listViewRestaurantOrders.adapter as RestaurantOrdersAdapter).setOnIntemClickListener(object :
+                            RestaurantOrdersAdapter.onIntemClickListener {
+                            override fun onClickItem(position: Int) {
+                                val intent = Intent(requireActivity(), RestaurantProcessingDetailActivity::class.java)
+                                intent.putExtra("billID", orderArray[position].orderID)
+                                startActivity(intent)
+                            }
+
+                        })
+                    }
+                }
+            }
+        }
+
+
+        fb.addSnapshotListener { value, error ->
+            if (error != null) {
+                return@addSnapshotListener
+            }
+            if (value != null) {
+                var array : ArrayList<RestaurantOrders> = ArrayList()
+                var fb = FirebaseFirestore.getInstance().collection("WaitingOrders")
+                var fbCustomer = FirebaseFirestore.getInstance().collection("Customer")
+
+                fb.get().addOnCompleteListener {task ->
+                    for (i in task.result) {
+                        if (i.data.getValue("idRestaurant").toString() == idRestaurant&&i.data.getValue("status").toString()=="incoming" && i.data.getValue("quantity").toString()!="0") {
+                            fbCustomer.get().addOnCompleteListener {
+                                for (j in it.result) {
+                                    if (j.id == i.data.getValue("idCustomer")) {
+                                        var customerName = j.data.getValue("displayName").toString()
+                                        var customerAddress = Geocoder(requireActivity(), Locale.getDefault()).getFromLocation(i.data.getValue("latCus").toString().toDouble(),i.data.getValue("longCus").toString().toDouble(),2).get(0).featureName+" "+
+                                                Geocoder(requireActivity(), Locale.getDefault()).getFromLocation(i.data.getValue("latCus").toString().toDouble(),i.data.getValue("longCus").toString().toDouble(),2).get(0).thoroughfare
+                                        array.add(
+                                            RestaurantOrders("" + i.id,
+                                                "" + customerAddress,
+                                                "" + customerName,
+                                                "" +i.data.getValue("quantity")+" dish(es)",
+                                                "" + i.data.getValue("total").toString()))
+                                    }
+                                }
+                                listViewRestaurantOrders.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
+                                listViewRestaurantOrders.adapter = RestaurantOrdersAdapter(requireActivity().applicationContext,array)
+
+                                (listViewRestaurantOrders.adapter as RestaurantOrdersAdapter).setOnIntemClickListener(object :
+                                    RestaurantOrdersAdapter.onIntemClickListener {
+                                    override fun onClickItem(position: Int) {
+                                        val intent = Intent(requireActivity(), RestaurantProcessingDetailActivity::class.java)
+
+                                        intent.putExtra("billID", array[position].orderID)
+                                        startActivity(intent)
+                                        //Log.d("idbill",array[position].orderID.toString())
+
+                                    }
+
+                                })
+                            }
                         }
                     }
                 }
             }
         }
+//
+//                listViewRestaurantOrders.adapter?.notifyDataSetChanged()
+//                Toast.makeText(requireActivity(), value.toString(), Toast.LENGTH_SHORT).show()
+//                fb.get().addOnCompleteListener {task ->
+//                    for (i in task.result) {
+//                        if (i.data.getValue("idRestaurant").toString() == idRestaurant && i.data.getValue("status").toString()=="incoming" && i.data.getValue("quantity").toString()!="0") {
+//                            var count = 0
+//                            for(index in orderArray.indices){
+//                                Toast.makeText(requireActivity(), orderArray[index].orderID, Toast.LENGTH_SHORT).show()
+//                                if(orderArray[index].orderID == i.id){
+//                                    count += 1
+//                                }
+//                            }
+//
+//                            if(count > 0){
+//                                continue
+//                            }
+//                            else{
+//                                fbCustomer.get().addOnCompleteListener {
+//
+//                                    for (j in it.result) {
+//                                        if (j.id == i.data.getValue("idCustomer")) {
+//
+//
+//
+//                                            var customerName = j.data.getValue("displayName").toString()
+//                                            var customerAddress = j.data.getValue("address").toString()
+//                                            orderArray.add(
+//                                                RestaurantOrders("" + i.id,
+//                                                    "" + customerAddress,
+//                                                    "" + customerName,
+//                                                    "" +i.data.getValue("quantity")+" dish(es)",
+//                                                    "" + i.data.getValue("total").toString()))
+//                                        }
+//                                    }
+//                                    listViewRestaurantOrders.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
+//                                    listViewRestaurantOrders.adapter = RestaurantOrdersAdapter(requireActivity().applicationContext,orderArray)
+//                                }
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//        }
+
+
+    }
 
 //        recyclerView.adapter = RestaurantOrdersAdapter(requireActivity().applicationContext, orderArray )
 //    }

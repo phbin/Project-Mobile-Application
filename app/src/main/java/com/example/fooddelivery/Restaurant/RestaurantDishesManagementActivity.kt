@@ -93,6 +93,57 @@ class RestaurantDishesManagementActivity : AppCompatActivity(){
                 }
             })
         }
+        fb.addSnapshotListener { value, error ->
+            if(error!=null) return@addSnapshotListener
+            if(value!=null){
+                var dishListLoaded : ArrayList<RestaurantDishesList> = ArrayList()
+                fb.get().addOnCompleteListener {
+                    if (it.isSuccessful) {
+                        for (i in it.result) {
+                            dishListLoaded.add(RestaurantDishesList("" + i.data.getValue("name").toString(),
+                                ""+i.data.getValue("price").toString(),
+                                "" + i.data.getValue("size"),
+                                ""+i.data.getValue("image")))
+                        }
+                    }
+
+                    layoutManager = LinearLayoutManager(this)
+                    recyclerViewDishes.layoutManager = layoutManager
+
+                    adapter = RestaurantDishesAdapter(dishListLoaded)
+                    recyclerViewDishes.adapter = adapter
+
+//            (adapter as RestaurantDishesAdapter).onItemClick = {
+//                val intent = Intent(this, RestaurantMenuDetailActivity::class.java)
+//                intent.putExtra("dishName", it)
+//                startActivity(intent)
+//            }
+                    (adapter as RestaurantDishesAdapter).setOnItemClickListener(object :
+                        RestaurantDishesAdapter.onItemClickListener {
+                        override fun onItemClick(position: Int) {
+                            val intent = Intent(this@RestaurantDishesManagementActivity, RestaurantDishDetailActivity::class.java)
+                            intent.putExtra("dishName", ""+position)
+                            intent.putExtra("categoryName", ""+textViewMenuTitle.text.toString())
+                            //Toast.makeText(this@RestaurantDishesManagementActivity,""+position,Toast.LENGTH_LONG).show()
+                            startActivity(intent)
+                        }
+                    })
+                    (adapter as RestaurantDishesAdapter).setOnDeleteItemClickListener(object :
+                        RestaurantDishesAdapter.onDeleteItemClickListener {
+                        override fun onDeleteItemClick(position: Int) {
+                            //Toast.makeText(this@RestaurantMenuManagementActivity,""+menuItems[position].menuName.toString(),Toast.LENGTH_SHORT).show()
+                            fb.get().addOnCompleteListener {
+                                if (it.isSuccessful) {
+                                    for ( (index,i) in it.result.withIndex()) {
+                                        if(index==position) fb.document(i.id).delete()
+                                    }
+                                }
+                            }
+                        }
+                    })
+                }
+            }
+        }
 
         btnAddDish.setOnClickListener {
             val intent = Intent(this, RestaurantAddingDishesActivity::class.java)

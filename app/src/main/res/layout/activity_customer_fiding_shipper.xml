@@ -60,21 +60,13 @@
                     android:text="We have received your order"/>
 
                 <LinearLayout
+                    android:id="@+id/layoutFinding"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center_vertical">
-                    <Button
-                        android:id="@+id/btnCancel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Cancel"
-                        android:textColor="@color/red"
-                        android:background="@android:color/transparent"
-                        android:textAllCaps="false"/>
 
                     <ProgressBar
-                        android:layout_marginLeft="96px"
                         android:id="@+id/progressBar"
                         android:layout_width="50px"
                         android:layout_height="50px"
@@ -83,6 +75,7 @@
                         android:backgroundTint="@color/mint"/>
 
                     <TextView
+                        android:id="@+id/textViewFinding"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Finding your shipper..."
@@ -225,68 +218,47 @@
                             android:textColor="@color/black"/>
                     </LinearLayout>
                     <LinearLayout
-                        android:layout_marginRight="10px"
-                        android:layout_width="380px"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_gravity="right"
                         android:gravity="right">
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:gravity="right">
 
                             <TextView
                                 android:id="@+id/textViewDeliveryFee"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/lato_regular"
                                 android:text="0"
+                                android:gravity="right"
+
                                 android:textColor="@color/black"
                                 android:textSize="40.32px" />
                             <TextView
                                 android:id="@+id/textViewSubTotal"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/black"
+                                android:gravity="right"
+
                                 android:fontFamily="@font/lato_regular"
                                 android:textSize="40.32px"
                                 android:text="0"/>
                             <TextView
                                 android:id="@+id/textViewTotal"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/black"
+                                android:gravity="right"
+
                                 android:fontFamily="@font/lato_regular"
                                 android:textSize="40.32px"
                                 android:text="0"/>
                         </LinearLayout>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="right"
-                        android:orientation="vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/lato_regular"
-                            android:text="VND"
-                            android:textColor="@color/black"
-                            android:textSize="40.32px" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/black"
-                            android:fontFamily="@font/lato_regular"
-                            android:textSize="40.32px"
-                            android:text="VND"/>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/black"
-                            android:fontFamily="@font/lato_regular"
-                            android:textSize="40.32px"
-                            android:text="VND"/>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
