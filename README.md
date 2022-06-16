@@ -12,9 +12,9 @@
 username: 0393751403
 password: 030202
 - RESTAURANT VÀ SHIPPER do admin cấp tài khoản, có thể đăng nhập bằng hai tài khoản sau: 
-#(RESTAURANT)
+# RESTAURANT
 - username: 0848867679
 - password: 123456
-#(SHIPPER)
+# SHIPPER
 - username: 0945654551
 - password: 030202
