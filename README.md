@@ -2,10 +2,10 @@
 # Giảng viên hướng dẫn: Huỳnh Tuấn Anh
 # Danh sách thành viên: 
 - 20520853 - Lê Đặng Phương Uyên (nhóm trưởng)
-- 20520143 - Nguyễn Phước Bình
-- 20520344 - Nguyễn Minh Hiếu
-- 20520311 - Huỳnh Tiến Thịnh	
 - 20520857 - Huỳnh Thế Vĩ
+- 20520311 - Huỳnh Tiến Thịnh	
+- 20520183 - Nguyễn Minh Hiếu
+- 20520143 - Nguyễn Phước Bình
 # Đề tài: Ứng dụng đặt đồ ăn trực tuyến
 # HƯỚNG DẪN ĐĂNG NHẬP:
 # CUSTOMER
